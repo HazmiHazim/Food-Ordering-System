@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('content.home');
+})->name('home');
+
+Route::get('/about', function () {
+    return view('content.about');
+})->name('about');
+
+
+// Route for staff
+Route::get('/login', function () {
+    return view('company.auth.login');
+})->name('login');
