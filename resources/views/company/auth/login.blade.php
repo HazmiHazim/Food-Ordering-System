@@ -13,7 +13,7 @@
                 <div class="login_field">
                     <input type="text" id="id" name="id" required>
                     <span></span>
-                    <label for="id">Staff id</label>
+                    <label for="id">Staff ID</label>
                 </div>
 
                 <div class="login_field">
@@ -22,11 +22,13 @@
                     <label for="password">Password</label>
                 </div>
 
-                <input type="submit" value="submit">
+                <div class="login-button">
+                    <input type="submit" value="Sign in">
+                </div>
 
                 <div class="flex">
                     <div class="register">
-                        <a href="#">Register Account</a>
+                        <a href="{{ route('register') }}">Register Account</a>
                     </div>
 
                     <div class="divider">|</div>

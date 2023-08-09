@@ -150,15 +150,17 @@ section .about p {
     text-align: justify;
 }
 
-section .login {
+
+/*---------- Login Page ----------*/
+.login {
     margin: 0;
     padding: 0;
-    background: linear-gradient(120deg, #87CEEB, #E6E6FA);
+    background: linear-gradient(135deg, #71B7E6, #9B59B6);
     height: 100vh;
     overflow: hidden;
 }
 
-.center {
+.login .center {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -168,24 +170,24 @@ section .login {
     border-radius: 10px;
 }
 
-.center h1 {
+.login .center h1 {
     text-align: center;
     padding: 0 0 20px 0;
     border-bottom: 1px solid #F0195A;
 }
 
-.center form {
+.login .center form {
     padding: 0 40px;
     box-sizing: border-box;
 }
 
-form .login_field {
+.login form .login_field {
     position: relative;
     border-bottom: 2px solid #ADADAD;
     margin: 30px 0;
 }
 
-.login_field input {
+.login .login_field input {
     width: 100%;
     padding: 0 5 px;
     height: 40px;
@@ -195,7 +197,7 @@ form .login_field {
     outline: none;
 }
 
-.login_field label {
+.login .login_field label {
     position: absolute;
     top: 50%;
     left: 5px;
@@ -206,7 +208,7 @@ form .login_field {
     transition: .5s;
 }
 
-.login_field span::before {
+.login .login_field span::before {
     content: '';
     position: absolute;
     top: 40px;
@@ -217,16 +219,16 @@ form .login_field {
     transition: .5s;
 }
 
-.login_field input:focus ~ label, .login_field:valid ~ label {
+.login .login_field input:focus ~ label, .login_field:valid ~ label {
     top: -5px;
     color: #F0195A;
 }
 
-.login_field input:focus ~ span::before, .login_field input:valid ~ span::before {
+.login .login_field input:focus ~ span::before, .login_field input:valid ~ span::before {
     width: 100%;
 }
 
-input[type="submit"] {
+.login [type="submit"] {
     width: 100%;
     height: 50px;
     border: 1px solid;
@@ -239,18 +241,18 @@ input[type="submit"] {
     outline: none;
 }
 
-input[type="submit"]:hover {
+.login input[type="submit"]:hover {
     border-color: #2691D9;
     transition: .5s;
 }
 
-.flex {
+.login .flex {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.register {
+.login .register {
     margin: 30px 0;
     text-align: center;
     font-size: 16px;
@@ -258,32 +260,188 @@ input[type="submit"]:hover {
     cursor: pointer;
 }
 
-.register a {
+.login .register a {
     color: #2691D9;
     text-decoration: none;
 }
 
-.register a:hover {
+.login .register a:hover {
     text-decoration: underline;
 }
 
-.divider {
+.login .divider {
     margin: 0 10px;
     color: #666666;
 }
 
-.forgot_password {
+.login .forgot_password {
     margin: 30px 0;
     text-align: center;
     color: #2691D9;
     cursor: pointer;
 }
 
-.forgot_password a {
+.login .forgot_password a {
     color: #2691D9;
     text-decoration: none;
 }
 
-.forgot_password:hover {
+.login .forgot_password:hover {
     text-decoration: underline;
 }
+/*---------- End of Login Page ----------*/
+
+
+/*---------- Registration Page ----------*/
+.registration {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0 0 0;
+    background: linear-gradient(135deg, #71B7E6, #9B59B6);
+}
+
+.registration .container {
+    max-width: 700px;
+    width: 100%;
+    background: #FFFFFF;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.registration .container .title {
+    font-size: 25px;
+    font-weight: 700;
+    position: relative;
+}
+
+.registration .container .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: #6A0DAD;
+}
+
+.registration .container form .registration-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+.registration form .registration-details .registration-field {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.registration .registration-details .registration-field .details {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.registration .registration-details .registration-field input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ADADAD;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.registration .registration-details .registration-field input:focus, .registration-details .registration-field input:valid {
+    border-color: #ADADAD;
+}
+
+.registration form .gender-details .gender-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.registration form .gender-details .category {
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+.registration .gender-details .category label {
+    display: flex;
+    align-items: center;
+}
+
+.registration .gender-details .category .dot {
+    height: 18px;
+    width: 18px;
+    background: #D9D9D9;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.registration #dot-1:checked ~ .category label .one, #dot-2:checked~.category label .two {
+    border-color: #D9D9D9;
+    background: #6A0DAD;
+}
+
+.registration form input[type="radio"] {
+    display: none;
+}
+
+.registration form .registration-button {
+    height: 45px;
+    margin: 45px 0;
+}
+
+.registration form .registration-button input {
+    height: 100%;
+    width: 100%;
+    outline-color: none;
+    color: #FFFFFF;
+    border: none;
+    font-size: 18px;
+    font-weight: 500px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #71B7E6, #9B59B6);
+    cursor: pointer;
+}
+
+.registration form .registration-button input:hover {
+    background: linear-gradient(-135deg, #71B7E6, #9B59B6);
+}
+
+/* Responsive Registration*/
+@media (max-width: 584px) {
+
+    .registration .container {
+        max-width: 100%;
+    }
+
+    .registration form .registration-details .registration-field {
+        margin: 20px 0 12px 0;
+        width: 100%;
+    }
+
+    .registration form .gender-details .category {
+        width: 100%;
+    }
+
+    .registration .container form .registration-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .registration .registration-details::-webkit-scrollbar {
+        width: 0;
+    }
+}
+/*---------- End of Registration Page ----------*/

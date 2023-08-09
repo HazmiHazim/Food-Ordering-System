@@ -26,3 +26,7 @@ Route::get('/about', function () {
 Route::get('/login', function () {
     return view('company.auth.login');
 })->name('login');
+
+Route::get('/register', function () {
+    return view('company.auth.register');
+})->name('register');
