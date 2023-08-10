@@ -153,97 +153,103 @@ section .about p {
 
 /*---------- Login Page ----------*/
 .login {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #71B7E6, #9B59B6);
+    display: flex;
     height: 100vh;
-    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 0 0;
+    background: linear-gradient(135deg, #71B7E6, #9B59B6);
 }
 
-.login .center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    background: white;
-    border-radius: 10px;
-}
-
-.login .center h1 {
-    text-align: center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid #F0195A;
-}
-
-.login .center form {
-    padding: 0 40px;
-    box-sizing: border-box;
-}
-
-.login form .login_field {
-    position: relative;
-    border-bottom: 2px solid #ADADAD;
-    margin: 30px 0;
-}
-
-.login .login_field input {
+.login .container {
+    max-width: 500px;
     width: 100%;
-    padding: 0 5 px;
-    height: 40px;
-    font-size: 16px;
-    border: none;
-    background: none;
-    outline: none;
+    background: #FFFFFF;
+    padding: 25px 30px 0px;
+    border-radius: 5px;
 }
 
-.login .login_field label {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    color: #ADADAD;
-    transform: translateY(-50%);
-    font-size: 16px;
-    pointer-events: none;
-    transition: .5s;
+.login .container .title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    position: relative;
 }
 
-.login .login_field span::before {
+.login .container .title::before {
     content: '';
     position: absolute;
-    top: 40px;
     left: 0;
-    width: 0%;
-    height: 2px;
-    background: #F0195A;
-    transition: .5s;
-}
-
-.login .login_field input:focus ~ label, .login_field:valid ~ label {
-    top: -5px;
-    color: #F0195A;
-}
-
-.login .login_field input:focus ~ span::before, .login_field input:valid ~ span::before {
+    bottom: -10px;
+    height: 3px;
     width: 100%;
+    background: linear-gradient(135deg, #8600A8, #150C81);
 }
 
-.login [type="submit"] {
-    width: 100%;
-    height: 50px;
-    border: 1px solid;
-    background: #2691D9;
-    border-radius: 25px;
-    font-size: 18px;
-    color: #FFFFFF;
+.login form .login-field {
+    margin: 30px 0 12px 0;
+}
+
+.login .login-field .details {
+    display: block;
     font-weight: 700;
-    cursor: pointer;
-    outline: none;
+    margin-bottom: 5px;
 }
 
-.login input[type="submit"]:hover {
-    border-color: #2691D9;
-    transition: .5s;
+.login .login-field input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.login .login-field input:focus, .login-field input:valid {
+    border-color: #6A0DAD;
+}
+
+.login .remember {
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.login .remember label {
+    display: flex;
+    align-items: center;
+}
+
+.login .remember input{
+    accent-color: #6A0DAD;
+}
+
+.login .remember label input {
+    margin-right: 7px;
+}
+
+.login form .login-button {
+    height: 45px;
+}
+
+.login form .login-button input {
+    height: 100%;
+    width: 100%;
+    outline-color: none;
+    color: #FFFFFF;
+    border: none;
+    font-size: 18px;
+    font-weight: 500px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: #6A0DAD;
+    cursor: pointer;
+}
+
+.login form .login-button input:hover {
+    background: linear-gradient(-135deg, #8600A8, #150C81);
 }
 
 .login .flex {
@@ -274,19 +280,19 @@ section .about p {
     color: #666666;
 }
 
-.login .forgot_password {
+.login .forgot-password {
     margin: 30px 0;
     text-align: center;
     color: #2691D9;
     cursor: pointer;
 }
 
-.login .forgot_password a {
+.login .forgot-password a {
     color: #2691D9;
     text-decoration: none;
 }
 
-.login .forgot_password:hover {
+.login .forgot-password:hover {
     text-decoration: underline;
 }
 /*---------- End of Login Page ----------*/
@@ -298,7 +304,7 @@ section .about p {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    padding: 50px 0 0 0;
+    padding: 30px 0 0 0;
     background: linear-gradient(135deg, #71B7E6, #9B59B6);
 }
 
@@ -311,6 +317,7 @@ section .about p {
 }
 
 .registration .container .title {
+    text-align: center;
     font-size: 25px;
     font-weight: 700;
     position: relative;
@@ -320,17 +327,17 @@ section .about p {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -10px;
     height: 3px;
-    width: 30px;
-    background: #6A0DAD;
+    width: 100%;
+    background: linear-gradient(135deg, #8600A8, #150C81);
 }
 
 .registration .container form .registration-details{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 20px 0 12px 0;
+    margin: 30px 0 12px 0;
 }
 
 .registration form .registration-details .registration-field {
@@ -349,7 +356,7 @@ section .about p {
     width: 100%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #ADADAD;
+    border: 1px solid #CCCCCC;
     padding-left: 15px;
     font-size: 16px;
     border-bottom-width: 2px;
@@ -357,7 +364,7 @@ section .about p {
 }
 
 .registration .registration-details .registration-field input:focus, .registration-details .registration-field input:valid {
-    border-color: #ADADAD;
+    border-color: #6A0DAD;
 }
 
 .registration form .gender-details .gender-title {
@@ -366,9 +373,9 @@ section .about p {
 }
 
 .registration form .gender-details .category {
-    display: flex;
-    width: 80%;
-    margin: 14px 0;
+    display: inline-flex;
+    width: 100%;
+    margin: 10px 0 0 0;
     justify-content: space-between;
 }
 
@@ -398,7 +405,6 @@ section .about p {
 
 .registration form .registration-button {
     height: 45px;
-    margin: 45px 0;
 }
 
 .registration form .registration-button input {
@@ -411,15 +417,16 @@ section .about p {
     font-weight: 500px;
     border-radius: 5px;
     letter-spacing: 1px;
-    background: linear-gradient(135deg, #71B7E6, #9B59B6);
+    background: #6A0DAD;
     cursor: pointer;
 }
 
 .registration form .registration-button input:hover {
-    background: linear-gradient(-135deg, #71B7E6, #9B59B6);
+    background: linear-gradient(-135deg, #8600A8, #150C81);
 }
+/*---------- End of Registration Page ----------*/
 
-/* Responsive Registration*/
+/* Responsive Page*/
 @media (max-width: 584px) {
 
     .registration .container {
@@ -444,4 +451,3 @@ section .about p {
         width: 0;
     }
 }
-/*---------- End of Registration Page ----------*/

@@ -28,7 +28,7 @@
 
                     <div class="registration-field">
                         <span class="details">Email</span>
-                        <input type="text" placeholder="Enter your email address" required>
+                        <input type="email" placeholder="Enter your email address" required>
                     </div>
 
 
@@ -39,12 +39,12 @@
 
                     <div class="registration-field">
                         <span class="details">Password</span>
-                        <input type="text" placeholder="Enter your password" required>
+                        <input type="password" placeholder="Enter your password" required>
                     </div>
 
                     <div class="registration-field">
                         <span class="details">Confirm Password</span>
-                        <input type="text" placeholder="Confirm your password" required>
+                        <input type="password" placeholder="Confirm your password" required>
                     </div>
 
                     <div class="gender-details">
@@ -55,8 +55,14 @@
                         <span class="gender-title">Gender</span>
 
                         <div class="category">
-                            <label for="dot-1"><span class="dot one"></span><span class="gender">Male</span></label>
-                            <label for="dot-2"><span class="dot two"></span><span class="gender">Female</span></label>
+                            <label for="dot-1">
+                                <span class="dot one"></span>
+                                <span class="gender">Male</span>
+                            </label>
+                            <label for="dot-2">
+                                <span class="dot two"></span>
+                                <span class="gender">Female</span>
+                            </label>
                         </div>
 
                     </div>
