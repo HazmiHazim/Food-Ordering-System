@@ -41,8 +41,8 @@
 
                     <div class="divider">|</div>
 
-                    <div class="forgot-password">
-                        Forgot Password
+                    <div class="forgot-link">
+                        <a href="{{ route('forgot-password') }}">Forgot Password</a>
                     </div>
                 </div>
 

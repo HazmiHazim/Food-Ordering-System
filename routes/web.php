@@ -30,3 +30,7 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('company.auth.register');
 })->name('register');
+
+Route::get('/forgot-password', function () {
+    return view('company.auth.forgot-password');
+})->name('forgot-password');

@@ -151,6 +151,7 @@ section .about p {
 }
 
 
+
 /*---------- Login Page ----------*/
 .login {
     display: flex;
@@ -280,22 +281,23 @@ section .about p {
     color: #666666;
 }
 
-.login .forgot-password {
+.login .forgot-link {
     margin: 30px 0;
     text-align: center;
     color: #2691D9;
     cursor: pointer;
 }
 
-.login .forgot-password a {
+.login .forgot-link a {
     color: #2691D9;
     text-decoration: none;
 }
 
-.login .forgot-password:hover {
+.login .forgot-link:hover {
     text-decoration: underline;
 }
 /*---------- End of Login Page ----------*/
+
 
 
 /*---------- Registration Page ----------*/
@@ -425,6 +427,92 @@ section .about p {
     background: linear-gradient(-135deg, #8600A8, #150C81);
 }
 /*---------- End of Registration Page ----------*/
+
+
+/*---------- Forgot Password Page ----------*/
+.forgot-password {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 0 0;
+    background: linear-gradient(135deg, #71B7E6, #9B59B6);
+}
+
+.forgot-password .container {
+    max-width: 500px;
+    width: 100%;
+    background: #FFFFFF;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.forgot-password .container .title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    position: relative;
+}
+
+.forgot-password .container .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(135deg, #8600A8, #150C81);
+}
+
+.forgot-password .text {
+    text-align: justify;
+    margin: 30px 0 22px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.forgot-password .forgot-field .details {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.forgot-password .forgot-field input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.forgot-password form .forgot-button {
+    height: 45px;
+    margin-top: 10px;
+}
+
+.forgot-password form .forgot-button input {
+    height: 100%;
+    width: 100%;
+    outline-color: none;
+    color: #FFFFFF;
+    border: none;
+    font-size: 18px;
+    font-weight: 500px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: #6A0DAD;
+    cursor: pointer;
+}
+
+.forgot-password form .forgot-button input:hover {
+    background: linear-gradient(-135deg, #8600A8, #150C81);
+}
+/*---------- End of Forgot Password Page ---------- */
+
 
 /* Responsive Page*/
 @media (max-width: 584px) {
