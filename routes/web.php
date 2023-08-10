@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,14 +26,10 @@ Route::get('/about', function () {
 
 
 // Route for staff
-Route::get('/login', function () {
-    return view('company.auth.login');
-})->name('login');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::get('/register', function () {
-    return view('company.auth.register');
-})->name('register');
 
-Route::get('/forgot-password', function () {
-    return view('company.auth.forgot-password');
-})->name('forgot-password');
+Route::get('/register', [RegistrationController::class, 'index'])->name('register');
+
+Route::get('forgot-password', [ForgotPasswordController::class, 'index'])->name('forgot-password');

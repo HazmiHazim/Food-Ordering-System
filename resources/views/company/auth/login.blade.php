@@ -14,14 +14,28 @@
 
             <form action="/login" method="POST">
 
+                @csrf
+                
                 <div class="login-field">
                     <span class="details">Staff ID</span>
                     <input type="text" placeholder="Enter your staff id" required>
+
+                    @error('staff_id')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="login-field">
                     <span class="details">Password</span>
                     <input type="password" placeholder="Enter your password" required>
+
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="remember">

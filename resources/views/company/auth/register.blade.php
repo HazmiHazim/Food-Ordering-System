@@ -14,6 +14,8 @@
 
             <form action="/register" method="POST">
 
+                @csrf
+
                 <div class="registration-details">
 
                     <div class="registration-field">

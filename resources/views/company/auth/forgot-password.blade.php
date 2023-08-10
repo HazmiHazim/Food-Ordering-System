@@ -19,6 +19,8 @@
 
             <form action="/forgot-password" method="POST">
 
+                @csrf
+
                 <div class="forgot-field">
                     <span class="details">Email</span>
                     <input type="email" placeholder="Enter your email" required>
