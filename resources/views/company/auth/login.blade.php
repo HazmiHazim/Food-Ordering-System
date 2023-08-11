@@ -6,36 +6,28 @@
 
     <div class="login">
 
+        @error('error-message')
+            <div class="error-message">{{ $message }}</div>
+        @enderror
+
         <div class="container">
 
             <div class="title">
                 Staff Login
             </div>
 
-            <form action="/login" method="POST">
+            <form action="{{ route('login') }}" method="POST">
 
                 @csrf
-                
+
                 <div class="login-field">
                     <span class="details">Staff ID</span>
-                    <input type="text" placeholder="Enter your staff id" required>
-
-                    @error('staff_id')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                    <input type="text" name="staff_id" placeholder="Enter your staff id" value="{{ old('staff_id') }}" required>
                 </div>
 
                 <div class="login-field">
                     <span class="details">Password</span>
-                    <input type="password" placeholder="Enter your password" required>
-
-                    @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                    <input type="password" name="password" placeholder="Enter your password" required>
                 </div>
 
                 <div class="remember">
@@ -58,10 +50,13 @@
                     <div class="forgot-link">
                         <a href="{{ route('forgot-password') }}">Forgot Password</a>
                     </div>
+
                 </div>
 
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                
             </form>
-            
+
         </div>
 
     </div>

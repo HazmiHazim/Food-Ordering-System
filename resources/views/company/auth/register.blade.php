@@ -6,13 +6,17 @@
 
     <div class="registration">
 
+        @error('error-message')
+            <div class="error-message">{{ $message }}</div>
+        @enderror
+
         <div class="container">
 
             <div class="title">
                 Staff Registration
             </div>
 
-            <form action="/register" method="POST">
+            <form action="{{ route('register') }}" method="POST">
 
                 @csrf
 
@@ -20,39 +24,39 @@
 
                     <div class="registration-field">
                         <span class="details">Full Name</span>
-                        <input type="text" placeholder="Enter your name" required>
+                        <input type="text" name="name" placeholder="Enter your name" value="{{ old('name') }}" required>
                     </div>
 
                     <div class="registration-field">
                         <span class="details">Staff ID</span>
-                        <input type="text" placeholder="Enter your staff id" required>
+                        <input type="text" name="staff_id" placeholder="Enter your staff id" value="{{ old('staff_id') }}" required>
                     </div>
 
                     <div class="registration-field">
                         <span class="details">Email</span>
-                        <input type="email" placeholder="Enter your email address" required>
+                        <input type="email" name="email" placeholder="Enter your email address" value="{{ old('email') }}" required>
                     </div>
 
 
                     <div class="registration-field">
                         <span class="details">Phone Number</span>
-                        <input type="text" placeholder="Enter your phone number" required>
+                        <input type="text" name="phone" placeholder="Enter your phone number" value="{{ old('phone') }}" required>
                     </div>
 
                     <div class="registration-field">
                         <span class="details">Password</span>
-                        <input type="password" placeholder="Enter your password" required>
+                        <input type="password" name="password" placeholder="Enter your password" value="{{ old('password') }}" required>
                     </div>
 
                     <div class="registration-field">
                         <span class="details">Confirm Password</span>
-                        <input type="password" placeholder="Confirm your password" required>
+                        <input type="password" name="password_confirmation" placeholder="Confirm your password" required>
                     </div>
 
                     <div class="gender-details">
 
-                        <input type="radio" name="gender" id="dot-1">
-                        <input type="radio" name="gender" id="dot-2">
+                        <input type="radio" name="gender" id="dot-1" required>
+                        <input type="radio" name="gender" id="dot-2" required>
 
                         <span class="gender-title">Gender</span>
 
@@ -74,6 +78,8 @@
                 <div class="registration-button">
                     <input type="submit" value="Register">
                 </div>
+
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             </form>
 

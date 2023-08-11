@@ -25,11 +25,12 @@ Route::get('/about', function () {
 })->name('about');
 
 
-// Route for staff
+// Route for login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-
+// Route for registration
 Route::get('/register', [RegistrationController::class, 'index'])->name('register');
+Route::post('/register', [RegistrationController::class, 'store']);
 
 Route::get('forgot-password', [ForgotPasswordController::class, 'index'])->name('forgot-password');

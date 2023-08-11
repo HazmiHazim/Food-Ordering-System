@@ -31,7 +31,15 @@ class LoginController extends Controller
         }
 
         return back()->withErrors([
-            'staff_id' => 'The provided credentials do not match our records.'
+            'error-message' => 'The provided credentials do not match our records.'
         ])->onlyInput('staff_id');
+    }
+
+    public function logout(Request $request) : RedirectResponse
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/login');
     }
 }

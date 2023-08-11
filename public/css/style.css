@@ -158,8 +158,23 @@ section .about p {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    padding: 30px 0 0 0;
+    padding: 20px 0 0 0;
+    flex-direction: column;
     background: linear-gradient(135deg, #71B7E6, #9B59B6);
+}
+
+.login .error-message {
+    max-width: 500px;
+    width: 100%;
+    color: #AF4242;
+    background-color: #FDE8EC;
+    padding: 10px;
+    transform: translateY(1px);
+    font-size: 16px;
+    margin-bottom: -10px;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .login .container {
@@ -306,8 +321,36 @@ section .about p {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    padding: 30px 0 0 0;
+    padding: 20px 0 0 0;
     background: linear-gradient(135deg, #71B7E6, #9B59B6);
+}
+
+.registration .error-message {
+    max-width: 500px;
+    width: 100%;
+    color: #AF4242;
+    background-color: #FDE8EC;
+    padding: 10px;
+    transform: translateY(1px);
+    font-size: 16px;
+    margin-bottom: -10px;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.registration .success-message {
+    max-width: 500px;
+    width: 100%;
+    color: #145214;
+    background-color: #DFF0D8;
+    padding: 10px;
+    transform: translateY(1px);
+    font-size: 16px;
+    margin-bottom: -10px;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .registration .container {
