@@ -27,7 +27,7 @@ Route::get('/about', function () {
 
 // Route for login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/login', [LoginController::class, 'authenticate'])->middleware('auth:staff');
 
 // Route for registration
 Route::get('/register', [RegistrationController::class, 'index'])->name('register');

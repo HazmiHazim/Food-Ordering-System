@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Staff extends Model
+class StaffAccount extends Model
 {
-    use HasFactory, HasApiTokens, Notifiable;
+    use HasFactory,HasApiTokens, Notifiable;
 
     protected $fillable = [
         'staff_account_id'
