@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('staff_accounts', function (Blueprint $table) {
-            $table->id();
-            $table->string('staff_account_id')->unique();
+            $table->string('staff_account_id')->primary();
             $table->timestamps();
         });
     }

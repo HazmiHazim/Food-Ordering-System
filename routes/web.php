@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrationController;
@@ -27,10 +28,16 @@ Route::get('/about', function () {
 
 // Route for login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'authenticate'])->middleware('auth:staff');
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+// Route for logout
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Route for registration
 Route::get('/register', [RegistrationController::class, 'index'])->name('register');
 Route::post('/register', [RegistrationController::class, 'store']);
 
 Route::get('forgot-password', [ForgotPasswordController::class, 'index'])->name('forgot-password');
+
+// Route for admin
+Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('dashboard')->middleware('auth');
