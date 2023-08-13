@@ -1,0 +1,583 @@
+:root {
+    --light: #F6F6F9;
+    --primary: #1976D2;
+    --light-primary: #CFE8FF;
+    --grey: #EEEEEE;
+    --dark-grey: #AAAAAA;
+    --dark: #363949;
+    --danger: #D32F2F;
+    --light-danger: #FECDD3;
+    --warning: #FBC02D;
+    --light-warning: #FFF2C6;
+    --success: #388E3C;
+    --light-success: #BBF7D0;
+    --glow: #6A0DAD;
+    --light-glow: #A46AEF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.bx {
+    font-size: 1.7rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body.dark {
+    --light: #181A1E;
+    --grey: #25252C;
+    --dark: #FBFBFB;
+}
+
+body {
+    background: var(--grey);
+    overflow-x: hidden;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--light);
+    width: 230px;
+    height: 100%;
+    z-index: 2000;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar.close {
+    width: 60px;
+}
+
+.sidebar .logo {
+    font-size: 24px;
+    font: 700;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    color: var(--glow);
+    z-index: 500;
+    padding-bottom: 20px;
+    box-sizing: content-box;
+}
+
+.sidebar .logo .logo-name span {
+    color: var(--dark);
+}
+
+.sidebar .logo .bx {
+    min-width: 60px;
+    display: flex;
+    justify-content: center;
+    font-size: 2.2rem;
+}
+
+.sidebar .side-menu {
+    width: 100%;
+    margin-top: 48px;
+}
+
+.sidebar .side-menu li {
+    height: 48px;
+    background: transparent;
+    margin-left: 6px;
+    border-radius: 48px 0 0 48px;
+    padding: 4px;
+}
+
+.sidebar .side-menu li.active {
+    background: var(--grey);
+    position: relative;
+}
+
+.sidebar .side-menu li.active::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: -40px;
+    right: 0;
+    box-shadow: 20px 20px 0 var(--grey);
+    z-index: -1;
+}
+
+.sidebar .side-menu li.active::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    bottom: -40px;
+    right: 0;
+    box-shadow: 20px -20px 0 var(--grey);
+    z-index: -1;
+}
+
+.sidebar .side-menu li a {
+    width: 100%;
+    height: 100%;
+    background: var(--light);
+    display: flex;
+    align-items: center;
+    border-radius: 48px;
+    font-size: 16px;
+    color: var(--dark);
+    white-space: nowrap;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar .side-menu li.active a {
+    color: var(--glow);
+}
+
+.sidebar.close .side-menu li a {
+    width: calc(48px - (4px * 2));
+    transition: all 0.3s ease;
+}
+
+.sidebar .side-menu li a .bx {
+    min-width: calc(60px - (4px + 6px) * 2);
+    display: flex;
+    font-size: 1.6rem;
+    justify-content: center;
+}
+
+.sidebar .side-menu li .logout {
+    cursor: pointer;
+}
+
+.sidebar .side-menu li .logout-button {
+    display: flex;
+    width: 170px;
+    align-items: center;
+    margin-top: 280px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--danger);
+    font-size: 16px;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar .side-menu li .logout i {
+    color: var(--danger);
+    font-size: 1.8rem;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-left: 3px;
+}
+
+.sidebar.close .side-menu li .logout-button {
+    width: calc(48px - (4px * 2));
+    transition: all 0.3s ease;
+}
+
+.top-bar {
+    position: relative;
+    width: calc(100% - 230px);
+    left: 230px;
+    transition: all 0.3s ease;
+}
+
+.sidebar.close~.top-bar {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+.top-bar nav {
+    height: 56px;
+    background: var(--light);
+    padding: 0 24px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 24px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.top-bar nav::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: -40px;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: -20px -20px 0 var(--light);
+}
+
+.top-bar nav a {
+    color: var(--dark);
+}
+
+.top-bar nav .bx.bx-menu {
+    cursor: pointer;
+    color: var(--dark);
+}
+
+.top-bar nav .right-side {
+    display: flex;
+    align-items: center;
+    grid-gap: 20px;
+}
+
+.top-bar nav .theme-toggle {
+    display: block;
+    min-width: 50px;
+    height: 25px;
+    background: var(--grey);
+    cursor: pointer;
+    position: relative;
+    border-radius: 25px;
+}
+
+.top-bar nav .theme-toggle::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: calc(25px - 4px);
+    background: var(--primary);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.top-bar nav #theme-toggle:checked+.theme-toggle::before {
+    left: calc(100% - (25px - 4px) - 2px);
+}
+
+.top-bar nav .profile {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.top-bar nav .profile i {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.dashboard section {
+    position: relative;
+    width: calc(100% - 230px);
+    left: 230px;
+    transition: all 0.3s ease;
+}
+
+.dashboard main {
+    width: 100%;
+    padding: 36px 24px;
+    max-height: calc(100vh - 56px);
+}
+
+.dashboard main .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 16px;
+    flex-wrap: wrap;
+}
+
+.dashboard main .header .left h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.dashboard main .header .left .breadcrumb {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+}
+
+.dashboard main .header .left .breadcrumb li {
+    color: var(--dark);
+}
+
+.dashboardmain main .header .left .breadcrumb li a {
+    color: var(--dark-grey);
+    pointer-events: none;
+}
+
+.dashboard main .header .left .breadcrumb li a.active {
+    color: var(--primary);
+    pointer-events: none;
+}
+
+.dashboard main .header .report {
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 36px;
+    background: var(--primary);
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    font-weight: 500;
+}
+
+.dashboard main .insights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 24px;
+    margin-top: 36px;
+}
+
+.dashboard main .insights li {
+    padding: 24px;
+    background: var(--light);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+    cursor: pointer;
+}
+
+.dashboard main .insights li .bx {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard main .insights li:nth-child(1) .bx {
+    background: var(--light-success);
+    color: var(--success);
+}
+
+.dashboard main .insights li:nth-child(2) .bx {
+    background: var(--light-primary);
+    color: var(--primary);
+}
+
+.dashboard main .insights li:nth-child(3) .bx {
+    background: var(--light-warning);
+    color: var(--warning);
+}
+
+.dashboard main .insights li .info h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.dashboard main .insights li .info p {
+    color: var(--dark);
+}
+
+.dashboard main .bottom-section {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 24px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.dashboard main .bottom-section>div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.dashboard main .bottom-section .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.dashboard main .bottom-section .header h3 {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.dashboard main .bottom-section .header .bx {
+    cursor: pointer;
+}
+
+.dashboard main .bottom-section .orders {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.dashboard main .bottom-section .orders table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dashboard main .bottom-section .orders table th {
+    padding-bottom: 12px;
+    font-size: 13px;
+    text-align: left;
+    border-bottom: 1px solid var(--grey);
+}
+
+.dashboard main .bottom-section .orders table td {
+    padding: 16px 0;
+}
+
+.dashboard main .bottom-section .orders table tr td:first-child {
+    display: flex;
+    align-items: center;
+    grid-gap: 12px;
+    padding-left: 6px;
+}
+
+.dashboard main .bottom-section .orders table td i {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dashboard main .bottom-section .orders table tbody tr {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dashboard main .bottom-section .orders table tbody tr:hover {
+    background: var(--grey);
+}
+
+.dashboard main .bottom-section .orders table tr td .status {
+    font-size: 10px;
+    padding: 6px 16px;
+    color: var(--light);
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.dashboard main .bottom-section .orders table tr td .status.completed {
+    background: var(--success);
+}
+
+.dashboard main .bottom-section .orders table tr td .status.process {
+    background: var(--primary);
+}
+
+.dashboard main .bottom-section .orders table tr td .status.pending {
+    background: var(--warning);
+}
+
+.dashboard main .bottom-section .reminders {
+    flex-grow: 1;
+    flex-basis: 300px;
+}
+
+.dashboard main .bottom-section .reminders .task-list {
+    width: 100%;
+}
+
+.dashboard main .bottom-section .reminders .task-list li {
+    width: 100%;
+    margin-bottom: 16px;
+    background: var(--grey);
+    padding: 14px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard main .bottom-section .reminders .task-list li .task-title {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard main .bottom-section .reminders .task-list li .task-title p {
+    margin-left: 6px;
+}
+
+.dashboard main .bottom-section .reminders .task-list li .bx {
+    cursor: pointer;
+}
+
+.dashboard main .bottom-section .reminders .task-list li.completed {
+    border-left: 10px solid var(--success);
+}
+
+.dashboard main .bottom-section .reminders .task-list li.not-completed {
+    border-left: 10px solid var(--danger);
+}
+
+.dashboard main .bottom-section .reminders .task-list li:last-child {
+    margin-bottom: 0;
+}
+
+/*
+*  Responsive Page
+*/
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .dashboard {
+        width: calc(100% - 60px);
+        left: 200px;
+    }
+
+    .sidebar .side-menu li .logout-button {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .dashboard main .insights {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard main .bottom-section .header {
+        min-width: 340px;
+    }
+    
+    .dashboard main .bottom-section .orders table {
+        max-width: 340px;
+    }
+
+    .dashboard main .bottom-section .reminders .task-list {
+        max-width: 340px;
+    }
+}

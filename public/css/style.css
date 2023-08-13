@@ -50,7 +50,7 @@ section nav ul li a{
 }
 
 section nav ul li a::after {
-    content: '';
+    content: "";
     width: 100%;
     height: 2px;
     background: #6A0DAD;
@@ -193,7 +193,7 @@ section .about p {
 }
 
 .login .container .title::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     bottom: -10px;
@@ -327,7 +327,7 @@ section .about p {
 }
 
 .registration .error-message {
-    max-width: 500px;
+    max-width: 700px;
     width: 100%;
     color: #AF4242;
     background-color: #FDE8EC;
@@ -341,7 +341,7 @@ section .about p {
 }
 
 .registration .success-message {
-    max-width: 500px;
+    max-width: 700px;
     width: 100%;
     color: #145214;
     background-color: #DFF0D8;
@@ -370,7 +370,7 @@ section .about p {
 }
 
 .registration .container .title::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     bottom: -10px;
@@ -499,7 +499,7 @@ section .about p {
 }
 
 .forgot-password .container .title::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     bottom: -10px;

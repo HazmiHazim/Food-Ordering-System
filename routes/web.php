@@ -18,11 +18,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('content.home');
+    return view('public.home');
 })->name('home');
 
 Route::get('/about', function () {
-    return view('content.about');
+    return view('public.about');
 })->name('about');
 
 
