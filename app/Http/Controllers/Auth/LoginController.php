@@ -12,7 +12,12 @@ class LoginController extends Controller
 {
     public function index() : View
     {
-        return view('company.auth.login');
+        if (Auth::check()) {
+            return view('company.admin.dashboard');
+        }
+        else {
+            return view('company.auth.login');
+        }
     }
     
     /**
