@@ -693,6 +693,75 @@ main .header .left h1 {
     background: var(--grey);
 }
 
+.staff-account-create main .create-form {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 34px 34px;
+    overflow-x: auto;
+    border: 1px solid #D3D3D3;
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+.staff-account-create main form .create-form label {
+    color: var(--dark);
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.staff-account-create main form .create-form input {
+    width: 100%;
+    height: 36px;
+    border-radius: 7px;
+    font-size: 16px;
+    padding-left: 10px;
+    border: 1px solid var(--dark-grey);
+}
+
+.staff-account-create main form .button input {
+    display: flex;
+    width: 10%;
+    height: 36px;
+    border-radius: 7px;
+    background: var(--primary);
+    color: var(--light);
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    justify-content: center;
+    grid-gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.staff-account-create main form .button input:hover {
+    color: var(--glow);
+}
+
+.staff-account-create main a {
+    position: absolute;
+    top: 277px;
+    left: 160px;
+    display: flex;
+    width: 10%;
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 7px;
+    background: var(--danger);
+    color: var(--light);
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    font-weight: 500;
+}
+
+.staff-account-create main a:hover {
+    color: var(--glow);
+}
+
 
 /*
 *  Responsive Page
@@ -728,5 +797,9 @@ main .header .left h1 {
 
     .dashboard main .bottom-section .reminders .task-list {
         max-width: 340px;
+    }
+
+    .staff-account-create main a {
+        top: 320px;
     }
 }

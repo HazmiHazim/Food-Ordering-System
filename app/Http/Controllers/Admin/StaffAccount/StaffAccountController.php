@@ -34,7 +34,7 @@ class StaffAccountController extends Controller
     public function store(Request $request) : RedirectResponse
     {
         $validator = Validator::make($request->only('new_staff_id'), [
-            'new_staff_id' => 'required|min:10'
+            'new_staff_id' => 'required|min:10|max:10'
         ]);
 
         if ($validator->fails()) {
