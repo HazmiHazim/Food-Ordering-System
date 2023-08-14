@@ -290,20 +290,20 @@ body {
     border-radius: 50%;
 }
 
-.dashboard section {
+section {
     position: relative;
     width: calc(100% - 230px);
     left: 230px;
     transition: all 0.3s ease;
 }
 
-.dashboard main {
+main {
     width: 100%;
     padding: 36px 24px;
     max-height: calc(100vh - 56px);
 }
 
-.dashboard main .header {
+main .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -311,13 +311,15 @@ body {
     flex-wrap: wrap;
 }
 
-.dashboard main .header .left h1 {
+main .header .left h1 {
     font-size: 36px;
     font-weight: 600;
     margin-bottom: 10px;
     color: var(--dark);
 }
 
+
+/*---------- Dashboard Page ----------*/
 .dashboard main .header .left .breadcrumb {
     display: flex;
     align-items: center;
@@ -544,6 +546,148 @@ body {
 .dashboard main .bottom-section .reminders .task-list li:last-child {
     margin-bottom: 0;
 }
+/*---------- End of Dashboard Page ---------- */
+
+
+
+/*---------- Staff Account Index Page ----------- */
+.staff-account-index main .header .create {
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 36px;
+    background: var(--primary);
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    font-weight: 500;
+}
+
+.staff-account-index main .mid-section {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 24px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.staff-account-index main .mid-section .id {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.staff-account-index main .mid-section>div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.staff-account-index main .mid-section .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.staff-account-index .mid-section .header h3 {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.staff-account-index main .mid-section .header .bx {
+    cursor: pointer;
+}
+
+.staff-account-index main .mid-section .id table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.staff-account-index main .mid-section .id table th {
+    padding-bottom: 12px;
+    font-size: 13px;
+    text-align: left;
+    border-bottom: 1px solid var(--grey);
+}
+
+.staff-account-index main .mid-section .id table td {
+    padding: 16px 0;
+}
+
+.staff-account-index main .bottom-section {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 24px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.staff-account-index main .bottom-section .staff {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.staff-account-index main .bottom-section>div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.staff-account-index main .bottom-section .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.staff-account-index .bottom-section .header h3 {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.staff-account-index main .bottom-section .header .bx {
+    cursor: pointer;
+}
+
+.staff-account-index main .bottom-section .staff table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.staff-account-index main .bottom-section .staff table th {
+    padding-bottom: 12px;
+    font-size: 13px;
+    text-align: left;
+    border-bottom: 1px solid var(--grey);
+}
+
+.staff-account-index main .bottom-section .staff table td {
+    padding: 16px 0;
+}
+
+.staff-account-index main .bottom-section .staff table td i {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.staff-account-index main .bottom-section .staff table tbody tr {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.staff-account-index main .bottom-section .staff table tbody tr:hover {
+    background: var(--grey);
+}
+
 
 /*
 *  Responsive Page

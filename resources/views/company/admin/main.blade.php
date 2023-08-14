@@ -15,11 +15,21 @@
     <div class="sidebar">
         <a href="{{ route('dashboard') }}" class="logo">Hash Restaurant</a>
         <ul class="side-menu">
-            <li class="active"><a href="{{ route('dashboard') }}"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
-            <li><a href="#"><i class='bx bxs-user-rectangle'></i>Staff Account</a></li>
-            <li><a href="#"><i class='bx bx-food-menu'></i>Food Menu</a></li>
-            <li><a href="#"><i class='bx bx-analyse'></i>Analytics</a></li>
-            <li><a href="#"><i class='bx bx-cog'></i>Settings</a></li>
+            <li class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                <a href="{{ route('dashboard') }}"><i class='bx bxs-dashboard'></i>Dashboard</a>
+            </li>
+            <li class="{{ request()->routeIs('staff-account') ? 'active' : '' }}">
+                <a href="{{ route('staff-account') }}"><i class='bx bxs-user-rectangle'></i>Staff Account</a>
+            </li>
+            <li>
+                <a href="#"><i class='bx bx-food-menu'></i>Food Menu</a>
+            </li>
+            <li>
+                <a href="#"><i class='bx bx-analyse'></i>Analytics</a>
+            </li>
+            <li>
+                <a href="#"><i class='bx bx-cog'></i>Settings</a>
+            </li>
         </ul>
         <ul class="side-menu">
             <li>

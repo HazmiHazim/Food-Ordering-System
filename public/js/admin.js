@@ -1,18 +1,8 @@
-const sideLinks = document.querySelectorAll('.sidebar .side-menu li a:not(.logout)');
 const menuBar = document.querySelector('.top-bar nav .bx.bx-menu');
 const sideBar = document.querySelector('.sidebar');
 const toggler = document.getElementById('theme-toggle');
 
-sideLinks.forEach(item => {
-    const li = item.parentElement;
-    item.addEventListener('click', () => {
-        sideLinks.forEach(i => {
-            i.parentElement.classList.remove('active');
-        });
-        li.classList.add('active');
-    });
-});
-
+// Close side bar menu
 menuBar.addEventListener('click', () => {
     sideBar.classList.toggle('close');
 });
@@ -26,6 +16,7 @@ window.addEventListener('resize', () => {
     }
 });
 
+// Dark Mode
 toggler.addEventListener('change', () => {
     const isChecked = toggler.checked;
     if (isChecked) {

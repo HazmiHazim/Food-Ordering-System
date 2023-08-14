@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\StaffAccount\StaffAccountController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrationController;
@@ -41,3 +42,4 @@ Route::get('forgot-password', [ForgotPasswordController::class, 'index'])->name(
 
 // Route for admin
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('/admin/staff-account', [StaffAccountController::class, 'index'])->name('staff-account')->middleware('auth');
