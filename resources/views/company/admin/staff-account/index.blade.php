@@ -14,7 +14,7 @@
                     <div class="left">
                         <h1>Staff Account</h1>
                     </div>
-                    <a href="#" class="create">
+                    <a href="{{ route('staff-account-create') }}" class="create">
                         <span>Create New Staff ID</span>
                     </a>
                 </div>
@@ -47,6 +47,7 @@
                                     </tr>
                                 @endforeach
                             </tbody>
+                            
                         </table>
                     </div>
                 </div>
@@ -80,6 +81,7 @@
                                         <td>{{ $staffDetails->name }}</td>
                                         <td>{{ $staffDetails->email }}</td>
                                         <td>{{ $staffDetails->phone }}</td>
+                                        <td><i class='bx bxs-pencil'></i><span>Edit</span></td>
                                     </tr>
                                 @endforeach
                             </tbody>

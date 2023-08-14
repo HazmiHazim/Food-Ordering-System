@@ -18,7 +18,7 @@
             <li class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
                 <a href="{{ route('dashboard') }}"><i class='bx bxs-dashboard'></i>Dashboard</a>
             </li>
-            <li class="{{ request()->routeIs('staff-account') ? 'active' : '' }}">
+            <li class="{{ request()->routeIs(['staff-account', 'staff-account-create', 'staff-account-edit', 'staff-account-show']) ? 'active' : '' }}">
                 <a href="{{ route('staff-account') }}"><i class='bx bxs-user-rectangle'></i>Staff Account</a>
             </li>
             <li>

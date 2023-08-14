@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\StaffAccount\StaffAccountController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrationController;
+use App\Models\StaffAccount;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,5 +42,13 @@ Route::post('/register', [RegistrationController::class, 'store']);
 Route::get('forgot-password', [ForgotPasswordController::class, 'index'])->name('forgot-password');
 
 // Route for admin
-Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('dashboard')->middleware('auth');
-Route::get('/admin/staff-account', [StaffAccountController::class, 'index'])->name('staff-account')->middleware('auth');
+Route::prefix('admin')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+
+    Route::resource('/staff-account', StaffAccountController::class)->names([
+        'index' => 'staff-account',
+        'create' => 'staff-account-create',
+        'edit' => 'staff-account-edit',
+        'show' => 'staff-account-show',
+    ]);
+})->middleware('auth', 'isAdmin');

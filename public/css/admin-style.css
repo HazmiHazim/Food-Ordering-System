@@ -673,10 +673,15 @@ main .header .left h1 {
 }
 
 .staff-account-index main .bottom-section .staff table td i {
-    width: 36px;
-    height: 36px;
+    margin-right: 8px;
+    font-size: 16px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.staff-account-index main .bottom-section .staff table td:last-child:hover {
+    color: var(--glow);
+    text-decoration: underline;
 }
 
 .staff-account-index main .bottom-section .staff table tbody tr {
