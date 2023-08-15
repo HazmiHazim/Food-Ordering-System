@@ -15,7 +15,7 @@
     <div class="sidebar">
         <a href="{{ route('dashboard') }}" class="logo">Hash Restaurant</a>
         <ul class="side-menu">
-            <li class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
+            <li class="{{ request()->routeIs(['dashboard', 'login']) ? 'active' : '' }}">
                 <a href="{{ route('dashboard') }}"><i class='bx bxs-dashboard'></i>Dashboard</a>
             </li>
             <li class="{{ request()->routeIs(['staff-account', 'staff-account-create', 'staff-account-edit', 'staff-account-show']) ? 'active' : '' }}">

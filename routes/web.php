@@ -48,7 +48,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     Route::resource('/staff-account', StaffAccountController::class)->names([
         'index' => 'staff-account',
         'create' => 'staff-account-create',
-        'edit' => 'staff-account-edit',
         'show' => 'staff-account-show',
+        'edit' => 'staff-account-edit',
     ]);
 });

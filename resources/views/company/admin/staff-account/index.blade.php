@@ -44,6 +44,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $id->staff_account_id }}</td>
                                         <td>{{ $id->created_at }}</td>
+                                        <td><i class='bx bxs-trash-alt'></i><span>Delete</span></td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -81,7 +82,7 @@
                                         <td>{{ $staffDetails->name }}</td>
                                         <td>{{ $staffDetails->email }}</td>
                                         <td>{{ $staffDetails->phone }}</td>
-                                        <td><i class='bx bxs-pencil'></i><span>Edit</span></td>
+                                        <td><a href="#"><i class='bx bxs-pencil'></i><span>Edit</span></a></td>
                                     </tr>
                                 @endforeach
                             </tbody>

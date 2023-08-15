@@ -59,4 +59,22 @@ class StaffAccountController extends Controller
             return back()->with('success-message', 'Successfully added new ID');
         }
     }
+
+    /*
+    * Function view show file
+    */
+    public function show($id) : View
+    {
+        $user = User::findOrFail($id);
+
+        return view('company.admin.staff-account.show', ['id' => $user]);
+    }
+
+    /*
+    * Function view edit file
+    */
+    public function edit() : View
+    {
+        return view('company.admin.staff-account.edit');
+    }
 }

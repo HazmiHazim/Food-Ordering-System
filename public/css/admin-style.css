@@ -564,6 +564,10 @@ main .header .left h1 {
     font-weight: 500;
 }
 
+.staff-account-index main .header .create:hover {
+    color: var(--light-primary);
+}
+
 .staff-account-index main .mid-section {
     display: flex;
     flex-wrap: wrap;
@@ -609,13 +613,33 @@ main .header .left h1 {
 
 .staff-account-index main .mid-section .id table th {
     padding-bottom: 12px;
-    font-size: 13px;
+    font-size: 16px;
     text-align: left;
     border-bottom: 1px solid var(--grey);
 }
 
 .staff-account-index main .mid-section .id table td {
     padding: 16px 0;
+}
+
+.staff-account-index main .mid-section .id table td i {
+    font-size: 16px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.staff-account-index main .mid-section .id table td span {
+    margin-left: 8px;
+}
+
+.staff-account-index main .mid-section .id table td:last-child:hover {
+    color: var(--danger);
+    text-decoration: underline;
+}
+
+.staff-account-index main .mid-section .id table td:last-child {
+    cursor: pointer;
 }
 
 .staff-account-index main .bottom-section {
@@ -663,7 +687,7 @@ main .header .left h1 {
 
 .staff-account-index main .bottom-section .staff table th {
     padding-bottom: 12px;
-    font-size: 13px;
+    font-size: 16px;
     text-align: left;
     border-bottom: 1px solid var(--grey);
 }
@@ -761,11 +785,11 @@ main .header .left h1 {
 }
 
 .staff-account-create main form .button input:hover {
-    color: var(--glow);
+    color: var(--light-primary);
 }
 
 .staff-account-create main .form-section form .button a:hover {
-    color: var(--glow);
+    color: var(--light-danger);
 }
 
 
