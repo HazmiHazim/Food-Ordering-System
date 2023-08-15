@@ -10,12 +10,6 @@ class AdminController extends Controller
 {
     public function index() : View
     {
-        // Check if user is already authenticated or not
-        if (Auth::check()) {
-            return view('company.admin.dashboard');
-        }
-        else {
-            return view('login');
-        }
+        return view('company.admin.dashboard');
     }
 }

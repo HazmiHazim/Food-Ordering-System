@@ -42,7 +42,7 @@ Route::post('/register', [RegistrationController::class, 'store']);
 Route::get('forgot-password', [ForgotPasswordController::class, 'index'])->name('forgot-password');
 
 // Route for admin
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 
     Route::resource('/staff-account', StaffAccountController::class)->names([
@@ -51,4 +51,4 @@ Route::prefix('admin')->group(function () {
         'edit' => 'staff-account-edit',
         'show' => 'staff-account-show',
     ]);
-})->middleware('auth', 'isAdmin');
+});

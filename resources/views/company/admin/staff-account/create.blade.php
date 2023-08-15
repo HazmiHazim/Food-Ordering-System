@@ -9,13 +9,13 @@
 
             <main>
 
-                <div class="main-container">
-
-                    <div class="header">
-                        <div class="left">
-                            <h1>Create New Staff ID</h1>
-                        </div>
+                <div class="header">
+                    <div class="left">
+                        <h1>Create New Staff ID</h1>
                     </div>
+                </div>
+
+                <div class="form-section">
 
                     <form action="{{ route('staff-account.store') }}" method="POST">
                         @csrf
@@ -30,18 +30,17 @@
 
                         <div class="button">
                             <input type="submit" value="Create">
+                            <a href="{{ route('staff-account') }}"><span>Cancel</span></a>
                         </div>
 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     </form>
 
-                    <a href="#" class="cancel"><span>Cancel</span></a>
-
                 </div>
 
             </main>
-            
+
         </section>
     </div>
 
