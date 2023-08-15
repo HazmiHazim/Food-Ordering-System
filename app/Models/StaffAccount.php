@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class StaffAccount extends Model
 {
-    use HasFactory,HasApiTokens, Notifiable;
+    use HasFactory, HasApiTokens, Notifiable;
 
     protected $fillable = [
         'staff_account_id'

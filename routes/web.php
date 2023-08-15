@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\FoodMenu\FoodMenuController;
 use App\Http\Controllers\Admin\StaffAccount\StaffAccountController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
@@ -50,5 +51,12 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         'create' => 'staff-account-create',
         'show' => 'staff-account-show',
         'edit' => 'staff-account-edit',
+    ]);
+
+    Route::resource('/food-menu', FoodMenuController::class)->names([
+        'index' => 'food-menu',
+        'create' => 'food-menu-create',
+        'show' => 'food-menu-show',
+        'edit' => 'food-menu-edit',
     ]);
 });
