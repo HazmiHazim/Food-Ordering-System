@@ -18,7 +18,7 @@
 
                 <div class="top-section">
 
-                    <form action="/" method="POST">
+                    <form action="{{ route('food-menu.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-add-menu">
@@ -28,12 +28,16 @@
                             </div>
 
                             <span class="star">Food Name</span>
-                            <input type="text" name="food_name" placeholder="Enter food name" value="{{ old('food_name') }}"
-                                required>
+                            <input type="text" name="food_name" placeholder="Enter food name" value="{{ old('food_name') }}" required>
+                            @foreach ($errors->get('food_name') as $name)
+                                <div class="error-message">{{ $name }}</div>
+                            @endforeach
 
                             <span class="star">Food Description</span>
-                            <input type="text" name="food_description" placeholder="Enter food description"
-                                value="{{ old('food_description') }}" required>
+                            <input type="text" name="food_description" placeholder="Enter food description" value="{{ old('food_description') }}" required>
+                            @foreach ($errors->get('food_description') as $description)
+                                <div class="error-message">{{ $description }}</div>
+                            @endforeach
 
                             <span class="star">Price</span>
                             <input type="text" name="price" placeholder="Enter food price" value="{{ old('price') }}"
@@ -41,16 +45,20 @@
 
                             <span class="star">Food Category</span>
                             <div class="dropdown">
-                                <div class="select">Select Category</div>
+                                <div class="select">
+                                    <span class="selected">Select Category</span>
+                                    <div class="caret"></div>
+                                </div>
                                 <ul class="menu">
-                                    <li>test1</li>
-                                    <li>tes2</li>
-                                    <li>test3</li>
+                                    @foreach ($newCategory as $category)
+                                        <li data-value="{{ $category->id }}">{{ $category->name }}</li>
+                                    @endforeach
                                 </ul>
                             </div>
+                            <input type="hidden" name="category_id" id="category_id" value="">
 
                             <span class="star">Food Image</span>
-                            <input type="file" name="image" value="{{ old('food_name') }}" required>
+                            <input type="file" name="image" accept="image/*" required>
 
                             <div class="button-menu">
                                 <input type="submit" value="Add Menu">
@@ -61,7 +69,7 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     </form>
 
-                    <form action="/" method="POST">
+                    <form action="{{ route('category') }}" method="POST">
                         @csrf
 
                         <div class="form-category">
@@ -71,8 +79,8 @@
                             </div>
 
                             <span>Food Category</span>
-                            <input type="text" name="category" placeholder="Enter new food category" value="{{ old('category') }}" required>
-                            @foreach ($errors->get('category') as $category)
+                            <input type="text" name="new_category" placeholder="Enter new food category" value="{{ old('category') }}" required>
+                            @foreach ($errors->get('new_category') as $category)
                                 <div class="error-message">{{ $category }}</div>
                             @endforeach
                         </div>
@@ -107,12 +115,14 @@
                             </thead>
 
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Beverages</td>
-                                    <td>20 Aug 2023</td>
-                                    <td>Delete</td>
-                                </tr>
+                                @foreach ($newCategory as $category)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $category->name }}</td>
+                                        <td>{{ $category->created_at }}</td>
+                                        <td><span><i class='bx bxs-trash-alt' ></i>Delete</span></td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
 

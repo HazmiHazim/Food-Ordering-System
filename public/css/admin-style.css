@@ -990,21 +990,40 @@ main .header .left h1 {
 }
 
 .food-menu-create main .top-section .form-add-menu .dropdown {
-    display: inline-block;
-    position: relative;
-    margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
 .food-menu-create main .top-section .form-add-menu .dropdown .select {
+    display: flex;
+    justify-content: space-between;
     background-color: #FFFFFF;
+    color: var(--dark);
     border: 1px solid var(--dark-grey);
     padding: 8px 12px;
     border-radius: 4px;
     cursor: pointer;
 }
 
+.food-menu-create main .top-section .form-add-menu .dropdown .select-clicked {
+    border: 1px solid var(--dark-grey);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .food-menu-create main .top-section .form-add-menu .dropdown .select:hover {
     background-color: #F0F0F0;
+}
+
+.food-menu-create main .top-section .form-add-menu .dropdown .select .caret {
+    width: 0;
+    height: 0;
+    margin-top: 5px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 9px solid var(--dark);
+}
+
+.food-menu-create main .top-section .form-add-menu .dropdown .select .caret-rotate {
+    transform: rotate(180deg);
 }
 
 .food-menu-create main .top-section .form-add-menu .dropdown ul.menu {
@@ -1021,11 +1040,18 @@ main .header .left h1 {
 
 .food-menu-create main .top-section .form-add-menu .dropdown ul.menu li {
     padding: 8px 12px;
+    border-radius: 4px;
+    margin: 4px 0;
     cursor: pointer;
 }
 
 .food-menu-create main .top-section .form-add-menu .dropdown ul.menu li:hover {
     background-color: #F0F0F0;
+}
+
+.food-menu-create main .top-section .form-add-menu .dropdown ul.menu-open {
+    display: block;
+    opacity: 1;
 }
 
 .food-menu-create main .top-section form .form-category {

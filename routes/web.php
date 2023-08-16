@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\FoodMenu\FoodCategoryController;
 use App\Http\Controllers\Admin\FoodMenu\FoodMenuController;
 use App\Http\Controllers\Admin\StaffAccount\StaffAccountController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -59,4 +60,6 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         'show' => 'food-menu-show',
         'edit' => 'food-menu-edit',
     ]);
+
+    Route::post('/food-menu/create', [FoodCategoryController::class, 'store'])->name('category');
 });

@@ -44,15 +44,17 @@
                             </thead>
 
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Nasi Ayam</td>
-                                    <td>Saya suka nasi ayam</td>
-                                    <td>RM 20.50</td>
-                                    <td>Beverages</td>
-                                    <td><img src="#"></td>
-                                    <td>Delete</td>
-                                </tr>
+                                @foreach ($food as $foodList)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $foodList->name }}</td>
+                                        <td>{{ $foodList->description }}</td>
+                                        <td>{{ $foodList->price }}</td>
+                                        <td>{{ $foodList->category_id }}</td>
+                                        <td><img src="{{ $foodList->image }}"></td>
+                                        <td>Delete</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
 
