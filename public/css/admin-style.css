@@ -550,7 +550,9 @@ main .header .left h1 {
 
 
 
-/*---------- Staff Account Index Page ----------- */
+/*
+* Staff Accout Page -------------------------
+*/
 .staff-account-index main .header .create {
     height: 36px;
     padding: 0 16px;
@@ -572,7 +574,7 @@ main .header .left h1 {
     display: flex;
     flex-wrap: wrap;
     grid-gap: 24px;
-    margin-top: 24px;
+    margin-top: 10px;
     width: 100%;
     color: var(--dark);
 }
@@ -804,7 +806,7 @@ main .header .left h1 {
     display: flex;
     flex-wrap: wrap;
     grid-gap: 24px;
-    margin-top: 24px;
+    margin-top: 10px;
     width: 100%;
     color: var(--dark);
 }
@@ -919,103 +921,296 @@ main .header .left h1 {
 
 .food-menu-create main .top-section {
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.food-menu-create main .top-section form {
+    flex: 1;
+    max-width: calc(50% - 10px);
+    border-radius: 20px;
+    background: var(--light);
+    padding: 30px 30px;
+    overflow-x: auto;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    flex-direction: column;
 }
 
 .food-menu-create main .top-section form .form-add-menu {
     display: flex;
     width: 100%;
-    border-radius: 20px;
-    background: var(--light);
-    padding: 34px 34px;
+    height: 100%;
+    padding: 0;
     overflow-x: auto;
-    border: 1px solid #D3D3D3;
-    margin-top: 30px;
-    margin-bottom: 25px;
+    margin-top: 0;
+    margin-bottom: 0;
     flex-direction: column;
 }
 
-.food-menu-create main .top-section .form-add-menu .dropdown {
-    min-width: 15em;
-    position: relative;
-    margin: 2em;
-}
-
-.food-menu-create main .top-section .form-add-menu .dropdown * {
-    box-sizing: border-box;
-}
-
-.food-menu-create main .top-section .form-add-menu .select {
-    background: #2A2F3B;
-    color: var(--light-glow);
+.food-menu-create main .top-section form .form-add-menu .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border: 2px solid var(--glow);
-    border-radius: 0.5em;
-    padding: 1em;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--grey);
+}
+
+.food-menu-create main .top-section form .form-add-menu .header h4 {
+    color: var(--dark);
+    margin: auto;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.food-menu-create main .top-section form .form-add-menu span.star {
+    color: var(--dark);
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.food-menu-create main .top-section form .form-add-menu span.star::after {
+    content: "*";
+    color: var(--danger);
+}
+
+.food-menu-create main .top-section form .form-add-menu input[type="text"] {
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 10px;
+    border: 1px solid var(--dark-grey);
+    color: black;
+}
+
+.food-menu-create main .top-section form .form-add-menu input[type="file"] {
+    margin-top: 5px;
+}
+
+.food-menu-create main .top-section .form-add-menu .dropdown {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.food-menu-create main .top-section .form-add-menu .dropdown .select {
+    background-color: #FFFFFF;
+    border: 1px solid var(--dark-grey);
+    padding: 8px 12px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-.food-menu-create main .top-section .form-add-menu .select:hover {
-    background: #323741;
+.food-menu-create main .top-section .form-add-menu .dropdown .select:hover {
+    background-color: #F0F0F0;
 }
 
-.food-menu-create main .top-section .form-add-menu .caret {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 6px solid #FFFFFF;
-    transition: 0.3s;
-}
-
-.food-menu-create main .top-section .form-add-menu .menu {
-    list-style: none;
-    padding: 0.2em 0.5em;
-    background: #323741;
-    border: 1px solid #363A43;
-    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
-    border-radius: 0.5em;
-    color: #9FA5B5;
-    position: absolute;
-    top: 3em;
-    left: 50%;
-    width: 100%;
-    transform: translateY(-50%);
-    opacity: 0;
+.food-menu-create main .top-section .form-add-menu .dropdown ul.menu {
     display: none;
-    transition: 0.2s;
-    z-index: 500;
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid var(--dark-grey);
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.food-menu-create main .top-section .form-add-menu .menu li {
-    padding: 0.7em 0.5em;
-    margin: 0.3em 0;
-    border-radius: 0.5em;
+.food-menu-create main .top-section .form-add-menu .dropdown ul.menu li {
+    padding: 8px 12px;
     cursor: pointer;
 }
 
-.food-menu-create main .top-section .form-add-menu .menu li:hover {
-    background: #2A2D35;
-}
-
-.food-menu-create main .top-section .form-add-menu .menu-open {
-    display: block;
-    opacity: 1;
+.food-menu-create main .top-section .form-add-menu .dropdown ul.menu li:hover {
+    background-color: #F0F0F0;
 }
 
 .food-menu-create main .top-section form .form-category {
     display: flex;
     width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow-x: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-direction: column;
+}
+
+.food-menu-create main .top-section form .form-category .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--grey);
+}
+
+.food-menu-create main .top-section form .form-category .header h4 {
+    color: var(--dark);
+    margin: auto;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.food-menu-create main .top-section form .button-menu {
+    display: flex;
+    margin-top: 20px;
+}
+
+.food-menu-create main .top-section form .button-menu input {
+    display: flex;
+    width: 20%;
+    height: 36px;
+    border-radius: 7px;
+    background: var(--primary);
+    color: var(--light);
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    justify-content: center;
+    grid-gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.food-menu-create main .top-section form .form-category span {
+    color: var(--dark);
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.food-menu-create main .top-section form .form-category span::after {
+    content: "*";
+    color: var(--danger);
+}
+
+.food-menu-create main .top-section form .form-category input[type="text"] {
+    height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 10px;
+    border: 1px solid var(--dark-grey);
+    color: black;
+}
+
+.food-menu-create main .top-section form .button-category {
+    display: flex;
+    margin-top: 20px;
+}
+
+.food-menu-create main .top-section form .button-category input {
+    display: flex;
+    width: 25%;
+    height: 36px;
+    border-radius: 7px;
+    background: var(--primary);
+    color: var(--light);
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    justify-content: center;
+    grid-gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.food-menu-create main .top-section form a {
+    display: flex;
+    margin-left: 10px;
+    width: 20%;
+    height: 36px;
+    border-radius: 7px;
+    background: var(--danger);
+    color: var(--light);
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    justify-content: center;
+    grid-gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.food-menu-create main .top-section form input[type="submit"]:hover {
+    color: var(--light-primary);
+}
+
+.food-menu-create main .top-section form a:hover {
+    color: var(--light-danger);
+}
+
+.food-menu-create main .bottom-section {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 24px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.food-menu-create main .bottom-section .food-category {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.food-menu-create main .bottom-section>div {
     border-radius: 20px;
     background: var(--light);
-    padding: 34px 34px;
+    padding: 24px;
     overflow-x: auto;
-    border: 1px solid #D3D3D3;
-    margin-top: 30px;
-    margin-bottom: 25px;
-    flex-direction: column;
+}
+
+.food-menu-create main .bottom-section .food-category .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.food-menu-create .bottom-section .food-category .header h3 {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.food-menu-create main .bottom-section .food-category .header .bx {
+    cursor: pointer;
+}
+
+.food-menu-create main .bottom-section .food-category table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.food-menu-create main .bottom-section .food-category table th {
+    padding-bottom: 12px;
+    font-size: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--grey);
+}
+
+.food-menu-create main .bottom-section .food-category table td {
+    padding: 16px 0;
+}
+
+.food-menu-create main .bottom-section .food-category table td:last-child:hover {
+    color: var(--glow);
+    text-decoration: underline;
+}
+
+.food-menu-create main .bottom-section .food-category table tbody tr {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.food-menu-create main .bottom-section .food-category table tbody tr:hover {
+    background: var(--grey);
 }
 /*---------- End of Food Menu Page ----------*/
 

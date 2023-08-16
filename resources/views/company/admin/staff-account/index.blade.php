@@ -57,7 +57,7 @@
                 <div class="bottom-section">
                     <div class="staff">
                         <div class="header">
-                            <i class='bx bx-receipt'></i>
+                            <i class='bx bx-detail'></i>
                             <h3>Staff Details</h3>
                             <i class='bx bx-filter' ></i>
                             <i class='bx bx-search' ></i>
