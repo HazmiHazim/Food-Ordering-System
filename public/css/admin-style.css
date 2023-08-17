@@ -889,7 +889,7 @@ main .header .left h1 {
     height: 60px;
     object-fit: cover;
     border-radius: 15px;
-    border: 5px solid var(--dark-grey);
+    border: 3px solid var(--dark-grey);
 }
 
 .food-menu-index main .top-section .food-menu table tr:last-child {
@@ -985,8 +985,15 @@ main .header .left h1 {
     color: black;
 }
 
+.food-menu-create main .top-section form .form-add-menu .low {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
 .food-menu-create main .top-section form .form-add-menu input[type="file"] {
-    margin-top: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid var(--dark-grey);
 }
 
 .food-menu-create main .top-section .form-add-menu .dropdown {
@@ -1027,6 +1034,7 @@ main .header .left h1 {
 }
 
 .food-menu-create main .top-section .form-add-menu .dropdown ul.menu {
+    width: 42.7%;
     display: none;
     position: absolute;
     list-style: none;

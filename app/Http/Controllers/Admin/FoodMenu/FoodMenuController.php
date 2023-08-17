@@ -7,7 +7,6 @@ use App\Models\FoodCategory;
 use App\Models\FoodMenu;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
 
@@ -20,6 +19,9 @@ class FoodMenuController extends Controller
         return view('company.admin.food-menu.index', ['food' => $food]);
     }
 
+    /*
+    *  Funtion to view create file
+    */
     public function create() : View
     {
         $newCategory = FoodCategory::all();
@@ -27,6 +29,10 @@ class FoodMenuController extends Controller
         return view('company.admin.food-menu.create', ['newCategory' => $newCategory]);
     }
 
+
+    /*
+    *  Function to store data into Food Menu table
+    */
     public function store(Request $request) : RedirectResponse
     {
         $validator = Validator::make($request->all(), [
@@ -48,6 +54,8 @@ class FoodMenuController extends Controller
         // Store the file with the new name
         $imagePath = $file->store('public/images');
 
+        //dd($imagePath);
+
         if ($validator->fails()) {
             dd($validator->errors());
             return back()->withErrors($validator)->withInput();
@@ -56,8 +64,8 @@ class FoodMenuController extends Controller
         //dd($fileName);
         
         $foodMenu = FoodMenu::create([
-            'food_name' => $request->name,
-            'food_description' => $request->description,
+            'name' => $request->food_name,
+            'description' => $request->food_description,
             'price' => $request->price,
             'category_id' => $request->category_id,
             'image' => $imagePath,

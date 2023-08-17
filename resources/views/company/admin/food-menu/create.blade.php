@@ -57,7 +57,7 @@
                             </div>
                             <input type="hidden" name="category_id" id="category_id" value="">
 
-                            <span class="star">Food Image</span>
+                            <div class="low"><span class="star">Food Image</span></div>
                             <input type="file" name="image" accept="image/*" required>
 
                             <div class="button-menu">
