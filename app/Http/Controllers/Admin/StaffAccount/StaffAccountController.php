@@ -34,7 +34,7 @@ class StaffAccountController extends Controller
     public function store(Request $request) : RedirectResponse
     {
         $validator = Validator::make($request->only('new_staff_id'), [
-            'new_staff_id' => 'required|min:10|max:10'
+            'new_staff_id' => 'required|min:10|max:12'
         ]);
 
         if ($validator->fails()) {
@@ -44,6 +44,7 @@ class StaffAccountController extends Controller
         // Retrieve a submitted input of staff id
         $validated = $validator->safe()->only('new_staff_id');
 
+        // Check if id exists in staff account table
         $staffCheck = StaffAccount::where('staff_account_id', $validated)->exists();
 
         if ($staffCheck == true) {
@@ -67,7 +68,7 @@ class StaffAccountController extends Controller
     {
         $user = User::findOrFail($id);
 
-        return view('company.admin.staff-account.show', ['id' => $user]);
+        return view('company.admin.staff-account.show', ['user' => $user]);
     }
 
     /*

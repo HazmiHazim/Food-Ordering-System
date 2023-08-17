@@ -82,7 +82,7 @@
                                         <td>{{ $staffDetails->name }}</td>
                                         <td>{{ $staffDetails->email }}</td>
                                         <td>{{ $staffDetails->phone }}</td>
-                                        <td><a href="#"><i class='bx bxs-pencil'></i><span>Edit</span></a></td>
+                                        <td><a href="{{ route('staff-account-show', ['staff_account' => $staffDetails->id]) }}"><i class='bx bxs-pencil'></i><span>Edit</span></a></td>
                                     </tr>
                                 @endforeach
                             </tbody>

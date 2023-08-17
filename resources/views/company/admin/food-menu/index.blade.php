@@ -49,7 +49,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $foodList->name }}</td>
                                         <td>{{ Str::limit($foodList->description, 30) }}</td>
-                                        <td>{{ $foodList->price }}</td>
+                                        <td>RM {{ $foodList->price }}</td>
                                         <td>{{ $foodList->category_id }}</td>
                                         <td><img src="{{ Storage::url($foodList->image) }}"></td>
                                         <td>Delete</td>

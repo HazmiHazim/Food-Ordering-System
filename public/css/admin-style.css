@@ -793,6 +793,139 @@ main .header .left h1 {
 .staff-account-create main .form-section form .button a:hover {
     color: var(--light-danger);
 }
+
+.staff-account-show main .show-section {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 10px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.staff-account-show main .show-section .user {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.staff-account-show main .show-section>div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.staff-account-show main .show-section .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.staff-account-show main .show-section .header h3 {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.staff-account-show main .show-section .header .edit-button {
+    height: 36px;
+    padding: 0 16px;
+    margin-bottom: 5px;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.staff-account-show main .show-section .header .edit-button i {
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 3px;
+}
+
+.staff-account-show main .show-section .header .edit-button span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.staff-account-show main .show-section .user .user-data {
+    display: flex;
+}
+
+.staff-account-show main .show-section .user .user-data .label, .staff-account-show main .show-section .user .user-data .data {
+    display: flex;
+    flex-direction: column;
+}
+
+.staff-account-show main .show-section .user .user-data .label span {
+    margin-bottom: 30px;
+    font-size: 20px;
+    text-align: end;
+}
+
+.staff-account-show main .show-section .user .user-data .data span {
+    margin-bottom: 30px;
+    font-size: 20px;
+    text-align: start;
+}
+
+.staff-account-show main .show-section .user .user-data .label span::after {
+    content: " :";
+    margin-right: 20px;
+}
+
+.staff-account-show main .cancel-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.staff-account-show main .cancel-button span.delete {
+    display: flex;
+    margin-top: 20px;
+    margin-right: 10px;
+    width: 15%;
+    height: 36px;
+    border-radius: 7px;
+    background: var(--danger);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    justify-content: center;
+    grid-gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.staff-account-show main .cancel-button span.delete:hover {
+    color: var(--light-warning);
+}
+
+.staff-account-show main .cancel-button a {
+    display: flex;
+    margin-top: 20px;
+    width: 15%;
+    height: 36px;
+    border-radius: 7px;
+    background: var(--danger);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    justify-content: center;
+    grid-gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.staff-account-show main .cancel-button a:hover {
+    color: var(--light-warning);
+}
 /*
 *   End of Staff Account Page
 */
