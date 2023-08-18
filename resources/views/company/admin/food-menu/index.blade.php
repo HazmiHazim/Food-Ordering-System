@@ -25,8 +25,7 @@
                             <h3>Menu</h3>
                             <i class='bx bx-search'></i>
                             <div class="add-menu">
-                                <i class='bx bx-plus'></i>
-                                <a href="{{ route('food-menu-create') }}"><span>Add Menu</span></a>
+                                <a href="{{ route('food-menu-create') }}"><i class='bx bx-plus'></i><span>Add Menu</span></a>
                             </div>
                         </div>
 

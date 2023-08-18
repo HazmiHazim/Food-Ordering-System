@@ -25,7 +25,9 @@ class StaffAccountController extends Controller
     */
     public function create() : View
     {
-        return view('company.admin.staff-account.create');
+        $staffid = StaffAccount::all();
+
+        return view('company.admin.staff-account.create', ['staffid' => $staffid]);
     }
 
     /*

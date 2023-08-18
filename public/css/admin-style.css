@@ -864,13 +864,13 @@ main .header .left h1 {
 
 .staff-account-show main .show-section .user .user-data .label span {
     margin-bottom: 30px;
-    font-size: 20px;
+    font-size: 16px;
     text-align: end;
 }
 
 .staff-account-show main .show-section .user .user-data .data span {
     margin-bottom: 30px;
-    font-size: 20px;
+    font-size: 16px;
     text-align: start;
 }
 
@@ -969,7 +969,7 @@ main .header .left h1 {
     font-weight: 600;
 }
 
-.food-menu-index main .top-section .food-menu .header .add-menu {
+.food-menu-index main .top-section .food-menu .header .add-menu a {
     height: 36px;
     padding: 0 16px;
     border-radius: 7px;
@@ -985,15 +985,10 @@ main .header .left h1 {
 
 .food-menu-index main .top-section .food-menu .header .add-menu i {
     font-size: 16px;
-    color: var(--light);
 }
 
-.food-menu-index main .top-section .food-menu .header .add-menu a {
-    color: var(--light);
-}
-
-.food-menu-index main .top-section .food-menu .header .add-menu:hover {
-    background: linear-gradient(-135deg, #8600A8, #150C81);
+.food-menu-index main .top-section .food-menu .header .add-menu a:hover {
+    color: var(--light-warning);
 }
 
 .food-menu-index main .top-section .header .bx {
@@ -1331,6 +1326,7 @@ main .header .left h1 {
     background: var(--light);
     padding: 24px;
     overflow-x: auto;
+    margin-bottom: 20px;
 }
 
 .food-menu-create main .bottom-section .food-category .header {
