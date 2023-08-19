@@ -7,6 +7,7 @@ use App\Models\StaffAccount;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
 
@@ -49,6 +50,8 @@ class StaffAccountController extends Controller
         // Check if id exists in staff account table
         $staffCheck = StaffAccount::where('staff_account_id', $validated)->exists();
 
+        Log::info(['Input enter by user: ', $validated, 'Exists: ', $staffCheck]);
+
         if ($staffCheck == true) {
             return back()->withErrors([
                 'error-message' => 'Provided ID is already registered',
@@ -76,8 +79,18 @@ class StaffAccountController extends Controller
     /*
     * Function view edit file
     */
-    public function edit() : View
+    public function edit($id) : View
     {
-        return view('company.admin.staff-account.edit');
+        $user = User::findOrFail($id);
+
+        return view('company.admin.staff-account.edit', ['user' => $user]);
+    }
+
+    /*
+    *  Function to update staff account data
+    */
+    public function update() : RedirectResponse
+    {
+        return back()->with('success-message', 'Staff details updated.');
     }
 }

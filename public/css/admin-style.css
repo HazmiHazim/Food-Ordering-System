@@ -914,12 +914,124 @@ main .header .left h1 {
     padding: 0 16px;
     justify-content: center;
     grid-gap: 10px;
+    border: none;
     align-items: center;
     cursor: pointer;
 }
 
 .staff-account-show main .cancel-button a:hover {
     color: var(--light-warning);
+}
+
+.staff-account-edit main .edit-section {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.staff-account-edit main .edit-section .user .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.staff-account-edit main .edit-section .user .header h3 {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.staff-account-edit main .edit-section .header h3 span {
+    color: var(--glow);
+}
+
+.staff-account-edit main .edit-section .form-staff-update form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.staff-account-edit main .edit-section .form-staff-update form .label,
+.staff-account-edit main .edit-section .form-staff-update form .input {
+    display: flex;
+    flex-direction: column;
+}
+
+.staff-account-edit main .edit-section .form-staff-update form .label span {
+    margin-bottom: 30px;
+    font-size: 16px;
+    text-align: end;
+    color: var(--dark);
+}
+
+.staff-account-edit main .edit-section .form-staff-update form .label span::after {
+    content: " :";
+    margin-right: 20px;
+}
+
+.staff-account-edit main .edit-section .form-staff-update form .input {
+    width: 80%;
+}
+
+.staff-account-edit main .edit-section .form-staff-update form .input input:disabled {
+    background: var(--dark-grey);
+}
+
+.staff-account-edit main .edit-section .form-staff-update form .input input {
+    height: 30px;
+    margin-bottom: 20px;
+    background-color: var(--light);
+    border-radius: 5px;
+    font-size: 16px;
+    align-items: center;
+    text-align: start;
+    padding-left: 10px;
+}
+
+.staff-account-edit main .edit-section .form-staff-update form .button {
+    display: flex;
+    margin-top: 10px;
+    margin-right: 100%;
+}
+
+.staff-account-edit main .edit-section .form-staff-update form .button input {
+    display: flex;
+    margin-top: 20px;
+    height: 36px;
+    border-radius: 7px;
+    background: var(--primary);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    justify-content: center;
+    grid-gap: 10px;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+}
+
+.staff-account-edit main .edit-section .form-staff-update form .button a {
+    display: flex;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 50%;
+    height: 36px;
+    border-radius: 7px;
+    background: var(--danger);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    justify-content: center;
+    grid-gap: 10px;
+    border: none;
+    align-items: center;
+    cursor: pointer;
 }
 /*
 *   End of Staff Account Page
