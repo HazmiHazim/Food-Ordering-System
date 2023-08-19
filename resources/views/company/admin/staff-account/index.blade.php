@@ -19,41 +19,6 @@
                     </a>
                 </div>
 
-                <!--ID Registered -->
-                <div class="mid-section">
-                    <div class="id">
-                        <div class="header">
-                            <i class='bx bx-receipt'></i>
-                            <h3>ID Registered</h3>
-                            <i class='bx bx-filter' ></i>
-                            <i class='bx bx-search' ></i>
-                        </div>
-
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>ID</th>
-                                    <th>Created At</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                @foreach ($staffid as $id)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $id->staff_account_id }}</td>
-                                        <td>{{ $id->created_at }}</td>
-                                        <td><i class='bx bxs-trash-alt'></i><span>Delete</span></td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                            
-                        </table>
-                    </div>
-                </div>
-
                 <!-- Staff Registered -->
                 <div class="bottom-section">
                     <div class="staff">

@@ -21,16 +21,18 @@
                         @csrf
 
                         <div class="create-form">
+
                             <label>New ID</label>
                             <input type="text" name="new_staff_id" value="{{ old('new_staff_id') }}" required>
                             @foreach ($errors->get('new_staff_id') as $id)
                                 <div class="error-message">{{ $id }}</div>
                             @endforeach
-                        </div>
 
-                        <div class="button">
-                            <input type="submit" value="Create">
-                            <a href="{{ route('staff-account') }}"><span>Cancel</span></a>
+                            <div class="button">
+                                <input type="submit" value="Create">
+                                <a href="{{ route('staff-account') }}"><span>Cancel</span></a>
+                            </div>
+
                         </div>
 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -42,6 +44,7 @@
                 <div class="bottom-section">
 
                     <div class="id">
+                        
                         <div class="header">
                             <i class='bx bx-receipt'></i>
                             <h3>ID Registered</h3>
