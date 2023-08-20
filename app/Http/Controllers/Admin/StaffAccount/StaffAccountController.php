@@ -89,8 +89,44 @@ class StaffAccountController extends Controller
     /*
     *  Function to update staff account data
     */
-    public function update() : RedirectResponse
+    public function update(Request $request, $id) : RedirectResponse
     {
-        return back()->with('success-message', 'Staff details updated.');
+        $user = User::find($id);
+
+        if ($request->anyFilled(['name', 'email', 'phone', 'position', 'address'])) {
+
+            $updateData = [];
+
+            if ($request->filled('name')) {
+                $updateData['name'] = $request->input('name');
+            }
+
+            if ($request->filled('email')) {
+                $updateData['email'] = $request->input('email');
+            }
+
+            if ($request->filled('phone')) {
+                $updateData['phone'] = $request->input('phone');
+            }
+
+            if ($request->filled('position')) {
+                $updateData['position'] = $request->input('position');
+            }
+
+            if ($request->filled('address')) {
+                $updateData['address'] = $request->input('address');
+            }
+
+            $updated = $user->update($updateData);
+
+            Log::info([$updateData]);
+            //dd($updated);
+
+            return redirect()->route('staff-account-show', $user->id)->with('success-message', 'Updated Sucessfully.');
+        }
+
+        return back()->withErrors([
+            'error-message', 'Please insert data to update.'
+        ]);
     }
 }

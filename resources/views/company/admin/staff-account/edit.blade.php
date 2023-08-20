@@ -26,7 +26,9 @@
 
                     <div class="form-staff-update">
 
-                        <form action="/" method="POST">
+                        <form action="{{ route('staff-account.update', $user->id) }}" method="POST">
+
+                            @method('PUT')
 
                             @csrf
 
@@ -41,11 +43,11 @@
 
                             <div class="input">
                                 <input type="text" placeholder="ID DISABLED" value="{{ $user->staff_id }}" disabled>
-                                <input type="text" placeholder="Enter update staff name">
-                                <input type="text" placeholder="Enter update staff email">
-                                <input type="text" placeholder="Enter update staff phone number">
-                                <input type="text" placeholder="Enter update staff position">
-                                <input type="text" placeholder="Enter updaate staff address">
+                                <input type="text" name="name" placeholder="Enter update staff name">
+                                <input type="text" name="email" placeholder="Enter update staff email">
+                                <input type="text" name="phone" placeholder="Enter update staff phone number">
+                                <input type="text" name="position" placeholder="Enter update staff position">
+                                <input type="text" name="address" placeholder="Enter updaate staff address">
                             </div>
 
                             <div class="button">

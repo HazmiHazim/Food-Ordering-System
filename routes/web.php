@@ -47,6 +47,7 @@ Route::get('forgot-password', [ForgotPasswordController::class, 'index'])->name(
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 
+    // Staff account module
     Route::resource('/staff-account', StaffAccountController::class)->names([
         'index' => 'staff-account',
         'create' => 'staff-account-create',
@@ -54,6 +55,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         'edit' => 'staff-account-edit',
     ]);
 
+    // Food menu module
     Route::resource('/food-menu', FoodMenuController::class)->names([
         'index' => 'food-menu',
         'create' => 'food-menu-create',
