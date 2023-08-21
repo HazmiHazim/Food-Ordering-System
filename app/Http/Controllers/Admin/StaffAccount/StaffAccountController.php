@@ -15,10 +15,10 @@ class StaffAccountController extends Controller
 {
     public function index() : View
     {
-        $staffid = StaffAccount::all();
-        $staff = User::all();
+        // Only show user that is not admin
+        $staff = User::where('role', 2)->get();
 
-        return view('company.admin.staff-account.index', ['staffid' => $staffid, 'staff' => $staff]);
+        return view('company.admin.staff-account.index', ['staff' => $staff]);
     }
 
     /*

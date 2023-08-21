@@ -71,6 +71,6 @@ class FoodMenuController extends Controller
             'image' => $imagePath,
         ]);
 
-        return back()->with('success-message', 'New menu added successful.');
+        return back()->with('success-message', 'Menu added successfully.');
     }
 }
