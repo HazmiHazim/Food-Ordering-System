@@ -9,6 +9,16 @@
 
             <main>
 
+                @if (session('success-message'))
+                    <div class="success-message left-green">
+                        <i class='bx bxs-check-circle'></i>
+                        <div class="text">
+                            <span>Success</span>
+                            <span class="message">{{ session('success-message') }}</span>
+                        </div>
+                    </div>
+                @endif
+
                 <div class="header">
                     <div class="left">
                         <h1>Create New Staff ID</h1>

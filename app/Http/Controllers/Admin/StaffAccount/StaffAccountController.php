@@ -122,7 +122,7 @@ class StaffAccountController extends Controller
             Log::info([$updateData]);
             //dd($updated);
 
-            return redirect()->route('staff-account-show', $user->id)->with('success-message', 'Updated Sucessfully.');
+            return redirect()->route('staff-account-show', $user->id)->with('success-message', 'Your changes are saved successfully.');
         }
 
         return back()->withErrors([
