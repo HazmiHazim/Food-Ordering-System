@@ -43,11 +43,11 @@
 
                             <div class="input">
                                 <input type="text" placeholder="ID DISABLED" value="{{ $user->staff_id }}" disabled>
-                                <input type="text" name="name" placeholder="Enter update staff name">
-                                <input type="text" name="email" placeholder="Enter update staff email">
-                                <input type="text" name="phone" placeholder="Enter update staff phone number">
-                                <input type="text" name="position" placeholder="Enter update staff position">
-                                <input type="text" name="address" placeholder="Enter updaate staff address">
+                                <input type="text" name="name" placeholder="{{ $user->name }}">
+                                <input type="text" name="email" placeholder="{{ $user->email }}">
+                                <input type="text" name="phone" placeholder="{{ $user->phone }}">
+                                <input type="text" name="position" placeholder="{{ $user->position }}">
+                                <input type="text" name="address" placeholder="{{ $user->address }}">
                             </div>
 
                             <div class="button">
