@@ -41,7 +41,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [RegistrationController::class, 'index'])->name('register');
 Route::post('/register', [RegistrationController::class, 'store']);
 
-Route::get('forgot-password', [ForgotPasswordController::class, 'index'])->name('forgot-password');
+Route::get('/forgot-password', [ForgotPasswordController::class, 'index'])->name('forgot-password');
 
 // Route for admin
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {

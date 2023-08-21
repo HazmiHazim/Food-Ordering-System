@@ -23,6 +23,7 @@
                         <div class="header">
                             <i class='bx bx-notepad'></i>
                             <h3>Menu</h3>
+                            <i class='bx bx-filter' ></i>
                             <i class='bx bx-search'></i>
                             <div class="add-menu">
                                 <a href="{{ route('food-menu-create') }}"><i class='bx bx-plus'></i><span>Add Menu</span></a>

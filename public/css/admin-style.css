@@ -613,6 +613,13 @@ main .header .left h1 {
 /*
 * Staff Accout Page -------------------------
 */
+.staff-account-create .error-message {
+    margin-top: 8px;
+    color: var(--danger);
+    font-size: 16px;
+    font-weight: 500;
+}
+
 .staff-account-index main .header .create {
     height: 36px;
     padding: 0 16px;
@@ -627,7 +634,7 @@ main .header .left h1 {
 }
 
 .staff-account-index main .header .create:hover {
-    color: var(--light-primary);
+    color: var(--light-warning);
 }
 
 .staff-account-index main .bottom-section {
@@ -721,6 +728,12 @@ main .header .left h1 {
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 10px;
+}
+
+.staff-account-create main .form-section form .create-form label::after {
+    content: " *";
+    font-size: 16px;
+    color: var(--danger);
 }
 
 .staff-account-create main .form-section form .create-form input {

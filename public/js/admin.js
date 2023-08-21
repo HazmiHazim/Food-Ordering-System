@@ -65,9 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (successMessage) {
         setTimeout(() => {
             successMessage.style.opacity = '0';
-            setTimeout(() =>{
-                successMessage.remove();
-            }, 300); // Time for fade-out transition
-        }, 3000); // Time to display the message (in milliseconds)
+            successMessage.remove();
+        }, 3000);
     }
 });
