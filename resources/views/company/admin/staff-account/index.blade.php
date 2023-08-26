@@ -37,6 +37,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
+                                    <th></th>
                                 </tr>
                             </thead>
 
@@ -53,6 +54,14 @@
                                 @endforeach
                             </tbody>
                         </table>
+
+                        <div class="staff-account-index-pagination">
+                            <div class="count">Showing {{ $staff->count() }} out of {{ $staff->total()}} results</div>
+                            <div class="pagination-number">
+                                <div class="page-number">{{ $staff->render('company.partials.paginator') }}</div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 

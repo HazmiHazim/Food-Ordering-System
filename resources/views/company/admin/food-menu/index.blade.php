@@ -58,7 +58,7 @@
                             </tbody>
                         </table>
 
-                        <div class="food-menu-pagination">
+                        <div class="food-menu-index-pagination">
                             <div><i class='bx bx-chevrons-left'></i></div>
                             <div>1</div>
                             <div>2</div>

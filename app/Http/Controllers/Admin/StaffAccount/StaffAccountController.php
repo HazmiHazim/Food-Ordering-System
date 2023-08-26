@@ -16,7 +16,8 @@ class StaffAccountController extends Controller
     public function index() : View
     {
         // Only show user that is not admin
-        $staff = User::where('role', 2)->get();
+        // Paginate user table to 8
+        $staff = User::where('role', 2)->paginate(8);
 
         return view('company.admin.staff-account.index', ['staff' => $staff]);
     }
