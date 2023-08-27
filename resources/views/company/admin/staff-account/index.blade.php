@@ -56,7 +56,7 @@
                         </table>
 
                         <div class="staff-account-index-pagination">
-                            <div class="count">Showing {{ $staff->count() }} out of {{ $staff->total()}} results</div>
+                            <div class="count">Showing {{ $staff->firstItem() }} to {{ $staff->lastItem() }} out of {{ $staff->total()}} results</div>
                             <div class="pagination-number">
                                 <div class="page-number">{{ $staff->render('company.partials.paginator') }}</div>
                             </div>

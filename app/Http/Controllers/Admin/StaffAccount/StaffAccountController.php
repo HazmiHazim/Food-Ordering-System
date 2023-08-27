@@ -17,7 +17,7 @@ class StaffAccountController extends Controller
     {
         // Only show user that is not admin
         // Paginate user table to 8
-        $staff = User::where('role', 2)->paginate(8);
+        $staff = User::where('role', 2)->paginate(10);
 
         return view('company.admin.staff-account.index', ['staff' => $staff]);
     }
@@ -27,7 +27,7 @@ class StaffAccountController extends Controller
     */
     public function create() : View
     {
-        $staffid = StaffAccount::all();
+        $staffid = StaffAccount::paginate(5);
 
         return view('company.admin.staff-account.create', ['staffid' => $staffid]);
     }
@@ -125,9 +125,10 @@ class StaffAccountController extends Controller
 
             return redirect()->route('staff-account-show', $user->id)->with('success-message', 'Your changes are saved successfully.');
         }
-
-        return back()->withErrors([
-            'error-message', 'Please insert data to update.'
-        ]);
+        else {
+            return back()->withErrors([
+                'warning-message', 'Please insert data to update.'
+            ]);
+        }
     }
 }

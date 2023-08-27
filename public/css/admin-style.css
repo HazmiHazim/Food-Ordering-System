@@ -319,6 +319,9 @@ main .header .left h1 {
     color: var(--dark);
 }
 
+/*
+* -----------Success Message--------------
+*/
 .success-message {
     position: absolute;
     z-index: 1700;
@@ -372,6 +375,70 @@ main .header .left h1 {
     background: var(--success);
     animation: anim 3s linear forwards;
 }
+/*
+* ------------ End of Success Message -------------------
+*/
+
+
+/*
+* --------------- Error Message -----------------------
+*/
+.error-message {
+    position: absolute;
+    z-index: 1700;
+    background: var(--light);
+    border-radius: 2px;
+    width: 360px;
+    height: 60px;
+    align-items: center;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    display: flex;
+    right: 30px;
+    top: 0;
+}
+
+.error-message .text {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-red {
+    border-left: 8px solid var(--danger);
+}
+
+.error-message i {
+    margin: 0 20px;
+    font-size: 36px;
+    color: var(--danger);
+}
+
+.error-message span {
+    font-size: 16px;
+    color: var(--dark);
+    font-weight: 700;
+}
+
+.error-message span.message {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--dark-grey);
+}
+
+.error-message::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--danger);
+    animation: anim 3s linear forwards;
+}
+/*
+* -------------- End of Error Message -----------------------
+*/
 
 @keyframes anim {
     100% {
@@ -614,13 +681,6 @@ main .header .left h1 {
 /*
 * Staff Accout Page -------------------------
 */
-.staff-account-create .error-message {
-    margin-top: 8px;
-    color: var(--danger);
-    font-size: 16px;
-    font-weight: 500;
-}
-
 .staff-account-index main .header .create {
     height: 36px;
     padding: 0 16px;
@@ -657,6 +717,7 @@ main .header .left h1 {
     background: var(--light);
     padding: 24px;
     overflow-x: auto;
+    margin-bottom: 25px;
     box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
 }
 
@@ -878,7 +939,7 @@ main .header .left h1 {
     background: var(--light);
     padding: 24px;
     overflow-x: auto;
-    margin-bottom: 20px;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
 }
 
 .staff-account-create main .bottom-section .id .header {
@@ -901,17 +962,33 @@ main .header .left h1 {
 .staff-account-create main .bottom-section .id table {
     width: 100%;
     border-collapse: collapse;
+    border-spacing: 0;
+    overflow: hidden;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .staff-account-create main .bottom-section .id table th {
-    padding-bottom: 12px;
+    background: var(--main-blue);
+    color: #FFFFFF;
+    padding: 12px 0 12px 16px;
     font-size: 16px;
     text-align: left;
     border-bottom: 1px solid var(--grey);
 }
 
 .staff-account-create main .bottom-section .id table td {
-    padding: 16px 0;
+    padding: 12px 0 12px 16px;
+    font-size: 16px;
+}
+
+.staff-account-create main .bottom-section .id table td i {
+    margin-right: 8px;
+    font-size: 16px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .staff-account-create main .bottom-section .id table td:last-child:hover {
@@ -925,7 +1002,62 @@ main .header .left h1 {
 }
 
 .staff-account-create main .bottom-section .id table tbody tr:hover {
-    background: var(--grey);
+    transform: scale(1.02);
+}
+
+.staff-account-create main .bottom-section .id table tbody tr:nth-child(even) {
+    background-color: var(--grey);
+}
+
+.staff-account-create main .bottom-section .id .staff-account-create-pagination {
+    display: flex;
+    padding: 12px 0 0 0;
+    justify-content: space-between;
+    font-size: 16px;
+    color: var(--dark);
+}
+
+.staff-account-create main .bottom-section .id .staff-account-create-pagination .pagination-number {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.staff-account-create main .bottom-section .id .staff-account-create-pagination .pagination-number:hover {
+    cursor: pointer;
+}
+
+.staff-account-create main .bottom-section .id .staff-account-create-pagination .pagination-number .page {
+    font-size: 16px;
+}
+
+.staff-account-create main .bottom-section .id .staff-account-create-pagination .pagination-number .page i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.staff-account-create main .bottom-section .id .staff-account-create-pagination .pagination-number .page:hover {
+    text-decoration: underline;
+}
+
+.staff-account-create main .bottom-section .id .staff-account-create-pagination .pagination-number .page-number {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.staff-account-create main .bottom-section .id .staff-account-create-pagination .pagination-number .page-number .active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    color: var(--light);
+    background-color: var(--main-blue);
 }
 
 .staff-account-show main .show-section {
@@ -947,6 +1079,7 @@ main .header .left h1 {
     background: var(--light);
     padding: 24px;
     overflow-x: auto;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
 }
 
 .staff-account-show main .show-section .header {

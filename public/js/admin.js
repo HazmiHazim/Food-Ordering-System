@@ -69,3 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 });
+
+// Function for error message
+document.addEventListener('DOMContentLoaded', () => {
+    const successMessage = document.querySelector('.error-message');
+
+    if (successMessage) {
+        setTimeout(() => {
+            successMessage.style.opacity = '0';
+            successMessage.remove();
+        }, 3000);
+    }
+});

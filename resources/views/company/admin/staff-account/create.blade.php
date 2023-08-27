@@ -19,6 +19,16 @@
                     </div>
                 @endif
 
+                @error('error-message')
+                    <div class="error-message left-red">
+                        <i class='bx bxs-x-circle'></i>
+                        <div class="text">
+                            <span>Error</span>
+                            <span class="message">{{ $message }}</span>
+                        </div>
+                    </div>
+                @enderror
+
                 <div class="header">
                     <div class="left">
                         <h1>Create New Staff ID</h1>
@@ -84,6 +94,14 @@
                             </tbody>
                             
                         </table>
+
+                        <div class="staff-account-create-pagination">
+                            <div class="count">Showing {{ $staffid->firstItem() }} to {{ $staffid->lastItem() }} out of {{ $staffid->total()}} results</div>
+                            <div class="pagination-number">
+                                <div class="page-number">{{ $staffid->render('company.partials.paginator') }}</div>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
