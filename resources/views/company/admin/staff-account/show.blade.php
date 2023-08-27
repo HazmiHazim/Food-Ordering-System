@@ -63,9 +63,30 @@
 
                 </div>
 
-                <div class="cancel-button">
-                    <span class="delete">Delete</span>
-                    <a href="{{ route('staff-account') }}"><span>Cancel</span></a>
+                <form action="{{ route('staff-account.destroy', $user->id) }}" method="POST" id="deleteForm">
+
+                    @method('DELETE')
+
+                    @csrf
+
+                    <div class="button">
+                        <button type="button" class="delete-button-popup">Delete</button>
+                        <a href="{{ route('staff-account') }}"><span>Cancel</span></a>
+                    </div>
+
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                </form>
+
+                <div class="delete-confirmation" id="deletePopup">
+                    <i class='bx bxs-info-circle' ></i>
+                    <h1>Warning</h1>
+                    <h3>Are you sure you want to delete this staff?</h3>
+                    <p>Once deleted, you will not be able to recover this data!</p>
+                    <div class="button">
+                        <button class="close-popup">Cancel</button>
+                        <button class="confirm-delete">Delete</button>
+                    </div>
                 </div>
 
             </main>

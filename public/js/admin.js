@@ -81,3 +81,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 });
+
+
+// Function for Delete Confirmation Pop Up
+document.addEventListener('DOMContentLoaded', () => {
+    const deleteBtn = document.querySelector('.delete-button-popup');
+    const confirmationPopup = document.getElementById('deletePopup');
+    const closeBtn = document.querySelector('.close-popup');
+    const confirmDeleteBtn = document.querySelector('.confirm-delete');
+    const deleteForm = document.getElementById('deleteForm');
+    const visibility = 'open-popup';
+
+    deleteBtn.addEventListener('click', () => {
+        confirmationPopup.classList.add(visibility);
+    });
+
+    closeBtn.addEventListener('click', () => {
+        confirmationPopup.classList.remove(visibility);
+    });
+
+    confirmDeleteBtn.addEventListener('click', () => {
+        deleteForm.submit();
+    });
+});

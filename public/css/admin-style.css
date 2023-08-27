@@ -440,12 +440,90 @@ main .header .left h1 {
 * -------------- End of Error Message -----------------------
 */
 
+/*
+* ------------- Message Animation ----------------------
+*/
 @keyframes anim {
     100% {
         width: 0;
     }
 }
+/* ------------------------------------------------------
 
+/*
+* -------------------- Delete Confirmation Pop Up -----------------------
+*/ 
+.delete-confirmation {
+    width: 600px;
+    background: var(--light-warning);
+    border-radius: 10px;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    padding: 0 30px 30px;
+    color: var(--dark);
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.delete-confirmation i {
+    color: var(--warning);
+    font-size: 100px;
+    margin-top: -50px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.delete-confirmation h1 {
+    border-bottom: 1px solid var(--dark-grey);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.delete-confirmation h3 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.delete-confirmation .button {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.delete-confirmation button {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background: var(--danger);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.delete-confirmation button:hover {
+    transform: scale(1.02);
+}
+
+.open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+/*
+* ----------------------- End of Delete Confirmation Pop Up -----------------------
+*/
 
 /*---------- Dashboard Page ----------*/
 .dashboard main .header .left .breadcrumb {
@@ -1146,53 +1224,34 @@ main .header .left h1 {
     margin-right: 20px;
 }
 
-.staff-account-show main .cancel-button {
+.staff-account-show main .button {
     display: flex;
     justify-content: flex-end;
 }
 
-.staff-account-show main .cancel-button span.delete {
+.staff-account-show main form .button button, .staff-account-show main form .button a {
     display: flex;
     margin-top: 20px;
     margin-right: 10px;
-    width: 15%;
     height: 36px;
-    border-radius: 7px;
-    background: var(--danger);
-    color: var(--light);
-    font-size: 16px;
-    font-weight: 500;
-    padding: 0 16px;
-    justify-content: center;
-    grid-gap: 10px;
-    align-items: center;
-    cursor: pointer;
-}
-
-.staff-account-show main .cancel-button span.delete:hover {
-    color: var(--light-warning);
-}
-
-.staff-account-show main .cancel-button a {
-    display: flex;
-    margin-top: 20px;
     width: 15%;
-    height: 36px;
-    border-radius: 7px;
-    background: var(--danger);
-    color: var(--light);
-    font-size: 16px;
-    font-weight: 500;
-    padding: 0 16px;
-    justify-content: center;
-    grid-gap: 10px;
     border: none;
+    border-radius: 7px;
+    background: var(--danger);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    justify-content: center;
+    grid-gap: 10px;
     align-items: center;
     cursor: pointer;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
 }
 
-.staff-account-show main .cancel-button a:hover {
+.staff-account-show main form .button button:hover, .staff-account-show main form .button a:hover {
     color: var(--light-warning);
+    transform: scale(1.02);
 }
 
 .staff-account-edit main .edit-section {

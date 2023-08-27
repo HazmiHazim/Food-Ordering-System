@@ -131,4 +131,16 @@ class StaffAccountController extends Controller
             ]);
         }
     }
+
+    /*
+    *  Function to delete staff data
+    */
+    public function destroy($id) : RedirectResponse
+    {
+        $deleted = User::find($id);
+
+        $deleted->delete();
+
+        return redirect()->route('staff-account')->with('success-message', 'Staff is deleted successfully.');
+    }
 }

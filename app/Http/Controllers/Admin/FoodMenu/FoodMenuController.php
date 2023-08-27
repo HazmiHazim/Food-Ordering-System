@@ -52,7 +52,7 @@ class FoodMenuController extends Controller
         $fileName = $file->hashName();
 
         // Store the file with the new name
-        $imagePath = $file->store('public/images');
+        $imagePath = $file->storeAs('public/images', $fileName);
 
         //dd($imagePath);
 
