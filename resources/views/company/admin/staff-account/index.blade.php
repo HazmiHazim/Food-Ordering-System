@@ -36,13 +36,11 @@
                             <i class='bx bx-detail'></i>
                             <h3>Staff Details</h3>
                             <i class='bx bx-filter' ></i>
-                            <form action="/" method="POST">
-                                @csrf
+                            <form action="{{ route('staff-account-search') }}" method="GET" id="search-form">
                                 <div class="search-field">
-                                    <i class='bx bx-search' ></i>
-                                    <input type="text" placeholder="Search">
+                                    <i class='bx bx-search' id="search-button"></i>
+                                    <input type="text" name="search" placeholder="Search" value="{{ old('search') }}">
                                 </div>
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </form>
                         </div>
 

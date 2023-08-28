@@ -55,6 +55,8 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         'edit' => 'staff-account-edit',
     ]);
 
+    Route::get('/search', [StaffAccountController::class, 'search'])->name('staff-account-search');
+
     // Food menu module
     Route::resource('/food-menu', FoodMenuController::class)->names([
         'index' => 'food-menu',

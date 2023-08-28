@@ -23,6 +23,24 @@ class StaffAccountController extends Controller
     }
 
     /*
+    *  Function to search resource in index page
+    */
+    public function search(Request $request) : View
+    {
+        $keyword = $request->input('search');
+
+        $search = User::where('role', 2)
+        ->where(function ($query) use ($keyword) {
+            $query->where('staff_id', 'like', '%' . $keyword . '%')
+                ->orWhere('name', 'like', '%' . $keyword . '%')
+                ->orWhere('email', 'like', '%' . $keyword . '%')
+                ->orWhere('phone', 'like', '%' . $keyword . '%');
+        })->paginate(10);
+
+        return view('company.admin.staff-account.index', ['staff' => $search]);
+    }
+
+    /*
     * To view create file
     */
     public function create() : View

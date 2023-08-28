@@ -4,6 +4,7 @@ const sideBar = document.querySelector('.sidebar');
 const toggler = document.getElementById('theme-toggle');
 const dropdowns = document.querySelectorAll('.dropdown');
 const categoryIdInput = document.querySelector('input[name="category_id"]');
+const searchBtn = document.getElementById('search-button');
 
 // Logout side menu
 logoutBtn.addEventListener('click', () => {
@@ -111,3 +112,11 @@ document.addEventListener('DOMContentLoaded', () => {
         deleteForm.submit();
     });
 });
+
+
+
+// Function to click an icon for search
+searchBtn.addEventListener('click', () => {
+    const search = document.getElementById('search-form');
+    search.submit();
+})
