@@ -36,7 +36,14 @@
                             <i class='bx bx-detail'></i>
                             <h3>Staff Details</h3>
                             <i class='bx bx-filter' ></i>
-                            <i class='bx bx-search' ></i>
+                            <form action="/" method="POST">
+                                @csrf
+                                <div class="search-field">
+                                    <i class='bx bx-search' ></i>
+                                    <input type="text" placeholder="Search">
+                                </div>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            </form>
                         </div>
 
                         <table>
