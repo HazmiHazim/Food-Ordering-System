@@ -1,8 +1,15 @@
+const logoutBtn = document.getElementById('logout-button');
 const menuBar = document.querySelector('.top-bar nav .bx.bx-menu');
 const sideBar = document.querySelector('.sidebar');
 const toggler = document.getElementById('theme-toggle');
 const dropdowns = document.querySelectorAll('.dropdown');
 const categoryIdInput = document.querySelector('input[name="category_id"]');
+
+// Logout side menu
+logoutBtn.addEventListener('click', () => {
+    const logout = document.getElementById('logout-form');
+    logout.submit();
+});
 
 // Close side bar menu
 menuBar.addEventListener('click', () => {

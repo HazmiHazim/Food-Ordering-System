@@ -13,34 +13,58 @@
 <body>
     <!-- Sidebar -->
     <div class="sidebar">
+        
         <a href="{{ route('dashboard') }}" class="logo">Hash Restaurant</a>
         <ul class="side-menu">
             <li class="{{ request()->routeIs(['dashboard', 'login']) ? 'active' : '' }}">
                 <a href="{{ route('dashboard') }}"><i class='bx bxs-dashboard'></i>Dashboard</a>
             </li>
             <li class="{{ request()->routeIs(['staff-account', 'staff-account-create', 'staff-account-edit', 'staff-account-show']) ? 'active' : '' }}">
-                <a href="{{ route('staff-account') }}"><i class='bx bxs-user-rectangle'></i>Staff Account</a>
+                <a href="{{ route('staff-account') }}"><i class='bx bxs-user-rectangle'></i>Staff Accounts</a>
             </li>
             <li class="{{ request()->routeIs(['food-menu', 'food-menu-create', 'food-menu-edit', 'food-menu-show']) ? 'active' : '' }}">
-                <a href="{{ route('food-menu') }}"><i class='bx bx-food-menu'></i>Food Menu</a>
+                <a href="{{ route('food-menu') }}"><i class='bx bxs-food-menu'></i>Food Menus</a>
+            </li>
+            <li>
+                <a href="#"><i class='bx bxs-group'></i>Partnerships</a>
+            </li>
+            <li>
+                <a href="#"><i class='bx bxs-gift'></i>Promotions & Discounts</a>
+            </li>
+            <li>
+                <a href="#"><i class='bx bxs-truck' ></i>Delivery Management</a>
+            </li>
+            <li>
+                <a href="#"><i class='bx bxs-receipt'></i>Billing & Invoices</a>
             </li>
             <li>
                 <a href="#"><i class='bx bx-analyse'></i>Analytics</a>
             </li>
+        </ul>
+
+        <ul class="side-menu">
+            <li>
+                <a href="#"><i class='bx bx-shield-quarter'></i>Access Control</a>
+            </li>
             <li>
                 <a href="#"><i class='bx bx-cog'></i>Settings</a>
             </li>
-        </ul>
-        <ul class="side-menu">
             <li>
-                <div class="logout">
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <button type="submit" class="logout-button"><i class='bx bx-log-out-circle'></i>Logout</button>
-                    </form>
-                </div>
+                <form action="{{ route('logout') }}" method="POST" id="logout-form">
+
+                    @csrf
+
+                    <button type="button" id="logout-button">
+                        <i class='bx bx-log-out-circle'></i>
+                        Logout
+                    </button>
+
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                </form>
             </li>
         </ul>
+
     </div>
     <!-- End of Sidebar -->
 

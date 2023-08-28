@@ -45,7 +45,7 @@
                             <label>New ID</label>
                             <input type="text" name="new_staff_id" value="{{ old('new_staff_id') }}" required>
                             @foreach ($errors->get('new_staff_id') as $id)
-                                <div class="error-message">{{ $id }}</div>
+                                <div class="validation-error-message">{{ $id }}</div>
                             @endforeach
 
                             <div class="button">

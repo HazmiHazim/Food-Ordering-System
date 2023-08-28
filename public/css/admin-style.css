@@ -136,7 +136,7 @@ body {
     z-index: -1;
 }
 
-.sidebar .side-menu li a {
+.sidebar .side-menu li a, .sidebar .side-menu li form {
     width: 100%;
     height: 100%;
     background: var(--light);
@@ -154,7 +154,7 @@ body {
     color: var(--glow);
 }
 
-.sidebar.close .side-menu li a {
+.sidebar.close .side-menu li a, .sidebar.close .side-menu li form {
     width: calc(48px - (4px * 2));
     transition: all 0.3s ease;
 }
@@ -166,38 +166,29 @@ body {
     justify-content: center;
 }
 
-.sidebar .side-menu li .logout {
-    cursor: pointer;
+.sidebar .side-menu li form .bx {
+    min-width: calc(60px - (4px + 6px) * 2);
+    display: flex;
+    font-size: 1.6rem;
+    justify-content: center;
 }
 
-.sidebar .side-menu li .logout-button {
+.sidebar .side-menu li form button {
     display: flex;
-    width: 170px;
+    width: 100%;
+    height: 100%;
+    background: var(--light);
+    color: var(--dark);
     align-items: center;
-    margin-top: 280px;
-    padding: 0;
     border: none;
-    background: none;
-    cursor: pointer;
-    color: var(--danger);
     font-size: 16px;
-    text-decoration: none;
     white-space: nowrap;
     overflow-x: hidden;
     transition: all 0.3s ease;
 }
 
-.sidebar .side-menu li .logout i {
-    color: var(--danger);
-    font-size: 1.8rem;
-    vertical-align: middle;
-    margin-right: 8px;
-    margin-left: 3px;
-}
-
-.sidebar.close .side-menu li .logout-button {
-    width: calc(48px - (4px * 2));
-    transition: all 0.3s ease;
+.sidebar .side-menu li form button:hover {
+    cursor: pointer;
 }
 
 .top-bar {
@@ -438,6 +429,17 @@ main .header .left h1 {
 }
 /*
 * -------------- End of Error Message -----------------------
+*/
+
+/*
+*  ----------------- Validation Error Message -------------------
+*/
+.validation-error-message {
+    margin-top: 10px;
+    color: var(--danger);
+}
+/*
+* ------------------ End of Validation Error Message
 */
 
 /*
@@ -773,7 +775,7 @@ main .header .left h1 {
 }
 
 .staff-account-index main .header .create:hover {
-    color: var(--light-warning);
+    transform: scale(1.02);
 }
 
 .staff-account-index main .bottom-section {
@@ -990,12 +992,8 @@ main .header .left h1 {
     cursor: pointer;
 }
 
-.staff-account-create main .form-section form .button input[type="submit"]:hover {
-    color: var(--light-warning);
-}
-
-.staff-account-create main .form-section form .button a:hover {
-    color: var(--light-warning);
+.staff-account-create main .form-section form .button input[type="submit"]:hover, .staff-account-create main .form-section form .button a:hover {
+    transform: scale(1.02);
 }
 
 .staff-account-create main .bottom-section {
@@ -1017,6 +1015,7 @@ main .header .left h1 {
     background: var(--light);
     padding: 24px;
     overflow-x: auto;
+    margin-bottom: 25px;
     box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
 }
 
@@ -1250,7 +1249,6 @@ main .header .left h1 {
 }
 
 .staff-account-show main form .button button:hover, .staff-account-show main form .button a:hover {
-    color: var(--light-warning);
     transform: scale(1.02);
 }
 
