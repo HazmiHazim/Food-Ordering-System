@@ -2127,6 +2127,10 @@ main .header .left h1 {
     box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
 }
 
+.partnership-index main .bottom-section .container:hover {
+    transform: scale(1.02);
+}
+
 .partnership-index main .bottom-section .container .partner {
     display: flex;
     align-items: center;
