@@ -130,14 +130,43 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $category->created_at }}</td>
-                                        <td><span><i class='bx bxs-trash-alt' ></i>Delete</span></td>
+                                        <td>
+                                            <form action="/" method="POST" id="deleteForm">
+                                                @method('DELETE')
+
+                                                <button type="button" class="delete-button-popup">
+                                                    <i class='bx bxs-trash-alt'></i>
+                                                    <span>Delete</span>
+                                                </button>
+
+                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
 
+                        <div class="food-menu-create-pagination">
+                            <div class="count">Showing {{ $newCategory->firstItem() }} to {{ $newCategory->lastItem() }} out of {{ $newCategory->total()}} results</div>
+                            <div class="pagination-number">
+                                <div class="page-number">{{ $newCategory->render('company.partials.paginator') }}</div>
+                            </div>
+                        </div>
+
                     </div>
 
+                </div>
+
+                <div class="delete-confirmation" id="deletePopup">
+                    <i class='bx bxs-info-circle' ></i>
+                    <h1>Warning</h1>
+                    <h3>Are you sure you want to delete this Category?</h3>
+                    <p>Once deleted, you will not be able to recover this data!</p>
+                    <div class="button">
+                        <button class="close-popup">Cancel</button>
+                        <button class="confirm-delete">Delete</button>
+                    </div>
                 </div>
 
             </main>

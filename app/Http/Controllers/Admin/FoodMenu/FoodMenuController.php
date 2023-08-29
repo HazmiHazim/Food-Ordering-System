@@ -24,7 +24,7 @@ class FoodMenuController extends Controller
     */
     public function create() : View
     {
-        $newCategory = FoodCategory::all();
+        $newCategory = FoodCategory::paginate(5);
 
         return view('company.admin.food-menu.create', ['newCategory' => $newCategory]);
     }
