@@ -1041,6 +1041,11 @@ main .header .left h1 {
     box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
 }
 
+.staff-account-create main .bottom-section .id {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
 .staff-account-create main .bottom-section .id .header {
     display: flex;
     align-items: center;
