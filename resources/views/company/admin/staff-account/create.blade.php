@@ -69,7 +69,12 @@
                             <i class='bx bx-receipt'></i>
                             <h3>ID Registered</h3>
                             <i class='bx bx-filter' ></i>
-                            <i class='bx bx-search' ></i>
+                            <form action="{{ route('staff-account-search-create') }}" method="GET" id="search-form">
+                                <div class="search-field">
+                                    <i class='bx bx-search' id="search-button"></i>
+                                    <input type="text" name="search" placeholder="Search" value="{{ old('search') }}">
+                                </div>
+                            </form>
                         </div>
 
                         <table>

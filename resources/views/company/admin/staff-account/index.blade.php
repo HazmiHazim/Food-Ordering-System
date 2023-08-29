@@ -36,7 +36,7 @@
                             <i class='bx bx-detail'></i>
                             <h3>Staff Details</h3>
                             <i class='bx bx-filter' ></i>
-                            <form action="{{ route('staff-account-search') }}" method="GET" id="search-form">
+                            <form action="{{ route('staff-account-search-index') }}" method="GET" id="search-form">
                                 <div class="search-field">
                                     <i class='bx bx-search' id="search-button"></i>
                                     <input type="text" name="search" placeholder="Search" value="{{ old('search') }}">

@@ -7,7 +7,6 @@ use App\Http\Controllers\Admin\StaffAccount\StaffAccountController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrationController;
-use App\Models\StaffAccount;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,7 +54,9 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         'edit' => 'staff-account-edit',
     ]);
 
-    Route::get('/search', [StaffAccountController::class, 'search'])->name('staff-account-search');
+    // Route for search in staff account module
+    Route::get('/search-index', [StaffAccountController::class, 'search_index'])->name('staff-account-search-index');
+    Route::get('/search-create', [StaffAccountController::class, 'search_create'])->name('staff-account-search-create');
 
     // Food menu module
     Route::resource('/food-menu', FoodMenuController::class)->names([

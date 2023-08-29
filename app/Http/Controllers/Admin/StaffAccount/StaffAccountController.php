@@ -22,10 +22,13 @@ class StaffAccountController extends Controller
         return view('company.admin.staff-account.index', ['staff' => $staff]);
     }
 
+
+
+
     /*
     *  Function to search resource in index page
     */
-    public function search(Request $request) : View
+    public function search_index(Request $request) : View
     {
         $keyword = $request->input('search');
 
@@ -40,6 +43,9 @@ class StaffAccountController extends Controller
         return view('company.admin.staff-account.index', ['staff' => $search]);
     }
 
+
+
+
     /*
     * To view create file
     */
@@ -49,6 +55,28 @@ class StaffAccountController extends Controller
 
         return view('company.admin.staff-account.create', ['staffid' => $staffid]);
     }
+
+
+
+
+    /*
+    *  Function to search resource in create page
+    */
+    public function search_create(Request $request) : View
+    {
+        $keyword = $request->input('search');
+
+        $search = StaffAccount::where(function ($query) use ($keyword) {
+            $query->where('staff_account_id', 'like', '%' . $keyword . '%')
+            ->orWhere('created_at', 'like', '%' . $keyword . '%')
+            ->orWhere('updated_at', 'like', '%' . $keyword . '%');
+        })->paginate(5);
+
+        return view('company.admin.staff-account.create', ['staffid' => $search]);
+    }
+
+
+
 
     /*
     * Function to add new staff ID
@@ -85,6 +113,9 @@ class StaffAccountController extends Controller
         }
     }
 
+
+
+
     /*
     * Function view show file
     */
@@ -95,6 +126,9 @@ class StaffAccountController extends Controller
         return view('company.admin.staff-account.show', ['user' => $user]);
     }
 
+
+
+
     /*
     * Function view edit file
     */
@@ -104,6 +138,9 @@ class StaffAccountController extends Controller
 
         return view('company.admin.staff-account.edit', ['user' => $user]);
     }
+
+
+
 
     /*
     *  Function to update staff account data
@@ -149,6 +186,9 @@ class StaffAccountController extends Controller
             ]);
         }
     }
+
+
+
 
     /*
     *  Function to delete staff data

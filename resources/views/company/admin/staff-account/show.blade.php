@@ -33,7 +33,10 @@
                         <div class="header">
                             <h3>Staff Details</h3>
                             <div class="edit-button">
-                                <a href="{{ route('staff-account-edit', ['staff_account' => $user->id]) }}"><i class='bx bx-edit' ></i><span>Edit</span></a>
+                                <a href="{{ route('staff-account-edit', ['staff_account' => $user->id]) }}">
+                                    <i class='bx bx-edit' ></i>
+                                    <span>Edit</span>
+                                </a>
                             </div>
                         </div>
 

@@ -1063,6 +1063,29 @@ main .header .left h1 {
     cursor: pointer;
 }
 
+.staff-account-create main .bottom-section .id .header form .search-field {
+    display: flex;
+    border-radius: 8px;
+    border: 1px solid var(--dark-grey);
+    background: #FFFFFF;
+}
+
+.staff-account-create main .bottom-section .id .header form .search-field i {
+    padding: 5px 5px 5px 5px;
+    color: var(--dark-grey);
+    font-size: 1.6rem;
+}
+
+.staff-account-create main .bottom-section .id .header form .search-field input {
+    border: none;
+    border-radius: 8px;
+    width: 250px;
+    font-size: 16px;
+    padding: 0 5px 0 7px;
+    color: var(--dark);
+    outline: none;
+}
+
 .staff-account-create main .bottom-section .id table {
     width: 100%;
     border-collapse: collapse;
@@ -1216,10 +1239,9 @@ main .header .left h1 {
 }
 
 .staff-account-show main .show-section .header .edit-button {
+    display: flex;
     height: 36px;
-    padding: 0 16px;
-    margin-bottom: 5px;
-    color: var(--dark);
+    padding: 0 32px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1227,15 +1249,20 @@ main .header .left h1 {
 }
 
 .staff-account-show main .show-section .header .edit-button i {
-    font-size: 18px;
+    font-size: 16px;
+    color: var(--main-blue);
     align-items: center;
     justify-content: center;
-    margin-right: 3px;
 }
 
 .staff-account-show main .show-section .header .edit-button span {
+    color: var(--main-blue);
     font-size: 16px;
     font-weight: 500;
+}
+
+.staff-account-show main .show-section .header .edit-button:hover {
+    transform: scale(1.02);
 }
 
 .staff-account-show main .show-section .user .user-data {
