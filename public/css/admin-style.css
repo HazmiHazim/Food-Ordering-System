@@ -96,7 +96,8 @@ body {
 
 .sidebar .side-menu {
     width: 100%;
-    margin-top: 48px;
+    margin-top: 8px;
+    margin-bottom: 30px;
 }
 
 .sidebar .side-menu li {
