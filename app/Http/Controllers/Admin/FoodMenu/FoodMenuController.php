@@ -14,7 +14,7 @@ class FoodMenuController extends Controller
 {
     public function index() : View
     {
-        $food = FoodMenu::all();
+        $food = FoodMenu::paginate(10);
 
         return view('company.admin.food-menu.index', ['food' => $food]);
     }
