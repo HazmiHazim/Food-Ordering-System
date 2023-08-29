@@ -40,13 +40,13 @@
                             <span class="star">Food Name</span>
                             <input type="text" name="food_name" placeholder="Enter food name" value="{{ old('food_name') }}" required>
                             @foreach ($errors->get('food_name') as $name)
-                                <div class="error-message">{{ $name }}</div>
+                                <div class="validation-error-message">{{ $name }}</div>
                             @endforeach
 
                             <span class="star">Food Description</span>
                             <input type="text" name="food_description" placeholder="Enter food description" value="{{ old('food_description') }}" required>
                             @foreach ($errors->get('food_description') as $description)
-                                <div class="error-message">{{ $description }}</div>
+                                <div class="validation-error-message">{{ $description }}</div>
                             @endforeach
 
                             <span class="star">Price</span>
@@ -57,18 +57,23 @@
                             <div class="dropdown">
                                 <div class="select">
                                     <span class="selected">Select Category</span>
-                                    <div class="caret"></div>
+                                    <div class="caret"><i class='bx bx-chevron-down' ></i></div>
                                 </div>
                                 <ul class="menu">
                                     @foreach ($newCategory as $category)
                                         <li data-value="{{ $category->id }}">{{ $category->name }}</li>
                                     @endforeach
                                 </ul>
+                                <input type="hidden" name="category_id" id="category_id" value="">
                             </div>
-                            <input type="hidden" name="category_id" id="category_id" value="">
 
                             <div class="low"><span class="star">Food Image</span></div>
-                            <input type="file" name="image" accept="image/*" required>
+                            <div class="drag-image">
+                                <i class='bx bxs-cloud-upload' ></i>
+                                <h2>Drag and drop to upload image</h2>
+                                <span>or</span>
+                                <input type="file" name="image" accept="image/*" required>
+                            </div>
 
                             <div class="button-menu">
                                 <input type="submit" value="Add Menu">

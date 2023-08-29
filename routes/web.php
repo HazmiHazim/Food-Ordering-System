@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\FoodMenu\FoodCategoryController;
 use App\Http\Controllers\Admin\FoodMenu\FoodMenuController;
+use App\Http\Controllers\Admin\Partnership\PartnershipController;
 use App\Http\Controllers\Admin\StaffAccount\StaffAccountController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
@@ -67,4 +68,12 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     ]);
 
     Route::post('/food-menu/create', [FoodCategoryController::class, 'store'])->name('category');
+
+    // Partnership module
+    Route::resource('/partnership', PartnershipController::class)->names([
+        'index' => 'partnership',
+        'create' => 'partnership-create',
+        'show' => 'partnership-show',
+        'edit' => 'partnership-edit',
+    ]);
 });
