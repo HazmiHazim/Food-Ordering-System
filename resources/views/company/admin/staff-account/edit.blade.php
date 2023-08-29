@@ -32,27 +32,31 @@
 
                             @csrf
 
-                            <div class="label">
-                                <span>ID</span>
-                                <span>Name</span>
-                                <span>Email</span>
-                                <span>Phone No</span>
-                                <span>Position</span>
-                                <span>Address</span>
+                            <div class="input-section">
+                                <div class="label">
+                                    <span>ID</span>
+                                    <span>Name</span>
+                                    <span>Email</span>
+                                    <span>Phone No</span>
+                                    <span>Position</span>
+                                    <span>Address</span>
+                                </div>
+
+                                <div class="input">
+                                    <input type="text" placeholder="ID DISABLED" value="{{ $user->staff_id }}" disabled>
+                                    <input type="text" name="name" placeholder="{{ $user->name }}">
+                                    <input type="text" name="email" placeholder="{{ $user->email }}">
+                                    <input type="text" name="phone" placeholder="{{ $user->phone }}">
+                                    <input type="text" name="position" placeholder="{{ $user->position }}">
+                                    <input type="text" name="address" placeholder="{{ $user->address }}">
+                                </div>
                             </div>
 
-                            <div class="input">
-                                <input type="text" placeholder="ID DISABLED" value="{{ $user->staff_id }}" disabled>
-                                <input type="text" name="name" placeholder="{{ $user->name }}">
-                                <input type="text" name="email" placeholder="{{ $user->email }}">
-                                <input type="text" name="phone" placeholder="{{ $user->phone }}">
-                                <input type="text" name="position" placeholder="{{ $user->position }}">
-                                <input type="text" name="address" placeholder="{{ $user->address }}">
-                            </div>
-
-                            <div class="button">
-                                <input type="submit" value="Update Profile">
-                                <a href="{{ route('staff-account-show', ['staff_account' => $user->id]) }}"><span>Cancel</span></a>
+                            <div class="button-section">
+                                <div class="button">
+                                    <input type="submit" value="Update Profile">
+                                    <a href="{{ route('staff-account-show', ['staff_account' => $user->id]) }}"><span>Cancel</span></a>
+                                </div>
                             </div>
 
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
