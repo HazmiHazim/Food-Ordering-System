@@ -538,7 +538,7 @@ main .header .left h1 {
     color: var(--dark);
 }
 
-.dashboardmain main .header .left .breadcrumb li a {
+.dashboard main .header .left .breadcrumb li a {
     color: var(--dark-grey);
     pointer-events: none;
 }
@@ -866,15 +866,18 @@ main .header .left h1 {
     font-size: 16px;
 }
 
+.staff-account-index main .bottom-section .staff table td a {
+    color: var(--main-blue);
+}
+
 .staff-account-index main .bottom-section .staff table td i {
     margin-right: 8px;
     font-size: 16px;
-    border-radius: 50%;
     object-fit: cover;
 }
 
 .staff-account-index main .bottom-section .staff table td:last-child:hover {
-    color: var(--glow);
+    color: var(--main-blue);
     text-decoration: underline;
 }
 
@@ -948,7 +951,7 @@ main .header .left h1 {
     padding: 34px 34px;
     overflow-x: auto;
     border: 1px solid #D3D3D3;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-bottom: 25px;
 }
 
@@ -1085,15 +1088,29 @@ main .header .left h1 {
     font-size: 16px;
 }
 
-.staff-account-create main .bottom-section .id table td i {
+.staff-account-create main .bottom-section .id table td form button {
+    color: var(--main-blue);
+    border: none;
+    background: transparent;
+    font-size: 16px;
+}
+
+.staff-account-create main .bottom-section .id table td form button i {
     margin-right: 8px;
     font-size: 16px;
-    border-radius: 50%;
     object-fit: cover;
 }
 
+.staff-account-create main .bottom-section .id table td form button:hover {
+    cursor: pointer;
+}
+
+.staff-account-create main .bottom-section .id table td form button span:hover {
+    text-decoration: underline;
+}
+
 .staff-account-create main .bottom-section .id table td:last-child:hover {
-    color: var(--glow);
+    color: var(--main-blue);
     text-decoration: underline;
 }
 
@@ -1277,6 +1294,7 @@ main .header .left h1 {
 }
 
 .staff-account-edit main .edit-section {
+    margin-top: 10px;
     border-radius: 20px;
     background: var(--light);
     padding: 24px;
