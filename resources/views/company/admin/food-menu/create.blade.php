@@ -75,6 +75,9 @@
                                 <h2 class="drag-text">Drag and drop to upload image</h2>
                                 <input type="file" hidden class="select-image-input" name="image" accept="image/*" required>
                             </div>
+                            @foreach ($errors->get('image') as $image)
+                                <div class="validation-error-message">{{ $image }}</div>
+                            @endforeach
 
                             <div class="button-menu">
                                 <input type="submit" value="Add Menu">
