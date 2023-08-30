@@ -1803,6 +1803,7 @@ main .header .left h1 {
 
 .food-menu-create main .top-section form .form-add-menu .drag-area {
     display: flex;
+    height: 350px;
     border: 1px dashed var(--dark-grey);
     border-radius: 5px;
     align-items: center;
@@ -1826,6 +1827,7 @@ main .header .left h1 {
 .food-menu-create main .top-section form .form-add-menu .drag-area img {
     max-width: 100%;
     max-height: 100%;
+    object-fit: contain;
 }
 
 .food-menu-create main .top-section form .form-category {
@@ -2099,6 +2101,326 @@ main .header .left h1 {
     border-radius: 100%;
     color: var(--light);
     background-color: var(--main-blue);
+}
+
+.food-menu-show main .show-section {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 10px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.food-menu-show main .show-section>div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
+}
+
+.food-menu-show main .show-section .container {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 500;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 48px;
+    gap: 50px;
+}
+
+.food-menu-show main .show-section .container .image {
+    border-radius: 50%;
+    padding: 12px 0;
+    background: transparent;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.food-menu-show main .show-section .container .image img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+
+.food-menu-show main .show-section .container .details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.food-menu-show main .show-section .container .details h2 {
+    font-size: 58px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.food-menu-show main .show-section .container .details span {
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.food-menu-show main .show-section .container .details span.category,
+.food-menu-show main .show-section .container .details span.price {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.food-menu-show main .show-section .container .details span.description {
+    font-size: 28;
+    font-weight: 300;
+}
+
+.food-menu-show main form .button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.food-menu-show main form .button button,
+.food-menu-show main form .button a {
+    display: flex;
+    margin-top: 20px;
+    margin-right: 10px;
+    height: 36px;
+    width: 15%;
+    border: none;
+    border-radius: 7px;
+    background: var(--danger);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    justify-content: center;
+    grid-gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
+}
+
+.food-menu-show main form .button button:hover,
+.food-menu-show main form .button a:hover {
+    transform: scale(1.02);
+}
+
+.food-menu-edit main .edit-section form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 10px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.food-menu-edit main .edit-section form>div.container {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
+}
+
+.food-menu-edit main .edit-section form .container {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 500;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 48px;
+    gap: 40px;
+}
+
+.food-menu-edit main .edit-section form .container .drag-area {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 350px;
+    padding: 12px 0;
+    background: transparent;
+    max-width: 100%;
+    max-height: 100%;
+    border: 1px dashed var(--dark-grey);
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.food-menu-edit main .edit-section form .container .drag-area i {
+    font-size: 32px;
+    color: var(--dark-grey);
+}
+
+.food-menu-edit main .edit-section form .container .drag-area h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark-grey);
+}
+
+.food-menu-edit main .edit-section form .container .drag-area img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.food-menu-edit main .edit-section form .container .details {
+    width: 100%;
+}
+
+.food-menu-edit main .edit-section form .container .details .label span {
+    display: flex;
+    flex-direction: column;
+    color: var(--dark);
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.food-menu-edit main .edit-section form .container .details .label input {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 10px;
+    border: 1px solid var(--dark-grey);
+    color: var(--dark);
+    outline: none;
+}
+
+.food-menu-edit main .edit-section form .container .details .label input.description {
+    margin-bottom: 10px;
+}
+
+.food-menu-edit main .edit-section form .container .details .label .dropdown {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.food-menu-edit main .edit-section form .container .details .label .dropdown .select {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    color: var(--dark);
+    border: 1px solid var(--dark-grey);
+    padding: 0px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.food-menu-edit main .edit-section form .container .details .label .dropdown .select span {
+    font-size: 16px;
+    color: var(--dark);
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.food-menu-edit main .edit-section form .container .details .label .dropdown .select-clicked {
+    border: 1px solid var(--dark-grey);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.food-menu-edit main .edit-section form .container .details .label .dropdown .select:hover {
+    background-color: var(--light-primary);
+}
+
+.food-menu-edit main .edit-section form .container .details .label .dropdown .select .caret {
+    display: flex;
+    height: 20px;
+    width: 20px;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+}
+
+.food-menu-edit main .edit-section form .container .details .label .dropdown .select .caret i {
+    font-size: 22px;
+}
+
+.food-menu-edit main .edit-section form .container .details .label .dropdown .select .caret-rotate {
+    transform: rotate(180deg);
+    transition: 0.3s all ease;
+}
+
+.food-menu-edit main .edit-section form .container .details .label .dropdown ul.menu {
+    position: absolute;
+    width: 100%;
+    display: none;
+    margin: 0;
+    border: 1px solid var(--dark-grey);
+    background: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.food-menu-edit main .edit-section form .container .details .label .dropdown ul.menu li {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 16px;
+    transition: 0.3s;
+}
+
+.food-menu-edit main .edit-section form .container .details .label .dropdown ul.menu li:hover {
+    background-color: var(--light-primary);
+}
+
+.food-menu-edit main .edit-section form .container .details .label .dropdown ul.menu-open {
+    display: block;
+    opacity: 1;
+}
+
+.food-menu-edit main .edit-section form .button-section .button {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.food-menu-edit main .edit-section form .button-section .button input {
+    display: flex;
+    width: 15%;
+    height: 36px;
+    border-radius: 7px;
+    background: var(--primary);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.food-menu-edit main .edit-section form .button-section .button a {
+    display: flex;
+    width: 15%;
+    height: 36px;
+    border-radius: 7px;
+    background: var(--danger);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.food-menu-edit main .edit-section form .button-section .button input:hover,
+.food-menu-edit main .edit-section form .button-section .button a:hover {
+    transform: scale(1.02);
 }
 /*---------- End of Food Menu Page ----------*/
 

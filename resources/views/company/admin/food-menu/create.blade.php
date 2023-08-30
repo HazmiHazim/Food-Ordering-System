@@ -22,7 +22,7 @@
 
                 <div class="header">
                     <div class="left">
-                        <h1>Create</h1>
+                        <h1>Create Food Menu</h1>
                     </div>
                 </div>
 

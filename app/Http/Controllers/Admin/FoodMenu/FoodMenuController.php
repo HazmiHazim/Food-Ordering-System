@@ -91,4 +91,34 @@ class FoodMenuController extends Controller
 
         return back()->with('success-message', 'Menu added successfully.');
     }
+
+
+
+
+    /*
+    *  Function view show file
+    */
+    public function show($id) : View
+    {
+        $menu = FoodMenu::findOrFail($id);
+
+        return view('company.admin.food-menu.show', ['menu' => $menu]);
+    }
+
+
+
+    
+    /*
+    *  Function to view edit file
+    */
+    public function edit($id) : View
+    {
+        $menu = FoodMenu::findOrFail($id);
+
+        $categoryid = $menu->category_id;
+
+        $menuCategory = FoodCategory::findOrFail($categoryid);
+
+        return view('company.admin.food-menu.edit', ['menu' => $menu, 'category' => $menuCategory]);
+    }
 }

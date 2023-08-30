@@ -53,7 +53,7 @@
                                         <td>{{ $foodList->category_id }}</td>
                                         <td><img src="{{ asset($foodList->image) }}"></td>
                                         <td>
-                                            <a href="#">
+                                            <a href="{{ route('food-menu-show', ['food_menu' => $foodList->id]) }}">
                                                 <i class='bx bxs-pencil'></i>
                                                 <span>Edit</span>
                                             </a>
