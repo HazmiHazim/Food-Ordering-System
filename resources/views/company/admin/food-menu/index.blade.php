@@ -51,7 +51,7 @@
                                         <td>{{ Str::limit($foodList->description, 30) }}</td>
                                         <td>RM {{ $foodList->price }}</td>
                                         <td>{{ $foodList->category_id }}</td>
-                                        <td><img src="{{ Storage::url($foodList->image) }}"></td>
+                                        <td><img src="{{ asset($foodList->image) }}"></td>
                                         <td>
                                             <a href="#">
                                                 <i class='bx bxs-pencil'></i>

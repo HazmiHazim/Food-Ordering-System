@@ -7,6 +7,7 @@ use App\Models\FoodCategory;
 use App\Models\FoodMenu;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
 
@@ -67,7 +68,10 @@ class FoodMenuController extends Controller
             'image' => 'required|image|mimes:jpg,jpeg,png,svg|max:10480',
         ]);
 
-        //dd($validator);
+        if ($validator->fails()) {
+            dd($validator->errors());
+            return back()->withErrors($validator)->withInput();
+        }
 
         // Get the original file name
         $file = $request->file('image');
@@ -76,16 +80,7 @@ class FoodMenuController extends Controller
         $fileName = $file->hashName();
 
         // Store the file with the new name
-        $imagePath = $file->storeAs('public/images', $fileName);
-
-        //dd($imagePath);
-
-        if ($validator->fails()) {
-            dd($validator->errors());
-            return back()->withErrors($validator)->withInput();
-        }
-
-        //dd($fileName);
+        $imagePath = $file->storeAs('images/food-menu', $fileName);
         
         $foodMenu = FoodMenu::create([
             'name' => $request->food_name,

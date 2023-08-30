@@ -28,7 +28,7 @@
 
                 <div class="top-section">
 
-                    <form action="{{ route('food-menu.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('food-menu.store') }}" method="POST" enctype="multipart/form-data" id="imageForm">
                         @csrf
 
                         <div class="form-add-menu">
@@ -73,8 +73,7 @@
                             <div class="drag-area">
                                 <i class='bx bxs-cloud-upload'></i>
                                 <h2 class="drag-text">Drag and drop to upload image</h2>
-                                <input type="file" hidden class="select-image-input" name="image" accept="image/*"
-                                    required>
+                                <input type="file" hidden class="select-image-input" name="image" accept="image/*" required>
                             </div>
 
                             <div class="button-menu">

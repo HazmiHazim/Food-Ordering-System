@@ -6,8 +6,8 @@ const dropdowns = document.querySelectorAll('.dropdown');
 const categoryIdInput = document.querySelector('input[name="category_id"]');
 const searchBtn = document.getElementById('search-button');
 const dragArea = document.querySelector('.drag-area');
-const dragText = document.querySelector('.drag-text');
-const imageInput = document.querySelector('.select-image-input');
+const dragText = dragArea.querySelector('.drag-text');
+const imageInput = dragArea.querySelector('.select-image-input');
 
 
 // Logout side menu
@@ -145,18 +145,16 @@ dragArea.addEventListener('drop', (event) => {
 
     file = event.dataTransfer.files[0];
 
-    showImage();
+    //showImage();
 });
 
 dragArea.addEventListener('click', () => {
-    const imageInput = document.querySelector('.select-image-input');
-
     imageInput.click();
 });
 
 imageInput.addEventListener('change', () => {
     file = imageInput.files[0];
-    showImage();
+    //showImage();
 });
 
 function showImage() {
