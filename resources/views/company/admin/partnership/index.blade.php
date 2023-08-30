@@ -45,6 +45,7 @@
                             </div>
 
                             <div class="action">
+                                <a href="#"><i class='bx bxs-show'></i><span>View</span></a>
                                 <form action="/" method="POST" id="deleteForm">
                                     @method('DELETE')
 

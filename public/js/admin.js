@@ -5,6 +5,10 @@ const toggler = document.getElementById('theme-toggle');
 const dropdowns = document.querySelectorAll('.dropdown');
 const categoryIdInput = document.querySelector('input[name="category_id"]');
 const searchBtn = document.getElementById('search-button');
+const dragArea = document.querySelector('.drag-area');
+const dragText = document.querySelector('.drag-text');
+const imageInput = document.querySelector('.select-image-input');
+
 
 // Logout side menu
 logoutBtn.addEventListener('click', () => {
@@ -113,10 +117,63 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-
 // Function to click an icon for search
 searchBtn.addEventListener('click', () => {
     const search = document.getElementById('search-form');
     search.submit();
-})
+});
+
+/*
+*  ------------- Drag and Drop Function -----------------
+*/
+let file;
+
+dragArea.addEventListener('dragover', (event) => {
+    event.preventDefault();
+    dragArea.classList.add('active');
+    dragText.textContent = 'Release to upload file';
+});
+
+dragArea.addEventListener('dragleave', () => {
+    dragArea.classList.remove('active');
+    dragText.textContent = 'Drag and drop to upload image';
+});
+
+dragArea.addEventListener('drop', (event) => {
+    event.preventDefault();
+    dragArea.classList.remove('active');
+
+    file = event.dataTransfer.files[0];
+
+    showImage();
+});
+
+dragArea.addEventListener('click', () => {
+    const imageInput = document.querySelector('.select-image-input');
+
+    imageInput.click();
+});
+
+imageInput.addEventListener('change', () => {
+    file = imageInput.files[0];
+    showImage();
+});
+
+function showImage() {
+    let fileType = file.type;
+
+    let validExtensions = ['image/jpg', 'image/jpeg', 'image/png', 'image/svg'];
+
+    if (validExtensions.includes(fileType)) {
+        let fileReader = new FileReader();
+        fileReader.onload = () => {
+            let fileUrl = fileReader.result;
+            let imgTag = `<img src="${fileUrl}" alt="">`;
+            dragArea.innerHTML = imgTag;
+        }
+        fileReader.readAsDataURL(file);
+    }
+}
+/*
+* ----------------- End of Drag and Drop Function ------------------
+*/

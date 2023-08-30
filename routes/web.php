@@ -56,8 +56,8 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     ]);
 
     // Route for search in staff account module
-    Route::get('/search-index', [StaffAccountController::class, 'search_index'])->name('staff-account-search-index');
-    Route::get('/search-create', [StaffAccountController::class, 'search_create'])->name('staff-account-search-create');
+    Route::get('/staff-search-index', [StaffAccountController::class, 'search_index'])->name('staff-account-search-index');
+    Route::get('/staff-search-create', [StaffAccountController::class, 'search_create'])->name('staff-account-search-create');
 
     // Food menu module
     Route::resource('/food-menu', FoodMenuController::class)->names([
@@ -68,6 +68,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     ]);
 
     Route::post('/food-menu/create', [FoodCategoryController::class, 'store'])->name('category');
+    Route::get('/food-search-index', [FoodMenuController::class, 'search_create'])->name('food-menu-search-create');
 
     // Partnership module
     Route::resource('/partnership', PartnershipController::class)->names([

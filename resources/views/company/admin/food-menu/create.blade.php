@@ -38,13 +38,15 @@
                             </div>
 
                             <span class="star">Food Name</span>
-                            <input type="text" name="food_name" placeholder="Enter food name" value="{{ old('food_name') }}" required>
+                            <input type="text" name="food_name" placeholder="Enter food name"
+                                value="{{ old('food_name') }}" required>
                             @foreach ($errors->get('food_name') as $name)
                                 <div class="validation-error-message">{{ $name }}</div>
                             @endforeach
 
                             <span class="star">Food Description</span>
-                            <input type="text" name="food_description" placeholder="Enter food description" value="{{ old('food_description') }}" required>
+                            <input type="text" name="food_description" placeholder="Enter food description"
+                                value="{{ old('food_description') }}" required>
                             @foreach ($errors->get('food_description') as $description)
                                 <div class="validation-error-message">{{ $description }}</div>
                             @endforeach
@@ -57,7 +59,7 @@
                             <div class="dropdown">
                                 <div class="select">
                                     <span class="selected">Select Category</span>
-                                    <div class="caret"><i class='bx bx-chevron-down' ></i></div>
+                                    <div class="caret"><i class='bx bx-chevron-down'></i></div>
                                 </div>
                                 <ul class="menu">
                                     @foreach ($newCategory as $category)
@@ -68,11 +70,11 @@
                             </div>
 
                             <div class="low"><span class="star">Food Image</span></div>
-                            <div class="drag-image">
-                                <i class='bx bxs-cloud-upload' ></i>
-                                <h2>Drag and drop to upload image</h2>
-                                <span>or</span>
-                                <input type="file" name="image" accept="image/*" required>
+                            <div class="drag-area">
+                                <i class='bx bxs-cloud-upload'></i>
+                                <h2 class="drag-text">Drag and drop to upload image</h2>
+                                <input type="file" hidden class="select-image-input" name="image" accept="image/*"
+                                    required>
                             </div>
 
                             <div class="button-menu">
@@ -94,7 +96,8 @@
                             </div>
 
                             <span>Food Category</span>
-                            <input type="text" name="new_category" placeholder="Enter new food category" value="{{ old('category') }}" required>
+                            <input type="text" name="new_category" placeholder="Enter new food category"
+                                value="{{ old('category') }}" required>
                             @foreach ($errors->get('new_category') as $category)
                                 <div class="error-message">{{ $category }}</div>
                             @endforeach
@@ -117,6 +120,12 @@
                         <div class="header">
                             <i class='bx bx-category'></i>
                             <h3>Food Category</h3>
+                            <form action="{{ route('food-menu-search-create') }}" method="GET" id="search-form">
+                                <div class="search-field">
+                                    <i class='bx bx-search' id="search-button"></i>
+                                    <input type="text" name="search" placeholder="Search" value="{{ old('search') }}">
+                                </div>
+                            </form>
                         </div>
 
                         <table>
@@ -153,7 +162,8 @@
                         </table>
 
                         <div class="food-menu-create-pagination">
-                            <div class="count">Showing {{ $newCategory->firstItem() }} to {{ $newCategory->lastItem() }} out of {{ $newCategory->total()}} results</div>
+                            <div class="count">Showing {{ $newCategory->firstItem() }} to {{ $newCategory->lastItem() }}
+                                out of {{ $newCategory->total() }} results</div>
                             <div class="pagination-number">
                                 <div class="page-number">{{ $newCategory->render('company.partials.paginator') }}</div>
                             </div>
@@ -164,7 +174,7 @@
                 </div>
 
                 <div class="delete-confirmation" id="deletePopup">
-                    <i class='bx bxs-info-circle' ></i>
+                    <i class='bx bxs-info-circle'></i>
                     <h1>Warning</h1>
                     <h3>Are you sure you want to delete this Category?</h3>
                     <p>Once deleted, you will not be able to recover this data!</p>

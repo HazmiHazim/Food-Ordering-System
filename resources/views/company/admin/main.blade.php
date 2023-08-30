@@ -22,7 +22,7 @@
             <li class="{{ request()->routeIs(['staff-account', 'staff-account-create', 'staff-account-edit', 'staff-account-show', 'staff-account-search-index', 'staff-account-search-create']) ? 'active' : '' }}">
                 <a href="{{ route('staff-account') }}"><i class='bx bxs-user-rectangle'></i>Staff Accounts</a>
             </li>
-            <li class="{{ request()->routeIs(['food-menu', 'food-menu-create', 'food-menu-edit', 'food-menu-show']) ? 'active' : '' }}">
+            <li class="{{ request()->routeIs(['food-menu', 'food-menu-create', 'food-menu-edit', 'food-menu-show', 'food-menu-search-create']) ? 'active' : '' }}">
                 <a href="{{ route('food-menu') }}"><i class='bx bxs-food-menu'></i>Food Menus</a>
             </li>
             <li>

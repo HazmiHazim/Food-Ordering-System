@@ -19,6 +19,9 @@ class FoodMenuController extends Controller
         return view('company.admin.food-menu.index', ['food' => $food]);
     }
 
+
+
+
     /*
     *  Funtion to view create file
     */
@@ -29,6 +32,27 @@ class FoodMenuController extends Controller
         return view('company.admin.food-menu.create', ['newCategory' => $newCategory]);
     }
 
+
+
+
+    /*
+    *  Function to ssearch reasource in create page
+    */
+    public function search_create(Request $request) : View
+    {
+        $keyword = $request->input('search');
+
+        $search = FoodCategory::where(function ($query) use ($keyword) {
+            $query->where('name', 'like', '%' . $keyword . '%')
+                ->orWhere('created_at', 'like', '%' . $keyword . '%')
+                ->orWhere('updated_at', 'like', '%' . $keyword . '%');
+        })->paginate(5);
+
+        return view('company.admin.food-menu.create', ['newCategory' => $search]);
+    }
+
+
+    
 
     /*
     *  Function to store data into Food Menu table

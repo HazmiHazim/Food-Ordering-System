@@ -1801,38 +1801,31 @@ main .header .left h1 {
     margin-bottom: 5px;
 }
 
-.food-menu-create main .top-section form .form-add-menu .drag-image {
+.food-menu-create main .top-section form .form-add-menu .drag-area {
     display: flex;
-    border: 2px dashed var(--dark-grey);
+    border: 1px dashed var(--dark-grey);
     border-radius: 5px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 30px 0px;
+    cursor: pointer;
 }
 
-.food-menu-create main .top-section form .form-add-menu .drag-image i {
-    font-size: 48px;
+.food-menu-create main .top-section form .form-add-menu .drag-area i {
+    font-size: 32px;
     color: var(--dark-grey);
 }
 
-.food-menu-create main .top-section form .form-add-menu .drag-image h2 {
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--dark-grey);
-}
-
-.food-menu-create main .top-section form .form-add-menu .drag-image span {
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--dark-grey);
-    margin: 15px 20px;
-}
-
-.food-menu-create main .top-section form .form-add-menu .drag-image input[type="file"] {
-    border-radius: 5px;
+.food-menu-create main .top-section form .form-add-menu .drag-area h2 {
     font-size: 16px;
-    border: 1px solid var(--dark-grey);
+    font-weight: 500;
+    color: var(--dark-grey);
+}
+
+.food-menu-create main .top-section form .form-add-menu .drag-area img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .food-menu-create main .top-section form .form-category {
@@ -1866,6 +1859,7 @@ main .header .left h1 {
     justify-content: flex-end;
     margin-top: 30px;
     margin-right: 10px;
+    overflow: hidden;
 }
 
 .food-menu-create main .top-section form .button-menu input, .food-menu-create main .top-section form .button-category input {
@@ -1967,6 +1961,29 @@ main .header .left h1 {
 
 .food-menu-create main .bottom-section .food-category .header .bx {
     cursor: pointer;
+}
+
+.food-menu-create main .bottom-section .food-category .header form .search-field {
+    display: flex;
+    border-radius: 8px;
+    border: 1px solid var(--dark-grey);
+    background: #FFFFFF;
+}
+
+.food-menu-create main .bottom-section .food-category .header form .search-field i {
+    padding: 5px 5px 5px 5px;
+    color: var(--dark-grey);
+    font-size: 1.6rem;
+}
+
+.food-menu-create main .bottom-section .food-category .header form .search-field input {
+    border: none;
+    border-radius: 8px;
+    width: 250px;
+    font-size: 16px;
+    padding: 0 5px 0 7px;
+    color: var(--dark);
+    outline: none;
 }
 
 .food-menu-create main .bottom-section .food-category table {
@@ -2123,7 +2140,7 @@ main .header .left h1 {
     background: var(--light);
     padding: 24px;
     overflow-x: auto;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
 }
 
@@ -2185,24 +2202,51 @@ main .header .left h1 {
     justify-content: flex-start;
 }
 
-.partnership-index main .bottom-section .container .partner .action form button {
-    color: var(--danger);
-    border: none;
+.partnership-index main .bottom-section .container .partner .action {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.partnership-index main .bottom-section .container .partner .action a {
+    color: var(--main-blue);
     background: transparent;
-    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
 }
 
-.partnership-index main .bottom-section .container .partner .action form button i {
+.partnership-index main .bottom-section .container .partner .action a i {
     font-size: 16px;
+    align-items: center;
+    justify-content: center;
     object-fit: cover;
+    margin-right: 5px;
 }
 
+.partnership-index main .bottom-section .container .partner .action a i:hover,
 .partnership-index main .bottom-section .container .partner .action form button:hover {
     cursor: pointer;
 }
 
+.partnership-index main .bottom-section .container .partner .action a span:hover,
 .partnership-index main .bottom-section .container .partner .action form button span:hover {
     text-decoration: underline;
+}
+
+.partnership-index main .bottom-section .container .partner .action form button {
+    color: var(--danger);
+    border: none;
+    text-align: center;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.partnership-index main .bottom-section .container .partner .action form button i {
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
 }
 /*
 * ---------------------- End of Partnership Page ------------------------
