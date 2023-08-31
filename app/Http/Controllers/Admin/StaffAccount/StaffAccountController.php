@@ -182,7 +182,7 @@ class StaffAccountController extends Controller
         }
         else {
             return back()->withErrors([
-                'warning-message', 'Please insert data to update.'
+                'error-message' => 'Please insert data to update staff details.'
             ]);
         }
     }

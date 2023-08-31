@@ -10,6 +10,16 @@
 
             <main>
 
+                @error('error-message')
+                    <div class="error-message left-red">
+                        <i class='bx bxs-x-circle'></i>
+                        <div class="text">
+                            <span>Error</span>
+                            <span class="message">{{ $message }}</span>
+                        </div>
+                    </div>
+                @enderror
+
                 <div class="header">
                     <div class="left">
                         <h1>Edit Food Menu</h1>
@@ -18,7 +28,8 @@
 
                 <div class="edit-section">
 
-                    <form action="/" method="POST">
+                    <form action="{{ route('food-menu.update', $menu->id) }}" method="POST" enctype="multipart/form-data"
+                        id="imageForm">
 
                         @method('PUT')
 
@@ -46,15 +57,17 @@
                                         <ul class="menu">
                                             <li data-value="{{ $category->id }}">{{ $category->name }}</li>
                                         </ul>
-                                        <input type="hidden" name="category_id" id="category_id" value="{{ $menu->category_id }}">
+                                        <input type="hidden" name="category" id="category_id" value="">
                                     </div>
 
                                     <span>Price</span>
                                     <input type="text" name="price" placeholder="{{ $menu->price }}">
 
                                     <span>Description</span>
-                                    <input type="text" name="description" placeholder="{{ $menu->description }}" class="description">
-                                    <input type="text" name="description" placeholder="{{ $menu->description }}" class="description">
+                                    <input type="text" name="description" placeholder="Description line 1"
+                                        class="description">
+                                    <input type="text" name="description-two" placeholder="Description line 2"
+                                        class="description">
                                 </div>
                             </div>
 

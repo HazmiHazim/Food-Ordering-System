@@ -9,6 +9,16 @@
         <section>
 
             <main>
+
+                @error('error-message')
+                    <div class="error-message left-red">
+                        <i class='bx bxs-x-circle'></i>
+                        <div class="text">
+                            <span>Error</span>
+                            <span class="message">{{ $message }}</span>
+                        </div>
+                    </div>
+                @enderror
                 
                 <div class="header">
                     <div class="left">

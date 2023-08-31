@@ -121,4 +121,56 @@ class FoodMenuController extends Controller
 
         return view('company.admin.food-menu.edit', ['menu' => $menu, 'category' => $menuCategory]);
     }
+
+    
+    public function update(Request $request, $id) : RedirectResponse
+    {
+        $menu = FoodMenu::find($id);
+
+        if ($request->anyFilled(['name', 'description', 'price', 'category', 'image'])) {
+
+            $updateData = [];
+
+            if ($request->filled('name')) {
+                $updateData['name'] = $request->input('name');
+            }
+
+            if ($request->filled('description')) {
+                $updateData['description'] = $request->input('description') . " " . $request->input('description-two');
+            }
+
+            if ($request->filled('price')) {
+                $updateData['price'] = $request->input('price');
+            }
+
+            if ($request->filled('category')) {
+                $updateData['category'] = $request->input('category');
+            }
+
+            if ($request->hasFile('image')) {
+
+                // Get the original file name
+                $file = $request->file('image');
+
+                // Generate a unique name for the uploaded file
+                $fileName = $file->hashName();
+
+                // Store the file with the new name
+                $imagePath = $file->storeAs('images/food-menu', $fileName);
+
+                $updateData['image'] = $imagePath;
+            }
+
+            $updated = $menu->update($updateData);
+
+            Log::info([$updateData]);
+
+            return redirect()->route('food-menu-show', $menu->id)->with('success-message', 'Your changes are saved successfully.');
+        }
+        else {
+            return back()->withErrors([
+                'error-message' => 'Please insert data to update menu.' 
+            ]);
+        }
+    }
 }

@@ -127,15 +127,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /*
+*  -------------------- Function for Warning Message ---------------------------
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    const warningMessage = document.querySelector('.warning-message');
+
+    if (warningMessage) {
+        setTimeout(() => {
+            warningMessage.style.opacity = '0';
+            warningMessage.remove();
+        }, 3000);
+    }
+});
+/*
+*  -------------------------- End of Function for Warning Message -------------------
+*/
+
+
+
+
+
+/*
 *  --------------------- Function for Error Message ------------------------------
 */
 document.addEventListener('DOMContentLoaded', () => {
-    const successMessage = document.querySelector('.error-message');
+    const errorMessage = document.querySelector('.error-message');
 
-    if (successMessage) {
+    if (errorMessage) {
         setTimeout(() => {
-            successMessage.style.opacity = '0';
-            successMessage.remove();
+            errorMessage.style.opacity = '0';
+            errorMessage.remove();
         }, 3000);
     }
 });
