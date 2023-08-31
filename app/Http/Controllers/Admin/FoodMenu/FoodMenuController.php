@@ -123,6 +123,11 @@ class FoodMenuController extends Controller
     }
 
     
+
+
+    /*
+    *  Function to update food menu resource
+    */
     public function update(Request $request, $id) : RedirectResponse
     {
         $menu = FoodMenu::find($id);
@@ -172,5 +177,19 @@ class FoodMenuController extends Controller
                 'error-message' => 'Please insert data to update menu.' 
             ]);
         }
+    }
+
+
+
+    /*
+    *  Function to delete food menu resource
+    */
+    public function destroy($id) : RedirectResponse
+    {
+        $deleted = FoodMenu::find($id);
+
+        $deleted->delete();
+
+        return redirect()->route('food-menu')->with('success-message', 'Menu is deleted successfully.');
     }
 }

@@ -45,7 +45,7 @@
 
                 </div>
 
-                <form action="/" method="POST" id="deleteForm">
+                <form action="{{ route('food-menu.destroy', $menu->id) }}" method="POST" id="deleteForm">
 
                     @method('DELETE')
 
