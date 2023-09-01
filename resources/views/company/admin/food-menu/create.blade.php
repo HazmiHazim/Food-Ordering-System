@@ -147,8 +147,10 @@
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $category->created_at }}</td>
                                         <td>
-                                            <form action="/" method="POST" id="deleteForm">
+                                            <form action="{{ route('category-delete', ['id' => $category->id]) }}" method="POST" id="deleteForm">
                                                 @method('DELETE')
+
+                                                @csrf
 
                                                 <button type="button" class="delete-button-popup">
                                                     <i class='bx bxs-trash-alt'></i>

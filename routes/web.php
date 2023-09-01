@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\StaffAccount\StaffAccountController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrationController;
+use App\Models\FoodCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -68,6 +69,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     ]);
 
     Route::post('/food-menu/create', [FoodCategoryController::class, 'store'])->name('category');
+    Route::delete('/food-category-delete/{id}', [FoodCategoryController::class, 'destroy'])->name('category-delete');
     Route::get('/food-search-index', [FoodMenuController::class, 'search_create'])->name('food-menu-search-create');
 
     // Partnership module

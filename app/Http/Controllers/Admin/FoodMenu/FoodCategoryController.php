@@ -41,4 +41,15 @@ class FoodCategoryController extends Controller
             return back()->with('success-message', 'Category added successfully.');
         }
     }
+
+
+    public function destroy($id) : RedirectResponse
+    {
+
+        $deleted = FoodCategory::find($id);
+        
+        $deleted->delete();
+
+        return back()->with('success-message', 'Category is deleted successfully.');
+    }
 }
