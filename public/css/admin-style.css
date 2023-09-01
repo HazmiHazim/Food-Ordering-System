@@ -1568,28 +1568,6 @@ main .header .left h1 {
     font-weight: 600;
 }
 
-.food-menu-index main .top-section .food-menu .header .add-menu a {
-    height: 36px;
-    padding: 0 16px;
-    border-radius: 7px;
-    background: var(--primary);
-    color: var(--light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    grid-gap: 10px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.food-menu-index main .top-section .food-menu .header .add-menu i {
-    font-size: 16px;
-}
-
-.food-menu-index main .top-section .food-menu .header .add-menu a:hover {
-    color: var(--light-warning);
-}
-
 .food-menu-index main .top-section .header .bx {
     cursor: pointer;
 }
@@ -2484,6 +2462,143 @@ main .header .left h1 {
     transform: scale(1.02);
 }
 /*---------- End of Food Menu Page ----------*/
+
+/*
+*  ---------------- Restaurant Page ----------------------
+*/
+.restaurant-index main .header .create {
+    display: flex;
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 36px;
+    background: var(--primary);
+    color: var(--light);
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    font-weight: 500;
+}
+
+.restaurant-index main .header .create:hover {
+    transform: scale(1.02);
+}
+
+.restaurant-index main .item-section {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 24px;
+    margin-top: 24px;
+    color: var(--dark);
+}
+
+.restaurant-index main .item-section>div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: auto;
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
+}
+
+.restaurant-index main .item-section .container .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.restaurant-index main .item-section .container .header h3 {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.restaurant-index main .item-section .container .header .bx {
+    cursor: pointer;
+}
+
+.restaurant-index main .item-section .container .header form .search-field {
+    display: flex;
+    border-radius: 8px;
+    border: 1px solid var(--dark-grey);
+    background: #FFFFFF;
+}
+
+.restaurant-index main .item-section .container .header form .search-field i {
+    padding: 5px 5px 5px 5px;
+    color: var(--dark-grey);
+    font-size: 1.6rem;
+}
+
+.restaurant-index main .item-section .container .header form .search-field input {
+    border: none;
+    border-radius: 8px;
+    width: 250px;
+    font-size: 16px;
+    padding: 0 5px 0 7px;
+    color: var(--dark);
+    outline: none;
+}
+
+.restaurant-index main .item-section .container table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    overflow: hidden;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.restaurant-index main .item-section .container table th {
+    background: var(--main-blue);
+    color: #FFFFFF;
+    padding: 12px 0 12px 16px;
+    font-size: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--grey);
+}
+
+.restaurant-index main .item-section .container table td {
+    padding: 12px 0 12px 16px;
+    font-size: 16px;
+}
+
+.restaurant-index main .item-section .container table td a {
+    color: var(--main-blue);
+}
+
+.restaurant-index main .item-section .container table td i {
+    margin-right: 8px;
+    font-size: 16px;
+    object-fit: cover;
+}
+
+.restaurant-index main .item-section .container table td:last-child:hover {
+    color: var(--main-blue);
+    text-decoration: underline;
+}
+
+.restaurant-index main .item-section .container table tbody tr {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.restaurant-index main .item-section .container table tbody tr:nth-child(even) {
+    background-color: var(--grey);
+}
+
+.restaurant-index main .item-section .container table tbody tr:hover {
+    transform: scale(1.02);
+}
+/*
+*  ---------------- End of Restaurant Page --------------------------
+*/
 
 
 /*

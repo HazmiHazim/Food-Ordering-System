@@ -25,14 +25,14 @@
             <li class="{{ request()->routeIs(['food-menu', 'food-menu-create', 'food-menu-edit', 'food-menu-show', 'food-menu-search-create']) ? 'active' : '' }}">
                 <a href="{{ route('food-menu') }}"><i class='bx bxs-food-menu'></i>Food Menus</a>
             </li>
-            <li>
-                <a href="#"><i class='bx bxs-store'></i>Restaurant</a>
+            <li class="{{ request()->routeIs(['restaurant']) ? 'active' : '' }}">
+                <a href="{{ route('restaurant') }}"><i class='bx bxs-store'></i>Restaurant</a>
             </li>
             <li class="{{ request()->routeIs(['partnership']) ? 'active' : '' }}">
                 <a href="{{ route('partnership') }}"><i class='bx bxs-group'></i>Partnerships</a>
             </li>
             <li>
-                <a href="#"><i class='bx bxs-gift'></i>Promotions & Discounts</a>
+                <a href="#"><i class='bx bxs-offer'></i>Promotions & Discounts</a>
             </li>
             <li>
                 <a href="#"><i class='bx bxs-truck' ></i>Delivery Management</a>
