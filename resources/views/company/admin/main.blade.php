@@ -25,7 +25,7 @@
             <li class="{{ request()->routeIs(['food-menu', 'food-menu-create', 'food-menu-edit', 'food-menu-show', 'food-menu-search-create']) ? 'active' : '' }}">
                 <a href="{{ route('food-menu') }}"><i class='bx bxs-food-menu'></i>Food Menus</a>
             </li>
-            <li class="{{ request()->routeIs(['restaurant']) ? 'active' : '' }}">
+            <li class="{{ request()->routeIs(['restaurant', 'restaurant-create']) ? 'active' : '' }}">
                 <a href="{{ route('restaurant') }}"><i class='bx bxs-store'></i>Restaurant</a>
             </li>
             <li class="{{ request()->routeIs(['partnership']) ? 'active' : '' }}">

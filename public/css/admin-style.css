@@ -311,6 +311,18 @@ main .header .left h1 {
     color: var(--dark);
 }
 
+/* 
+*  ----------- Input[type=number] ---------------
+*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/*
+*  --------------- End of Input[type=number]
+*/
+
 /*
 * -----------Success Message--------------
 */
@@ -2594,6 +2606,212 @@ main .header .left h1 {
 }
 
 .restaurant-index main .item-section .container table tbody tr:hover {
+    transform: scale(1.02);
+}
+
+.restaurant-create main .form-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.restaurant-create main .form-section .form-item-create,
+.restaurant-create main .form-section .form-category-create {
+    flex: 1;
+    max-width: calc(50% - 10px);
+    border-radius: 20px;
+    background: var(--light);
+    padding: 30px 30px;
+    overflow-x: auto;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    flex-direction: column;
+    border: 1px solid var(--dark-grey);
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
+}
+
+.restaurant-create main .form-section .form-item-create form .header,
+.restaurant-create main .form-section .form-category-create form .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--grey);
+}
+
+.restaurant-create main .form-section .form-item-create form .header h4,
+.restaurant-create main .form-section .form-category-create form .header h4 {
+    color: var(--dark);
+    margin: auto;
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input,
+.restaurant-create main .form-section .form-category-create form .form-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input span,
+.restaurant-create main .form-section .form-category-create form .form-input span {
+    color: var(--dark);
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input span::after,
+.restaurant-create main .form-section .form-category-create form .form-input span::after {
+    content: "*";
+    color: var(--danger);
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input input,
+.restaurant-create main .form-section .form-category-create form .form-input input {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 10px;
+    border: 1px solid var(--dark-grey);
+    color: var(--dark);
+    outline: none;
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input .dropdown {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input .dropdown .select {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    color: var(--dark);
+    border: 1px solid var(--dark-grey);
+    padding: 0px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input .dropdown .select span {
+    font-size: 16px;
+    color: var(--dark);
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input .dropdown .select-clicked {
+    border: 1px solid var(--dark-grey);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input .dropdown .select:hover {
+    background-color: var(--light-primary);
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input .dropdown .select .caret {
+    display: flex;
+    height: 20px;
+    width: 20px;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input .dropdown .select .caret i {
+    font-size: 22px;
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input .dropdown .select .caret-rotate {
+    transform: rotate(180deg);
+    transition: 0.3s all ease;
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input .dropdown ul.menu {
+    position: absolute;
+    width: 100%;
+    display: none;
+    margin: 0;
+    border: 1px solid var(--dark-grey);
+    background: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input .dropdown ul.menu li {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 16px;
+    transition: 0.3s;
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input .dropdown ul.menu li:hover {
+    background-color: var(--light-primary);
+}
+
+.restaurant-create main .form-section .form-item-create form .form-input .dropdown ul.menu-open {
+    display: block;
+    opacity: 1;
+}
+
+.restaurant-create main .form-section .form-item-create form .button,
+.restaurant-create main .form-section .form-category-create form .button {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.restaurant-create main .form-section .form-item-create form .button input,
+.restaurant-create main .form-section .form-category-create form .button input {
+    display: flex;
+    width: 15%;
+    height: 36px;
+    border-radius: 7px;
+    background: var(--primary);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.restaurant-create main .form-section .form-item-create form .button a,
+.restaurant-create main .form-section .form-category-create form .button a {
+    display: flex;
+    width: 15%;
+    height: 36px;
+    border-radius: 7px;
+    background: var(--danger);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.restaurant-create main .form-section .form-item-create form .button input:hover,
+.restaurant-create main .form-section .form-category-create form .button input:hover,
+.restaurant-create main .form-section .form-item-create form a:hover,
+.restaurant-create main .form-section .form-category-create form .button a:hover {
     transform: scale(1.02);
 }
 /*

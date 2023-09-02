@@ -88,7 +88,7 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     </form>
 
-                    <form action="{{ route('category') }}" method="POST">
+                    <form action="{{ route('food-category') }}" method="POST">
                         @csrf
 
                         <div class="form-category">

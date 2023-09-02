@@ -14,7 +14,7 @@
                     <div class="left">
                         <h1>Restaurant Items</h1>
                     </div>
-                    <a href="#" class="create">
+                    <a href="{{ route('restaurant-create') }}" class="create">
                         <span>Create New Restaurant Item</span>
                     </a>
                 </div>
@@ -49,14 +49,16 @@
                             </thead>
 
                             <tbody>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>meja</td>
-                                    <td>50</td>
-                                    <td>Utensil</td>
-                                    <td>RM 20.50</td>
-                                    <td><a href="#"><i class='bx bxs-pencil'></i><span>Edit</span></a></td>
-                                </tr>
+                                @foreach ($restaurantItems as $items)
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>{{ $items->item_name }}</td>
+                                        <td>{{ $items->quantity }}</td>
+                                        <td>{{ $items->itemCategory->name }}</td>
+                                        <td>RM {{ $items->price }}</td>
+                                        <td><a href="#"><i class='bx bxs-pencil'></i><span>Edit</span></a></td>
+                                    </tr>
+                                @endforeach
                             </tbody>
 
                         </table>

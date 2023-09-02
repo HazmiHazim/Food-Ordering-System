@@ -4,12 +4,14 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\FoodMenu\FoodCategoryController;
 use App\Http\Controllers\Admin\FoodMenu\FoodMenuController;
 use App\Http\Controllers\Admin\Partnership\PartnershipController;
+use App\Http\Controllers\Admin\Restaurant\ItemCategoryController;
 use App\Http\Controllers\Admin\Restaurant\RestaurantController;
 use App\Http\Controllers\Admin\StaffAccount\StaffAccountController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Models\FoodCategory;
+use App\Models\ItemCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,7 +71,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         'edit' => 'food-menu-edit',
     ]);
 
-    Route::post('/food-menu/create', [FoodCategoryController::class, 'store'])->name('category');
+    Route::post('/food-menu/create', [FoodCategoryController::class, 'store'])->name('food-category');
     Route::delete('/food-category-delete/{id}', [FoodCategoryController::class, 'destroy'])->name('category-delete');
     Route::get('/food-search-index', [FoodMenuController::class, 'search_create'])->name('food-menu-search-create');
 
@@ -80,6 +82,8 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         'show' => 'restaurant-show',
         'edit' => 'restaurant-edit',
     ]);
+
+    Route::post('/restaurant/create', [ItemCategoryController::class, 'store'])->name('item-category');
 
     // Partnership module
     Route::resource('/partnership', PartnershipController::class)->names([
