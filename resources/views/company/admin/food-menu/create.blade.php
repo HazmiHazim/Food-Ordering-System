@@ -165,7 +165,7 @@
                             </tbody>
                         </table>
 
-                        <div class="food-menu-create-pagination">
+                        <div class="pagination">
                             <div class="count">Showing {{ $newCategory->firstItem() }} to {{ $newCategory->lastItem() }}
                                 out of {{ $newCategory->total() }} results</div>
                             <div class="pagination-number">

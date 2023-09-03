@@ -113,7 +113,7 @@
                             
                         </table>
 
-                        <div class="staff-account-create-pagination">
+                        <div class="pagination">
                             <div class="count">Showing {{ $staffid->firstItem() }} to {{ $staffid->lastItem() }} out of {{ $staffid->total()}} results</div>
                             <div class="pagination-number">
                                 <div class="page-number">{{ $staffid->render('company.partials.paginator') }}</div>

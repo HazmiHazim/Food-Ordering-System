@@ -73,7 +73,7 @@
                             </tbody>
                         </table>
 
-                        <div class="food-menu-index-pagination">
+                        <div class="pagination">
                             <div class="count">Showing {{ $food->firstItem() }} to {{ $food->lastItem() }} out of {{ $food->total()}} results</div>
                             <div class="pagination-number">
                                 <div class="page-number">{{ $food->render('company.partials.paginator') }}</div>

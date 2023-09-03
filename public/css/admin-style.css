@@ -50,6 +50,9 @@ body {
     overflow-x: hidden;
 }
 
+/*
+*  ----------------- Sidebar ---------------------------
+*/
 .sidebar {
     position: fixed;
     top: 0;
@@ -191,6 +194,9 @@ body {
 .sidebar .side-menu li form button:hover {
     cursor: pointer;
 }
+/*
+*  ---------------- End of Sidebar --------------------------
+*/
 
 .top-bar {
     position: relative;
@@ -311,6 +317,88 @@ main .header .left h1 {
     color: var(--dark);
 }
 
+/*
+*  ------------------- Table ----------------------
+*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    overflow: hidden;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+table th {
+    background: var(--main-blue);
+    color: #FFFFFF;
+    padding: 12px 0 12px 16px;
+    font-size: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--grey);
+}
+
+table td {
+    padding: 12px 0 12px 16px;
+    font-size: 16px;
+}
+
+table td a {
+    color: var(--main-blue);
+}
+
+table td i.bx {
+    margin-right: 8px;
+    font-size: 16px;
+    object-fit: cover;
+}
+
+table td img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid var(--dark-grey);
+}
+
+table td form button {
+    color: var(--main-blue);
+    border: none;
+    background: transparent;
+    font-size: 16px;
+}
+
+table td form button:hover {
+    cursor: pointer;
+}
+
+table td form button span:hover {
+    text-decoration: underline;
+}
+
+table td:last-child:hover {
+    color: var(--main-blue);
+    text-decoration: underline;
+}
+
+table tbody tr {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+table tbody tr:hover {
+    transform: scale(1.02);
+}
+
+table tbody tr:nth-child(even) {
+    background-color: var(--grey);
+}
+/*
+*  ----------------- End of Table ------------------------
+*/
+
 /* 
 *  ----------- Input[type=number] ---------------
 */
@@ -320,7 +408,93 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 /*
-*  --------------- End of Input[type=number]
+*  --------------- End of Input[type=number] --------------------
+*/
+
+/*
+*  ----------------- Pagination ---------------------
+*/
+.pagination {
+    display: flex;
+    padding: 12px 0 0 0;
+    justify-content: space-between;
+    font-size: 16px;
+    color: var(--dark);
+}
+
+.pagination .pagination-number {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination .pagination-number:hover {
+    cursor: pointer;
+}
+
+.pagination .pagination-number .page {
+    font-size: 16px;
+}
+
+.pagination .pagination-number .page i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.pagination .pagination-number .page:hover {
+    text-decoration: underline;
+}
+
+.pagination .pagination-number .page-number {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.pagination .pagination-number .page-number .active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    color: var(--light);
+    background-color: var(--main-blue);
+}
+/*
+*  ----------------- End of Pagination -----------------------------
+*/
+
+/*
+* -------------------- Search Field ------------------------------
+*/
+.search-field {
+    display: flex;
+    border-radius: 8px;
+    border: 1px solid var(--dark-grey);
+    background: #FFFFFF;
+}
+
+.search-field i {
+    padding: 5px 5px 5px 5px;
+    color: var(--dark-grey);
+    font-size: 1.6rem;
+}
+
+.search-field input {
+    border: none;
+    border-radius: 8px;
+    width: 250px;
+    font-size: 16px;
+    padding: 0 5px 0 7px;
+    color: var(--dark);
+    outline: none;
+}
+/*
+*  --------------------- End of Search Field
 */
 
 /*
@@ -730,6 +904,10 @@ input::-webkit-inner-spin-button {
     border-collapse: collapse;
 }
 
+.dashboard main .bottom-section .orders table .bx {
+    font-size: 1.7rem;
+}
+
 .dashboard main .bottom-section .orders table th {
     padding-bottom: 12px;
     font-size: 13px;
@@ -892,133 +1070,6 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
-.staff-account-index main .bottom-section .header form .search-field {
-    display: flex;
-    border-radius: 8px;
-    border: 1px solid var(--dark-grey);
-    background: #FFFFFF;
-}
-
-.staff-account-index main .bottom-section .header form .search-field i {
-    padding: 5px 5px 5px 5px;
-    color: var(--dark-grey);
-    font-size: 1.6rem;
-}
-
-.staff-account-index main .bottom-section .header form .search-field input {
-    border: none;
-    border-radius: 8px;
-    width: 250px;
-    font-size: 16px;
-    padding: 0 5px 0 7px;
-    color: var(--dark);
-    outline: none;
-}
-
-.staff-account-index main .bottom-section .staff table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    overflow: hidden;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.staff-account-index main .bottom-section .staff table th {
-    background: var(--main-blue);
-    color: #FFFFFF;
-    padding: 12px 0 12px 16px;
-    font-size: 16px;
-    text-align: left;
-    border-bottom: 1px solid var(--grey);
-}
-
-.staff-account-index main .bottom-section .staff table td {
-    padding: 12px 0 12px 16px;
-    font-size: 16px;
-}
-
-.staff-account-index main .bottom-section .staff table td a {
-    color: var(--main-blue);
-}
-
-.staff-account-index main .bottom-section .staff table td i {
-    margin-right: 8px;
-    font-size: 16px;
-    object-fit: cover;
-}
-
-.staff-account-index main .bottom-section .staff table td:last-child:hover {
-    color: var(--main-blue);
-    text-decoration: underline;
-}
-
-.staff-account-index main .bottom-section .staff table tbody tr {
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.staff-account-index main .bottom-section .staff table tbody tr:nth-child(even) {
-    background-color: var(--grey);
-}
-
-.staff-account-index main .bottom-section .staff table tbody tr:hover {
-    transform: scale(1.02);
-}
-
-.staff-account-index .bottom-section .staff .staff-account-index-pagination {
-    display: flex;
-    padding: 12px 0 0 0;
-    justify-content: space-between;
-    font-size: 16px;
-    color: var(--dark);
-}
-
-.staff-account-index .bottom-section .staff .staff-account-index-pagination .pagination-number {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-}
-
-.staff-account-index .bottom-section .staff .staff-account-index-pagination .pagination-number:hover {
-    cursor: pointer;
-}
-
-.staff-account-index .bottom-section .staff .staff-account-index-pagination .pagination-number .page {
-    font-size: 16px;
-}
-
-.staff-account-index .bottom-section .staff .staff-account-index-pagination .pagination-number .page i {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.staff-account-index .bottom-section .staff .staff-account-index-pagination .pagination-number .page:hover {
-    text-decoration: underline;
-}
-
-.staff-account-index .bottom-section .staff .staff-account-index-pagination .pagination-number .page-number {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-}
-
-.staff-account-index .bottom-section .staff .staff-account-index-pagination .pagination-number .page-number .active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    width: 30px;
-    border-radius: 100%;
-    color: var(--light);
-    background-color: var(--main-blue);
-}
-
 .staff-account-create main .form-section form .create-form {
     border-radius: 20px;
     background: var(--light);
@@ -1135,144 +1186,6 @@ input::-webkit-inner-spin-button {
 
 .staff-account-create main .bottom-section .id .header .bx {
     cursor: pointer;
-}
-
-.staff-account-create main .bottom-section .id .header form .search-field {
-    display: flex;
-    border-radius: 8px;
-    border: 1px solid var(--dark-grey);
-    background: #FFFFFF;
-}
-
-.staff-account-create main .bottom-section .id .header form .search-field i {
-    padding: 5px 5px 5px 5px;
-    color: var(--dark-grey);
-    font-size: 1.6rem;
-}
-
-.staff-account-create main .bottom-section .id .header form .search-field input {
-    border: none;
-    border-radius: 8px;
-    width: 250px;
-    font-size: 16px;
-    padding: 0 5px 0 7px;
-    color: var(--dark);
-    outline: none;
-}
-
-.staff-account-create main .bottom-section .id table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    overflow: hidden;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.staff-account-create main .bottom-section .id table th {
-    background: var(--main-blue);
-    color: #FFFFFF;
-    padding: 12px 0 12px 16px;
-    font-size: 16px;
-    text-align: left;
-    border-bottom: 1px solid var(--grey);
-}
-
-.staff-account-create main .bottom-section .id table td {
-    padding: 12px 0 12px 16px;
-    font-size: 16px;
-}
-
-.staff-account-create main .bottom-section .id table td form button {
-    color: var(--main-blue);
-    border: none;
-    background: transparent;
-    font-size: 16px;
-}
-
-.staff-account-create main .bottom-section .id table td form button i {
-    margin-right: 8px;
-    font-size: 16px;
-    object-fit: cover;
-}
-
-.staff-account-create main .bottom-section .id table td form button:hover {
-    cursor: pointer;
-}
-
-.staff-account-create main .bottom-section .id table td form button span:hover {
-    text-decoration: underline;
-}
-
-.staff-account-create main .bottom-section .id table td:last-child:hover {
-    color: var(--main-blue);
-    text-decoration: underline;
-}
-
-.staff-account-create main .bottom-section .id table tbody tr {
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.staff-account-create main .bottom-section .id table tbody tr:hover {
-    transform: scale(1.02);
-}
-
-.staff-account-create main .bottom-section .id table tbody tr:nth-child(even) {
-    background-color: var(--grey);
-}
-
-.staff-account-create main .bottom-section .id .staff-account-create-pagination {
-    display: flex;
-    padding: 12px 0 0 0;
-    justify-content: space-between;
-    font-size: 16px;
-    color: var(--dark);
-}
-
-.staff-account-create main .bottom-section .id .staff-account-create-pagination .pagination-number {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-}
-
-.staff-account-create main .bottom-section .id .staff-account-create-pagination .pagination-number:hover {
-    cursor: pointer;
-}
-
-.staff-account-create main .bottom-section .id .staff-account-create-pagination .pagination-number .page {
-    font-size: 16px;
-}
-
-.staff-account-create main .bottom-section .id .staff-account-create-pagination .pagination-number .page i {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.staff-account-create main .bottom-section .id .staff-account-create-pagination .pagination-number .page:hover {
-    text-decoration: underline;
-}
-
-.staff-account-create main .bottom-section .id .staff-account-create-pagination .pagination-number .page-number {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-}
-
-.staff-account-create main .bottom-section .id .staff-account-create-pagination .pagination-number .page-number .active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    width: 30px;
-    border-radius: 100%;
-    color: var(--light);
-    background-color: var(--main-blue);
 }
 
 .staff-account-show main .show-section {
@@ -1582,118 +1495,6 @@ input::-webkit-inner-spin-button {
 
 .food-menu-index main .top-section .header .bx {
     cursor: pointer;
-}
-
-.food-menu-index main .top-section .food-menu table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    overflow: hidden;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.food-menu-index main .top-section .food-menu table th {
-    background: var(--main-blue);
-    color: #FFFFFF;
-    padding: 12px 0 12px 16px;
-    font-size: 16px;
-    text-align: left;
-    border-bottom: 1px solid var(--grey);
-}
-
-.food-menu-index main .top-section .food-menu table td {
-    padding: 12px 0 12px 16px;
-    font-size: 16px;
-}
-
-.food-menu-index main .top-section .food-menu table td img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 15px;
-    border: 3px solid var(--dark-grey);
-}
-
-.food-menu-index main .top-section .food-menu table td a {
-    color: var(--main-blue);
-}
-
-.food-menu-index main .top-section .food-menu table td i {
-    margin-right: 8px;
-    font-size: 16px;
-    object-fit: cover;
-}
-
-.food-menu-index main .top-section .food-menu table td:last-child:hover {
-    color: var(--main-blue);
-    text-decoration: underline;
-}
-
-.food-menu-index main .top-section .food-menu table tbody tr {
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.food-menu-index main .top-section .food-menu table tbody tr:nth-child(even) {
-    background-color: var(--grey);
-}
-
-.food-menu-index main .top-section .food-menu table tbody tr:hover {
-    transform: scale(1.02);
-}
-
-.food-menu-index .top-section .food-menu .food-menu-index-pagination {
-    display: flex;
-    padding: 12px 0 0 0;
-    justify-content: space-between;
-    font-size: 16px;
-    color: var(--dark);
-}
-
-.food-menu-index .top-section .food-menu .food-menu-index-pagination .pagination-number {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-}
-
-.food-menu-index .top-section .food-menu .food-menu-index-pagination .pagination-number:hover {
-    cursor: pointer;
-}
-
-.food-menu-index .top-section .food-menu .food-menu-index-pagination .pagination-number .page {
-    font-size: 16px;
-}
-
-.food-menu-index .top-section .food-menu .food-menu-index-pagination .pagination-number .page i {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.food-menu-index .top-section .food-menu .food-menu-index-pagination .pagination-number .page:hover {
-    text-decoration: underline;
-}
-
-.food-menu-index .top-section .food-menu .food-menu-index-pagination .pagination-number .page-number {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-}
-
-.food-menu-index .top-section .food-menu .food-menu-index-pagination .pagination-number .page-number .active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    width: 30px;
-    border-radius: 100%;
-    color: var(--light);
-    background-color: var(--main-blue);
 }
 
 .food-menu-create main .top-section {
@@ -2014,144 +1815,6 @@ input::-webkit-inner-spin-button {
 
 .food-menu-create main .bottom-section .food-category .header .bx {
     cursor: pointer;
-}
-
-.food-menu-create main .bottom-section .food-category .header form .search-field {
-    display: flex;
-    border-radius: 8px;
-    border: 1px solid var(--dark-grey);
-    background: #FFFFFF;
-}
-
-.food-menu-create main .bottom-section .food-category .header form .search-field i {
-    padding: 5px 5px 5px 5px;
-    color: var(--dark-grey);
-    font-size: 1.6rem;
-}
-
-.food-menu-create main .bottom-section .food-category .header form .search-field input {
-    border: none;
-    border-radius: 8px;
-    width: 250px;
-    font-size: 16px;
-    padding: 0 5px 0 7px;
-    color: var(--dark);
-    outline: none;
-}
-
-.food-menu-create main .bottom-section .food-category table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    overflow: hidden;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.food-menu-create main .bottom-section .food-category table th {
-    background: var(--main-blue);
-    color: #FFFFFF;
-    padding: 12px 0 12px 16px;
-    font-size: 16px;
-    text-align: left;
-    border-bottom: 1px solid var(--grey);
-}
-
-.food-menu-create main .bottom-section .food-category table td {
-    padding: 12px 0 12px 16px;
-    font-size: 16px;
-}
-
-.food-menu-create main .bottom-section .food-category table td form button {
-    color: var(--main-blue);
-    border: none;
-    background: transparent;
-    font-size: 16px;
-}
-
-.food-menu-create main .bottom-section .food-category table td form button i {
-    margin-right: 8px;
-    font-size: 16px;
-    object-fit: cover;
-}
-
-.food-menu-create main .bottom-section .food-category table td form button:hover {
-    cursor: pointer;
-}
-
-.food-menu-create main .bottom-section .food-category table td form button span:hover {
-    text-decoration: underline;
-}
-
-.food-menu-create main .bottom-section .food-category table td:last-child:hover {
-    color: var(--main-blue);
-    text-decoration: underline;
-}
-
-.food-menu-create main .bottom-section .food-category table tbody tr {
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.food-menu-create main .bottom-section .food-category table tbody tr:hover {
-    transform: scale(1.02);
-}
-
-.food-menu-create main .bottom-section .food-category table tbody tr:nth-child(even) {
-    background-color: var(--grey);
-}
-
-.food-menu-create main .bottom-section .food-category .food-menu-create-pagination {
-    display: flex;
-    padding: 12px 0 0 0;
-    justify-content: space-between;
-    font-size: 16px;
-    color: var(--dark);
-}
-
-.food-menu-create main .bottom-section .food-category .food-menu-create-pagination .pagination-number {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-}
-
-.food-menu-create main .bottom-section .food-category .food-menu-create-pagination .pagination-number:hover {
-    cursor: pointer;
-}
-
-.food-menu-create main .bottom-section .food-category .food-menu-create-pagination .pagination-number .page {
-    font-size: 16px;
-}
-
-.food-menu-create main .bottom-section .food-category .food-menu-create-pagination .pagination-number .page i {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.food-menu-create main .bottom-section .food-category .food-menu-create-pagination .pagination-number .page:hover {
-    text-decoration: underline;
-}
-
-.food-menu-create main .bottom-section .food-category .food-menu-create-pagination .pagination-number .page-number {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-}
-
-.food-menu-create main .bottom-section .food-category .food-menu-create-pagination .pagination-number .page-number .active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    width: 30px;
-    border-radius: 100%;
-    color: var(--light);
-    background-color: var(--main-blue);
 }
 
 .food-menu-show main .show-section {
@@ -2533,86 +2196,11 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
-.restaurant-index main .item-section .container .header form .search-field {
-    display: flex;
-    border-radius: 8px;
-    border: 1px solid var(--dark-grey);
-    background: #FFFFFF;
-}
-
-.restaurant-index main .item-section .container .header form .search-field i {
-    padding: 5px 5px 5px 5px;
-    color: var(--dark-grey);
-    font-size: 1.6rem;
-}
-
-.restaurant-index main .item-section .container .header form .search-field input {
-    border: none;
-    border-radius: 8px;
-    width: 250px;
-    font-size: 16px;
-    padding: 0 5px 0 7px;
-    color: var(--dark);
-    outline: none;
-}
-
-.restaurant-index main .item-section .container table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    overflow: hidden;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.restaurant-index main .item-section .container table th {
-    background: var(--main-blue);
-    color: #FFFFFF;
-    padding: 12px 0 12px 16px;
-    font-size: 16px;
-    text-align: left;
-    border-bottom: 1px solid var(--grey);
-}
-
-.restaurant-index main .item-section .container table td {
-    padding: 12px 0 12px 16px;
-    font-size: 16px;
-}
-
-.restaurant-index main .item-section .container table td a {
-    color: var(--main-blue);
-}
-
-.restaurant-index main .item-section .container table td i {
-    margin-right: 8px;
-    font-size: 16px;
-    object-fit: cover;
-}
-
-.restaurant-index main .item-section .container table td:last-child:hover {
-    color: var(--main-blue);
-    text-decoration: underline;
-}
-
-.restaurant-index main .item-section .container table tbody tr {
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.restaurant-index main .item-section .container table tbody tr:nth-child(even) {
-    background-color: var(--grey);
-}
-
-.restaurant-index main .item-section .container table tbody tr:hover {
-    transform: scale(1.02);
-}
-
 .restaurant-create main .form-section {
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .restaurant-create main .form-section .form-item-create,
@@ -2627,7 +2215,6 @@ input::-webkit-inner-spin-button {
     margin-bottom: 25px;
     flex-direction: column;
     border: 1px solid var(--dark-grey);
-    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
 }
 
 .restaurant-create main .form-section .form-item-create form .header,
@@ -2775,7 +2362,7 @@ input::-webkit-inner-spin-button {
 .restaurant-create main .form-section .form-item-create form .button input,
 .restaurant-create main .form-section .form-category-create form .button input {
     display: flex;
-    width: 15%;
+    width: 30%;
     height: 36px;
     border-radius: 7px;
     background: var(--primary);
@@ -2793,7 +2380,7 @@ input::-webkit-inner-spin-button {
 .restaurant-create main .form-section .form-item-create form .button a,
 .restaurant-create main .form-section .form-category-create form .button a {
     display: flex;
-    width: 15%;
+    width: 30%;
     height: 36px;
     border-radius: 7px;
     background: var(--danger);
@@ -2813,6 +2400,46 @@ input::-webkit-inner-spin-button {
 .restaurant-create main .form-section .form-item-create form a:hover,
 .restaurant-create main .form-section .form-category-create form .button a:hover {
     transform: scale(1.02);
+}
+
+.restaurant-create main .table-section {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 24px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.restaurant-create main .table-section>div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
+}
+
+.restaurant-create main .table-section .item-category {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.restaurant-create main .table-section .item-category .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.restaurant-create main .table-section .item-category .header h3 {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.restaurant-create main .table-section .item-category .header .bx {
+    cursor: pointer;
 }
 /*
 *  ---------------- End of Restaurant Page --------------------------

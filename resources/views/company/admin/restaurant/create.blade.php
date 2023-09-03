@@ -123,6 +123,80 @@
 
                 </div>
 
+                <div class="table-section">
+
+                    <div class="item-category">
+
+                        <div class="header">
+                            <i class='bx bx-category'></i>
+                            <h3>Item Category</h3>
+                            <form action="/" method="GET" id="search-form">
+                                <div class="search-field">
+                                    <i class='bx bx-search' id="search-button"></i>
+                                    <input type="text" name="search" placeholder="Search" value="{{ old('search') }}">
+                                </div>
+                            </form>
+                        </div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox"></th>
+                                    <th>Category Name</th>
+                                    <th>Created At</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach ($itemCategory as $category)
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>{{ $category->name }}</td>
+                                        <td>{{ $category->created_at }}</td>
+                                        <td>
+                                            <form action="/" method="POST">
+                                                @method('DELETE')
+
+                                                @csrf
+
+                                                <button type="button" class="delete-button-popup">
+                                                    <i class='bx bxs-trash-alt'></i>
+                                                    <span>Delete</span>
+                                                </button>
+
+                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+
+                        </table>
+
+                        <div class="pagination">
+                            <div class="count">Showing {{ $itemCategory->firstItem() }} to {{ $itemCategory->lastItem() }}
+                                out of {{ $itemCategory->total() }} results</div>
+                            <div class="pagination-number">
+                                <div class="page-number">{{ $itemCategory->render('company.partials.paginator') }}</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="delete-confirmation" id="deletePopup">
+                    <i class='bx bxs-info-circle'></i>
+                    <h1>Warning</h1>
+                    <h3>Are you sure you want to delete this Category?</h3>
+                    <p>Once deleted, you will not be able to recover this data!</p>
+                    <div class="button">
+                        <button class="close-popup">Cancel</button>
+                        <button class="confirm-delete">Delete</button>
+                    </div>
+                </div>
+
             </main>
 
         </section>

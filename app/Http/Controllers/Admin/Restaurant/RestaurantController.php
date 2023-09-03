@@ -21,7 +21,7 @@ class RestaurantController extends Controller
 
     public function create() : View
     {
-        $itemCategory = ItemCategory::all();
+        $itemCategory = ItemCategory::paginate(5);
 
         return view('company.admin.restaurant.create', ['itemCategory' => $itemCategory]);
     }

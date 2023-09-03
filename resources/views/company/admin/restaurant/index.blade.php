@@ -63,6 +63,14 @@
 
                         </table>
 
+                        <div class="pagination">
+                            <div class="count">Showing {{ $restaurantItems->firstItem() }} to {{ $restaurantItems->lastItem() }}
+                                out of {{ $restaurantItems->total() }} results</div>
+                            <div class="pagination-number">
+                                <div class="page-number">{{ $restaurantItems->render('company.partials.paginator') }}</div>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
