@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /*
-*  ------------------------------ Dropdown Function in Create Food Category ---------------------
+*  ------------------------------ Dropdown Function to Select ---------------------
 */
 document.addEventListener('DOMContentLoaded', () => {
     const dropdowns = document.querySelectorAll('.dropdown');
@@ -99,8 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 /*
-*  --------------------- End of Dropdown Function in Create Food Category ------------------------
+*  --------------------- End of Dropdown Function to Select ------------------------
 */
+
+
 
 
 

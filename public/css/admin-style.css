@@ -498,7 +498,7 @@ input::-webkit-inner-spin-button {
 */
 
 /*
-*  -------------------- Dropdown -------------------------------------
+*  -------------------- Dropdown Category -------------------------------------
 */
 .dropdown {
     position: relative;
@@ -1483,7 +1483,8 @@ input::-webkit-inner-spin-button {
     gap: 10px;
 }
 
-.staff-account-edit main .edit-section .form-staff-update form .button-section .button input {
+.staff-account-edit main .edit-section .form-staff-update form .button-section .button input,
+.staff-account-edit main .edit-section .form-staff-update form .button-section .button a {
     display: flex;
     height: 36px;
     border-radius: 7px;
@@ -1500,19 +1501,7 @@ input::-webkit-inner-spin-button {
 }
 
 .staff-account-edit main .edit-section .form-staff-update form .button-section .button a {
-    display: flex;
-    height: 36px;
-    border-radius: 7px;
     background: var(--danger);
-    color: var(--light);
-    font-size: 16px;
-    font-weight: 500;
-    padding: 0 16px;
-    align-items: center;
-    justify-content: center;
-    grid-gap: 10px;
-    border: none;
-    cursor: pointer;
 }
 
 .staff-account-edit main .edit-section .form-staff-update form .button-section .button input:hover,
@@ -1524,9 +1513,8 @@ input::-webkit-inner-spin-button {
 */
 
 
-
 /*
-*  Food Menu Page --------------------
+*  ----------------------- Food Menu Page --------------------
 */
 .food-menu-index main .header .create {
     height: 36px;
@@ -2028,7 +2016,8 @@ input::-webkit-inner-spin-button {
     gap: 10px;
 }
 
-.food-menu-edit main .edit-section form .button-section .button input {
+.food-menu-edit main .edit-section form .button-section .button input,
+.food-menu-edit main .edit-section form .button-section .button a {
     display: flex;
     width: 15%;
     height: 36px;
@@ -2046,20 +2035,7 @@ input::-webkit-inner-spin-button {
 }
 
 .food-menu-edit main .edit-section form .button-section .button a {
-    display: flex;
-    width: 15%;
-    height: 36px;
-    border-radius: 7px;
     background: var(--danger);
-    color: var(--light);
-    font-size: 16px;
-    font-weight: 500;
-    padding: 0 16px;
-    align-items: center;
-    justify-content: center;
-    grid-gap: 10px;
-    border: none;
-    cursor: pointer;
 }
 
 .food-menu-edit main .edit-section form .button-section .button input:hover,
@@ -2663,6 +2639,140 @@ input::-webkit-inner-spin-button {
     align-items: center;
     justify-content: center;
     object-fit: cover;
+}
+
+.partnership-create main .create-section form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 10px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.partnership-create main .create-section form>div.container {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
+}
+
+.partnership-create main .create-section form .container {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 500;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 48px;
+    gap: 40px;
+}
+
+.partnership-create main .create-section form .container .drag-area {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 350px;
+    padding: 12px 0;
+    background: transparent;
+    max-width: 100%;
+    max-height: 100%;
+    border: 1px dashed var(--dark-grey);
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.partnership-create main .create-section form .container .drag-area i {
+    font-size: 32px;
+    color: var(--dark-grey);
+}
+
+.partnership-create main .create-section form .container .drag-area h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark-grey);
+}
+
+.partnership-create main .create-section form .container .details {
+    width: 100%;
+}
+
+.partnership-create main .create-section form .container .details .data span {
+    display: flex;
+    flex-direction: column;
+    color: var(--dark);
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.partnership-create main .create-section form .container .details .data input {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 10px;
+    border: 1px solid var(--dark-grey);
+    color: var(--dark);
+    outline: none;
+}
+
+.partnership-create main .create-section form .container .details .data input[type="date"] {
+    box-sizing: border-box;
+    outline: none;
+    padding-left: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.partnership-create main .create-section form .container .details .data input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    color: transparent;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    cursor: pointer;
+    height: auto;
+    width: auto;
+    position: absolute;
+}
+
+.partnership-create main .create-section form .button-section .button {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.partnership-create main .create-section form .button-section .button input,
+.partnership-create main .create-section form .button-section .button a {
+    display: flex;
+    width: 15%;
+    height: 36px;
+    border-radius: 7px;
+    background: var(--primary);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.partnership-create main .create-section form .button-section .button a {
+    background: var(--danger);
+}
+
+.partnership-create main .create-section form .button-section .button input:hover,
+.partnership-create main .create-section form .button-section .button a:hover {
+    transform: scale(1.02);
 }
 /*
 * ---------------------- End of Partnership Page ------------------------
