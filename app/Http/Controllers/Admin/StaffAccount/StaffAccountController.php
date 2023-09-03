@@ -40,6 +40,8 @@ class StaffAccountController extends Controller
                 ->orWhere('phone', 'like', '%' . $keyword . '%');
         })->paginate(10);
 
+        Log::info([$keyword, $search]);
+
         return view('company.admin.staff-account.index', ['staff' => $search]);
     }
 
@@ -71,6 +73,8 @@ class StaffAccountController extends Controller
             ->orWhere('created_at', 'like', '%' . $keyword . '%')
             ->orWhere('updated_at', 'like', '%' . $keyword . '%');
         })->paginate(5);
+
+        Log::info([$keyword, $search]);
 
         return view('company.admin.staff-account.create', ['staffid' => $search]);
     }
@@ -108,6 +112,8 @@ class StaffAccountController extends Controller
             $id = StaffAccount::create([
                 'staff_account_id' => $validated['new_staff_id'],
             ]);
+
+            Log::info([$id]);
 
             return back()->with('success-message', 'Successfully added new ID');
         }
@@ -175,8 +181,7 @@ class StaffAccountController extends Controller
 
             $updated = $user->update($updateData);
 
-            Log::info([$updateData]);
-            //dd($updated);
+            Log::info([$updateData, $updated]);
 
             return redirect()->route('staff-account-show', $user->id)->with('success-message', 'Your changes are saved successfully.');
         }
@@ -198,6 +203,8 @@ class StaffAccountController extends Controller
         $deleted = User::find($id);
 
         $deleted->delete();
+
+        Log::info([$deleted]);
 
         return redirect()->route('staff-account')->with('success-message', 'Staff is deleted successfully.');
     }

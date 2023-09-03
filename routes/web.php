@@ -72,7 +72,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     ]);
 
     Route::post('/food-menu/create', [FoodCategoryController::class, 'store'])->name('food-category');
-    Route::delete('/food-category-delete/{id}', [FoodCategoryController::class, 'destroy'])->name('category-delete');
+    Route::delete('/food-category-delete/{id}', [FoodCategoryController::class, 'destroy'])->name('food-category-delete');
     Route::get('/food-search-index', [FoodMenuController::class, 'search_create'])->name('food-menu-search-create');
 
     // Restaurant module
@@ -84,6 +84,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     ]);
 
     Route::post('/restaurant/create', [ItemCategoryController::class, 'store'])->name('item-category');
+    Route::delete('/item-category-delete/{id}', [ItemCategoryController::class, 'destroy'])->name('item-category-delete');
 
     // Partnership module
     Route::resource('/partnership', PartnershipController::class)->names([

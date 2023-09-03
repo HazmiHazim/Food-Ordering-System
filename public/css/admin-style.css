@@ -494,7 +494,95 @@ input::-webkit-inner-spin-button {
     outline: none;
 }
 /*
-*  --------------------- End of Search Field
+*  --------------------- End of Search Field -------------------
+*/
+
+/*
+*  -------------------- Dropdown -------------------------------------
+*/
+.dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown .select {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    color: var(--dark);
+    border: 1px solid var(--dark-grey);
+    padding: 0px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown .select span {
+    font-size: 16px;
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.dropdown .select-clicked {
+    border: 1px solid var(--dark-grey);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown .select:hover {
+    background-color: var(--light-primary);
+}
+
+.dropdown .select .caret {
+    display: flex;
+    height: 20px;
+    width: 20px;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+}
+
+.dropdown .select .caret i {
+    font-size: 22px;
+}
+
+.dropdown .select .caret-rotate {
+    transform: rotate(180deg);
+    transition: 0.3s all ease;
+}
+
+.dropdown ul.menu {
+    position: absolute;
+    width: 100%;
+    display: none;
+    margin: 0;
+    border: 1px solid var(--dark-grey);
+    background: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown ul.menu li {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 16px;
+    transition: 0.3s;
+}
+
+.dropdown ul.menu li:hover {
+    background-color: var(--light-primary);
+}
+
+.dropdown ul.menu-open {
+    display: block;
+    opacity: 1;
+}
+/*
+* ---------------------- End of Dropdown -----------------------------------
 */
 
 /*
@@ -1566,88 +1654,6 @@ input::-webkit-inner-spin-button {
     outline: none;
 }
 
-.food-menu-create main .top-section .form-add-menu .dropdown {
-    position: relative;
-    width: 100%;
-}
-
-.food-menu-create main .top-section .form-add-menu .dropdown .select {
-    display: flex;
-    height: 40px;
-    align-items: center;
-    justify-content: space-between;
-    background: #FFFFFF;
-    color: var(--dark);
-    border: 1px solid var(--dark-grey);
-    padding: 0px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.food-menu-create main .top-section .form-add-menu .dropdown .select span {
-    font-size: 16px;
-    color: var(--dark);
-    font-weight: 500;
-}
-
-.food-menu-create main .top-section .form-add-menu .dropdown .select-clicked {
-    border: 1px solid var(--dark-grey);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.food-menu-create main .top-section .form-add-menu .dropdown .select:hover {
-    background-color: var(--light-primary);
-}
-
-.food-menu-create main .top-section .form-add-menu .dropdown .select .caret {
-    display: flex;
-    height: 20px;
-    width: 20px;
-    align-items: center;
-    justify-content: center;
-    color: var(--dark);
-}
-
-.food-menu-create main .top-section .form-add-menu .dropdown .select .caret i {
-    font-size: 22px;
-}
-
-.food-menu-create main .top-section .form-add-menu .dropdown .select .caret-rotate {
-    transform: rotate(180deg);
-    transition: 0.3s all ease;
-}
-
-.food-menu-create main .top-section .form-add-menu .dropdown ul.menu {
-    position: absolute;
-    width: 100%;
-    display: none;
-    margin: 0;
-    border: 1px solid var(--dark-grey);
-    background: #FFFFFF;
-    border-radius: 5px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.food-menu-create main .top-section .form-add-menu .dropdown ul.menu li {
-    display: flex;
-    height: 50px;
-    align-items: center;
-    list-style: none;
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 16px;
-    transition: 0.3s;
-}
-
-.food-menu-create main .top-section .form-add-menu .dropdown ul.menu li:hover {
-    background-color: var(--light-primary);
-}
-
-.food-menu-create main .top-section .form-add-menu .dropdown ul.menu-open {
-    display: block;
-    opacity: 1;
-}
-
 .food-menu-create main .top-section form .form-add-menu .low {
     margin-top: 20px;
     margin-bottom: 5px;
@@ -2009,87 +2015,11 @@ input::-webkit-inner-spin-button {
 }
 
 .food-menu-edit main .edit-section form .container .details .label .dropdown {
-    position: relative;
     margin-bottom: 20px;
-    width: 100%;
-}
-
-.food-menu-edit main .edit-section form .container .details .label .dropdown .select {
-    display: flex;
-    height: 40px;
-    align-items: center;
-    justify-content: space-between;
-    background: #FFFFFF;
-    color: var(--dark);
-    border: 1px solid var(--dark-grey);
-    padding: 0px 16px;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
 .food-menu-edit main .edit-section form .container .details .label .dropdown .select span {
-    font-size: 16px;
-    color: var(--dark);
-    font-weight: 500;
     margin-bottom: 0;
-}
-
-.food-menu-edit main .edit-section form .container .details .label .dropdown .select-clicked {
-    border: 1px solid var(--dark-grey);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.food-menu-edit main .edit-section form .container .details .label .dropdown .select:hover {
-    background-color: var(--light-primary);
-}
-
-.food-menu-edit main .edit-section form .container .details .label .dropdown .select .caret {
-    display: flex;
-    height: 20px;
-    width: 20px;
-    align-items: center;
-    justify-content: center;
-    color: var(--dark);
-}
-
-.food-menu-edit main .edit-section form .container .details .label .dropdown .select .caret i {
-    font-size: 22px;
-}
-
-.food-menu-edit main .edit-section form .container .details .label .dropdown .select .caret-rotate {
-    transform: rotate(180deg);
-    transition: 0.3s all ease;
-}
-
-.food-menu-edit main .edit-section form .container .details .label .dropdown ul.menu {
-    position: absolute;
-    width: 100%;
-    display: none;
-    margin: 0;
-    border: 1px solid var(--dark-grey);
-    background: #FFFFFF;
-    border-radius: 5px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.food-menu-edit main .edit-section form .container .details .label .dropdown ul.menu li {
-    display: flex;
-    height: 50px;
-    align-items: center;
-    list-style: none;
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 16px;
-    transition: 0.3s;
-}
-
-.food-menu-edit main .edit-section form .container .details .label .dropdown ul.menu li:hover {
-    background-color: var(--light-primary);
-}
-
-.food-menu-edit main .edit-section form .container .details .label .dropdown ul.menu-open {
-    display: block;
-    opacity: 1;
 }
 
 .food-menu-edit main .edit-section form .button-section .button {
@@ -2249,7 +2179,7 @@ input::-webkit-inner-spin-button {
     font-weight: 500;
 }
 
-.restaurant-create main .form-section .form-item-create form .form-input span::after,
+.restaurant-create main .form-section .form-item-create form .form-input span.star::after,
 .restaurant-create main .form-section .form-category-create form .form-input span::after {
     content: "*";
     color: var(--danger);
@@ -2269,87 +2199,11 @@ input::-webkit-inner-spin-button {
 }
 
 .restaurant-create main .form-section .form-item-create form .form-input .dropdown {
-    position: relative;
     margin-bottom: 20px;
-    width: 100%;
-}
-
-.restaurant-create main .form-section .form-item-create form .form-input .dropdown .select {
-    display: flex;
-    height: 40px;
-    align-items: center;
-    justify-content: space-between;
-    background: #FFFFFF;
-    color: var(--dark);
-    border: 1px solid var(--dark-grey);
-    padding: 0px 16px;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
 .restaurant-create main .form-section .form-item-create form .form-input .dropdown .select span {
-    font-size: 16px;
-    color: var(--dark);
-    font-weight: 500;
     margin-bottom: 0;
-}
-
-.restaurant-create main .form-section .form-item-create form .form-input .dropdown .select-clicked {
-    border: 1px solid var(--dark-grey);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.restaurant-create main .form-section .form-item-create form .form-input .dropdown .select:hover {
-    background-color: var(--light-primary);
-}
-
-.restaurant-create main .form-section .form-item-create form .form-input .dropdown .select .caret {
-    display: flex;
-    height: 20px;
-    width: 20px;
-    align-items: center;
-    justify-content: center;
-    color: var(--dark);
-}
-
-.restaurant-create main .form-section .form-item-create form .form-input .dropdown .select .caret i {
-    font-size: 22px;
-}
-
-.restaurant-create main .form-section .form-item-create form .form-input .dropdown .select .caret-rotate {
-    transform: rotate(180deg);
-    transition: 0.3s all ease;
-}
-
-.restaurant-create main .form-section .form-item-create form .form-input .dropdown ul.menu {
-    position: absolute;
-    width: 100%;
-    display: none;
-    margin: 0;
-    border: 1px solid var(--dark-grey);
-    background: #FFFFFF;
-    border-radius: 5px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.restaurant-create main .form-section .form-item-create form .form-input .dropdown ul.menu li {
-    display: flex;
-    height: 50px;
-    align-items: center;
-    list-style: none;
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 16px;
-    transition: 0.3s;
-}
-
-.restaurant-create main .form-section .form-item-create form .form-input .dropdown ul.menu li:hover {
-    background-color: var(--light-primary);
-}
-
-.restaurant-create main .form-section .form-item-create form .form-input .dropdown ul.menu-open {
-    display: block;
-    opacity: 1;
 }
 
 .restaurant-create main .form-section .form-item-create form .button,
@@ -2440,6 +2294,225 @@ input::-webkit-inner-spin-button {
 
 .restaurant-create main .table-section .item-category .header .bx {
     cursor: pointer;
+}
+
+.restaurant-show main .show-section {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 10px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.restaurant-show main .show-section>div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px 24px 5px 24px;
+    overflow-x: auto;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
+}
+
+.restaurant-show main .show-section .container {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.restaurant-show main .show-section .container .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.restaurant-show main .show-section .container .header h3 {
+    padding-left: 14px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.restaurant-show main .show-section .container .details {
+    display: flex;
+
+}
+
+.restaurant-show main .show-section .container .details .label,
+.restaurant-show main .show-section .container .details .data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.restaurant-show main .show-section .container .details .label span {
+    padding: 16px;
+    font-size: 16px;
+    text-align: end;
+}
+
+.restaurant-show main .show-section .container .details .data span {
+    padding: 16px 16px 16px 0;
+    font-size: 16px;
+    text-align: start;
+}
+
+.restaurant-show main .show-section .container .details .label span::after {
+    content: " :";
+}
+
+.restaurant-show main form .button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.restaurant-show main form .button button,
+.restaurant-show main form .button a {
+    display: flex;
+    margin-top: 20px;
+    margin-right: 10px;
+    height: 36px;
+    width: 15%;
+    border: none;
+    border-radius: 7px;
+    background: var(--danger);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    justify-content: center;
+    grid-gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
+}
+
+.restaurant-show main form .button button:hover,
+.restaurant-show main form .button a:hover {
+    transform: scale(1.02);
+}
+
+.restaurant-edit main form .edit-section {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 10px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.restaurant-edit main form .edit-section>div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px 24px 5px 24px;
+    overflow-x: auto;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
+}
+
+.restaurant-edit main form .edit-section .container {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.restaurant-edit main form .edit-section .container .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.restaurant-edit main form .edit-section .container .header h3 {
+    padding-left: 14px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.restaurant-edit main form .edit-section .container .details {
+    display: flex;
+
+}
+
+.restaurant-edit main form .edit-section .container .details .label,
+.restaurant-edit main form .edit-section .container .details .input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.restaurant-edit main form .edit-section .container .details .label span {
+    padding: 16px;
+    font-size: 16px;
+    text-align: end;
+}
+
+.restaurant-edit main form .edit-section .container .details .input input {
+    height: 32px;
+    padding: 15px 10px 15px 10px;
+    border: 1px solid var(--dark-grey);
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.restaurant-edit main form .edit-section .container .details .input .dropdown {
+    margin-bottom: 20px;
+}
+
+.restaurant-edit main form .edit-section .container .details .label span::after {
+    content: " :";
+}
+
+.restaurant-edit main form .button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.restaurant-edit main form .button input {
+    display: flex;
+    margin-top: 20px;
+    margin-right: 10px;
+    height: 36px;
+    width: 15%;
+    border: none;
+    border-radius: 7px;
+    background: var(--primary);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    justify-content: center;
+    grid-gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
+}
+
+.restaurant-edit main form .button a {
+    display: flex;
+    margin-top: 20px;
+    margin-right: 10px;
+    height: 36px;
+    width: 15%;
+    border: none;
+    border-radius: 7px;
+    background: var(--danger);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    justify-content: center;
+    grid-gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
+}
+
+.restaurant-edit main form .button input:hover,
+.restaurant-edit main form .button a:hover {
+    transform: scale(1.02);
 }
 /*
 *  ---------------- End of Restaurant Page --------------------------

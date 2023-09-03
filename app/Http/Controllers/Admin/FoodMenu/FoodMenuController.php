@@ -37,7 +37,7 @@ class FoodMenuController extends Controller
 
 
     /*
-    *  Function to ssearch reasource in create page
+    *  Function to search reasource in create page
     */
     public function search_create(Request $request) : View
     {
@@ -48,6 +48,8 @@ class FoodMenuController extends Controller
                 ->orWhere('created_at', 'like', '%' . $keyword . '%')
                 ->orWhere('updated_at', 'like', '%' . $keyword . '%');
         })->paginate(5);
+
+        Log::info([$keyword, $search]);
 
         return view('company.admin.food-menu.create', ['newCategory' => $search]);
     }
@@ -89,6 +91,8 @@ class FoodMenuController extends Controller
             'image' => $imagePath,
         ]);
 
+        Log::info([$foodMenu]);
+
         return back()->with('success-message', 'Menu added successfully.');
     }
 
@@ -118,6 +122,8 @@ class FoodMenuController extends Controller
         $categoryid = $menu->category_id;
 
         $menuCategory = FoodCategory::findOrFail($categoryid);
+
+        Log::info([$menu, $menuCategory]);
 
         return view('company.admin.food-menu.edit', ['menu' => $menu, 'category' => $menuCategory]);
     }
@@ -168,7 +174,7 @@ class FoodMenuController extends Controller
 
             $updated = $menu->update($updateData);
 
-            Log::info([$updateData]);
+            Log::info([$updateData, $updated]);
 
             return redirect()->route('food-menu-show', $menu->id)->with('success-message', 'Your changes are saved successfully.');
         }
@@ -189,6 +195,8 @@ class FoodMenuController extends Controller
         $deleted = FoodMenu::find($id);
 
         $deleted->delete();
+
+        Log::info([$deleted]);
 
         return redirect()->route('food-menu')->with('success-message', 'Menu is deleted successfully.');
     }

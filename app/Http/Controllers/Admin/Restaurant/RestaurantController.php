@@ -7,6 +7,7 @@ use App\Models\ItemCategory;
 use App\Models\RestaurantItems;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
 
@@ -19,6 +20,11 @@ class RestaurantController extends Controller
         return view('company.admin.restaurant.index', ['restaurantItems' => $restaurantItems]);
     }
 
+
+
+    /*
+    *  Functio to view create file
+    */
     public function create() : View
     {
         $itemCategory = ItemCategory::paginate(5);
@@ -26,6 +32,12 @@ class RestaurantController extends Controller
         return view('company.admin.restaurant.create', ['itemCategory' => $itemCategory]);
     }
 
+
+
+
+    /*
+    *  Function to store data into restaurant item table
+    */
     public function store(Request $request) : RedirectResponse
     {
         $validator = Validator::make($request->all(), [
@@ -46,8 +58,101 @@ class RestaurantController extends Controller
             'price' => $request->item_price,
         ]);
 
-        //dd($itemCreate);
+        Log::info([$itemCreate]);
 
         return back()->with('success-message', 'Item added successfully.');
+    }
+
+
+
+
+    /*
+    *  Function view show file
+    */
+    public function show($id) : View
+    {
+        $item = RestaurantItems::findOrFail($id);
+
+        return view('company.admin.restaurant.show', ['item' => $item]);
+    }
+
+
+
+
+    /*
+    *  Function to view edit file
+    */
+    public function edit($id) : View
+    {
+        $item = RestaurantItems::findOrFail($id);
+
+        $categoryid = $item->item_category_id;
+
+        $itemCategory = ItemCategory::findOrFail($categoryid);
+
+        Log::info([$item, $itemCategory]);
+
+        return view('company.admin.restaurant.edit', ['item' => $item, 'category' => $itemCategory]);
+    }
+
+
+
+
+
+    /*
+    *  Function to update restaurant item resource
+    */
+    public function update(Request $request, $id) : RedirectResponse
+    {
+        $item = RestaurantItems::find($id);
+
+        if ($request->anyFilled(['item_name', 'quntity', 'category', 'price'])) {
+
+            $updateData = [];
+
+            if ($request->filled('item_name')) {
+                $updateData['item_name'] = $request->input('item_name');
+            }
+
+            if ($request->filled('quantity')) {
+                $updateData['quantity'] = $request->input('quantity');
+            }
+
+            if ($request->filled('category')) {
+                $updateData['category'] = $request->input('category');
+            }
+
+            if ($request->filled('price')) {
+                $updateData['price'] = $request->input('price');
+            }
+
+            $updated = $item->update($updateData);
+
+            Log::info([$updateData, $updated]);
+
+            return redirect()->route('restaurant-show', $item->id)->with('success-message', 'Your changes are saved successfully.');
+        }
+        else {
+            return back()->withErrors([
+                'error-message' => 'Please insert data to update item.'
+            ]);
+        }
+    }
+
+
+
+
+    /*
+    *  Function to delete restaurant item resource
+    */
+    public function destroy($id) : RedirectResponse
+    {
+        $deleted = RestaurantItems::find($id);
+
+        $deleted->delete();
+
+        Log::info([$deleted]);
+
+        return redirect()->route('restaurant')->with('success-message', 'Item is deleted successfully.');
     }
 }

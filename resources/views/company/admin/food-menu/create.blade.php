@@ -147,7 +147,7 @@
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $category->created_at }}</td>
                                         <td>
-                                            <form action="{{ route('category-delete', ['id' => $category->id]) }}" method="POST" id="deleteForm">
+                                            <form action="{{ route('food-category-delete', ['id' => $category->id]) }}" method="POST" id="deleteForm">
                                                 @method('DELETE')
 
                                                 @csrf

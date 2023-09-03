@@ -26,9 +26,10 @@ class FoodCategoryController extends Controller
         // Retrieve a submitted input of new_category
         $validated = $validator->safe()->only('new_category');
 
-        $categoryCheck = FoodCategory::where('name', $validated)->exists();
+        // Check if the category is exists
+        $exists = FoodCategory::where('name', $validated)->exists();
 
-        if ($categoryCheck == true) {
+        if ($exists == true) {
             return back()->withErrors([
                 'error-message' => 'Category already exists.'
             ]);
@@ -38,14 +39,18 @@ class FoodCategoryController extends Controller
                 'name' => $validated['new_category'],
             ]);
             
-            return back()->with('success-message', 'Category added successfully.');
+            return back()->with('success-message', 'Food Category added successfully.');
         }
     }
 
 
+
+
+    /*
+    *  Function to delete resource
+    */
     public function destroy($id) : RedirectResponse
     {
-
         $deleted = FoodCategory::find($id);
         
         $deleted->delete();

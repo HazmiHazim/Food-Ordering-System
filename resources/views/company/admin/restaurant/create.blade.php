@@ -49,19 +49,19 @@
 
                             <div class="form-input">
 
-                                <span>Item Name</span>
+                                <span class="star">Item Name</span>
                                 <input type="text" name="item_name" placeholder="Enter Item Name" required>
                                 @foreach ($errors->get('item_name') as $error)
                                     <div class="validation-error-message">{{ $error }}</div>
                                 @endforeach
 
-                                <span>Quantity</span>
+                                <span class="star">Quantity</span>
                                 <input type="number" name="quantity" placeholder="Enter Product Quantity" required>
                                 @foreach ($errors->get('quantity') as $error)
                                     <div class="validation-error-message">{{ $error }}</div>
                                 @endforeach
 
-                                <span>Category</span>
+                                <span class="star">Category</span>
                                 <div class="dropdown">
                                     <div class="select">
                                         <span class="selected">Select Category</span>
@@ -75,7 +75,7 @@
                                     <input type="hidden" name="category_id" id="category_id" value="" required>
                                 </div>
 
-                                <span>Item Price/each</span>
+                                <span class="star">Item Price/each</span>
                                 <input type="text" name="item_price" placeholder="Enter Product Price" required>
                                 @foreach ($errors->get('item_price') as $error)
                                     <div class="validation-error-message">{{ $error }}</div>
@@ -155,7 +155,7 @@
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $category->created_at }}</td>
                                         <td>
-                                            <form action="/" method="POST">
+                                            <form action="{{ route('item-category-delete', ['id' => $category->id]) }}" method="POST" id="deleteForm">
                                                 @method('DELETE')
 
                                                 @csrf
