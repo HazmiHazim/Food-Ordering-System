@@ -2641,7 +2641,8 @@ input::-webkit-inner-spin-button {
     object-fit: cover;
 }
 
-.partnership-create main .create-section form {
+.partnership-create main .create-section form,
+.partnership-edit main .edit-section form {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -2651,7 +2652,8 @@ input::-webkit-inner-spin-button {
     color: var(--dark);
 }
 
-.partnership-create main .create-section form>div.container {
+.partnership-create main .create-section form>div.container,
+.partnership-edit main .edit-section form>div.container {
     border-radius: 20px;
     background: var(--light);
     padding: 24px;
@@ -2659,7 +2661,8 @@ input::-webkit-inner-spin-button {
     box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
 }
 
-.partnership-create main .create-section form .container {
+.partnership-create main .create-section form .container,
+.partnership-edit main .edit-section form .container {
     display: flex;
     flex-grow: 1;
     flex-basis: 500;
@@ -2669,7 +2672,8 @@ input::-webkit-inner-spin-button {
     gap: 40px;
 }
 
-.partnership-create main .create-section form .container .drag-area {
+.partnership-create main .create-section form .container .drag-area,
+.partnership-edit main .edit-section form .container .drag-area {
     display: flex;
     flex-direction: column;
     width: 40%;
@@ -2685,22 +2689,26 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
-.partnership-create main .create-section form .container .drag-area i {
+.partnership-create main .create-section form .container .drag-area i,
+.partnership-edit main .edit-section form .container .drag-area i  {
     font-size: 32px;
     color: var(--dark-grey);
 }
 
-.partnership-create main .create-section form .container .drag-area h2 {
+.partnership-create main .create-section form .container .drag-area h2,
+.partnership-edit main .edit-section form .container .drag-area h2 {
     font-size: 16px;
     font-weight: 500;
     color: var(--dark-grey);
 }
 
-.partnership-create main .create-section form .container .details {
+.partnership-create main .create-section form .container .details,
+.partnership-edit main .edit-section form .container .details {
     width: 100%;
 }
 
-.partnership-create main .create-section form .container .details .data span {
+.partnership-create main .create-section form .container .details .data span,
+.partnership-edit main .edit-section form .container .details .data span {
     display: flex;
     flex-direction: column;
     color: var(--dark);
@@ -2709,7 +2717,8 @@ input::-webkit-inner-spin-button {
     font-weight: 500;
 }
 
-.partnership-create main .create-section form .container .details .data input {
+.partnership-create main .create-section form .container .details .data input,
+.partnership-edit main .edit-section form .container .details .data input {
     height: 40px;
     width: 100%;
     margin-bottom: 20px;
@@ -2721,7 +2730,8 @@ input::-webkit-inner-spin-button {
     outline: none;
 }
 
-.partnership-create main .create-section form .container .details .data input[type="date"] {
+.partnership-create main .create-section form .container .details .data input[type="date"],
+.partnership-edit main .edit-section form .container .details .data input[type="date"] {
     box-sizing: border-box;
     outline: none;
     padding-left: 10px;
@@ -2729,7 +2739,8 @@ input::-webkit-inner-spin-button {
     width: 100%;
 }
 
-.partnership-create main .create-section form .container .details .data input[type="date"]::-webkit-calendar-picker-indicator {
+.partnership-create main .create-section form .container .details .data input[type="date"]::-webkit-calendar-picker-indicator,
+.partnership-edit main .edit-section form .container .details .data input[type="date"]::-webkit-calendar-picker-indicator {
     background: transparent;
     color: transparent;
     top: 0;
@@ -2742,14 +2753,17 @@ input::-webkit-inner-spin-button {
     position: absolute;
 }
 
-.partnership-create main .create-section form .button-section .button {
+.partnership-create main .create-section form .button-section .button,
+.partnership-edit main .edit-section form .button-section .button {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
 }
 
 .partnership-create main .create-section form .button-section .button input,
-.partnership-create main .create-section form .button-section .button a {
+.partnership-create main .create-section form .button-section .button a,
+.partnership-edit main .edit-section form .button-section .button input,
+.partnership-edit main .edit-section form .button-section .button a {
     display: flex;
     width: 15%;
     height: 36px;
@@ -2766,14 +2780,19 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
-.partnership-create main .create-section form .button-section .button a {
+.partnership-create main .create-section form .button-section .button a,
+.partnership-edit main .edit-section form .button-section .button a {
     background: var(--danger);
 }
 
 .partnership-create main .create-section form .button-section .button input:hover,
-.partnership-create main .create-section form .button-section .button a:hover {
+.partnership-create main .create-section form .button-section .button a:hover,
+.partnership-edit main .edit-section form .button-section .button input:hover,
+.partnership-edit main .edit-section form .button-section .button a:hover {
     transform: scale(1.02);
 }
+
+
 /*
 * ---------------------- End of Partnership Page ------------------------
 */

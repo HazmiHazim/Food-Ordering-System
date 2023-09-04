@@ -8,6 +8,7 @@ use App\Models\FoodMenu;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
 
@@ -160,6 +161,13 @@ class FoodMenuController extends Controller
 
             if ($request->hasFile('image')) {
 
+                // check if image path exists then delete the path inside storage
+                $image = $menu->image;
+
+                if ($image) {
+                    Storage::delete($image);
+                }
+
                 // Get the original file name
                 $file = $request->file('image');
 
@@ -187,16 +195,24 @@ class FoodMenuController extends Controller
 
 
 
+    
     /*
     *  Function to delete food menu resource
     */
     public function destroy($id) : RedirectResponse
     {
-        $deleted = FoodMenu::find($id);
+        $menu = FoodMenu::find($id);
 
-        $deleted->delete();
+        // check if image path exists then delete the path inside storage
+        $image = $menu->image;
 
-        Log::info([$deleted]);
+        if ($image) {
+            Storage::delete($image);
+        }
+
+        $menu->delete();
+
+        Log::info([$menu]);
 
         return redirect()->route('food-menu')->with('success-message', 'Menu is deleted successfully.');
     }

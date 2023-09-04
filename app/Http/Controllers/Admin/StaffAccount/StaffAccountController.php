@@ -103,7 +103,7 @@ class StaffAccountController extends Controller
 
         Log::info(['Input enter by user: ', $validated, 'Exists: ', $staffCheck]);
 
-        if ($staffCheck == true) {
+        if ($staffCheck) {
             return back()->withErrors([
                 'error-message' => 'Provided ID is already registered',
             ]);
@@ -200,11 +200,11 @@ class StaffAccountController extends Controller
     */
     public function destroy($id) : RedirectResponse
     {
-        $deleted = User::find($id);
+        $staff = User::find($id);
 
-        $deleted->delete();
+        $staff->delete();
 
-        Log::info([$deleted]);
+        Log::info([$staff]);
 
         return redirect()->route('staff-account')->with('success-message', 'Staff is deleted successfully.');
     }

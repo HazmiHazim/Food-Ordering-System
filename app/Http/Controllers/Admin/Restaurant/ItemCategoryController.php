@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ItemCategory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class ItemCategoryController extends Controller
@@ -29,7 +30,7 @@ class ItemCategoryController extends Controller
         // Check if the category name is exists
         $exists = ItemCategory::where('name', $validated)->exists();
 
-        if ($exists == true) {
+        if ($exists) {
             return back()->withErrors([
                 'error-message' => 'Category already exists.',
             ]);
@@ -38,6 +39,8 @@ class ItemCategoryController extends Controller
             $itemCreate = ItemCategory::create([
                 'name' => $request->item_category_name,
             ]);
+
+            Log::info([$itemCreate]);
 
             return back()->with('success-message', 'Item Category added successfully.');
         }
@@ -51,9 +54,11 @@ class ItemCategoryController extends Controller
     */
     public function destroy($id) : RedirectResponse
     {
-        $deleted = ItemCategory::find($id);
+        $category = ItemCategory::find($id);
 
-        $deleted->delete();
+        $category->delete();
+
+        Log::info([$category]);
 
         return back()->with('success-message', 'Category is deleted successfully.');
     }

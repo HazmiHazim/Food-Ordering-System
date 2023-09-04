@@ -90,7 +90,6 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     Route::resource('/partnership', PartnershipController::class)->names([
         'index' => 'partnership',
         'create' => 'partnership-create',
-        'show' => 'partnership-show',
         'edit' => 'partnership-edit',
     ]);
 });

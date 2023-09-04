@@ -10,6 +10,16 @@
 
             <main>
 
+                @if (session('success-message'))
+                    <div class="success-message left-green">
+                        <i class='bx bxs-check-circle'></i>
+                        <div class="text">
+                            <span>Success</span>
+                            <span class="message">{{ session('success-message') }}</span>
+                        </div>
+                    </div>
+                @endif
+
                 <div class="header">
                     <div class="left">
                         <h1>Partnership</h1>
@@ -45,13 +55,13 @@
                                 </div>
 
                                 <div class="action">
-                                    <a href="#"><i class='bx bxs-show'></i><span>Edit</span></a>
-                                    <form action="/" method="POST" id="deleteForm">
+                                    <a href="{{ route('partnership-edit', ['partnership' => $partner->id]) }}"><i class='bx bxs-show'></i><span>Edit</span></a>
+                                    <form action="{{ route('partnership.destroy', $partner->id) }}" method="POST" id="deleteForm">
                                         @method('DELETE')
 
                                         @csrf
 
-                                        <button>
+                                        <button type="button" class="delete-button-popup">
                                             <i class='bx bxs-trash-alt'></i>
                                             <span>Remove</span>
                                         </button>
@@ -65,6 +75,17 @@
 
                     @endforeach
 
+                </div>
+
+                <div class="delete-confirmation" id="deletePopup">
+                    <i class='bx bxs-info-circle'></i>
+                    <h1>Warning</h1>
+                    <h3>Are you sure you want to delete this staff?</h3>
+                    <p>Once deleted, you will not be able to recover this data!</p>
+                    <div class="button">
+                        <button class="close-popup">Cancel</button>
+                        <button class="confirm-delete">Delete</button>
+                    </div>
                 </div>
 
             </main>

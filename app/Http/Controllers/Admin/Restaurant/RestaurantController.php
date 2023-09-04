@@ -147,11 +147,11 @@ class RestaurantController extends Controller
     */
     public function destroy($id) : RedirectResponse
     {
-        $deleted = RestaurantItems::find($id);
+        $restaurant = RestaurantItems::find($id);
 
-        $deleted->delete();
+        $restaurant->delete();
 
-        Log::info([$deleted]);
+        Log::info([$restaurant]);
 
         return redirect()->route('restaurant')->with('success-message', 'Item is deleted successfully.');
     }

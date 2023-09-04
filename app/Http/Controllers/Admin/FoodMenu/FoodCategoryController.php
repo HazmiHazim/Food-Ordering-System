@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\FoodCategory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class FoodCategoryController extends Controller
@@ -29,7 +30,7 @@ class FoodCategoryController extends Controller
         // Check if the category is exists
         $exists = FoodCategory::where('name', $validated)->exists();
 
-        if ($exists == true) {
+        if ($exists) {
             return back()->withErrors([
                 'error-message' => 'Category already exists.'
             ]);
@@ -38,6 +39,8 @@ class FoodCategoryController extends Controller
             $category = FoodCategory::create([
                 'name' => $validated['new_category'],
             ]);
+
+            Log::info([$category]);
             
             return back()->with('success-message', 'Food Category added successfully.');
         }
@@ -51,9 +54,11 @@ class FoodCategoryController extends Controller
     */
     public function destroy($id) : RedirectResponse
     {
-        $deleted = FoodCategory::find($id);
+        $category = FoodCategory::find($id);
         
-        $deleted->delete();
+        $category->delete();
+
+        Log::info([$category]);
 
         return back()->with('success-message', 'Category is deleted successfully.');
     }
