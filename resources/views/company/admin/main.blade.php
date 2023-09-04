@@ -31,7 +31,7 @@
             <li class="{{ request()->routeIs(['partnership', 'partnership-create', 'partnership-edit']) ? 'active' : '' }}">
                 <a href="{{ route('partnership') }}"><i class='bx bxs-group'></i>Partnerships</a>
             </li>
-            <li class="{{ request()->routeIs(['promotion-discount', 'promotion-discount-create', 'promotion-discount-show']) ? 'active' : '' }}">
+            <li class="{{ request()->routeIs(['promotion-discount', 'promotion-discount-create', 'promotion-discount-show', 'promotion-discount-edit']) ? 'active' : '' }}">
                 <a href="{{ route('promotion-discount') }}"><i class='bx bxs-offer'></i>Promotions & Discounts</a>
             </li>
             <li>

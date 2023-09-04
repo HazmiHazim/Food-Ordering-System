@@ -24,11 +24,13 @@
 
                         <div class="design">
                             <div class="left-side">
+                                <div class="triangle"></div>
                                 <div class="code">{{ QrCode::size(150)->generate($coupons->coupon_code) }}</div>
                                 <span>{{ $coupons->coupon_code }}</span>
                             </div>
 
                             <div class="right-side">
+                                <div class="triangle"></div>
                                 <span class="title">Promotion Discount</span>
                                 <span class="coupon-name">{{ $coupons->coupon_name }}</span>
                                 <span><strong>{{ $coupons->discount * 100 }}% OFF</strong></span>

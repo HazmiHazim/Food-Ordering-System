@@ -75,12 +75,30 @@ class PromotionDiscountController extends Controller
 
 
 
+    /*
+    *  Function to view show file
+    */
     public function show($id) : View
     {
         $promotion = PromotionDiscount::find($id);
 
         return view('company.admin.promotion-discount.show', ['coupons' => $promotion]);
     }
+
+
+
+    
+
+    /*
+    *  Function to view edit file
+    */
+    public function edit($id) : View
+    {
+        return view('company.admin.promotion-discount.edit');
+    }
+
+
+
 
 
     /*
