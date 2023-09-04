@@ -66,7 +66,7 @@
                                         <li data-value="{{ $category->id }}">{{ $category->name }}</li>
                                     @endforeach
                                 </ul>
-                                <input type="hidden" name="category_id" id="category_id" value="">
+                                <input type="hidden" name="category_id" value="" required>
                             </div>
 
                             <div class="low"><span class="star">Food Image</span></div>

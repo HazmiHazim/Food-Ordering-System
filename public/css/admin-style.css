@@ -2407,7 +2407,6 @@ input::-webkit-inner-spin-button {
 
 .restaurant-edit main form .edit-section .container .details {
     display: flex;
-
 }
 
 .restaurant-edit main form .edit-section .container .details .label,
@@ -2966,7 +2965,9 @@ input::-webkit-inner-spin-button {
 }
 
 .promotion-discount-create main .form-section .form-promotion-create form .button input,
-.promotion-discount-create main .form-section .form-event-create form .button input {
+.promotion-discount-create main .form-section .form-event-create form .button input,
+.promotion-discount-create main .form-section .form-promotion-create form .button a,
+.promotion-discount-create main .form-section .form-event-create form .button a {
     display: flex;
     width: 30%;
     height: 36px;
@@ -2985,20 +2986,7 @@ input::-webkit-inner-spin-button {
 
 .promotion-discount-create main .form-section .form-promotion-create form .button a,
 .promotion-discount-create main .form-section .form-event-create form .button a {
-    display: flex;
-    width: 30%;
-    height: 36px;
-    border-radius: 7px;
     background: var(--danger);
-    color: var(--light);
-    font-size: 16px;
-    font-weight: 500;
-    padding: 0 16px;
-    align-items: center;
-    justify-content: center;
-    grid-gap: 10px;
-    border: none;
-    cursor: pointer;
 }
 
 .promotion-discount-create main .form-section .form-promotion-create form .button input:hover,
@@ -3191,6 +3179,125 @@ input::-webkit-inner-spin-button {
 
 .promotion-discount-show form .button button:hover,
 .promotion-discount-show form .button a:hover {
+    transform: scale(1.02);
+}
+
+.promotion-discount-edit main .edit-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 10px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.promotion-discount-edit main .edit-section form>div.container {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
+}
+
+.promotion-discount-edit main .edit-section form .container {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.promotion-discount-edit main .edit-section form .container .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.promotion-discount-edit main .edit-section form .container .header h3 {
+    padding-left: 14px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.promotion-discount-edit main .edit-section form .container .details .data {
+    display: flex;
+    flex-direction: column;
+}
+
+.promotion-discount-edit main .edit-section form .container .details .data span {
+    color: var(--dark);
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.promotion-discount-edit main .edit-section form .container .details .data input {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 10px;
+    border: 1px solid var(--dark-grey);
+    color: var(--dark);
+    outline: none;
+}
+
+.promotion-discount-edit main .edit-section form .container .details .data input[type="datetime-local"] {
+    box-sizing: border-box;
+    outline: none;
+    padding-left: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.promotion-discount-edit main .edit-section form .container .details .data input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    color: transparent;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    cursor: pointer;
+    height: auto;
+    width: auto;
+    position: absolute;
+}
+
+.promotion-discount-edit main .edit-section form .button-section .button {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.promotion-discount-edit main .edit-section form .button-section input,
+.promotion-discount-edit main .edit-section form .button-section a {
+    display: flex;
+    margin-top: 20px;
+    margin-right: 10px;
+    height: 36px;
+    width: 15%;
+    border: none;
+    border-radius: 7px;
+    background: var(--primary);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    justify-content: center;
+    grid-gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
+}
+
+.promotion-discount-edit main .edit-section form .button-section a {
+    background: var(--danger);
+}
+
+.promotion-discount-edit main .edit-section form .button-section input:hover,
+.promotion-discount-edit main .edit-section form .button-section a:hover {
     transform: scale(1.02);
 }
 /*

@@ -87,14 +87,65 @@ class PromotionDiscountController extends Controller
 
 
 
-    
+
 
     /*
     *  Function to view edit file
     */
     public function edit($id) : View
     {
-        return view('company.admin.promotion-discount.edit');
+        $promotion = PromotionDiscount::findOrFail($id);
+
+        $eventid = $promotion->event_id;
+
+        $event = PromotionEvent::findOrFail($eventid);
+
+        Log::info([$promotion, $event]);
+
+        return view('company.admin.promotion-discount.edit', ['promotion' => $promotion, 'event' => $event]);
+    }
+
+
+
+
+    /*
+    *  Funtion to update promotion discount resource
+    */
+    public function update(Request $request, $id) : RedirectResponse
+    {
+        $promotion = PromotionDiscount::find($id);
+
+        if ($request->anyFilled(['name', 'discount', 'status', 'cateory_id'])) {
+
+            $updateData = [];
+
+            if ($request->filled('name')) {
+                $updateData['name'] = $request->input('name');
+            }
+
+            if ($request->filled('discount')) {
+                $updateData['discount'] = $request->input('discount');
+            }
+
+            if ($request->filled('status')) {
+                $updateData['status'] = $request->input('status');
+            }
+
+            if ($request->filled('category_id')) {
+                $updateData['category_id'] = $request->input('category_id');
+            }
+
+            $updated = $promotion->update($updateData);
+
+            Log::info([$updateData, $updated]);
+
+            return redirect()->route('promotion-discount-show', $promotion->id)->with('success-message', 'Your changes are saved successfully.');
+        }
+        else {
+            return back()->withErrors([
+                'error-message' => 'Please insert data to update coupon.',
+            ]);
+        }
     }
 
 

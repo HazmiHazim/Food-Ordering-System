@@ -57,7 +57,7 @@
                                         <ul class="menu">
                                             <li data-value="{{ $category->id }}">{{ $category->name }}</li>
                                         </ul>
-                                        <input type="hidden" name="category" id="category_id" value="">
+                                        <input type="hidden" name="category_id" value="">
                                     </div>
 
                                     <span>Price</span>

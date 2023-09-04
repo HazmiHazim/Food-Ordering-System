@@ -71,7 +71,7 @@
                                             <li data-value="{{ $event->id }}">{{ $event->event_name }}</li>
                                         @endforeach
                                     </ul>
-                                    <input type="hidden" name="category_id" id="category_id" value="" required>
+                                    <input type="hidden" name="category_id" value="" required>
                                 </div>
 
                             </div>

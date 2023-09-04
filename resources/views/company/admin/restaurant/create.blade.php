@@ -72,7 +72,7 @@
                                             <li data-value="{{ $category->id }}">{{ $category->name }}</li>
                                         @endforeach
                                     </ul>
-                                    <input type="hidden" name="category_id" id="category_id" value="" required>
+                                    <input type="hidden" name="category_id" value="" required>
                                 </div>
 
                                 <span class="star">Item Price/each</span>
