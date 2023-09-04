@@ -24,8 +24,8 @@ class ItemCategoryController extends Controller
             return back()->withErrors($validator)->withInput();
         }
 
-        // Retrieve a submitted input of new_category
-        $validated = $validator->safe()->only('item_category_table');
+        // Retrieve a submitted input of item_category_name
+        $validated = $validator->safe()->only('item_category_name');
 
         // Check if the category name is exists
         $exists = ItemCategory::where('name', $validated)->exists();

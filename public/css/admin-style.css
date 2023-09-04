@@ -2791,10 +2791,236 @@ input::-webkit-inner-spin-button {
 .partnership-edit main .edit-section form .button-section .button a:hover {
     transform: scale(1.02);
 }
-
-
 /*
 * ---------------------- End of Partnership Page ------------------------
+*/
+
+/*
+*  ---------------------- Promotion Discount Page ------------------------
+*/
+.promotion-discount-index main .header .create {
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 36px;
+    background: var(--primary);
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    font-weight: 500;
+}
+
+.promotion-discount-index main .header .create:hover {
+    transform: scale(1.02);
+}
+
+.promotion-discount-index .index-section {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 10px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.promotion-discount-index .index-section>div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
+}
+
+.promotion-discount-index .index-section .container {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.promotion-discount-index .index-section .container .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.promotion-discount-index .index-section .container .header h3 {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.promotion-discount-index .index-section .container .header .bx {
+    cursor: pointer;
+}
+
+.promotion-discount-index .index-section .container table tr td span.status {
+    font-size: 10px;
+    padding: 6px 16px;
+    color: var(--light);
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.promotion-discount-index .index-section .container table tr td .status {
+    background: var(--success);
+}
+
+.promotion-discount-create main .form-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.promotion-discount-create main .form-section .form-promotion-create,
+.promotion-discount-create main .form-section .form-event-create {
+    flex: 1;
+    max-width: calc(50% - 10px);
+    border-radius: 20px;
+    background: var(--light);
+    padding: 30px 30px;
+    overflow-x: auto;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    flex-direction: column;
+    border: 1px solid var(--dark-grey);
+}
+
+.promotion-discount-create main .form-section .form-promotion-create form .header,
+.promotion-discount-create main .form-section .form-event-create form .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--grey);
+}
+
+.promotion-discount-create main .form-section .form-promotion-create form .header h4,
+.promotion-discount-create main .form-section .form-event-create form .header h4 {
+    color: var(--dark);
+    margin: auto;
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+.promotion-discount-create main .form-section .form-promotion-create form .form-input,
+.promotion-discount-create main .form-section .form-event-create form .form-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.promotion-discount-create main .form-section .form-promotion-create form .form-input span,
+.promotion-discount-create main .form-section .form-event-create form .form-input span {
+    color: var(--dark);
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.promotion-discount-create main .form-section .form-promotion-create form .form-input span.star::after,
+.promotion-discount-create main .form-section .form-event-create form .form-input span::after {
+    content: "*";
+    color: var(--danger);
+}
+
+.promotion-discount-create main .form-section .form-promotion-create form .form-input input,
+.promotion-discount-create main .form-section .form-event-create form .form-input input {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 10px;
+    border: 1px solid var(--dark-grey);
+    color: var(--dark);
+    outline: none;
+}
+
+.promotion-discount-create main .form-section .form-promotion-create form .form-input input[type="datetime-local"],
+.promotion-discount-create main .form-section .form-event-create form .form-input input[type="datetime-local"] {
+    box-sizing: border-box;
+    outline: none;
+    padding-left: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.promotion-discount-create main .form-section .form-promotion-create form .form-input input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+.promotion-discount-create main .form-section .form-event-create form .form-input input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    color: transparent;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    cursor: pointer;
+    height: auto;
+    width: auto;
+    position: absolute;
+}
+
+.promotion-discount-create main .form-section .form-promotion-create form .form-input .dropdown {
+    margin-bottom: 20px;
+}
+
+.promotion-discount-create main .form-section .form-promotion-create form .form-input .dropdown .select span {
+    margin-bottom: 0;
+}
+
+.promotion-discount-create main .form-section .form-promotion-create form .button,
+.promotion-discount-create main .form-section .form-event-create form .button {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.promotion-discount-create main .form-section .form-promotion-create form .button input,
+.promotion-discount-create main .form-section .form-event-create form .button input {
+    display: flex;
+    width: 30%;
+    height: 36px;
+    border-radius: 7px;
+    background: var(--primary);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.promotion-discount-create main .form-section .form-promotion-create form .button a,
+.promotion-discount-create main .form-section .form-event-create form .button a {
+    display: flex;
+    width: 30%;
+    height: 36px;
+    border-radius: 7px;
+    background: var(--danger);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.promotion-discount-create main .form-section .form-promotion-create form .button input:hover,
+.promotion-discount-create main .form-section .form-event-create form .button input:hover,
+.promotion-discount-create main .form-section .form-promotion-create form a:hover,
+.promotion-discount-create main .form-section .form-event-create form .button a:hover {
+    transform: scale(1.02);
+}
+/*
+*  ----------------------- End of Promotion Discount Page -------------------------
 */
 
 /*

@@ -4,14 +4,14 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\FoodMenu\FoodCategoryController;
 use App\Http\Controllers\Admin\FoodMenu\FoodMenuController;
 use App\Http\Controllers\Admin\Partnership\PartnershipController;
+use App\Http\Controllers\Admin\PromotionDiscount\PromotionDiscountController;
+use App\Http\Controllers\Admin\PromotionDiscount\PromotionEventController;
 use App\Http\Controllers\Admin\Restaurant\ItemCategoryController;
 use App\Http\Controllers\Admin\Restaurant\RestaurantController;
 use App\Http\Controllers\Admin\StaffAccount\StaffAccountController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrationController;
-use App\Models\FoodCategory;
-use App\Models\ItemCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -92,4 +92,14 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
         'create' => 'partnership-create',
         'edit' => 'partnership-edit',
     ]);
+
+    // Promotion and discount module
+    Route::resource('/promotion-discount', PromotionDiscountController::class)->names([
+        'index' => 'promotion-discount',
+        'create' => 'promotion-discount-create',
+        'show' => 'promotion-discount-show',
+        'edit' => 'promotion-discount-edit',
+    ]);
+
+    Route::post('/promotion-discount/create', [PromotionEventController::class, 'store'])->name('promotion-event');
 });
