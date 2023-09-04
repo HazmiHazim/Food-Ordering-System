@@ -57,10 +57,18 @@
                                     <tr>
                                         <td><input type="checkbox"></td>
                                         <td>{{ Str::limit($coupon->coupon_code, 5) }}</td>
-                                        <td>Test1</td>
+                                        <td>
+                                            <div class="qrcode">
+                                                {{ QrCode::generate($coupon->coupon_code) }}
+                                            </div>
+                                        </td>
                                         <td>{{ $coupon->coupon_name }}</td>
                                         <td>{{ $coupon->discount * 100 }}%</td>
-                                        <td><span class="status">{{ $coupon->redeem_status }}</span></td>
+                                        <td>
+                                            <span style="{{ $status }}">
+                                                {{ $coupon->redeem_status }}
+                                            </span>
+                                        </td>
                                         <td>{{ $coupon->event_id }}</td>
                                         <td>{{ \Carbon\Carbon::parse($coupon->validity)->formatLocalized('%d %B') }}</td>
                                         <td>{{ $coupon->date_redeemed }}</td>

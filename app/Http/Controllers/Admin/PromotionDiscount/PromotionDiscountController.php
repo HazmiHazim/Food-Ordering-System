@@ -19,7 +19,10 @@ class PromotionDiscountController extends Controller
     {
         $coupon = PromotionDiscount::paginate(10);
 
-        return view('company.admin.promotion-discount.index', ['coupon' => $coupon]);
+        // Send the function to view file
+        $backgroundStatus = $this->getStatusStyle($coupon);
+
+        return view('company.admin.promotion-discount.index', ['coupon' => $coupon, 'status' => $backgroundStatus]);
     }
 
 
@@ -66,5 +69,41 @@ class PromotionDiscountController extends Controller
         Log::info([$couponCreate]);
 
         return back()->with('success-message', 'Coupon created successfully.');
+    }
+
+
+
+
+
+    /*
+    *  Function to customize style css of redeem status field
+    */
+    public function getStatusStyle($status) : string
+    {
+        $styling = [
+            'font-size: 10px', 'padding: 6px 16px', 'color: #F6F6F9', 
+            'border-radius: 20px', 'font-weight: 700',
+        ];
+
+        switch ($status) {
+            case CouponStatusEnum::Redeemed:
+                $styling[] = 'background: #388E3C';
+                break;
+
+            case CouponStatusEnum::Expired:
+                $styling[] = 'background: #D32F2F';
+                break;
+
+            case CouponStatusEnum::Cancel:
+                $styling[] = 'background: #AAAAAA';
+                break;
+            
+            case CouponStatusEnum::NotRedeemed:
+            default:
+                $styling[] = 'background: #AAAAAA';
+                break;
+        }
+
+        return implode(';', $styling);
     }
 }

@@ -2855,18 +2855,6 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
-.promotion-discount-index .index-section .container table tr td span.status {
-    font-size: 10px;
-    padding: 6px 16px;
-    color: var(--light);
-    border-radius: 20px;
-    font-weight: 700;
-}
-
-.promotion-discount-index .index-section .container table tr td .status {
-    background: var(--success);
-}
-
 .promotion-discount-create main .form-section {
     display: flex;
     width: 100%;
