@@ -75,6 +75,14 @@ class PromotionDiscountController extends Controller
 
 
 
+    public function show($id) : View
+    {
+        $promotion = PromotionDiscount::find($id);
+
+        return view('company.admin.promotion-discount.show', ['coupons' => $promotion]);
+    }
+
+
     /*
     *  Function to customize style css of redeem status field
     */

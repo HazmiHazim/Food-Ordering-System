@@ -82,7 +82,7 @@
                                         <td>{{ $coupon->event_id }}</td>
                                         <td>{{ \Carbon\Carbon::parse($coupon->validity)->formatLocalized('%d %B') }}</td>
                                         <td>{{ $coupon->date_redeemed }}</td>
-                                        <td><a href="#"><i class='bx bxs-pencil'></i><span>Edit</span></a></td>
+                                        <td><a href="{{ route('promotion-discount-show', ['promotion_discount' => $coupon->id]) }}"><i class='bx bxs-pencil'></i><span>Edit</span></a></td>
                                     </tr>
                                 @endforeach
                             </tbody>

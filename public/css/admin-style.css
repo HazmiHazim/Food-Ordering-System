@@ -3047,6 +3047,147 @@ input::-webkit-inner-spin-button {
 .promotion-discount-create main .table-section .table-event .header .bx {
     cursor: pointer;
 }
+
+.promotion-discount-show main .show-section {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 10px;
+    width: 100%;
+    color: var(--light);
+}
+
+.promotion-discount-show .show-section>div {
+    border-radius: 20px;
+    background: var(--dark);
+    padding: 24px 24px 5px 24px;
+    overflow-x: auto;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
+}
+
+.promotion-discount-show .show-section .coupon-design-section {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.promotion-discount-show .show-section .coupon-design-section h4 {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: var(--light);
+    border-bottom: 1px dashed var(--dark);
+}
+
+.promotion-discount-show .show-section .coupon-design-section .design {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding: 30px 50px;
+    gap: 0;
+}
+
+.promotion-discount-show .show-section .coupon-design-section .design::before {
+    content: "";
+    position: absolute;
+    top: 36%;
+    left: 105px;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid var(--dark);
+}
+
+.promotion-discount-show .show-section .coupon-design-section .design::after {
+    content: "";
+    position: absolute;
+    top: 36%;
+    right: 105px;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 50px solid var(--dark);
+}
+
+.promotion-discount-show .show-section .coupon-design-section .design .left-side {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    padding: 30px 12px 30px 0px;
+    justify-content: center;
+    align-items: center;
+    background: var(--light-primary);
+    gap: 10px;
+}
+
+.promotion-discount-show .show-section .coupon-design-section .design .left-side span {
+    color: var(--dark);
+    text-align: center;
+}
+
+.promotion-discount-show .show-section .coupon-design-section .design .right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 300px;
+    background: linear-gradient(135deg, #8600A8, #150C81);
+}
+
+.promotion-discount-show .show-section .coupon-design-section .design .right-side span.title {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.promotion-discount-show .show-section .coupon-design-section .design .right-side span.coupon-name {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.promotion-discount-show .show-section .coupon-design-section .design .right-side span strong {
+    font-size: 85px;
+    font-weight: 700;
+}
+
+.promotion-discount-show .show-section .coupon-design-section .design .right-side span.valid {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.promotion-discount-show main form .button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.promotion-discount-show form .button button,
+.promotion-discount-show form .button a {
+    display: flex;
+    margin-top: 20px;
+    margin-right: 10px;
+    height: 36px;
+    width: 15%;
+    border: none;
+    border-radius: 7px;
+    background: var(--danger);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 16px;
+    justify-content: center;
+    grid-gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
+}
+
+.promotion-discount-show form .button button:hover,
+.promotion-discount-show form .button a:hover {
+    transform: scale(1.02);
+}
 /*
 *  ----------------------- End of Promotion Discount Page -------------------------
 */
