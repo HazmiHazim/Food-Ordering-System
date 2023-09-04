@@ -10,6 +10,16 @@
 
             <main>
 
+                @if (session('success-message'))
+                    <div class="success-message left-green">
+                        <i class='bx bxs-check-circle'></i>
+                        <div class="text">
+                            <span>Success</span>
+                            <span class="message">{{ session('success-message') }}</span>
+                        </div>
+                    </div>
+                @endif
+
                 <div class="header">
                     <div class="left">
                         <h1>Promotions and Discounts</h1>
@@ -53,7 +63,7 @@
                             </thead>
 
                             <tbody>
-                                @foreach ($coupon as $coupon)
+                                @foreach ($coupons as $coupon)
                                     <tr>
                                         <td><input type="checkbox"></td>
                                         <td>{{ Str::limit($coupon->coupon_code, 5) }}</td>
@@ -79,6 +89,14 @@
 
                         </table>
 
+                        <div class="pagination">
+                            <div class="count">Showing {{ $coupons->firstItem() }} to {{ $coupons->lastItem() }}
+                                out of {{ $coupons->total() }} results</div>
+                            <div class="pagination-number">
+                                <div class="page-number">{{ $coupons->render('company.partials.paginator') }}</div>
+                            </div>
+                        </div>
+                        
                     </div>
 
                 </div>

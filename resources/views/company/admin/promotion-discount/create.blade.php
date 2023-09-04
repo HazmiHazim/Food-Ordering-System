@@ -54,7 +54,8 @@
                                 <input type="text" name="coupon_name" placeholder="Enter Coupon Name" required>
 
                                 <span class="star">Discount</span>
-                                <input type="text" name="discount" placeholder="Enter Discount for Coupon" required>
+                                <input type="text" name="discount"
+                                    placeholder="Enter Discount for Coupon (e.g. 0.5 = 50%)" required>
 
                                 <span>Validity</span>
                                 <input type="datetime-local" name="validity" placeholder="Enter Coupon Validity" required>
@@ -66,7 +67,7 @@
                                         <div class="caret"><i class='bx bx-chevron-down'></i></div>
                                     </div>
                                     <ul class="menu">
-                                        @foreach ($event as $event)
+                                        @foreach ($events as $event)
                                             <li data-value="{{ $event->id }}">{{ $event->event_name }}</li>
                                         @endforeach
                                     </ul>
@@ -74,7 +75,7 @@
                                 </div>
 
                             </div>
-                            
+
                             <div class="button">
                                 <input type="submit" value="Create Coupon">
                                 <a href="{{ route('promotion-discount') }}"><span>Cancel</span></a>
@@ -110,6 +111,75 @@
 
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         </form>
+
+                    </div>
+
+                </div>
+
+                <div class="table-section">
+
+                    <div class="table-event">
+
+                        <div class="header">
+                            <i class='bx bx-party'></i>
+                            <h3>Events</h3>
+                            <i class='bx bx-filter'></i>
+                            <form action="/" method="GET" id="search-form">
+                                <div class="search-field">
+                                    <i class='bx bx-search' id="search-button"></i>
+                                    <input type="text" name="search" placeholder="Search" value="{{ old('search') }}">
+                                </div>
+                            </form>
+                        </div>
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox"></th>
+                                    <th>Event Name</th>
+                                    <th>Date</th>
+                                    <th>Created At</th>
+                                    <th>Updated At</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach ($events as $event)
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>{{ $event->event_name }}</td>
+                                        <td>{{ $event->event_date }}</td>
+                                        <td>{{ $event->created_at }}</td>
+                                        <td>{{ $event->updated_at }}</td>
+                                        <td>
+                                            <form action="/" method="POST">
+                                                @method('DELETE')
+
+                                                @csrf
+
+                                                <button type="button" class="delete-button-popup">
+                                                    <i class='bx bxs-trash-alt'></i>
+                                                    <span>Delete</span>
+                                                </button>
+
+                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+
+                        </table>
+
+                        <div class="pagination">
+                            <div class="count">Showing {{ $events->firstItem() }} to {{ $events->lastItem() }}
+                                out of {{ $events->total() }} results</div>
+                            <div class="pagination-number">
+                                <div class="page-number">{{ $events->render('company.partials.paginator') }}</div>
+                            </div>
+                        </div>
 
                     </div>
 

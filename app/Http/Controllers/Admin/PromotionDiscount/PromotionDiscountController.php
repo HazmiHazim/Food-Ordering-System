@@ -22,7 +22,7 @@ class PromotionDiscountController extends Controller
         // Send the function to view file
         $backgroundStatus = $this->getStatusStyle($coupon);
 
-        return view('company.admin.promotion-discount.index', ['coupon' => $coupon, 'status' => $backgroundStatus]);
+        return view('company.admin.promotion-discount.index', ['coupons' => $coupon, 'status' => $backgroundStatus]);
     }
 
 
@@ -35,7 +35,7 @@ class PromotionDiscountController extends Controller
     {
         $event = PromotionEvent::paginate(5);
 
-        return view('company.admin.promotion-discount.create', ['event' => $event]);
+        return view('company.admin.promotion-discount.create', ['events' => $event]);
     }
 
 

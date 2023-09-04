@@ -2928,7 +2928,7 @@ input::-webkit-inner-spin-button {
 }
 
 .promotion-discount-create main .form-section .form-promotion-create form .form-input input[type="datetime-local"],
-.promotion-discount-create main .form-section .form-event-create form .form-input input[type="datetime-local"] {
+.promotion-discount-create main .form-section .form-event-create form .form-input input[type="date"] {
     box-sizing: border-box;
     outline: none;
     padding-left: 10px;
@@ -2937,7 +2937,7 @@ input::-webkit-inner-spin-button {
 }
 
 .promotion-discount-create main .form-section .form-promotion-create form .form-input input[type="datetime-local"]::-webkit-calendar-picker-indicator,
-.promotion-discount-create main .form-section .form-event-create form .form-input input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+.promotion-discount-create main .form-section .form-event-create form .form-input input[type="date"]::-webkit-calendar-picker-indicator {
     background: transparent;
     color: transparent;
     top: 0;
@@ -3006,6 +3006,46 @@ input::-webkit-inner-spin-button {
 .promotion-discount-create main .form-section .form-promotion-create form a:hover,
 .promotion-discount-create main .form-section .form-event-create form .button a:hover {
     transform: scale(1.02);
+}
+
+.promotion-discount-create main .table-section {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 24px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.promotion-discount-create main .table-section>div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
+}
+
+.promotion-discount-create main .table-section .table-event {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.promotion-discount-create main .table-section .table-event .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.promotion-discount-create main .table-section .table-event .header h3 {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.promotion-discount-create main .table-section .table-event .header .bx {
+    cursor: pointer;
 }
 /*
 *  ----------------------- End of Promotion Discount Page -------------------------
