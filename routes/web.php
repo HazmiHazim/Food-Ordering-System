@@ -33,6 +33,10 @@ Route::get('/about', function () {
     return view('public.about');
 })->name('about');
 
+Route::get('/staff', function() {
+    return view('company.staff.dashboard');
+})->name('staff');
+
 
 // Route for login
 Route::get('/login', [LoginController::class, 'index'])->name('login');

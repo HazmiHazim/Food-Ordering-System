@@ -1,0 +1,368 @@
+:root {
+    --default: #FFFFFF;
+    --light: #F6F6F9;
+    --primary: #1976D2;
+    --light-primary: #CFE8FF;
+    --grey: #EEEEEE;
+    --dark-grey: #AAAAAA;
+    --light-grey: #E5E7EB;
+    --dark: #363949;
+    --danger: #D32F2F;
+    --light-danger: #FECDD3;
+    --warning: #FBC02D;
+    --light-warning: #FFF2C6;
+    --success: #388E3C;
+    --light-success: #BBF7D0;
+    --glow: #6A0DAD;
+    --light-glow: #A46AEF;
+    --main-blue: #6C7AE0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    background: var(--grey);
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.bx {
+    font-size: 1.7rem;
+}
+
+section {
+    position: relative;
+    width: calc(100% - 300px);
+    right: 0;
+    left: 300px;
+    transition: all 0.3s ease;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    overflow: hidden;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+table th {
+    color: var(--dark);
+    background: var(--grey);
+    padding: 12px 0 12px 16px;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0px 0px 4px -4px rgba(0, 0, 0, 0.3);
+}
+
+table td {
+    text-align: center;
+    padding: 12px 0 12px 16px;
+    font-size: 16px;
+}
+
+table td a {
+    color: var(--main-blue);
+}
+
+table td a span:hover {
+    text-decoration: underline;
+}
+
+table td i.bx {
+    margin-right: 8px;
+    font-size: 16px;
+    object-fit: cover;
+}
+
+table tbody tr {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+table tbody tr:hover {
+    transform: scale(1.02);
+}
+
+table tbody tr:nth-child(even) {
+    background-color: var(--grey);
+}
+/*
+*  --------------------- Main ------------------------------
+*/
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--dark);
+    width: 300px;
+    height: 100%;
+    z-index: 2000;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    transition: all 0.3s ease;
+    padding: 16px;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar.close {
+    width: 80px;
+}
+
+.sidebar .content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .content ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.sidebar .content ul a.logo {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: flex-start;
+}
+
+.sidebar .content ul a.logo img {
+    width: 30%;
+    height: 100%;
+}
+
+.sidebar .content ul a.logo span {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.sidebar .content li:nth-child(n+2),
+.sidebar .content li.logout {
+    height: 50px;
+    cursor: pointer;
+}
+
+.sidebar .content li.active {
+    border-left: 5px solid var(--primary);
+}
+
+.sidebar .content li a,
+.sidebar .content li.logout form {
+    display: flex;
+    height: 100%;
+    color: var(--light);
+    gap: 5px;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.sidebar.close .content li a,
+.sidebar.close .content li.logout form {
+    width: calc(100% - (10px * 2));
+    transition: all 0.3s ease;
+}
+
+.sidebar .content li.logout button {
+    display: flex;
+    color: var(--danger);
+    background: transparent;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.sidebar .content li a i,
+.sidebar .content li.logout button i {
+    font-size: 24px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.sidebar .content li a span,
+.sidebar .content li.logout button span {
+    font-size: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
+    white-space: nowrap;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar .content li:nth-child(n+2):hover,
+.sidebar .content li.logout:hover {
+    background: var(--dark-grey);
+}
+
+.topbar {
+    position: relative;
+    top: 0;
+    left: 300px;
+    width: calc(100% - 300px);
+    right: 0;
+    background: var(--default);
+    height: 80px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(25, 118, 210, 0.5);
+}
+
+.sidebar.close~.topbar {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.topbar .content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px 0 4px;
+}
+
+.topbar .content i {
+    font-size: 36px;
+    cursor: pointer;
+}
+/*
+*  ----------------------- End of Main ------------------------
+*/
+
+
+/*
+*  --------------------------- Dashboard -----------------------------
+*/
+.sidebar.close~section {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.dashboard main .content {
+    padding: 24px;
+}
+
+.dashboard main .content .header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.dashboard main .content .statistic {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+    gap: 30px;
+}
+
+.dashboard main .content .statistic .item1,
+.dashboard main .content .statistic .item2,
+.dashboard main .content .statistic .item3 {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid var(--dark-grey);
+    border-radius: 5px;
+    background: var(--light);
+    padding: 16px;
+    gap: 20px;
+}
+
+.dashboard main .content .statistic .item1 i,
+.dashboard main .content .statistic .item2 i,
+.dashboard main .content .statistic .item3 i {
+    font-size: 48px;
+}
+
+.dashboard main .content .statistic .item1 span,
+.dashboard main .content .statistic .item2 span,
+.dashboard main .content .statistic .item3 span {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.dashboard main .content .bottom-section {
+    margin-top: 50px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
+}
+
+.dashboard main .content .bottom-section .table-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    color: var(--default);
+    background: var(--dark);
+    padding: 12px 24px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.dashboard main .content .bottom-section .table-top h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--light);
+}
+
+.dashboard main .content .bottom-section .table-top .button {
+    display: flex;
+    gap: 10px;
+}
+
+.dashboard main .content .bottom-section .table-top .button a {
+    display: flex;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    padding: 5px 18px;
+    gap: 5px;
+}
+
+.dashboard main .content .bottom-section .table-top .button a.delete {
+    background: var(--danger);
+}
+
+.dashboard main .content .bottom-section .table-top .button a.add {
+    background: var(--success);
+}
+
+.dashboard main .content .bottom-section .table-top .button a i {
+    font-size: 20px;
+}
+
+.dashboard main .content .bottom-section .table-top .button a span {
+    font-size: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+/*
+*  ------------------------------ End of Dashboard ---------------------
+*/
