@@ -3244,6 +3244,10 @@ input::-webkit-inner-spin-button {
     outline: none;
 }
 
+.promotion-discount-edit main .edit-section form .container .details .data .dropdown {
+    margin-bottom: 20px;
+}
+
 .promotion-discount-edit main .edit-section form .container .details .data input[type="datetime-local"] {
     box-sizing: border-box;
     outline: none;
