@@ -37,7 +37,7 @@
                 <li>
                     <a href="#">
                         <i class='bx bxs-dashboard'></i>
-                        <span>Test2</span>
+                        <span>Reservation</span>
                     </a>
                 </li>
                 <li>

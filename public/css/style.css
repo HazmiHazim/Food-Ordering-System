@@ -1,154 +1,195 @@
+:root {
+    --default: #FFFFFF;
+    --light: #F6F6F9;
+    --primary: #1976D2;
+    --light-primary: #CFE8FF;
+    --grey: #EEEEEE;
+    --dark-grey: #AAAAAA;
+    --light-grey: #E5E7EB;
+    --dark: #363949;
+    --danger: #D32F2F;
+    --light-danger: #FECDD3;
+    --warning: #FBC02D;
+    --light-warning: #FFF2C6;
+    --success: #388E3C;
+    --light-success: #BBF7D0;
+    --glow: #6A0DAD;
+    --light-glow: #A46AEF;
+    --main-blue: #6C7AE0;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
+body {
+    position: relative;
+    background: var(--grey);
 }
 
-section {
-    width: 100%;
-    height: 100vh;
+a {
+    text-decoration: none;
 }
 
-section nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    right: 0;
-    left: 0;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-}
-
-section nav .logo img {
-    width: 100px;
-    cursor: pointer;
-    margin: 7px 0;
-}
-
-section nav ul {
+li {
     list-style: none;
 }
 
-section nav ul li {
-    display: inline-block;
-    margin: 0 15px;
+.bx {
+    font-size: 1.7rem;
 }
 
-section nav ul li a{
-    text-decoration: none;
-    color: #000000;
-    font-weight: 500;
-    font-size: 17px;
-    transition: 0.1s;
-}
-
-section nav ul li a::after {
-    content: "";
-    width: 100%;
-    height: 2px;
-    background: #6A0DAD;
-    display: block;
-    transition: 0.2s linear;
-}
-
-section nav ul li a:hover::after {
-    width: 100%;
-}
-
-section nav ul li a:hover {
-    color: #6A0DAD;
-}
-
-section nav .icon i {
-    font-size: 18px;
-    color: #000000;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-section nav .icon i:hover {
-    color: #6A0DAD;
-}
-
-section .home {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+section {
     position: relative;
-    top: 130px;
-}
-
-section .home .home_header h1 {
-    font-size: 60px;
-    position: relative;
-    top: -170px;
-    left: 20px;
-}
-
-section .home .home_header h1 span {
-    margin-left: 15px;
-    color: #6A0DAD;
-    font-family: mv boli;
-    line-height: 22px;
-    font-size: 70px;
-}
-
-section .home .home_image img {
     width: 100%;
     height: 100%;
-    position: relative;
-    left: 70px;
 }
 
-section p {
-    width: 650px;
-    text-align: justify;
-    position: relative;
-    left: 120px;
-    bottom: 200px;
-    line-height: 22px;
+/*
+*  --------------------- Main --------------------------
+*/
+.topbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    background: var(--light);
+    padding: 16px;
+    z-index: 1000;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
 }
 
-section .home_button {
-    background: #6A0DAD;
-    position: relative;
-    left: 120px;
-    bottom: 100px;
-    width: 150px;
-    cursor: pointer;
-    padding: 12px 25px;
+.topbar.scrolled {
+    background: transparent;
 }
 
-section .home_button a {
-    color: #FFFFFF;
-    margin-right: 5px;
-    text-decoration: none;
+.topbar span {
+    color: var(--dark);
+    font-size: 16px;
+    font-weight: 700;
 }
 
-section .about {
+.topbar .container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.topbar .container .logo {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    position: relative;
-    top: 130px;
+    justify-content: center;
 }
 
-section .about h1 {
-    font-size: 70px;
-    margin-bottom: 36px;
+.topbar .container .logo img {
+    width: 50px;
+    height: 50px;
 }
 
-section .about p {
-    text-align: justify;
+.topbar .container .nav-page {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
 }
+
+.topbar .container .nav-page .home,
+.topbar .container .nav-page .food-menu,
+.topbar .container .nav-page .promotions,
+.topbar .container .nav-page .reservation {
+    cursor: pointer;
+    padding: 5px 16px;
+    border-radius: 30px;
+}
+
+.topbar .container .nav-page .home.active {
+    background: var(--glow);
+}
+
+.topbar .container .nav-page .home.active span {
+    color: var(--light);
+}
+
+.topbar .container .manage {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbar .container .manage .search,
+.topbar .container .manage .cart,
+.topbar .container .manage .company {
+    cursor: pointer;
+    padding: 5px 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbar .container .nav-page .home:hover,
+.topbar .container .nav-page .food-menu:hover,
+.topbar .container .nav-page .promotions:hover,
+.topbar .container .nav-page .reservation:hover {
+    background: var(--light-glow);
+}
+
+.footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 300px;
+    background: var(--dark);
+    padding: 16px;
+    box-shadow: 0px -15px 24px -5px rgba(91, 89, 91, 0.3);
+}
+
+.footer .container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer .container .more,
+.footer .container .location,
+.footer .container .social-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    gap: 10px;
+}
+
+.footer .container .more a,
+.footer .container .location span,
+.footer .container .social-page a {
+    cursor: pointer;
+    color: var(--dark-grey);
+}
+
+.footer .copyright {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .copyright span {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--dark-grey);
+}
+/*
+*  ------------------ End of Main ----------------------
+*/
 
 
 
@@ -557,6 +598,70 @@ section .about p {
 }
 /*---------- End of Forgot Password Page ---------- */
 
+/*
+*  ------------------ Home Page ----------------------------
+*/
+.home-page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.home-page main img {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    object-fit: cover;
+}
+
+.home-page main .curtain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark);
+    opacity: 0.5;
+    z-index: 300;
+}
+
+.home-page main .content {
+    position: fixed;
+    top: 90px;
+    z-index: 500;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.home-page main .content .top-section {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin-top: 80px;
+    margin-left: 70px;
+    z-index: 500;
+}
+
+.home-page main .content .top-section h1{
+    font-size: 72px;
+    font-weight: 700;
+    color: var(--light);
+}
+
+.home-page main .content .top-section a {
+    margin-top: 30px;
+    border-radius: 5px;
+    background: var(--glow);
+    height: 100px;
+}
+/*
+*  -------------------- End of Home Page
+*/
 
 /* Responsive Page*/
 @media (max-width: 584px) {

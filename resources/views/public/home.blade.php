@@ -4,27 +4,32 @@
 
 @section('content')
 
-    <div class="home">
+    <section>
 
-        <div class="home_header">
-            <h1>New<span>Food</span></h1>
-        </div>
-        <div class="home_image">
-            <img src="images/pasta.png" alt="New Food Image">
-        </div>
-    </div>
+        <div class="home-page">
 
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Praesent vitae mauris quam. Aliquam sed sapien quis sapien congue efficitur. Nullam molestie velit ac sem molestie
-        aliquet.
-        Praesent vitae mauris quam. Aliquam sed sapien quis sapien congue efficitur. Nullam molestie velit ac sem molestie
-        aliquet.
-    </p>
+            <main>
 
-    <div class="home_button">
-        <a href="#">Order Now</a>
-        <i class="fa-solid fa-angle-right"></i>
+                <img src="{{ asset('images/home-bg1.jpg') }}" alt="Background">
+
+                <div class="curtain"></div>
+
+                <div class="content">
+
+                    <div class="top-section">
+                        <h1>Welcome To</h1>
+                        <h1>Hash Restaurant</h1>
+                        <span>We are ready to serve you with our Malaysian Cuisine made by local chef with</span>
+                        <span>michelin star. Enjoy our delicious food with your family and friends.</span>
+                        <a href="#"><span>See our menu</span></a>
+                    </div>
+                </div>
+                
+
+            </main>
+
+    </section>
+
     </div>
 
 @endsection
