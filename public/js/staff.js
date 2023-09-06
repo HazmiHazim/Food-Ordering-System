@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 */
 
 
+
 /*
 *  ------------------ Logout Side Menu ----------------
 */
@@ -35,4 +36,23 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 /*
 *  ------------------ End of Logout Side Menu -------------------
+*/
+
+
+
+/*
+*  -------------------- Function for Success Message ---------------------------
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    const successMessage = document.querySelector('.success-message');
+
+    if (successMessage) {
+        setTimeout(() => {
+            successMessage.style.opacity = '0';
+            successMessage.remove();
+        }, 3000);
+    }
+});
+/*
+*  -------------------------- End of Function for Success Message -------------------
 */
