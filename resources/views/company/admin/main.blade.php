@@ -14,10 +14,10 @@
     <!-- Sidebar -->
     <div class="sidebar">
         
-        <a href="{{ route('dashboard') }}" class="logo">Hash Restaurant</a>
+        <a href="{{ route('admin-dashboard') }}" class="logo">Hash Restaurant</a>
         <ul class="side-menu">
-            <li class="{{ request()->routeIs(['dashboard', 'login']) ? 'active' : '' }}">
-                <a href="{{ route('dashboard') }}"><i class='bx bxs-dashboard'></i>Dashboard</a>
+            <li class="{{ request()->routeIs(['admin-dashboard', 'login']) ? 'active' : '' }}">
+                <a href="{{ route('admin-dashboard') }}"><i class='bx bxs-dashboard'></i>Dashboard</a>
             </li>
             <li class="{{ request()->routeIs(['staff-account', 'staff-account-create', 'staff-account-edit', 'staff-account-show', 'staff-account-search-index', 'staff-account-search-create']) ? 'active' : '' }}">
                 <a href="{{ route('staff-account') }}"><i class='bx bxs-user-rectangle'></i>Staff Accounts</a>

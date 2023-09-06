@@ -165,7 +165,11 @@ table tbody tr:nth-child(even) {
 }
 
 .sidebar .content li.active {
-    border-left: 5px solid var(--primary);
+    border-left: 5px solid var(--glow);
+}
+
+.sidebar .content li.active a {
+    color: var(--glow);
 }
 
 .sidebar .content li a,
@@ -213,7 +217,7 @@ table tbody tr:nth-child(even) {
 
 .sidebar .content li:nth-child(n+2):hover,
 .sidebar .content li.logout:hover {
-    background: var(--dark-grey);
+    background: var(--light-glow);
 }
 
 .topbar {

@@ -13,7 +13,13 @@ class LoginController extends Controller
     public function index() : View
     {
         if (Auth::check()) {
-            return view('company.admin.dashboard');
+            if (Auth::user()->role == 1) {
+                return view('company.admin.dashboard');
+            }
+
+            if (Auth::user()->role == 2) {
+                return view('company.staff.dashboard');
+            }
         }
         else {
             return view('company.auth.login');
@@ -21,7 +27,7 @@ class LoginController extends Controller
     }
     
     /**
-     * Handle an authentication attemp
+     * Handle an authentication attempt
      */
     public function authenticate(Request $request) : RedirectResponse
     {
@@ -31,8 +37,16 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->route('dashboard')->with('success-message', 'Login Successful.');
+
+            if (Auth::user()->role == 1) {
+                $request->session()->regenerate();
+                return redirect()->route('admin-dashboard')->with('success-message', 'Login Successful.');
+            }
+            
+            if (Auth::user()->role == 2) {
+                $request->session()->regenerate();
+                return redirect()->route('staff-dashboard')->with('success-message', 'Login Successful.');
+            }
         }
 
         return back()->withErrors([

@@ -21,3 +21,18 @@ document.addEventListener('DOMContentLoaded', () => {
 /*
 *  --------------------- End of Close Side Bar Menu -----------------------
 */
+
+
+/*
+*  ------------------ Logout Side Menu ----------------
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    const logoutBtn = document.getElementById('logout-button');
+    logoutBtn.addEventListener('click', () => {
+        const logout = document.getElementById('logout-form');
+        logout.submit();
+    });
+});
+/*
+*  ------------------ End of Logout Side Menu -------------------
+*/

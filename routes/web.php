@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\StaffAccount\StaffAccountController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrationController;
+use App\Http\Controllers\Staff\StaffController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,10 +34,6 @@ Route::get('/about', function () {
     return view('public.about');
 })->name('about');
 
-Route::get('/staff', function() {
-    return view('company.staff.dashboard');
-})->name('staff');
-
 
 // Route for login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
@@ -53,7 +50,7 @@ Route::get('/forgot-password', [ForgotPasswordController::class, 'index'])->name
 
 // Route for admin
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('admin-dashboard');
 
     // Staff account module
     Route::resource('/staff-account', StaffAccountController::class)->names([
@@ -106,4 +103,10 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     ]);
 
     Route::post('/promotion-discount/create', [PromotionEventController::class, 'store'])->name('promotion-event');
+});
+
+// Route for staff
+Route::prefix('staff')->middleware('auth', 'isStaff')->group(function () {
+    Route::get('/dashboard', [StaffController::class, 'index'])->name('staff-dashboard');
+
 });

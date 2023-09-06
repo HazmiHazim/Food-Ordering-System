@@ -31,7 +31,7 @@
                 </li>
                 <li>
                     <a href="#"><i class='bx bxs-dashboard'></i>
-                        <span>Test1</span>
+                        <span>Orders</span>
                     </a>
                 </li>
                 <li>
@@ -61,7 +61,7 @@
             </ul>
             <ul>
                 <li class="logout">
-                    <form action="/" method="POST">
+                    <form action="{{ route('logout') }}" method="POST" id="logout-form">
 
                         @csrf
 
