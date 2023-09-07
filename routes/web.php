@@ -13,6 +13,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\Public\PublicController;
+use App\Http\Controllers\Staff\Order\OrderControler;
 use App\Http\Controllers\Staff\StaffController;
 use Illuminate\Support\Facades\Route;
 
@@ -107,5 +108,13 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
 // Route for staff
 Route::prefix('staff')->middleware('auth', 'isStaff')->group(function () {
     Route::get('/dashboard', [StaffController::class, 'index'])->name('staff-dashboard');
+
+    // Order module
+    Route::resource('/customer-order', OrderControler::class)->names([
+        'index' => 'customer-order',
+        'create' => 'customer-order-create',
+        'show' => 'customer-order-show',
+        'edit' => 'customer-order-edit',
+    ]);
 
 });

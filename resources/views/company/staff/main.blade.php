@@ -23,20 +23,21 @@
                         <span>Hash Restaurant</span>
                     </a>
                 </li>
-                <li class="active">
-                    <a href="#">
+                <li class="{{ request()->routeIs(['staff-dashboard']) ? 'active' : '' }}">
+                    <a href="{{ route('staff-dashboard') }}">
                         <i class='bx bxs-dashboard'></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#"><i class='bx bxs-dashboard'></i>
+                <li class="{{ request()->routeIs(['customer-order']) ? 'active' : '' }}">
+                    <a href="{{ route('customer-order') }}">
+                        <i class='bx bxs-spreadsheet'></i>
                         <span>Orders</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class='bx bxs-dashboard'></i>
+                        <i class='bx bxs-book'></i>
                         <span>Reservation</span>
                     </a>
                 </li>
