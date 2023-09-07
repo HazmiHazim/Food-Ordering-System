@@ -14,8 +14,8 @@ class ItemCategory extends Model
         'name',
     ];
 
-    public function restaurantItems() : HasMany
+    public function restaurantItem() : HasMany
     {
-        return $this->hasMany(RestaurantItems::class, 'item_category_id');
+        return $this->hasMany(RestaurantItem::class, 'item_category_id');
     }
 }

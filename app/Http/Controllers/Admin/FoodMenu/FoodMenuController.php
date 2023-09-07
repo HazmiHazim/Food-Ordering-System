@@ -66,7 +66,7 @@ class FoodMenuController extends Controller
         $validator = Validator::make($request->all(), [
             'food_name' => 'required|max:255',
             'food_description' => 'required|max:9999',
-            'price' => 'required|numeric|min:0.01|max:9999.99',
+            'price' => 'required|numeric|decimal:2|min:0.01|max:9999.99',
             'category_id' => 'required|exists:food_categories,id',
             'image' => 'required|image|mimes:jpg,jpeg,png,svg|max:10480',
         ]);

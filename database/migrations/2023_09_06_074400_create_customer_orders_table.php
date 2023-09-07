@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('customer_orders', function (Blueprint $table) {
             $table->ulid('id')->primary();
             $table->foreignId('dining_table_id')->constrained('dining_tables')->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignId('food_orders')->constrained('food_menus')->cascadeOnUpdate()->cascadeOnDelete();
-            $table->integer('quantity')->default(1);
+            $table->decimal('order_total_price', 10, 2);
             $table->boolean('isPaid')->default(false);
             $table->enum('order_status', ['Preparing', 'Completed'])->default('Preparing');
-            $table->string('contacts')->nullable();
+            $table->string('customer_contacts')->nullable();
             $table->timestamps();
         });
     }

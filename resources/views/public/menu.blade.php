@@ -18,7 +18,15 @@
                     </div>
 
                     <div class="food-item">
-                        <div class="item"><img src="{{asset('images/pizza.jpg')}}" alt="test"></div>
+                        <div class="item">
+                            <img src="{{asset('images/pizza.jpg')}}" alt="test">
+                            <span class="food-name">Title</span>
+                            <span class="price">RM 20.50</span>
+                            <button type="button" class="add-to-cart">
+                                <i class='bx bx-plus'></i>
+                                <span>Add to Cart</span>
+                            </button>
+                        </div>
                         <div class="item"><img src="{{asset('images/pizza.jpg')}}" alt="test"></div>
                         <div class="item"><img src="{{asset('images/pizza.jpg')}}" alt="test"></div>
                         <div class="item"><img src="{{asset('images/pizza.jpg')}}" alt="test"></div>

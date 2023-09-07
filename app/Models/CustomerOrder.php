@@ -7,25 +7,25 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class FoodMenu extends Model
+class CustomerOrder extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'description',
-        'price',
-        'category_id',
-        'image',
+        'dining_table_id',
+        'order_total_price',
+        'isPaid',
+        'order_status',
+        'customer_contacts',
     ];
 
     public function customerOrderDetail() : HasMany
     {
-        return $this->hasMany(CustomerOrderDetail::class, 'food_id');
+        return $this->hasMany(CustomerOrderDetail::class, 'order_id');
     }
 
-    public function foodCategory() : BelongsTo
+    public function diningTable() : BelongsTo
     {
-        return $this->belongsTo(FoodCategory::class);
+        return $this->belongsTo(DiningTable::class);
     }
 }

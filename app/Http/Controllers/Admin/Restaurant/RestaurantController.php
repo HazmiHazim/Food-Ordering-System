@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\Restaurant;
 
 use App\Http\Controllers\Controller;
 use App\Models\ItemCategory;
-use App\Models\RestaurantItems;
+use App\Models\RestaurantItem;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -15,7 +15,7 @@ class RestaurantController extends Controller
 {
     public function index() : View
     {
-        $restaurantItems = RestaurantItems::paginate(10);
+        $restaurantItems = RestaurantItem::paginate(10);
 
         return view('company.admin.restaurant.index', ['restaurantItems' => $restaurantItems]);
     }
@@ -44,14 +44,14 @@ class RestaurantController extends Controller
             'item_name' => 'required|max:255',
             'quantity' => 'required|numeric|min:1|max:99999',
             'category_id' => 'required|exists:item_categories,id',
-            'item_price' => 'required|numeric|min:0.01|max:9999999.99',
+            'item_price' => 'required|numeric|decimal:2|min:0.01|max:9999999.99',
         ]);
 
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
 
-        $itemCreate = RestaurantItems::create([
+        $itemCreate = RestaurantItem::create([
             'item_name' => $request->item_name,
             'quantity' => $request->quantity,
             'item_category_id' => $request->category_id,
@@ -71,7 +71,7 @@ class RestaurantController extends Controller
     */
     public function show($id) : View
     {
-        $item = RestaurantItems::findOrFail($id);
+        $item = RestaurantItem::findOrFail($id);
 
         return view('company.admin.restaurant.show', ['item' => $item]);
     }
@@ -84,7 +84,7 @@ class RestaurantController extends Controller
     */
     public function edit($id) : View
     {
-        $item = RestaurantItems::findOrFail($id);
+        $item = RestaurantItem::findOrFail($id);
 
         $categoryid = $item->item_category_id;
 
@@ -104,7 +104,7 @@ class RestaurantController extends Controller
     */
     public function update(Request $request, $id) : RedirectResponse
     {
-        $item = RestaurantItems::find($id);
+        $item = RestaurantItem::find($id);
 
         if ($request->anyFilled(['item_name', 'quntity', 'category', 'price'])) {
 
@@ -147,7 +147,7 @@ class RestaurantController extends Controller
     */
     public function destroy($id) : RedirectResponse
     {
-        $restaurant = RestaurantItems::find($id);
+        $restaurant = RestaurantItem::find($id);
 
         $restaurant->delete();
 
