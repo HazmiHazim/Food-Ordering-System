@@ -31,10 +31,26 @@
                         </div>
                         <a href="{{ route('menu') }}"><span>See our menu</span></a>
 
-                        <div class="new-product">
-                            <i class='bx bxs-castle'></i>
-                            <i class='bx bxs-castle'></i>
-                            <i class='bx bxs-castle'></i>
+                        <div class="top-product">
+                            <span>Top Favourite</span>
+                            <div class="scroll-section">
+                                <div class="left-button">
+                                    <button><i class='bx bxs-chevron-left'></i></button>
+                                </div>
+                                <div class="item">
+                                    <img src="{{ asset('images/burger-king.png') }}" alt="burger">
+                                    <img src="{{ asset('images/burger-king.png') }}" alt="burger">
+                                    <img src="{{ asset('images/burger-king.png') }}" alt="burger">
+                                    <img src="{{ asset('images/burger-king.png') }}" alt="burger">
+                                    <img src="{{ asset('images/burger-king.png') }}" alt="burger">
+                                    <img src="{{ asset('images/burger-king.png') }}" alt="burger">
+                                    <img src="{{ asset('images/burger-king.png') }}" alt="burger">
+                                    <img src="{{ asset('images/burger-king.png') }}" alt="burger">
+                                </div>
+                                <div class="right-button">
+                                    <button><i class='bx bxs-chevron-right'></i></button>
+                                </div>
+                            </div>
                         </div>
 
                     </div>

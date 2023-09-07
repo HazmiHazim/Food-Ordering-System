@@ -357,6 +357,7 @@ section {
     height: 300px;
     background: url('../images/footer-bg.png');
     padding: 16px;
+    z-index: 500;
     box-shadow: 0px -15px 24px -5px rgba(91, 89, 91, 0.3);
 }
 
@@ -814,15 +815,16 @@ section {
 *  ------------------ Home Page ----------------------------
 */
 .home-page {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
-    z-index: 100;
     overflow-y: auto;
 }
 
 .home-page main .top-section {
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     overflow-y: auto;
@@ -830,22 +832,21 @@ section {
 
 .home-page main .top-section img {
     display: flex;
+    position: relative;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     object-fit: cover;
+    z-index: 100;
 }
 
 .home-page main .top-section .curtain {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: fixed;
     width: 100%;
     height: 100%;
     background: var(--dark);
     opacity: 0.5;
-    z-index: 300;
+    z-index: 200;
 }
 
 .home-page main .top-section .content {
@@ -896,6 +897,81 @@ section {
 
 .home-page main .top-section .content a:hover {
     transform: scale(1.02);
+}
+
+.home-page main .top-section .content .top-product {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    position: relative;
+    align-items: start;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.home-page main .top-section .content .top-product span {
+    font-size: 62px;
+    font-weight: 700;
+    color: var(--light);
+}
+
+.home-page main .top-section .content .top-product .scroll-section {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.home-page main .top-section .content .top-product .scroll-section .left-button button {
+    right: -8px;
+    z-index: 600;
+}
+
+.home-page main .top-section .content .top-product .scroll-section .right-button button {
+    left: -8px;
+    z-index: 600;
+}
+
+.home-page main .top-section .content .top-product .scroll-section .left-button button,
+.home-page main .top-section .content .top-product .scroll-section .right-button button {
+    position: relative;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--primary);
+    cursor: pointer;
+}
+
+.home-page main .top-section .content .top-product .scroll-section .left-button button:hover,
+.home-page main .top-section .content .top-product .scroll-section .right-button button:hover {
+    background: #1669bd;
+    opacity: 0.9;
+}
+
+.home-page main .top-section .content .top-product .scroll-section .left-button button i,
+.home-page main .top-section .content .top-product .scroll-section .right-button button i {
+    color: var(--light);
+    font-size: 26;
+}
+
+.home-page main .top-section .content .top-product .scroll-section .item {
+    width: 80%;
+    display: flex;
+    height: 180px;
+    gap: 10px;
+    overflow-x: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-page main .top-section .content .top-product .scroll-section .item img {
+    width: 150px;
+    height: 150px;
 }
 /*
 *  -------------------- End of Home Page ------------------------------
