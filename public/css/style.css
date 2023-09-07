@@ -59,7 +59,7 @@ section {
     background: var(--light);
     padding: 16px;
     z-index: 1000;
-    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
+    box-shadow: 0 5px 12px rgba(106, 13, 173, 0.4);
 }
 
 .topbar.scrolled {
@@ -677,7 +677,73 @@ section {
     transform: scale(1.02);
 }
 /*
-*  -------------------- End of Home Page
+*  -------------------- End of Home Page ------------------------------
+*/
+
+/*
+*  ----------------------- Menu Page --------------------------------------
+*/
+.menu-page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.menu-page main .container {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-top: 90px;
+    overflow-y: auto;
+}
+
+.menu-page main .container:nth-of-type(n+2) {
+    margin-top: 0px;
+}
+
+.menu-page main .container .title {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 60px 10px;
+}
+
+.menu-page main .container .title h1,
+.menu-page main .container .title i {
+    font-size: 36px;
+    color: var(--dark);
+    cursor: pointer;
+}
+
+.menu-page main .container .food-item {
+    display: flex;
+    padding: 0px 50px 50px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.menu-page main .container .food-item>div {
+    display: flex;
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+    background: var(--light);
+    padding: 2px;
+    overflow-x: auto;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
+    margin-top: 20px;
+}
+
+.menu-page main .container .food-item .item img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+/*
+*  -------------------------- End of Menu Page ------------------------------
 */
 
 /* Responsive Page*/
