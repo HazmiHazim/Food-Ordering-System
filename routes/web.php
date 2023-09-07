@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\StaffAccount\StaffAccountController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrationController;
+use App\Http\Controllers\Public\PublicController;
 use App\Http\Controllers\Staff\StaffController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,13 +27,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('public.home');
-})->name('home');
 
-Route::get('/about', function () {
-    return view('public.about');
-})->name('about');
+// Public Route
+Route::get('/', [PublicController::class, 'home'])->name('home');
+Route::get('/menu', [PublicController::class, 'menu'])->name('menu');
+Route::get('/about', [PublicController::class, 'about'])->name('about');
 
 
 // Route for login

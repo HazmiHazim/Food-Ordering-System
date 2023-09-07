@@ -10,21 +10,36 @@
 
             <main>
 
-                <img src="{{ asset('images/home-bg1.jpg') }}" alt="Background">
+                <div class="top-section">
 
-                <div class="curtain"></div>
+                    <img src="{{ asset('images/home-bg1.jpg') }}" alt="Background">
 
-                <div class="content">
+                    <div class="curtain"></div>
 
-                    <div class="top-section">
-                        <h1>Welcome To</h1>
-                        <h1>Hash Restaurant</h1>
-                        <span>We are ready to serve you with our Malaysian Cuisine made by local chef with</span>
-                        <span>michelin star. Enjoy our delicious food with your family and friends.</span>
-                        <a href="#"><span>See our menu</span></a>
+                    <div class="content">
+                        <div class="title">
+                            <h1>Welcome To</h1>
+                            <h1>Hash Restaurant</h1>
+                        </div>
+                        <div class="description">
+                            <span>
+                                Embark on a transcendent culinary odyssey at our esteemed venue, where the magic of
+                                Malaysian cuisine is elevated by our local maestro boasting two Michelin stars. Gather your
+                                loved ones for an unforgettable gastronomic journey through the enchanting world of flavor
+                                we have meticulously crafted for you.
+                            </span>
+                        </div>
+                        <a href="{{ route('menu') }}"><span>See our menu</span></a>
+
+                        <div class="new-product">
+                            <i class='bx bxs-castle'></i>
+                            <i class='bx bxs-castle'></i>
+                            <i class='bx bxs-castle'></i>
+                        </div>
+
                     </div>
+
                 </div>
-                
 
             </main>
 

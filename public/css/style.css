@@ -97,20 +97,21 @@ section {
     justify-content: center;
 }
 
-.topbar .container .nav-page .home,
-.topbar .container .nav-page .food-menu,
-.topbar .container .nav-page .promotions,
-.topbar .container .nav-page .reservation {
+.topbar .container .nav-page>div {
     cursor: pointer;
     padding: 5px 16px;
     border-radius: 30px;
 }
 
-.topbar .container .nav-page .home.active {
+.topbar .container .nav-page>div:hover {
+    background: var(--light-glow);
+}
+
+.topbar .container .nav-page .active {
     background: var(--glow);
 }
 
-.topbar .container .nav-page .home.active span {
+.topbar .container .nav-page .active span {
     color: var(--light);
 }
 
@@ -130,20 +131,10 @@ section {
     justify-content: center;
 }
 
-.topbar .container .nav-page .home:hover,
-.topbar .container .nav-page .food-menu:hover,
-.topbar .container .nav-page .promotions:hover,
-.topbar .container .nav-page .reservation:hover {
-    background: var(--light-glow);
-}
-
 .footer {
-    bottom: 0;
-    left: 0;
-    right: 0;
     width: 100%;
     height: 300px;
-    background: var(--dark);
+    background: url('../images/footer-bg.png');
     padding: 16px;
     box-shadow: 0px -15px 24px -5px rgba(91, 89, 91, 0.3);
 }
@@ -609,14 +600,22 @@ section {
     overflow-y: auto;
 }
 
-.home-page main img {
+.home-page main .top-section {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.home-page main .top-section img {
+    display: flex;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     object-fit: cover;
 }
 
-.home-page main .curtain {
+.home-page main .top-section .curtain {
     position: absolute;
     top: 0;
     left: 0;
@@ -628,36 +627,54 @@ section {
     z-index: 300;
 }
 
-.home-page main .content {
-    position: fixed;
-    top: 90px;
-    z-index: 500;
-    width: 100%;
-    height: 100%;
-    padding: 24px;
-    overflow-y: auto;
-}
-
-.home-page main .content .top-section {
+.home-page main .top-section .content {
     display: flex;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
+    top: 90px;
     margin-top: 80px;
     margin-left: 70px;
     z-index: 500;
+    gap: 20px;
 }
 
-.home-page main .content .top-section h1{
+.home-page main .top-section .content .title h1{
     font-size: 72px;
     font-weight: 700;
     color: var(--light);
 }
 
-.home-page main .content .top-section a {
-    margin-top: 30px;
+.home-page main .top-section .content .description {
+    display: flex;
+    text-align: start;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+}
+
+.home-page main .top-section .content .description span {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 30px;
+    color: var(--light);
+}
+
+.home-page main .top-section .content a {
+    width: 200px;
+    padding: 16px;
+    text-align: center;
     border-radius: 5px;
     background: var(--glow);
-    height: 100px;
+}
+
+.home-page main .top-section .content a span {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--light);
+}
+
+.home-page main .top-section .content a:hover {
+    transform: scale(1.02);
 }
 /*
 *  -------------------- End of Home Page

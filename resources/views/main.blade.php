@@ -23,20 +23,20 @@
 
             <div class="nav-page">
 
-                <div class="home active">
+                <div class="{{ request()->routeIs(['home']) ? 'active' : '' }}">
                     <a href="{{ route('home') }}"><span>Home</span></a>
                 </div>
 
-                <div class="food-menu">
-                    <span>Menu</span>
+                <div class="{{ request()->routeIs(['menu']) ? 'active' : '' }}">
+                    <a href="{{ route('menu') }}"><span>Menu</span></a>
                 </div>
 
                 <div class="promotions">
-                    <span>Promotions</span>
+                    <a href="#"><span>Promotions</span></a>
                 </div>
 
                 <div class="reservation">
-                    <span>Reservation</span>
+                    <a href="#"><span>Reservation</span></a>
                 </div>
 
             </div>
@@ -80,7 +80,7 @@
                     <a href="#"><i class='bx bxl-whatsapp'></i></a>
                     <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
                     <a href="#"><i class='bx bxl-twitter' ></i></a>
-                    <a href="$"><i class='bx bxl-instagram-alt' ></i></a>
+                    <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
                 </div>
                 <div class="project">
                     <a href="https://github.com/HazmiHazim" target="_blank"><i class='bx bxl-github' ></i></a>
