@@ -7,6 +7,7 @@ use App\Models\CustomerOrder;
 use App\Models\FoodMenu;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
 
 class PublicController extends Controller
@@ -48,27 +49,24 @@ class PublicController extends Controller
     /*
     *  Function for add to cart
     */
-    public function addToCart(Request $request, $id) : RedirectResponse
+    public function createOrder(Request $request) : RedirectResponse
     {
-        // Retrieve menu details based on menu id
-        $product = FoodMenu::find($id);
+        // Retrieve the JSON data from the request
+        $cartItem = $request->json()->all();
 
-        $cart = session()->get('cart', []);
+        Log::info($cartItem);
+        dd($cartItem);
 
-        if (array_key_exists($id, $cart)) {
-            $cart[$id]['quantity']++;
+        foreach ($cartItem['cartData'] as $item) {
+            $foodId = $item['id'];
+            $image = $item['image'];
+            $name = $item['name'];
+            $price = $item['price'];
+            $quantity = $item['quantity'];
+
+            dd($foodId);
         }
-        else {
-            $cart[$id] = [
-                'name' => $product->name,
-                'image' => $product->image,
-                'price' => $product->price,
-                'quantity' => 1,
-            ];
-        }
 
-        session()->put('cart', $cart);
-
-        return back()->with('success-message', 'Product added to cart successfully.');
+        return back()->with('success-message', 'Order is taken. Please wait 15 - 30 minutes for us to prepare your food.');
     }
 }

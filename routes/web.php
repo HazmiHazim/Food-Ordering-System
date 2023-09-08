@@ -33,7 +33,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PublicController::class, 'home'])->name('home');
 Route::get('/menu', [PublicController::class, 'menu'])->name('menu');
 Route::get('/about', [PublicController::class, 'about'])->name('about');
-Route::post('/menu/add-to-cart/{id}', [PublicController::class, 'addToCart'])->name('add-to-cart');
+
+// Add to cart
+Route::post('/menu/create-order', [PublicController::class, 'createOrder'])->name('create-order');
 
 
 // Route for login

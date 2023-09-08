@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const openCart = document.querySelector('.cart');
     const closeCart = document.querySelector('.close-cart');
     const cartList = document.querySelector('.cart-list');
-    const totalPrice = document.querySelector('.cart-total');
     const addProduct = document.querySelectorAll('.add-to-cart');
 
     // Initilize an empty cart object
@@ -171,6 +170,47 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const cartQuantity = document.getElementById('cart-quantity');
         cartQuantity.textContent = totalItemCount;
     }
+
+
+    // Send add-to-cart value to controller
+    const confirmOrderBtn = document.querySelector('.confirm-order');
+    confirmOrderBtn.addEventListener('click', () => {
+
+        // Collect cart data with ids
+        const cartData = Object.keys(cart).map(foodId => {
+            const product = cart[foodId];
+            return {
+                id: foodId,
+                image: product.image,
+                name: product.name,
+                price: product.price,
+                quantity: product.quantity,
+            };
+        });
+
+        // Get CSRF token form head tag
+        const csrfToken = document.head.querySelector("[name~=csrf-token][content]").content;
+        console.log('Sending fetch request...');
+        console.log('cartData:', cartData);
+
+        // Send an AJAX request to your Laravel controller
+        fetch('/menu/create-order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': csrfToken,
+            },
+            body: JSON.stringify({ cartData }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response from your controller if needed
+                console.log(data);
+            })
+            .catch(error => {
+                //console.error('Error:', error);
+            });
+    });
 });
 /*
 *  -------------------------- End of Add to Cart -----------------------
