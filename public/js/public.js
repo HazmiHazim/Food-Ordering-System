@@ -74,10 +74,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 
-    // Handle the "minus" button click
+    // Handle the minus button event
     document.addEventListener('click', (event) => {
         if (event.target.classList.contains('minus')) {
-            const foodId = event.getAttribute('data-food-id');
+            const foodId = event.target.getAttribute('data-food-id');
             const quantityElement = document.querySelector(`[data-food-id="${foodId}"]`);
 
             if (cart[foodId] && cart[foodId].quantity > 1) {
@@ -88,7 +88,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
-    // Handle the "plus" button click
+    // Handle the plus button event
+    document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('plus')) {
+            const foodId = event.target.getAttribute('data-food-id');
+
+            if (cart[foodId]) {
+                cart[foodId].quantity++;
+                updateCart();
+            }
+        }
+    });
+
+    // Handle the listener for delete buttons
+    document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('bx') || event.target.classList.contains('bxs-trash')) {
+            const foodId = event.target.getAttribute('data-food-id');
+
+            if (cart[foodId]) {
+                delete cart[foodId];
+                updateCart();
+            }
+        }
+    });
 
     // Function to update cart view
     function updateCart() {
@@ -118,13 +140,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     <span>RM ${(productTotalPrice).toFixed(2)}</span>
                 </div>
                 <div class="action">
-                    <button type="button" class="minus">-</button>
+                    <button type="button" class="minus" data-food-id="${foodId}">-</button>
                     <span>${product.quantity}</span>
-                    <button type="button" class="plus">+</button>
+                    <button type="button" class="plus" data-food-id="${foodId}">+</button>
                 </div>
                 <div class="delete">
                     <button type="button" class="cart-list-delete">
-                        <i class='bx bxs-trash' ></i>
+                        <i class='bx bxs-trash' data-food-id="${foodId}"></i>
                     </button>
                 </div>
             `;
