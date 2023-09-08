@@ -48,7 +48,7 @@
 
                 <div class="cart">
                     <i class='bx bx-cart'></i>
-                    <span class="cart-quantity">0</span>
+                    <span class="cart-quantity" id="cart-quantity">0</span>
                 </div>
 
                 <div class="company">
@@ -71,69 +71,12 @@
         <div class="your-order">
             <span>Your Order</span>
             <div class="cart-total">
-                <span>Total (1 item)</span>
-                <span>RM 250.90</span>
+                <span id="cart-item-count">Total (0 item)</span>
+                <span id="cart-total-amount">RM 0.00</span>
             </div>
             <ul class="cart-list">
                 <li>
-                    <div class="product">
-                        <img src="{{ asset('images/pasta.png') }}" alt="pasta">
-                        <span>Product Name</span>
-                    </div>
-                    <div class="quantity-price">
-                        <span>5</span>
-                        <span>RM 50.00</span>
-                    </div>
-                    <div class="action">
-                        <button type="button" class="minus">-</button>
-                        <span>5</span>
-                        <button type="button" class="plus">+</button>
-                    </div>
-                    <div class="delete">
-                        <button type="button" class="cart-list-delete">
-                            <i class='bx bxs-trash' ></i>
-                        </button>
-                    </div>
-                </li>
-                <li>
-                    <div class="product">
-                        <img src="{{ asset('images/pasta.png') }}" alt="pasta">
-                        <span>Product Name</span>
-                    </div>
-                    <div class="quantity-price">
-                        <span>5</span>
-                        <span>RM 50.00</span>
-                    </div>
-                    <div class="action">
-                        <button type="button" class="minus">-</button>
-                        <span>5</span>
-                        <button type="button" class="plus">+</button>
-                    </div>
-                    <div class="delete">
-                        <button type="button" class="cart-list-delete">
-                            <i class='bx bxs-trash' ></i>
-                        </button>
-                    </div>
-                </li>
-                <li>
-                    <div class="product">
-                        <img src="{{ asset('images/pasta.png') }}" alt="pasta">
-                        <span>Product Name</span>
-                    </div>
-                    <div class="quantity-price">
-                        <span>5</span>
-                        <span>RM 50.00</span>
-                    </div>
-                    <div class="action">
-                        <button type="button" class="minus">-</button>
-                        <span>5</span>
-                        <button type="button" class="plus">+</button>
-                    </div>
-                    <div class="delete">
-                        <button type="button" class="cart-list-delete">
-                            <i class='bx bxs-trash' ></i>
-                        </button>
-                    </div>
+                    <span class="empty">No item in cart</span>
                 </li>
             </ul>
         </div>
