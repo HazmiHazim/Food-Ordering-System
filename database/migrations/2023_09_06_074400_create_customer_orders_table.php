@@ -17,7 +17,7 @@ return new class extends Migration
             $table->decimal('order_total_price', 10, 2);
             $table->boolean('isPaid')->default(false);
             $table->enum('order_status', ['Preparing', 'Completed'])->default('Preparing');
-            $table->string('customer_contacts')->nullable();
+            $table->string('customer_contact')->nullable();
             $table->timestamps();
         });
     }

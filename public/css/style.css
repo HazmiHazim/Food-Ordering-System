@@ -426,6 +426,13 @@ section {
     opacity: 0.9;
 }
 
+.cart-section .cart-button button:disabled,
+.cart-section .cart-button button:disabled:hover {
+    background: var(--dark-grey);
+    opacity: 1;
+    cursor: default;
+}
+
 .footer {
     position: absolute;
     width: 100%;

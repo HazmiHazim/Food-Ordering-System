@@ -97,7 +97,7 @@
 
         <div class="cart-button">
             <span>Please make sure your purchase before confirm the order.</span>
-            <button type="button" class="confirm-order"><span>Confirm Order</span></button>
+            <button type="button" class="confirm-order" disabled><span>Confirm Order</span></button>
         </div>
     </div>
 

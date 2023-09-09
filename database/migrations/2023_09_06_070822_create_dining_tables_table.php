@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('dining_tables', function (Blueprint $table) {
             $table->id();
-            $table->string('table_name')->nullable();
+            $table->string('table_name')->unique();
             $table->boolean('isOccupied')->default(false);
             $table->timestamps();
         });

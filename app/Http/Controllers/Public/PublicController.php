@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Public;
 use App\Enums\OrderStatusEnum;
 use App\Http\Controllers\Controller;
 use App\Models\CustomerOrder;
+use App\Models\CustomerOrderDetail;
+use App\Models\DiningTable;
 use App\Models\FoodMenu;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -54,33 +56,64 @@ class PublicController extends Controller
     {
         // Retrieve the JSON data from the request
         $cartItem = $request->input('cartData');
+        $totalPrice = $request->input('totalAmount');
+
+        // Get table number input
+        $tableNumber = $request->input('table_number');
 
         // Check if contact field is filled
         if ($request->filled('customer_contact')) {
             $contact = $request->input('customer_contact');
+            //dd($contact);
         }
 
+        //dd($tableNumber);
         Log::info($cartItem);
 
-        foreach ($cartItem as $item) {
-            $foodId = $item['id'];
-            $image = $item['image'];
-            $name = $item['name'];
-            $price = $item['price'];
-            $quantity = $item['quantity'];
+        // Get table record
+        $table = DiningTable::where('table_name', $tableNumber)->first();
+
+        // If table not exists
+        if (!$table) {
+            dd($table);
+            return back()->withErrors([
+                'error-message' => 'Table does not exists. Plese enter a correct table number.',
+            ]);
         }
 
-        dd($foodId);
+        // If table is occupied
+        if ($table->isOccupied) {
+            return back()->withErrors([
+                'error-message' => 'Table is taken. Please enter another table number.',
+            ]);
+        }
 
-        /*  Insert Data to Customer Order Table
+        // Table exists and table is not accupied then update isOccupied to true
+        $table->update(['isOccupied' => true]);
+
+        // Create order
         $order = CustomerOrder::create([
-            'dining_table_id' => $request->table_number,
-            'order_total_price' => $price,
+            'dining_table_id' => $table->id,
+            'order_total_price' => $totalPrice,
             'isPaid' => false,
             'order_status' => OrderStatusEnum::Preparing,
-            'customer_contacts' => $contact,
+            'customer_contact' => $contact,
         ]);
-        */
+
+        // Get order id
+        $orderId = $order->id;
+
+        foreach ($cartItem as $item) {
+            // Create order details
+            $orderDetails = CustomerOrderDetail::create([
+                'order_id' => $orderId,
+                'food_id' => $item['id'],
+                'quantity' => $item['quantity'],
+                'total_price' => $item['eachTotalPrice'],
+            ]);
+        }
+
+        Log::info([$table, $order]);
 
         return back()->with('success-message', 'Order is taken. Please wait 15 - 30 minutes for us to prepare your food.');
     }

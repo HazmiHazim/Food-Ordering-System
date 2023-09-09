@@ -34,6 +34,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Initilize an empty cart object
     const cart = JSON.parse(localStorage.getItem('cart')) || {};
 
+    // Get input in add-to-cart
+    const tableNumberInput = document.querySelector('input[name="table_number"]');
+    const customerContactInput = document.querySelector('input[name="customer_contact"]');
+
     updateCart();
 
     openCart.addEventListener('click', (event) => {
@@ -52,6 +56,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
+    // Add product that user click into the cart
     addProduct.forEach(button => {
         button.addEventListener('click', () => {
             const foodId = button.getAttribute('data-food-id');
@@ -76,6 +81,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             updateCart();
         });
+    });
+
+    // Make confirm button disable if input is not insert
+    tableNumberInput.addEventListener('input', () => {
+        // Check if the input value is empty
+        if (tableNumberInput.value.trim() === '') {
+            confirmOrderBtn.disabled = true;
+        } else {
+            confirmOrderBtn.disabled = false;
+        }
     });
 
     // Handle the minus button event
@@ -142,7 +157,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             const listItem = document.createElement('li');
 
-            // Calculate the total price for the product based on quantity
+            // Calculate the total price for each of the product based on quantity
             const productTotalPrice = product.price * product.quantity;
 
             listItem.innerHTML = `
@@ -192,20 +207,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const confirmOrderBtn = document.querySelector('.confirm-order');
     confirmOrderBtn.addEventListener('click', () => {
 
-        // Collect cart data with ids
-        const cartData = Object.keys(cart).map(foodId => {
+        // Initialize an empty array to collect cart data
+        const cartData = [];
+
+        // Initialize totalAmount
+        let totalAmount = 0;
+
+        // Get the values of table number input and customer contact input
+        const table_number = tableNumberInput.value;
+        const customer_contact = customerContactInput.value;
+
+        for (const foodId in cart) {
             const product = cart[foodId];
-            return {
+
+            // Calculate the total price for each product based on quantity
+            const eachTotalPrice = product.price * product.quantity;
+
+            // Add the product data to cartData array
+            cartData.push({
                 id: foodId,
                 image: product.image,
                 name: product.name,
                 price: product.price,
                 quantity: product.quantity,
-            };
-        });
+                eachTotalPrice: eachTotalPrice.toFixed(2),
+            });
+
+            // Add the eachTotalPrice to the totalAmount
+            totalAmount = (parseFloat(totalAmount) + parseFloat(eachTotalPrice)).toFixed(2);
+        }
 
         // Get CSRF token form head tag
         const csrfToken = document.head.querySelector("[name~=csrf-token][content]").content;
+
         console.log('Sending fetch request...');
         console.log('cartData:', cartData);
 
@@ -216,7 +250,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 'Content-Type': 'application/json',
                 'X-CSRF-TOKEN': csrfToken,
             },
-            body: JSON.stringify({ cartData }),
+            body: JSON.stringify({ cartData, totalAmount, table_number, customer_contact }),
         })
             .then(response => response.json())
             .then(data => {

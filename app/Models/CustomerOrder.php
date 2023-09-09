@@ -18,7 +18,7 @@ class CustomerOrder extends Model
         'order_total_price',
         'isPaid',
         'order_status',
-        'customer_contacts',
+        'customer_contact',
     ];
 
     protected $casts = [
