@@ -69,6 +69,11 @@
             </div>
         </div>
 
+        <div class="table-number">
+            <span>Table No.</span>
+            <input type="text" name="table_number" placeholder="0" required>
+        </div>
+
         <div class="your-order">
             <span>Your Order</span>
             <div class="cart-total">
@@ -80,6 +85,11 @@
                     <span class="empty">No item in cart</span>
                 </li>
             </ul>
+        </div>
+
+        <div class="customer-contact">
+            <span>Your Contact Number</span>
+            <input type="text" name="customer_contact" placeholder="0123456789">
         </div>
 
         <div class="cart-button">

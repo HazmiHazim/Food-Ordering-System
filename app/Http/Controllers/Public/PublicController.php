@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Public;
 
+use App\Enums\OrderStatusEnum;
 use App\Http\Controllers\Controller;
 use App\Models\CustomerOrder;
 use App\Models\FoodMenu;
@@ -52,20 +53,34 @@ class PublicController extends Controller
     public function createOrder(Request $request) : RedirectResponse
     {
         // Retrieve the JSON data from the request
-        $cartItem = $request->json()->all();
+        $cartItem = $request->input('cartData');
+
+        // Check if contact field is filled
+        if ($request->filled('customer_contact')) {
+            $contact = $request->input('customer_contact');
+        }
 
         Log::info($cartItem);
-        dd($cartItem);
 
-        foreach ($cartItem['cartData'] as $item) {
+        foreach ($cartItem as $item) {
             $foodId = $item['id'];
             $image = $item['image'];
             $name = $item['name'];
             $price = $item['price'];
             $quantity = $item['quantity'];
-
-            dd($foodId);
         }
+
+        dd($foodId);
+
+        /*  Insert Data to Customer Order Table
+        $order = CustomerOrder::create([
+            'dining_table_id' => $request->table_number,
+            'order_total_price' => $price,
+            'isPaid' => false,
+            'order_status' => OrderStatusEnum::Preparing,
+            'customer_contacts' => $contact,
+        ]);
+        */
 
         return back()->with('success-message', 'Order is taken. Please wait 15 - 30 minutes for us to prepare your food.');
     }

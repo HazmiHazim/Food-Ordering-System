@@ -159,7 +159,6 @@ section {
     width: 500px;
     height: 100vh;
     z-index: 1000;
-    gap: 30px;
     transition: 0.5s;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -172,14 +171,13 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 2500;
     width: 100%;
     height: 100px;
-    padding: 32px;
+    padding: 32px 32px 0;
 }
 
 .cart-section .header span {
@@ -194,12 +192,45 @@ section {
     cursor: pointer;
 }
 
+.cart-section .table-number {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 32px 32px;
+    gap: 10px;
+}
+
+.cart-section .table-number span,
+.cart-section .table-number span::after {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.cart-section .table-number span::after {
+    content: "*";
+    color: var(--danger);
+}
+
+.cart-section .table-number input {
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid var(--dark-grey);
+    padding: 3px;
+    height: 100%;
+    width: 50px;
+}
+
 .cart-section .your-order {
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 100px;
-    padding: 16px 32px;
+    top: 0;
+    padding: 0 32px 16px;
     height: 100%;
     width: 100%;
     overflow-y: auto;
@@ -311,10 +342,45 @@ section {
     color: #e64b4b;
 }
 
+.cart-section .customer-contact {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 16px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    background: var(--grey);
+    gap: 5px;
+}
+
+.cart-section .customer-contact span,
+.cart-section .customer-contact span::after {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.cart-section .customer-contact span::after {
+    content: " (Optional)";
+}
+
+.cart-section .customer-contact input {
+    outline: none;
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    color: var(--dark);
+    border: 1px solid var(--dark-grey);
+}
+
 .cart-section .cart-button {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: relative;
     padding: 16px;
     right: 0;
     left: 0;

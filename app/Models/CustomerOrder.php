@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Enums\OrderStatusEnum;
+use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -9,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class CustomerOrder extends Model
 {
-    use HasFactory;
+    use HasFactory, HasUlids;
 
     protected $fillable = [
         'dining_table_id',
@@ -17,6 +19,10 @@ class CustomerOrder extends Model
         'isPaid',
         'order_status',
         'customer_contacts',
+    ];
+
+    protected $casts = [
+        'order_status' => OrderStatusEnum::class,
     ];
 
     public function customerOrderDetail() : HasMany

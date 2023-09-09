@@ -32,7 +32,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const addProduct = document.querySelectorAll('.add-to-cart');
 
     // Initilize an empty cart object
-    const cart = {};
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    updateCart();
 
     openCart.addEventListener('click', (event) => {
         event.stopPropagation();
@@ -64,10 +66,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 cart[foodId] = {
                     image: foodImage,
                     name: foodName,
-                    price: parseFloat(foodPrice),
+                    price: foodPrice,
                     quantity: 1
                 }
             }
+
+            // Save the updated cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
 
             updateCart();
         });
@@ -82,6 +87,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (cart[foodId] && cart[foodId].quantity > 1) {
                 cart[foodId].quantity--;
                 quantityElement.textContent = cart[foodId].quantity;
+
+                // Save the updated cart to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+
                 updateCart();
             }
         }
@@ -94,6 +103,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             if (cart[foodId]) {
                 cart[foodId].quantity++;
+
+                // Save the updated cart to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+
                 updateCart();
             }
         }
@@ -106,6 +119,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             if (cart[foodId]) {
                 delete cart[foodId];
+
+                // Save the updated cart to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
                 updateCart();
             }
         }
