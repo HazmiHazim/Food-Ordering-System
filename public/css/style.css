@@ -225,6 +225,34 @@ section {
     width: 50px;
 }
 
+.cart-section .main-section-order {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    padding: 0 32px;
+    width: 100%;
+}
+
+.cart-section .main-section-order span {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.cart-section .main-section-order .cart-total {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.cart-section .main-section-order .cart-total span {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
 .cart-section .your-order {
     display: flex;
     flex-direction: column;
@@ -234,25 +262,6 @@ section {
     height: 100%;
     width: 100%;
     overflow-y: auto;
-}
-
-.cart-section .your-order span {
-    font-size: 24px;
-    font-weight: 500;
-    color: var(--dark);
-}
-
-.cart-section .your-order .cart-total {
-    display: flex;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    justify-content: space-between;
-}
-
-.cart-section .your-order .cart-total span {
-    font-size: 22px;
-    font-weight: 500;
-    color: var(--dark);
 }
 
 .cart-section .your-order li {

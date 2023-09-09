@@ -74,12 +74,15 @@
             <input type="text" name="table_number" placeholder="0" required>
         </div>
 
-        <div class="your-order">
+        <div class="main-section-order">
             <span>Your Order</span>
             <div class="cart-total">
-                <span id="cart-item-count">Total (0 item)</span>
+                <span id="cart-item-count">Total 0 item</span>
                 <span id="cart-total-amount">RM 0.00</span>
             </div>
+        </div>
+
+        <div class="your-order">
             <ul class="cart-list">
                 <li>
                     <span class="empty">No item in cart</span>
