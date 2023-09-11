@@ -27,4 +27,9 @@ class CustomerOrderDetail extends Model
     {
         return $this->belongsTo(FoodMenu::class);
     }
+
+    public function uniqueIds(): array
+    {
+        return ['order_id'];
+    }
 }

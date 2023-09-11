@@ -315,6 +315,18 @@ table tbody tr:nth-child(even) {
 */
 
 /*
+*  ----------------- Validation Error Message -------------------
+*/
+.validation-error-message {
+    margin-top: 10px;
+    color: var(--danger);
+}
+
+/*
+* ------------------ End of Validation Error Message ------------------------
+*/
+
+/*
 *  ----------------------- Message Animation -------------------
 */
 @keyframes anim {
@@ -446,25 +458,25 @@ table tbody tr:nth-child(even) {
 /*
 *  -------------------------- Customer Order Page ---------------------------
 */
-.order main .content {
+.customer-order-index main .content {
     padding: 24px;
 }
 
-.order main .content .header h1 {
+.customer-order-index main .content .header h1 {
     font-size: 36px;
     font-weight: 700;
     color: var(--dark);
 }
 
-.order main .content .statistic {
+.customer-order-index main .content .statistic {
     display: flex;
     justify-content: space-evenly;
     margin-top: 15px;
     gap: 30px;
 }
 
-.order main .content .statistic .item1,
-.order main .content .statistic .item2 {
+.customer-order-index main .content .statistic .item1,
+.customer-order-index main .content .statistic .item2 {
     display: flex;
     width: 100%;
     height: 100px;
@@ -477,48 +489,48 @@ table tbody tr:nth-child(even) {
     gap: 20px;
 }
 
-.order main .content .statistic .item1 i,
-.order main .content .statistic .item2 i {
+.customer-order-index main .content .statistic .item1 i,
+.customer-order-index main .content .statistic .item2 i {
     font-size: 48px;
 }
 
-.order main .content .statistic .item1 i {
+.customer-order-index main .content .statistic .item1 i {
     color: var(--success);
 }
 
-.order main .content .statistic .item2 i {
+.customer-order-index main .content .statistic .item2 i {
     color: var(--warning);
 }
 
-.order main .content .statistic .item1 .data,
-.order main .content .statistic .item2 .data {
+.customer-order-index main .content .statistic .item1 .data,
+.customer-order-index main .content .statistic .item2 .data {
     display: flex;
     flex-direction: column;
     gap: 3px;
 }
 
-.order main .content .statistic .item1 .data span.title,
-.order main .content .statistic .item2 .data span.title {
+.customer-order-index main .content .statistic .item1 .data span.title,
+.customer-order-index main .content .statistic .item2 .data span.title {
     font-size: 24px;
     font-weight: 700;
     color: var(--dark);
 }
 
-.order main .content .statistic .item1 .data span.data,
-.order main .content .statistic .item2 .data span.data {
+.customer-order-index main .content .statistic .item1 .data span.data,
+.customer-order-index main .content .statistic .item2 .data span.data {
     font-size: 16px;
     font-weight: 500;
 }
 
-.order main .content .statistic .item1 .data span.data {
+.customer-order-index main .content .statistic .item1 .data span.data {
     color: var(--success);
 }
 
-.order main .content .statistic .item2 .data span.data {
+.customer-order-index main .content .statistic .item2 .data span.data {
     color: var(--warning);
 }
 
-.order main .content .bottom-section {
+.customer-order-index main .content .bottom-section {
     margin-top: 50px;
     background: var(--light);
     padding: 24px;
@@ -526,7 +538,7 @@ table tbody tr:nth-child(even) {
     box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
 }
 
-.order main .content .bottom-section .table-top {
+.customer-order-index main .content .bottom-section .table-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -538,18 +550,18 @@ table tbody tr:nth-child(even) {
     border-top-right-radius: 5px;
 }
 
-.order main .content .bottom-section .table-top h3 {
+.customer-order-index main .content .bottom-section .table-top h3 {
     font-size: 18px;
     font-weight: 700;
     color: var(--light);
 }
 
-.order main .content .bottom-section .table-top .button {
+.customer-order-index main .content .bottom-section .table-top .button {
     display: flex;
     gap: 10px;
 }
 
-.order main .content .bottom-section .table-top .button a {
+.customer-order-index main .content .bottom-section .table-top .button a {
     display: flex;
     height: 35px;
     align-items: center;
@@ -559,22 +571,147 @@ table tbody tr:nth-child(even) {
     gap: 5px;
 }
 
-.order main .content .bottom-section .table-top .button a.delete {
+.customer-order-index main .content .bottom-section .table-top .button a.delete {
     background: var(--danger);
 }
 
-.order main .content .bottom-section .table-top .button a.add {
+.customer-order-index main .content .bottom-section .table-top .button a.add {
     background: var(--success);
 }
 
-.order main .content .bottom-section .table-top .button a i {
+.customer-order-index main .content .bottom-section .table-top .button a i {
     font-size: 20px;
 }
 
-.order main .content .bottom-section .table-top .button a span {
+.customer-order-index main .content .bottom-section .table-top .button a span {
     font-size: 16px;
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.customer-order-create main .content {
+    padding: 24px;
+}
+
+.customer-order-create main .content .header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.customer-order-create main .content form {
+    margin-top: 30px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
+}
+
+.customer-order-create main .content form .create-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.customer-order-create main .content form .create-section .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--grey);
+}
+
+.customer-order-create main .content form .create-section .header h4 {
+    color: var(--dark);
+    margin: auto;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.customer-order-create main .content form .create-section span.star {
+    color: var(--dark);
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.customer-order-create main .content form .create-section span.star::after {
+    content: "*";
+    color: var(--danger);
+}
+
+.customer-order-create main .content form .create-section input[type="text"] {
+    height: 40px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 10px;
+    border: 1px solid var(--dark-grey);
+    color: var(--dark);
+    outline: none;
+}
+
+.customer-order-create main .content form .button-section {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.customer-order-create main .content form .button-section input,
+.customer-order-create main .content form .button-section a {
+    width: 20%;
+    display: flex;
+    height: 35px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: var(--light);
+    padding: 5px 18px;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.customer-order-create main .content form .button-section a {
+    background: var(--danger);
+}
+
+.customer-order-create main .content form .button-section input:hover {
+    background: var(--primary);
+    opacity: 0.9;
+}
+
+.customer-order-create main .content form .button-section a:hover {
+    background: var(--danger);
+    opacity: 0.9;
+}
+
+.customer-order-create main .content .dining-table-section {
+    margin-top: 50px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
+}
+
+.customer-order-create main .content .dining-table-section .table-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    color: var(--default);
+    background: var(--dark);
+    padding: 12px 24px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.customer-order-create main .content .dining-table-section .table-top h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--light);
 }
 /*
 *  -------------------------- End of Customer Order Page ----------------------------

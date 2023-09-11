@@ -29,7 +29,7 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="{{ request()->routeIs(['customer-order']) ? 'active' : '' }}">
+                <li class="{{ request()->routeIs(['customer-order', 'customer-order-create']) ? 'active' : '' }}">
                     <a href="{{ route('customer-order') }}">
                         <i class='bx bxs-spreadsheet'></i>
                         <span>Orders</span>

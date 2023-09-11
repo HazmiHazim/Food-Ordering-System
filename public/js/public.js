@@ -20,6 +20,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+/*
+*  -------------------- Function for Success Message ---------------------------
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    const successMessage = document.querySelector('.success-message');
+
+    if (successMessage) {
+        setTimeout(() => {
+            successMessage.style.opacity = '0';
+            successMessage.remove();
+        }, 3000);
+    }
+});
+/*
+*  -------------------------- End of Function for Success Message -------------------
+*/
+
+
+
+
+
+
+
+
 /*
 *  ---------------------------- Add to Cart ------------------------------
 */
@@ -256,9 +284,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
             .then(data => {
                 // Handle the response from your controller if needed
                 console.log(data);
+
+                const success = document.getElementById('success-response');
+                const error = document.getElementById('error-response');
+
+                if (data['success-message']) {
+                    success.textContent = data['success-message'];
+                    success.classList.remove('error');
+                    success.classList.add('success');
+                } else if (data['validation-error-message']) {
+                    error.textContent = data['validation-error-message'];
+                    error.classList.remove('success');
+                    error.classList.add('error');
+                }
             })
             .catch(error => {
-                //console.error('Error:', error);
+                console.error('Error: ', error);
             });
     });
 });

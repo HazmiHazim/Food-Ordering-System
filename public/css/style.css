@@ -49,6 +49,29 @@ section {
 }
 
 /*
+*  ----------------- Validation Error Message -------------------
+*/
+.validation-error-message {
+    color: var(--danger);
+}
+
+/*
+* ------------------ End of Validation Error Message ------------------------
+*/
+
+/*
+*  ----------------------- Message Animation -------------------
+*/
+@keyframes anim {
+    100% {
+        width: 0;
+    }
+}
+/*
+*  ------------------------- End of Messsage Animation --------------------
+*/
+
+/*
 *  --------------------- Main --------------------------
 */
 .topbar {

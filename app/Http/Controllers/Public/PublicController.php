@@ -8,6 +8,7 @@ use App\Models\CustomerOrder;
 use App\Models\CustomerOrderDetail;
 use App\Models\DiningTable;
 use App\Models\FoodMenu;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -52,7 +53,7 @@ class PublicController extends Controller
     /*
     *  Function for add to cart
     */
-    public function createOrder(Request $request) : RedirectResponse
+    public function createOrder(Request $request) : JsonResponse
     {
         // Retrieve the JSON data from the request
         $cartItem = $request->input('cartData');
@@ -60,6 +61,9 @@ class PublicController extends Controller
 
         // Get table number input
         $tableNumber = $request->input('table_number');
+
+        // Initialize contact as null
+        $contact = null;
 
         // Check if contact field is filled
         if ($request->filled('customer_contact')) {
@@ -75,17 +79,16 @@ class PublicController extends Controller
 
         // If table not exists
         if (!$table) {
-            dd($table);
-            return back()->withErrors([
-                'error-message' => 'Table does not exists. Plese enter a correct table number.',
-            ]);
+            return response()->json([
+                'validation-error-message' => 'Table does not exists. Plese enter a correct table number.',
+            ], 422);
         }
 
         // If table is occupied
         if ($table->isOccupied) {
-            return back()->withErrors([
-                'error-message' => 'Table is taken. Please enter another table number.',
-            ]);
+            return response()->json([
+                'validation-error-message' => 'Table is taken. Please enter another table number.',
+            ], 422);
         }
 
         // Table exists and table is not accupied then update isOccupied to true
@@ -115,6 +118,8 @@ class PublicController extends Controller
 
         Log::info([$table, $order]);
 
-        return back()->with('success-message', 'Order is taken. Please wait 15 - 30 minutes for us to prepare your food.');
+        return response()->json([
+            'success-message' => 'Order is taken. Please wait 15 - 30 minutes for us to prepare your food.',
+        ]);
     }
 }

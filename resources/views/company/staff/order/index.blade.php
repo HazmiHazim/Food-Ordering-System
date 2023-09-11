@@ -6,7 +6,7 @@
 
     <section>
 
-        <div class="order">
+        <div class="customer-order-index">
 
             <main>
 
@@ -15,7 +15,7 @@
                     <div class="header">
                         <h1>Manage Customer Orders</h1>
                     </div>
-    
+
                     <div class="statistic">
 
                         <div class="item1">
@@ -33,7 +33,7 @@
                                 <span class="data">51 Still Pending</span>
                             </div>
                         </div>
-                
+
                         <div class="item"></div>
                     </div>
 
@@ -43,7 +43,8 @@
                             <h3>Manage Orders</h3>
                             <div class="button">
                                 <a href="#" class="delete"><i class='bx bxs-minus-circle'></i><span>Delete</span></a>
-                                <a href="#" class="add"><i class='bx bxs-plus-circle'></i><span>Create New Motherfucker</span></a>
+                                <a href="{{ route('customer-order-create') }}" class="add"><i
+                                        class='bx bxs-plus-circle'></i><span>Check Table</span></a>
                             </div>
                         </div>
 
@@ -52,7 +53,6 @@
                             <thead>
                                 <tr>
                                     <th><input type="checkbox"></th>
-                                    <th>Order ID</th>
                                     <th>Table Number</th>
                                     <th>Food Order</th>
                                     <th>Order Status</th>
@@ -63,16 +63,30 @@
                             </thead>
 
                             <tbody>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>Hazmi Hazim</td>
-                                    <td>Kambing@gmail.com</td>
-                                    <td>Kuala Lumpur</td>
-                                    <td>0123456789</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td><a href="#"><i class='bx bxs-pencil'></i><span>Edit</span></a></td>
-                                </tr>
+                                @foreach ($customerOrder as $order)
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>{{ $order->diningTable->table_name }}</td>
+                                        <td>
+                                            @foreach ($order->customerOrderDetail as $orderDetail)
+                                                {{ $orderDetail->food_id }}
+                                                @if (!$loop->last)
+                                                    ,
+                                                @endif
+                                            @endforeach
+                                        </td>
+                                        <td>{{ $order->order_status }}</td>
+                                        <td>
+                                            @if ($order->isPaid)
+                                                true
+                                            @else
+                                                false
+                                            @endif
+                                        </td>
+                                        <td>{{ $order->customer_contact }}</td>
+                                        <td><a href="#"><i class='bx bxs-pencil'></i><span>Edit</span></a></td>
+                                    </tr>
+                                @endforeach
                             </tbody>
 
                         </table>

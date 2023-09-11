@@ -72,6 +72,9 @@
         <div class="table-number">
             <span>Table No.</span>
             <input type="text" name="table_number" placeholder="0" required>
+            <div class="message"></div>
+            <div id="success-response" class="success-message"></div>
+            <div id="error-response" class="validation-error-message"></div>
         </div>
 
         <div class="main-section-order">
@@ -120,13 +123,14 @@
             <div class="social-page">
                 <div class="social-media">
                     <a href="#"><i class='bx bxl-whatsapp'></i></a>
-                    <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
-                    <a href="#"><i class='bx bxl-twitter' ></i></a>
-                    <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+                    <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-instagram-alt'></i></a>
                 </div>
                 <div class="project">
-                    <a href="https://github.com/HazmiHazim" target="_blank"><i class='bx bxl-github' ></i></a>
-                    <a href="https://www.linkedin.com/in/hazmihazim/" target="_blank"><i class='bx bxl-linkedin-square' ></i></a>
+                    <a href="https://github.com/HazmiHazim" target="_blank"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.linkedin.com/in/hazmihazim/" target="_blank"><i
+                            class='bx bxl-linkedin-square'></i></a>
                 </div>
             </div>
         </div>
