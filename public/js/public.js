@@ -302,6 +302,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 //console.error('Error: ', error);
             });
         
+        // Clear and reload page when click button confirm
         localStorage.clear();
         updateCart();
         location.reload();

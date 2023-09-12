@@ -4,17 +4,13 @@
 
 @section('content')
 
-    <section>
+    <div class="home-page">
 
-        <div class="home-page">
+        <section>
 
             <main>
 
-                <div class="top-section">
-
-                    <img src="{{ asset('images/home-bg1.jpg') }}" alt="Background">
-
-                    <div class="curtain"></div>
+                <div class="page">
 
                     <div class="content">
                         <div class="title">
@@ -37,7 +33,7 @@
 
             </main>
 
-    </section>
+        </section>
 
     </div>
 
