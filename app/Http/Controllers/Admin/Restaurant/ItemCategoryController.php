@@ -54,7 +54,7 @@ class ItemCategoryController extends Controller
     */
     public function destroy($id) : RedirectResponse
     {
-        $category = ItemCategory::find($id);
+        $category = ItemCategory::findOrFail($id);
 
         $category->delete();
 

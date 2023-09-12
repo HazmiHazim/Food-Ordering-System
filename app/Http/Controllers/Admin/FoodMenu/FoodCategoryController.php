@@ -54,7 +54,7 @@ class FoodCategoryController extends Controller
     */
     public function destroy($id) : RedirectResponse
     {
-        $category = FoodCategory::find($id);
+        $category = FoodCategory::findOrFail($id);
         
         $category->delete();
 

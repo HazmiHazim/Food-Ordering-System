@@ -20,12 +20,12 @@ class CustomerOrderDetail extends Model
 
     public function customerOrder() : BelongsTo
     {
-        return $this->belongsTo(CustomerOrder::class);
+        return $this->belongsTo(CustomerOrder::class, 'order_id');
     }
 
     public function foodMenu() : BelongsTo
     {
-        return $this->belongsTo(FoodMenu::class);
+        return $this->belongsTo(FoodMenu::class, 'food_id');
     }
 
     public function uniqueIds(): array

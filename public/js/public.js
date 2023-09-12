@@ -230,7 +230,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         cartQuantity.textContent = totalItemCount;
     }
 
-
     // Send add-to-cart value to controller
     const confirmOrderBtn = document.querySelector('.confirm-order');
     confirmOrderBtn.addEventListener('click', () => {
@@ -271,7 +270,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.log('Sending fetch request...');
         console.log('cartData:', cartData);
 
-        // Send an AJAX request to your Laravel controller
+        // Send an AJAX request to Laravel controller
         fetch('/menu/create-order', {
             method: 'POST',
             headers: {
@@ -282,11 +281,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         })
             .then(response => response.json())
             .then(data => {
-                // Handle the response from your controller if needed
+                // Handle the response from controller
                 console.log(data);
 
                 const success = document.getElementById('success-response');
                 const error = document.getElementById('error-response');
+
 
                 if (data['success-message']) {
                     success.textContent = data['success-message'];
@@ -299,8 +299,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 }
             })
             .catch(error => {
-                console.error('Error: ', error);
+                //console.error('Error: ', error);
             });
+        
+        localStorage.clear();
+        updateCart();
+        location.reload();
     });
 });
 /*

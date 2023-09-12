@@ -80,7 +80,7 @@ class PromotionDiscountController extends Controller
     */
     public function show($id) : View
     {
-        $promotion = PromotionDiscount::find($id);
+        $promotion = PromotionDiscount::findOrFail($id);
 
         return view('company.admin.promotion-discount.show', ['coupons' => $promotion]);
     }
@@ -113,7 +113,7 @@ class PromotionDiscountController extends Controller
     */
     public function update(Request $request, $id) : RedirectResponse
     {
-        $promotion = PromotionDiscount::find($id);
+        $promotion = PromotionDiscount::findOrFail($id);
 
         if ($request->anyFilled(['name', 'discount', 'status', 'cateory_id'])) {
 

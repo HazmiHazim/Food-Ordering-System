@@ -120,4 +120,6 @@ Route::prefix('staff')->middleware('auth', 'isStaff')->group(function () {
         'edit' => 'customer-order-edit',
     ]);
 
+    Route::put('/customer-order/update-order/{id}', [OrderControler::class, 'updateStatus'])->name('update-order');
+
 });

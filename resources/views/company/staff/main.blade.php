@@ -23,7 +23,7 @@
                         <span>Hash Restaurant</span>
                     </a>
                 </li>
-                <li class="{{ request()->routeIs(['staff-dashboard']) ? 'active' : '' }}">
+                <li class="{{ request()->routeIs(['staff-dashboard', 'login']) ? 'active' : '' }}">
                     <a href="{{ route('staff-dashboard') }}">
                         <i class='bx bxs-dashboard'></i>
                         <span>Dashboard</span>

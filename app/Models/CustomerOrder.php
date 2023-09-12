@@ -32,6 +32,6 @@ class CustomerOrder extends Model
 
     public function diningTable() : BelongsTo
     {
-        return $this->belongsTo(DiningTable::class);
+        return $this->belongsTo(DiningTable::class, 'dining_table_id');
     }
 }

@@ -82,7 +82,7 @@ class PartnershipController extends Controller
     */
     public function edit($id) : View
     {
-        $partner = Partnership::find($id);
+        $partner = Partnership::findOrFail($id);
 
         Log::info([$partner]);
 
@@ -97,7 +97,7 @@ class PartnershipController extends Controller
     */
     public function update(Request $request, $id) : RedirectResponse
     {
-        $partner = Partnership::find($id);
+        $partner = Partnership::findOrFail($id);
 
         if ($request->anyFilled(['image', 'company_name', 'owner_name', 'date', 'location'])) {
 
@@ -157,7 +157,7 @@ class PartnershipController extends Controller
 
     public function destroy($id) : RedirectResponse
     {
-        $partnership = Partnership::find($id);
+        $partnership = Partnership::findOrFail($id);
 
         // check if image path exists then delete the path inside storage
         $image = $partnership->image;

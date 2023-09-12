@@ -137,7 +137,7 @@ class FoodMenuController extends Controller
     */
     public function update(Request $request, $id) : RedirectResponse
     {
-        $menu = FoodMenu::find($id);
+        $menu = FoodMenu::findOrFail($id);
 
         if ($request->anyFilled(['name', 'description', 'price', 'category', 'image'])) {
 
@@ -201,7 +201,7 @@ class FoodMenuController extends Controller
     */
     public function destroy($id) : RedirectResponse
     {
-        $menu = FoodMenu::find($id);
+        $menu = FoodMenu::findOrFail($id);
 
         // check if image path exists then delete the path inside storage
         $image = $menu->image;

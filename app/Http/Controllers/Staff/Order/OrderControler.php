@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Staff\Order;
 
+use App\Enums\OrderStatusEnum;
 use App\Http\Controllers\Controller;
 use App\Models\CustomerOrder;
 use App\Models\DiningTable;
@@ -16,7 +17,8 @@ class OrderControler extends Controller
 {
     public function index() : View
     {
-        $order = CustomerOrder::paginate(10);
+        $order = CustomerOrder::with(['diningTable', 'customerOrderDetail.foodMenu'])
+        ->where('order_status', OrderStatusEnum::Preparing)->paginate(10);
 
         return view('company.staff.order.index', ['customerOrder' => $order]);
     }
@@ -90,5 +92,29 @@ class OrderControler extends Controller
         Log::info($created);
 
         return back()->with('success-message', 'Table number successfully registered.');
+    }
+
+
+
+
+
+    /*
+    *  Function to update order status resource
+    */
+    public function updateStatus($id) : RedirectResponse
+    {   
+        // Find order id
+        $order = CustomerOrder::findOrFail($id);
+
+        $order->update(['order_status' => OrderStatusEnum::Completed]);
+
+        // Get dining table based on order id
+        $diningTable = $order->diningTable;
+
+        $diningTable->update(['isOccupied' => false]);
+
+        Log::info([$order, $diningTable]);
+
+        return back()->with('success-message', 'Order status updated successfully.');
     }
 }

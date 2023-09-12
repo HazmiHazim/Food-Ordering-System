@@ -104,7 +104,7 @@ class RestaurantController extends Controller
     */
     public function update(Request $request, $id) : RedirectResponse
     {
-        $item = RestaurantItem::find($id);
+        $item = RestaurantItem::findOrFail($id);
 
         if ($request->anyFilled(['item_name', 'quntity', 'category', 'price'])) {
 
@@ -147,7 +147,7 @@ class RestaurantController extends Controller
     */
     public function destroy($id) : RedirectResponse
     {
-        $restaurant = RestaurantItem::find($id);
+        $restaurant = RestaurantItem::findOrFail($id);
 
         $restaurant->delete();
 

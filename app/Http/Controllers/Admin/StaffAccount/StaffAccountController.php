@@ -153,7 +153,7 @@ class StaffAccountController extends Controller
     */
     public function update(Request $request, $id) : RedirectResponse
     {
-        $user = User::find($id);
+        $user = User::findOrFail($id);
 
         if ($request->anyFilled(['name', 'email', 'phone', 'position', 'address'])) {
 
@@ -200,7 +200,7 @@ class StaffAccountController extends Controller
     */
     public function destroy($id) : RedirectResponse
     {
-        $staff = User::find($id);
+        $staff = User::findOrFail($id);
 
         $staff->delete();
 

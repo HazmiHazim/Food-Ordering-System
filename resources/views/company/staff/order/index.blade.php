@@ -10,6 +10,16 @@
 
             <main>
 
+                @if (session('success-message'))
+                    <div class="success-message left-green">
+                        <i class='bx bxs-check-circle'></i>
+                        <div class="text">
+                            <span>Success</span>
+                            <span class="message">{{ session('success-message') }}</span>
+                        </div>
+                    </div>
+                @endif
+
                 <div class="content">
 
                     <div class="header">
@@ -42,7 +52,6 @@
                         <div class="table-top">
                             <h3>Manage Orders</h3>
                             <div class="button">
-                                <a href="#" class="delete"><i class='bx bxs-minus-circle'></i><span>Delete</span></a>
                                 <a href="{{ route('customer-order-create') }}" class="add"><i
                                         class='bx bxs-plus-circle'></i><span>Check Table</span></a>
                             </div>
@@ -69,7 +78,7 @@
                                         <td>{{ $order->diningTable->table_name }}</td>
                                         <td>
                                             @foreach ($order->customerOrderDetail as $orderDetail)
-                                                {{ $orderDetail->food_id }}
+                                                {{ Str::limit($orderDetail->foodMenu->name, 10) }}
                                                 @if (!$loop->last)
                                                     ,
                                                 @endif
@@ -78,18 +87,25 @@
                                         <td>{{ $order->order_status }}</td>
                                         <td>
                                             @if ($order->isPaid)
-                                                true
+                                                True
                                             @else
-                                                false
+                                                False
                                             @endif
                                         </td>
                                         <td>{{ $order->customer_contact }}</td>
-                                        <td><a href="#"><i class='bx bxs-pencil'></i><span>Edit</span></a></td>
+                                        <td>
+                                            <button class="modal-button">
+                                                <i class='bx bxs-pencil'></i>
+                                                <span>Edit</span>
+                                            </button>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
 
                         </table>
+
+                        @include('company.staff.order.modal.edit')
 
                     </div>
 

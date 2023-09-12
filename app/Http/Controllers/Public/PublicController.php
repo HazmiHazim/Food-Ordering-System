@@ -71,9 +71,6 @@ class PublicController extends Controller
             //dd($contact);
         }
 
-        //dd($tableNumber);
-        Log::info($cartItem);
-
         // Get table record
         $table = DiningTable::where('table_name', $tableNumber)->first();
 
@@ -116,7 +113,7 @@ class PublicController extends Controller
             ]);
         }
 
-        Log::info([$table, $order]);
+        Log::info([$table, $order, $orderDetails]);
 
         return response()->json([
             'success-message' => 'Order is taken. Please wait 15 - 30 minutes for us to prepare your food.',

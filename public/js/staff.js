@@ -56,3 +56,73 @@ document.addEventListener('DOMContentLoaded', () => {
 /*
 *  -------------------------- End of Function for Success Message -------------------
 */
+
+
+
+
+/*
+*  --------------------------- Function for Order Modal ---------------------------------
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    const modalPopup = document.querySelector('.modal-edit-order');
+    const modalPopupBtns = document.querySelectorAll('.modal-button');
+    const closeBtn = document.getElementById('modal-close');
+    const cancelBtn = document.querySelector('.modal-edit-order .button-section .cancel');
+    const editStatus = document.getElementById('edit-order-status');
+    const statusChange = document.querySelector('.modal-edit-order .order-status .data');
+    const submitBtn = document.querySelector('.modal-edit-order .button-section input[type="submit"]');
+
+    let orderStatus;
+
+    modalPopupBtns.forEach((modalPopupBtn) => {
+        modalPopupBtn.addEventListener('click', () => {
+            modalPopup.style.visibility = 'visible';
+            modalPopup.style.opacity = '1';
+
+            orderStatus = statusChange.textContent;
+
+            disableSubmitBtn();
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modalPopup.style.visibility = 'hidden';
+        modalPopup.style.opacity = '0';
+
+        // Reset the status to its original value when closing the modal
+        statusChange.textContent = orderStatus;
+        statusChange.classList.remove('completed');
+
+        disableSubmitBtn();
+    });
+
+    cancelBtn.addEventListener('click', () => {
+        modalPopup.style.visibility = 'hidden';
+        modalPopup.style.opacity = '0';
+
+        // Reset the status to its original value when closing the modal
+        statusChange.textContent = orderStatus;
+        statusChange.classList.remove('completed');
+
+        disableSubmitBtn();
+    });
+
+    editStatus.addEventListener('click', () => {
+        statusChange.textContent = 'Completed';
+        statusChange.classList.add('completed');
+
+        submitBtn.disabled = false;
+    });
+
+    // Function to disable submit button if order status is not completed
+    function disableSubmitBtn() {
+        if (orderStatus !== 'Completed') {
+            submitBtn.disabled = true;
+        } else {
+            submitBtn.disabled = false;
+        }
+    }
+});
+/*
+*  ---------------------------------- End of Order Modal ------------------------------------
+*/

@@ -571,10 +571,6 @@ table tbody tr:nth-child(even) {
     gap: 5px;
 }
 
-.customer-order-index main .content .bottom-section .table-top .button a.delete {
-    background: var(--danger);
-}
-
 .customer-order-index main .content .bottom-section .table-top .button a.add {
     background: var(--success);
 }
@@ -587,6 +583,24 @@ table tbody tr:nth-child(even) {
     font-size: 16px;
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.customer-order-index main .content .bottom-section table td button {
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+.customer-order-index main .content .bottom-section table td button i {
+    color: var(--primary);
+}
+
+.customer-order-index main .content .bottom-section table td button span {
+    color: var(--primary);
+}
+
+.customer-order-index main .content .bottom-section table td button span:hover {
+    text-decoration: underline;
 }
 
 .customer-order-create main .content {
@@ -712,6 +726,169 @@ table tbody tr:nth-child(even) {
     font-size: 18px;
     font-weight: 700;
     color: var(--light);
+}
+
+.modal-edit-order {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    
+}
+
+.modal-edit-order .wrapper {
+    margin: 70px auto;
+    padding: 20px;
+    background: var(--grey);
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.modal-edit-order .wrapper h2 {
+    margin-top: 0;
+    color: var(--dark);
+}
+
+.modal-edit-order .wrapper i {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 20ms;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--dark);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.modal-edit-order .wrapper .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+.modal-edit-order .wrapper .content .container {
+    padding: 20px 0 0;
+}
+
+.modal-edit-order .wrapper .content .container .input-data {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.modal-edit-order .wrapper .content .container .input-data span,
+.modal-edit-order .wrapper .content .container .order-status span,
+.modal-edit-order .wrapper .content .container .food-list-order span {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.modal-edit-order .wrapper .content .container .order-status,
+.modal-edit-order .wrapper .content .container .food-list-order {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.modal-edit-order .wrapper .content .container .order-status .status {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-edit-order .wrapper .content .container .order-status .status span.data {
+    border-radius: 30px;
+    text-align: center;
+    color: var(--light);
+    padding: 2px 16px;
+    background: var(--warning);
+}
+
+.modal-edit-order .wrapper .content .container .order-status .status span.data.completed {
+    border-radius: 30px;
+    text-align: center;
+    color: var(--light);
+    padding: 2px 16px;
+    background: var(--success);
+}
+
+.modal-edit-order .wrapper .content .container .order-status .status span.edit {
+    display: flex;
+    cursor: pointer;
+    color: var(--success);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-edit-order .wrapper .content .container .order-status .status span.edit:hover {
+    text-decoration: underline;
+}
+
+.modal-edit-order .wrapper .content .container .food-list-order .list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.modal-edit-order .wrapper .content .container .food-list-order .list span {
+    background: transparent;
+    color: var(--glow);
+}
+
+.modal-edit-order .wrapper .content .container .button-section {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal-edit-order .wrapper .content .container .button-section input,
+.modal-edit-order .wrapper .content .container .button-section button {
+    margin-top: 50px;
+    border: none;
+    width: 40%;
+    height: 40px;
+    padding: 5px;
+    font-size: 16px;
+    color: var(--light);
+    background: var(--primary);
+    cursor: pointer;
+}
+
+.modal-edit-order .wrapper .content .container .button-section button {
+    background: var(--danger);
+}
+
+.modal-edit-order .wrapper .content .container .button-section input:hover {
+    background: var(--primary);
+    opacity: 0.9;
+}
+
+.modal-edit-order .wrapper .content .container .button-section button:hover {
+    background: var(--danger);
+    opacity: 0.9;
+}
+
+.modal-edit-order .wrapper .content .container .button-section input:disabled {
+    background: var(--dark-grey);
+    color: var(--light);
+    cursor: default;
+}
+
+.modal-edit-order .wrapper .content .container .button-section input:disabled:hover {
+    background: var(--dark-grey);
+    opacity: 1;
 }
 /*
 *  -------------------------- End of Customer Order Page ----------------------------
