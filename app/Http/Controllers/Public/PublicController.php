@@ -50,6 +50,19 @@ class PublicController extends Controller
 
 
 
+
+
+    /*
+    *  Function to view reservation file
+    */
+    public function reservation() : View
+    {
+        return view('public.reservation');
+    }
+
+
+
+
     /*
     *  Function for add to cart
     */

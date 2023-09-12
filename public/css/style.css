@@ -457,7 +457,10 @@ section {
 }
 
 .footer {
-    position: absolute;
+    position: relative;
+    right: 0;
+    left: 0;
+    bottom: 0;
     width: 100%;
     height: 300px;
     background: url('../images/footer-bg.png');
@@ -468,6 +471,7 @@ section {
 
 .footer .container {
     display: flex;
+    position: relative;
     width: 100%;
     height: 100%;
     align-items: center;
@@ -1116,6 +1120,45 @@ section {
 .menu-page main .container .food-item .item button span {
     font-size: 16px;
     color: var(--light);
+}
+
+.reservation-page {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.reservation-page main .reservation-form img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+}
+
+.reservation-page main .reservation-form .curtain {
+    display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark);
+    opacity: 0.5;
+    z-index: 200;
+}
+
+.reservation-page main .reservation-form {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
 /*
 *  -------------------------- End of Menu Page ------------------------------

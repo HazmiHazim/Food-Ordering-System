@@ -36,8 +36,8 @@
                     <a href="#"><span>Promotions</span></a>
                 </div>
 
-                <div class="reservation">
-                    <a href="#"><span>Reservation</span></a>
+                <div class="{{ request()->routeIs(['reservation']) ? 'active' : '' }}">
+                    <a href="{{ route('reservation') }}"><span>Reservation</span></a>
                 </div>
 
             </div>
