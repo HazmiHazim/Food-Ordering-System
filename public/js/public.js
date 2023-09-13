@@ -284,14 +284,32 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 // Handle the response from controller
                 console.log(data);
 
-                const success = document.getElementById('success-response');
+                const successModal = document.querySelector('.modal-success-message');
+                const successMessage = document.querySelector('.modal-success-message .message');
                 const error = document.getElementById('error-response');
 
 
                 if (data['success-message']) {
-                    success.textContent = data['success-message'];
-                    success.classList.remove('error');
-                    success.classList.add('success');
+
+                    // Use success message modal
+                    // Set the text content of the modal's success message element
+                    successMessage.textContent = data['success-message'];
+
+                    successModal.style.visibility = 'visible';
+                    successModal.style.opacity = '1';
+
+                    // Close modal button
+                    const closeModalBtn = successModal.querySelector('.close-modal');
+                    closeModalBtn.addEventListener('click', () => {
+                        successModal.style.visibility = 'hidden';
+                        successModal.style.opacity = '0';
+
+                        // Clear and reload page when click button okay
+                        localStorage.clear();
+                        updateCart();
+                        location.reload();
+                    });
+
                 } else if (data['validation-error-message']) {
                     error.textContent = data['validation-error-message'];
                     error.classList.remove('success');
@@ -301,11 +319,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             .catch(error => {
                 //console.error('Error: ', error);
             });
-        
-        // Clear and reload page when click button confirm
-        localStorage.clear();
-        updateCart();
-        location.reload();
     });
 });
 /*

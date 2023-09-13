@@ -3,15 +3,18 @@
 namespace App\Http\Controllers\Public;
 
 use App\Enums\OrderStatusEnum;
+use App\Enums\ReservationStatusEnum;
 use App\Http\Controllers\Controller;
 use App\Models\CustomerOrder;
 use App\Models\CustomerOrderDetail;
 use App\Models\DiningTable;
 use App\Models\FoodMenu;
+use App\Models\Reservation;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
 
 class PublicController extends Controller
@@ -131,5 +134,46 @@ class PublicController extends Controller
         return response()->json([
             'success-message' => 'Order is taken. Please wait 15 - 30 minutes for us to prepare your food.',
         ]);
+    }
+
+
+
+    
+
+    /*
+    *  Function for reservation
+    */
+    public function makeReservation(Request $request) : RedirectResponse
+    {
+        $validator = Validator::make($request->all(), [
+            'book_name' => 'required|max:255',
+            'book_email' => 'required|email',
+            'book_phone' => 'required|numeric',
+            'guest_number' => 'required|numeric',
+            'book_date' => 'required|date',
+            'book_time' => 'required|date_format:h:i A',
+            'book_message' => 'required|max:999999'
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
+        // Store reservation data
+        $reservation = Reservation::create([
+            'reservation_name' => $request->book_name,
+            'reservation_email' => $request->book_email,
+            'reservation_contact' => $request->book_phone,
+            'reservation_attendees' => $request->guest_number,
+            'reservation_date' => $request->book_date,
+            'reservation_time' => $request->book_time,
+            'reservation_message' => $request->book_message,
+            'dining_table_id' => null,
+            'reservation_status' => ReservationStatusEnum::Pending,
+        ]);
+
+        Log::info($reservation);
+
+        return back()->with('success-message', 'We have received your reservation. We will process immediately and we will contact you as soon as possible. Thank you.');
     }
 }

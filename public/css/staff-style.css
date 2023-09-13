@@ -738,7 +738,6 @@ table tbody tr:nth-child(even) {
     transition: opacity 500ms;
     visibility: hidden;
     opacity: 0;
-    
 }
 
 .modal-edit-order .wrapper {
@@ -892,4 +891,95 @@ table tbody tr:nth-child(even) {
 }
 /*
 *  -------------------------- End of Customer Order Page ----------------------------
+*/
+
+/*
+*  -------------------------- Reservation Page --------------------------------------
+*/
+.reservation-index main .content {
+    padding: 24px;
+}
+
+.reservation-index main .content .header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.reservation-index main .content .reservation-status {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 15px;
+    gap: 30px;
+}
+
+.reservation-index main .content .reservation-status .container {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid var(--dark-grey);
+    border-radius: 5px;
+    background: var(--light);
+    padding: 16px;
+    gap: 20px;
+}
+
+.reservation-index main .content .reservation-status .container i {
+    font-size: 48px;
+}
+
+.reservation-index main .content .reservation-status .container i {
+    color: var(--main-blue);
+}
+
+.reservation-index main .content .reservation-status .container .data {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.reservation-index main .content .reservation-status .container .data span.title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.reservation-index main .content .reservation-status .container .data span.data {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.reservation-index main .content .reservation-status .container .data span.data {
+    color: var(--main-blue);
+}
+
+.reservation-index main .content .bottom-section {
+    margin-top: 50px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
+}
+
+.reservation-index main .content .bottom-section .table-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    color: var(--default);
+    background: var(--dark);
+    padding: 12px 24px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.reservation-index main .content .bottom-section .table-top h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--light);
+}
+/*
+*  --------------------------- End of Reservation Page -----------------------------------
 */

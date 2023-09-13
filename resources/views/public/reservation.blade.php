@@ -50,7 +50,7 @@
 
                             <div class="message">
                                 <span class="label">Message</span>
-                                <textarea name="book_message" placeholder="Tell us anything else that might be important." required></textarea>
+                                <textarea name="book_message" placeholder="Tell us anything else that might be important."></textarea>
                             </div>
 
                             <div class="button-section">
@@ -62,6 +62,8 @@
                         </form>
 
                     </div>
+
+                    @include('public.modal.success-message');
 
                 </div>
 

@@ -35,8 +35,8 @@
                         <span>Orders</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li class="{{ request()->routeIs(['customer-reservation']) ? 'active' : '' }}">
+                    <a href="{{ route('customer-reservation') }}">
                         <i class='bx bxs-book'></i>
                         <span>Reservation</span>
                     </a>

@@ -19,6 +19,6 @@ class RestaurantItem extends Model
 
     public function itemCategory() : BelongsTo
     {
-        return $this->belongsTo(ItemCategory::class);
+        return $this->belongsTo(ItemCategory::class, 'item_category_id');
     }
 }

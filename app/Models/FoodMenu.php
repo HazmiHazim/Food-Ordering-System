@@ -26,6 +26,6 @@ class FoodMenu extends Model
 
     public function foodCategory() : BelongsTo
     {
-        return $this->belongsTo(FoodCategory::class);
+        return $this->belongsTo(FoodCategory::class, 'category_id');
     }
 }

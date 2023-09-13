@@ -14,6 +14,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\Public\PublicController;
 use App\Http\Controllers\Staff\Order\OrderControler;
+use App\Http\Controllers\Staff\Reservation\ReservationController;
 use App\Http\Controllers\Staff\StaffController;
 use Illuminate\Support\Facades\Route;
 
@@ -117,10 +118,17 @@ Route::prefix('staff')->middleware('auth', 'isStaff')->group(function () {
     Route::resource('/customer-order', OrderControler::class)->names([
         'index' => 'customer-order',
         'create' => 'customer-order-create',
-        'show' => 'customer-order-show',
-        'edit' => 'customer-order-edit',
+        'show' => 'customer-order-show',      // Not used yet
+        'edit' => 'customer-order-edit',      // Not used yet
     ]);
 
     Route::put('/customer-order/update-order/{id}', [OrderControler::class, 'updateStatus'])->name('update-order');
 
+
+    Route::resource('/customer-reservation', ReservationController::class)->names([
+        'index' => 'customer-reservation',
+        'create' => 'customer-reservation-create',
+        'show' => 'customer-reservation-show',
+        'edit' => 'customer-reservation-edit',
+    ]);
 });

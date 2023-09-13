@@ -19,4 +19,9 @@ class DiningTable extends Model
     {
         return $this->hasOne(CustomerOrder::class, 'dining_table_id');
     }
+
+    public function reservation() : HasOne
+    {
+        return $this->hasOne(Reservation::class, 'dining_table_id');
+    }
 }

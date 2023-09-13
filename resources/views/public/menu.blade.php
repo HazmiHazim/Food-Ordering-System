@@ -39,6 +39,8 @@
 
             </main>
 
+            @include('public.modal.success-message');
+
         </div>
 
     </section>

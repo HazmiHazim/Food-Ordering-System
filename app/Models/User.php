@@ -53,6 +53,6 @@ class User extends Authenticatable
 
     public function staffAccount() : BelongsTo
     {
-        return $this->belongsTo(StaffAccount::class);
+        return $this->belongsTo(StaffAccount::class, 'staff_id');
     }
 }

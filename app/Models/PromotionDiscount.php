@@ -28,7 +28,7 @@ class PromotionDiscount extends Model
 
     public function promotionEvent() : BelongsTo
     {
-        return $this->belongsTo(PromotionEvent::class);
+        return $this->belongsTo(PromotionEvent::class, 'event_id');
     }
 
     public function uniqueIds() : array
