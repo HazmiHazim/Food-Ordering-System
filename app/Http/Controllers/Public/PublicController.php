@@ -149,10 +149,10 @@ class PublicController extends Controller
             'book_name' => 'required|max:255',
             'book_email' => 'required|email',
             'book_phone' => 'required|numeric',
-            'guest_number' => 'required|numeric',
-            'book_date' => 'required|date',
-            'book_time' => 'required|date_format:h:i A',
-            'book_message' => 'required|max:999999'
+            'guest_number' => 'required|numeric|min:2',
+            'book_date' => 'required|date|after:today',
+            'book_time' => 'required|date_format:H:i',
+            'book_message' => 'max:999999'
         ]);
 
         if ($validator->fails()) {

@@ -8,7 +8,7 @@
 
                 <h1>Success</h1>
 
-                <span class="message">Message that will return</span>
+                <span class="message">Message that will return JSON Message</span>
 
                 <button type="button" class="close-modal"><span>okay</span></button>
 

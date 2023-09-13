@@ -52,18 +52,29 @@
                             </thead>
 
                             <tbody>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>haha</td>
-                                    <td>haha</td>
-                                    <td>haha</td>
-                                    <td>haha</td>
-                                    <td>haha</td>
-                                    <td>haha</td>
-                                    <td>haha</td>
-                                    <td>haha</td>
-                                    <td><a href="#"><i class='bx bxs-pencil'></i><span>Edit</span></a></td>
-                                </tr>
+                                @foreach ($reservation as $reserve)
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>{{ $reserve->reservation_name }}</td>
+                                        <td>{{ $reserve->reservation_email }}</td>
+                                        <td>{{ $reserve->reservation_contact }}</td>
+                                        <td>{{ $reserve->reservation_attendees }}</td>
+                                        <td>
+                                            {{ date('d-M', strtotime($reserve->reservation_date)) }} 
+                                            {{ date('g:i A', strtotime($reserve->reservation_time)) }}
+                                        </td>
+                                        <td>
+                                            @if ($reserve->dining_table_id)
+                                                {{ $reserve->dining_table_id }}
+                                            @else
+                                                Not Chosen
+                                            @endif
+                                        </td>
+                                        <td>{{ $reserve->reservation_status }}</td>
+                                        <td>{{ $reserve->reservation_message }}</td>
+                                        <td><a href="#"><i class='bx bxs-pencil'></i><span>Edit</span></a></td>
+                                    </tr>
+                                @endforeach
                             </tbody>
 
                         </table>

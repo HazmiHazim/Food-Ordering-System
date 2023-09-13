@@ -46,7 +46,7 @@
                                             </div>
                                             <div class="output">
                                                 <span>{{ $partner->owner_name }}</span>
-                                                <span>{{ \Carbon\Carbon::parse($partner->date_join)->formatLocalized('%B %Y') }}</span>
+                                                <span>{{ date('F Y', strtotime($partner->date_join)) }}</span>
                                                 <span>{{ $partner->location }}</span>
                                             </div>
                                         </div>
