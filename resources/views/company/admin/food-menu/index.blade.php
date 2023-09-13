@@ -65,7 +65,7 @@
                                         <td>{{ $foodList->name }}</td>
                                         <td>{{ Str::limit($foodList->description, 30) }}</td>
                                         <td>RM {{ $foodList->price }}</td>
-                                        <td>{{ $foodList->category_id }}</td>
+                                        <td>{{ $foodList->foodCategory->name }}</td>
                                         <td><img src="{{ asset($foodList->image) }}"></td>
                                         <td>
                                             <a href="{{ route('food-menu-show', ['food_menu' => $foodList->id]) }}">

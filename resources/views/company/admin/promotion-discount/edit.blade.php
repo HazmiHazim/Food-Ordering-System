@@ -37,7 +37,7 @@
                         <div class="container">
 
                             <div class="header">
-                                <h3>Edit Coupon 1</h3>
+                                <h3>Edit Coupon {{ $promotion->coupon_name }}</h3>
                             </div>
 
                             <div class="details">
