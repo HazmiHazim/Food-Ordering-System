@@ -37,11 +37,19 @@
     php artisan db:seed
     ```
 
-## User
-```
-ID : hashceo001
-Pass : adminceouser
+# `Authentication`
+- Admin
+    ```
+    ID: hashceo001
+    ```
+    ```
+    Password: adminceouser
+    ```
 
-ID : hashstaff123
-Pass : staffuser
-```
+- Staff
+    ```
+    ID: hashstaff123
+    ```
+    ```
+    Password: staffuser
+    ```

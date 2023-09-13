@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('staff_id')->unique();
             $table->foreign('staff_id')->references('staff_account_id')->on('staff_accounts')->restrictOnUpdate()->cascadeOnDelete();
             $table->string('name');
-            $table->string('role')->default('1');
+            $table->integer('role')->default(2);
             $table->string('email')->unique();
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
