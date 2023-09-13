@@ -23,21 +23,19 @@
     ```
     composer update
     ```
-
-- Setup application
     
-    - Generate key
-       ```
-       php artisan key:generate
-       ```
-    - Migrate database
-       ```
-       php artisan migrate
-       ```    
-    - Run seeder
-        ```
-        php artisan db:seed
-        ```
+- Generate key
+    ```
+    php artisan key:generate
+    ```
+- Migrate database
+    ```
+    php artisan migrate
+    ```    
+- Run seeder
+    ```
+    php artisan db:seed
+    ```
 
 ## User
 ```
