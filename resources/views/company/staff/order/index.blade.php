@@ -31,7 +31,7 @@
                         <div class="item1">
                             <i class='bx bxs-check-circle'></i>
                             <div class="data">
-                                <span class="title">Total Orders Completed (Today)</span>
+                                <span class="title">Total Orders Completed ({{ date('j M', strtotime(now())) }})</span>
                                 <span class="data">Total of 51 Order</span>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                         <div class="item2">
                             <i class='bx bxs-info-circle'></i>
                             <div class="data">
-                                <span class="title">Total Orders Pending (Today)</span>
+                                <span class="title">Total Orders Pending ({{ date('j M', strtotime(now())) }})</span>
                                 <span class="data">51 Still Pending</span>
                             </div>
                         </div>

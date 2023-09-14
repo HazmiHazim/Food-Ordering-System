@@ -43,14 +43,14 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class='bx bxs-dashboard'></i>
-                        <span>Test3</span>
+                        <i class='bx bxs-message-alt-error'></i>
+                        <span>Complaint</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class='bx bxs-dashboard'></i>
-                        <span>Test3</span>
+                        <i class='bx bxs-dollar-circle'></i>
+                        <span>Money Float</span>
                     </a>
                 </li>
                 <li>
@@ -89,7 +89,24 @@
             </div>
 
             <div class="user">
-                <i class='bx bxs-user-circle'></i>
+                <i class='bx bxs-user-circle' id="profile-menu"></i>
+                <ul class="toggle-profile">
+                    <li><a href="#"><i class='bx bxs-user-detail'></i><span>Update Profile</span></a></li>
+                    <li class="logout">
+                        <form action="{{ route('logout') }}" method="POST" id="logout-form">
+
+                            @csrf
+
+                            <button type="button" id="logout-button">
+                                <i class='bx bx-log-out-circle'></i>
+                                <span>Logout</span>
+                            </button>
+
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                        </form>
+                    </li>
+                </ul>
             </div>
 
         </div>

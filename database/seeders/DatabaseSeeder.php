@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             ItemCategorySeeder::class,
             RestaurantItemSeeder::class,
             PartnershipSeeder::class,
+            DiningTableSeeder::class,
         ]);
     }
 }

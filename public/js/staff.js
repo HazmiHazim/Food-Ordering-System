@@ -40,6 +40,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+/*
+*  ------------------------- Toggle Topbar Profile -----------------------------
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('profile-menu');
+
+    toggleBtn.addEventListener('click', () => {
+        const profileToggle = document.querySelector('.toggle-profile');
+        profileToggle.classList.toggle('active');
+    });
+});
+/*
+*  ----------------------------- End of Toggle Topbar Profile -------------------------------
+*/
+
 /*
 *  -------------------- Function for Success Message ---------------------------
 */

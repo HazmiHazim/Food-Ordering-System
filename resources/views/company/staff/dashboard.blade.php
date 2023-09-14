@@ -51,8 +51,7 @@
                             <h3>Manage Orders</h3>
                             <div class="button">
                                 <a href="#" class="delete"><i class='bx bxs-minus-circle'></i><span>Delete</span></a>
-                                <a href="#" class="add"><i class='bx bxs-plus-circle'></i><span>Create New
-                                        Motherfucker</span></a>
+                                <a href="#" class="add"><i class='bx bxs-plus-circle'></i><span>Create New</span></a>
                             </div>
                         </div>
 
