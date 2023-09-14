@@ -16,9 +16,10 @@ class PromotionEventController extends Controller
     */
     public function store(Request $request) : RedirectResponse
     {
-        $validator = Validator::make($request->only(['event_name', 'event_date']), [
+        $validator = Validator::make($request->all(), [
             'event_name' => 'required|max:255',
             'event_date' => 'required|date',
+            'image' => 'required|image|mimes:jpg,jpeg,png,svg|max:10480',
         ]);
 
         if ($validator->fails()) {
@@ -37,9 +38,19 @@ class PromotionEventController extends Controller
             ]);
         }
         else {
+            // Get the original file name
+            $file = $request->file('image');
+
+            // Generate a unique name for the uploaded file
+            $fileName = $file->hashName();
+
+            // Store the file with the new name
+            $imagePath = $file->storeAs('images/promotion-event', $fileName);
+
             $eventCreate = PromotionEvent::create([
                 'event_name' => $request->event_name,
                 'event_date' => $request->event_date,
+                'event_image' => $imagePath,
             ]);
 
             Log::info([$eventCreate]);

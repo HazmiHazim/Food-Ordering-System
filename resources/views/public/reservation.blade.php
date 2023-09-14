@@ -28,19 +28,19 @@
 
                             <div class="top-detail">
                                 <span class="label">Your Name</span>
-                                <input type="text" name="book_name" placeholder="John Doe" required>
+                                <input type="text" name="book_name" placeholder="John Doe" value="{{ old('book_name') }}" required>
                                 @foreach ($errors->get('book_name') as $name)
                                     <div class="validation-error-message">{{ $name }}</div>
                                 @endforeach
 
                                 <span class="label">Your E-mail</span>
-                                <input type="text" name="book_email" placeholder="john.doe@email.com" required>
+                                <input type="text" name="book_email" placeholder="john.doe@email.com" value="{{ old('book_email') }}" required>
                                 @foreach ($errors->get('book_email') as $name)
                                     <div class="validation-error-message">{{ $name }}</div>
                                 @endforeach
 
                                 <span class="label">Your Phone</span>
-                                <input type="text" name="book_phone" placeholder="0123456789" required>
+                                <input type="text" name="book_phone" placeholder="0123456789" value="{{ old('book_phone') }}" required>
                                 @foreach ($errors->get('book_phone') as $name)
                                     <div class="validation-error-message">{{ $name }}</div>
                                 @endforeach
@@ -50,19 +50,19 @@
 
                             <div class="bottom-detail">
                                 <span class="label">Number of Guests</span>
-                                <input type="number" name="guest_number" placeholder="5" required>
+                                <input type="number" name="guest_number" placeholder="5" value="{{ old('guest_number') }}" required>
                                 @foreach ($errors->get('guest_number') as $name)
                                     <div class="validation-error-message">{{ $name }}</div>
                                 @endforeach
 
                                 <span class="label">Reservation Date</span>
-                                <input type="date" name="book_date" placeholder="20/03/2077" required>
+                                <input type="date" name="book_date" placeholder="20/03/2077" value="{{ old('book_date') }}" required>
                                 @foreach ($errors->get('book_date') as $name)
                                     <div class="validation-error-message">{{ $name }}</div>
                                 @endforeach
 
                                 <span class="label">Reservation Time</span>
-                                <input type="time" name="book_time" placeholder="12.00 p.m." required>
+                                <input type="time" name="book_time" placeholder="12.00 p.m." value="{{ old('book_time') }}" required>
                                 @foreach ($errors->get('book_time') as $name)
                                     <div class="validation-error-message">{{ $name }}</div>
                                 @endforeach

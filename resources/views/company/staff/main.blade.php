@@ -89,9 +89,14 @@
             </div>
 
             <div class="user">
-                <i class='bx bxs-user-circle' id="profile-menu"></i>
+                @if (Auth::user()->photo)
+                    <img src="{{ asset(Auth::user()->photo) }}" alt="User-Photo" class="user-profile" id="profile-menu">
+                @else
+                    <i class='bx bxs-user-circle' id="profile-menu"></i>
+                @endif
                 <ul class="toggle-profile">
-                    <li><a href="#"><i class='bx bxs-user-detail'></i><span>Update Profile</span></a></li>
+                    <li><a href="{{ route('staff-profile-show', Auth::user()->id) }}"><i class='bx bxs-user-detail'></i><span>Update Profile</span></a></li>
+                    <li><a href="#"><i class='bx bxs-key'></i><span>Change Password</span></a></li>
                     <li class="logout">
                         <form action="{{ route('logout') }}" method="POST" id="logout-form">
 

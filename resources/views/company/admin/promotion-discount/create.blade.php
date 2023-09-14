@@ -102,6 +102,12 @@
 
                                 <span>Event Date</span>
                                 <input type="date" name="event_date" placeholder="Enter Event Date" required>
+
+                                <div class="drag-area">
+                                    <i class='bx bxs-cloud-upload'></i>
+                                    <h2 class="drag-text">Drag and drop to upload image</h2>
+                                    <input type="file" hidden name="image" accept="image/*" class="select-image-input" required>
+                                </div>
                             </div>
 
                             <div class="button">
@@ -139,8 +145,7 @@
                                     <th><input type="checkbox"></th>
                                     <th>Event Name</th>
                                     <th>Date</th>
-                                    <th>Created At</th>
-                                    <th>Updated At</th>
+                                    <th>Event Image</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -150,9 +155,8 @@
                                     <tr>
                                         <td><input type="checkbox"></td>
                                         <td>{{ $event->event_name }}</td>
-                                        <td>{{ $event->event_date }}</td>
-                                        <td>{{ $event->created_at }}</td>
-                                        <td>{{ $event->updated_at }}</td>
+                                        <td>{{ date('j F', strtotime($event->event_date)) }}</td>
+                                        <td><img src="{{ asset($event->event_image) }}" alt="Event Image"></td>
                                         <td>
                                             <form action="/" method="POST">
                                                 @method('DELETE')

@@ -251,6 +251,14 @@ table tbody tr:nth-child(even) {
     cursor: pointer;
 }
 
+.topbar .content img.user-profile {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
 .topbar .content .user ul {
     display: flex;
     flex-direction: column;
@@ -288,7 +296,7 @@ table tbody tr:nth-child(even) {
     gap: 10px;
 }
 
-.topbar .content .user ul li a {
+.topbar .content .user ul li:first-child > a {
     border-top-right-radius: 16px;
     border-top-left-radius: 16px;
 }
@@ -382,6 +390,66 @@ table tbody tr:nth-child(even) {
 }
 /*
 * ------------ End of Success Message -------------------
+*/
+
+/*
+* --------------- Error Message -----------------------
+*/
+.error-message {
+    position: absolute;
+    z-index: 1700;
+    background: var(--light);
+    border-radius: 2px;
+    width: 360px;
+    height: 60px;
+    align-items: center;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    display: flex;
+    right: 30px;
+    top: 0;
+}
+
+.error-message .text {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-red {
+    border-left: 8px solid var(--danger);
+}
+
+.error-message i {
+    margin: 0 20px;
+    font-size: 36px;
+    color: var(--danger);
+}
+
+.error-message span {
+    font-size: 16px;
+    color: var(--dark);
+    font-weight: 700;
+}
+
+.error-message span.message {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--dark-grey);
+}
+
+.error-message::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--danger);
+    animation: anim 3s linear forwards;
+}
+/*
+* -------------- End of Error Message -----------------------
 */
 
 /*
@@ -524,6 +592,162 @@ table tbody tr:nth-child(even) {
 /*
 *  ------------------------------ End of Dashboard ---------------------
 */
+
+/*
+*  ----------------------------- Staff Profile Page --------------------------------
+*/
+.staff-profile-show main .content,
+.staff-profile-edit main .content {
+    padding: 24px;
+}
+
+.staff-profile-show main .content .header h1,
+.staff-profile-edit main .content .header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.staff-profile-show main .content .container,
+.staff-profile-edit main .content .container {
+    display: flex;
+    margin-top: 30px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
+    gap: 40px;
+}
+
+.staff-profile-show main .content .container img {
+    display: flex;
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.staff-profile-show main .content .container .profile-data,
+.staff-profile-edit main .content .container .profile-data {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.staff-profile-show main .content .container .profile-data span.label,
+.staff-profile-edit main .content .container .profile-data span.label {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 5px;
+}
+
+.staff-profile-show main .content .container .profile-data span.data {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.staff-profile-show main .content .button,
+.staff-profile-edit main .content .button {
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.staff-profile-show main .content .button a,
+.staff-profile-edit main .content .button input[type="submit"],
+.staff-profile-edit main .content .button a {
+    display: flex;
+    width: 30%;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    background: var(--danger);
+    color: var(--light);
+    padding: 5px 18px;
+    gap: 5px;
+}
+
+.staff-profile-show main .content .button a.edit,
+.staff-profile-edit main .content .button input[type="submit"] {
+    background: var(--main-blue);
+}
+
+.staff-profile-show main .content .button a.edit:hover,
+.staff-profile-edit main .content .button input[type="submit"]:hover {
+    background: var(--main-blue);
+    opacity: 0.9;
+}
+
+.staff-profile-show main .content .button a.back:hover,
+.staff-profile-edit main .content .button a.cancel:hover {
+    background: var(--danger);
+    opacity: 0.9;
+}
+
+.staff-profile-edit main .content .container .drag-area {
+    display: flex;
+    width: 400px;
+    border: 1px dashed var(--dark-grey);
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px 0px;
+    cursor: pointer;
+}
+
+.staff-profile-edit main .content .container .drag-area i {
+    font-size: 32px;
+    color: var(--dark-grey);
+}
+
+.staff-profile-edit main .content .container .drag-area h2 {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--dark-grey);
+}
+
+.staff-profile-edit main .content .container .profile-data input[type="text"],
+.staff-profile-edit main .content .container .profile-data input[type="email"] {
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px 12px;
+    color: var(--dark);
+    border: 1px solid var(--dark);
+}
+
+.staff-profile-edit main .content .container .profile-data .input-radio {
+    display: flex;
+    gap: 50px;
+}
+
+.staff-profile-edit main .content .container .profile-data .input-radio label {
+    display: flex;
+    gap: 10px;
+}
+
+.staff-profile-edit main .content .container .profile-data .input-radio label span {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.staff-profile-edit main .content .button input[type="submit"] {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    color: var(--light);
+}
+/*
+*  ------------------------------ End of Staff Profile Page ----------------------------------
+*/
+
 
 /*
 *  -------------------------- Customer Order Page ---------------------------

@@ -13,6 +13,7 @@ class PromotionEvent extends Model
     protected $fillable = [
         'event_name',
         'event_date',
+        'event_image',
     ];
 
     public function promotionDiscount() : HasMany

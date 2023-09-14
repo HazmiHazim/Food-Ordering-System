@@ -14,6 +14,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\Public\PublicController;
 use App\Http\Controllers\Staff\Order\OrderControler;
+use App\Http\Controllers\Staff\Profile\StaffProfileController;
 use App\Http\Controllers\Staff\Reservation\ReservationController;
 use App\Http\Controllers\Staff\StaffController;
 use Illuminate\Support\Facades\Route;
@@ -117,6 +118,12 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
 Route::prefix('staff')->middleware('auth', 'isStaff')->group(function () {
     Route::get('/dashboard', [StaffController::class, 'index'])->name('staff-dashboard');
 
+    // Profile module
+    Route::resource('/staff-profile', StaffProfileController::class)->names([
+        'show' => 'staff-profile-show',
+        'edit' => 'staff-profile-edit',
+    ]);
+
     // Order module
     Route::resource('/customer-order', OrderControler::class)->names([
         'index' => 'customer-order',
@@ -128,6 +135,7 @@ Route::prefix('staff')->middleware('auth', 'isStaff')->group(function () {
     Route::put('/customer-order/update-order/{id}', [OrderControler::class, 'updateStatus'])->name('update-order');
 
 
+    // Reservation module
     Route::resource('/customer-reservation', ReservationController::class)->names([
         'index' => 'customer-reservation',
         'create' => 'customer-reservation-create',

@@ -46,15 +46,30 @@ document.addEventListener('DOMContentLoaded', () => {
 */
 document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.getElementById('profile-menu');
+    const profileToggle = document.querySelector('.toggle-profile');
+    const body = document.querySelector('body');
 
-    toggleBtn.addEventListener('click', () => {
-        const profileToggle = document.querySelector('.toggle-profile');
+    toggleBtn.addEventListener('click', (event) => {
+        event.stopPropagation();
         profileToggle.classList.toggle('active');
+    });
+
+    // Click outside will close the toggle
+    body.addEventListener('click', () => {
+        profileToggle.classList.remove('active');
+    });
+
+    profileToggle.addEventListener('click', (event) => {
+        event.stopPropagation();
     });
 });
 /*
 *  ----------------------------- End of Toggle Topbar Profile -------------------------------
 */
+
+
+
+
 
 /*
 *  -------------------- Function for Success Message ---------------------------
@@ -72,6 +87,92 @@ document.addEventListener('DOMContentLoaded', () => {
 /*
 *  -------------------------- End of Function for Success Message -------------------
 */
+
+
+
+
+
+/*
+*  --------------------- Function for Error Message ------------------------------
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    const errorMessage = document.querySelector('.error-message');
+
+    if (errorMessage) {
+        setTimeout(() => {
+            errorMessage.style.opacity = '0';
+            errorMessage.remove();
+        }, 3000);
+    }
+});
+/*
+*  ------------------------- End of Function for Error Message -------------------------
+*/
+
+
+
+
+
+
+/*
+*  ------------- Drag and Drop Function -----------------
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    const dragArea = document.querySelector('.drag-area');
+    const dragText = dragArea.querySelector('.drag-text');
+    const imageInput = dragArea.querySelector('.select-image-input');
+    let file;
+
+    dragArea.addEventListener('dragover', (event) => {
+        event.preventDefault();
+        dragArea.classList.add('active');
+        dragText.textContent = 'Release to upload file';
+    });
+
+    dragArea.addEventListener('dragleave', () => {
+        dragArea.classList.remove('active');
+        dragText.textContent = 'Drag and drop to upload image';
+    });
+
+    dragArea.addEventListener('drop', (event) => {
+        event.preventDefault();
+        dragArea.classList.remove('active');
+
+        file = event.dataTransfer.files[0];
+
+        //showImage();
+    });
+
+    dragArea.addEventListener('click', () => {
+        imageInput.click();
+    });
+
+    imageInput.addEventListener('change', () => {
+        file = imageInput.files[0];
+        //showImage();
+    });
+
+    function showImage() {
+        let fileType = file.type;
+
+        let validExtensions = ['image/jpg', 'image/jpeg', 'image/png', 'image/svg'];
+
+        if (validExtensions.includes(fileType)) {
+            let fileReader = new FileReader();
+            fileReader.onload = () => {
+                let fileUrl = fileReader.result;
+                let imgTag = `<img src="${fileUrl}" alt="">`;
+                dragArea.innerHTML = imgTag;
+            }
+            fileReader.readAsDataURL(file);
+        }
+    }
+});
+/*
+* ----------------- End of Drag and Drop Function ------------------
+*/
+
+
 
 
 
