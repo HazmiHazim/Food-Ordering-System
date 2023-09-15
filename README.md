@@ -19,9 +19,9 @@
     cp .env.example .env
     ```
 
-- Update php & javascript libraries
+- Install php & javascript libraries
     ```
-    composer update
+    composer install
     ```
     
 - Generate key

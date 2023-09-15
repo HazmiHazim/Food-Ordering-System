@@ -77,8 +77,13 @@ class PublicController extends Controller
                 ->orWhereMonth('event_date', '=', $monthBefore);
         })->get();
 
-        // To be fixed
-        $coupon = PromotionDiscount::all();
+        // Initialize as empty array to store coupon based on $promotion
+        $coupon = [];
+
+        foreach ($promotion as $event) {
+            $eventCoupon = PromotionDiscount::where('event_id', $event->id)->get();
+            $coupon[$event->id] = $eventCoupon;
+        }
 
         $menu = FoodMenu::where('price', '>', 27.00)->get();
 

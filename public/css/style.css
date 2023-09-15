@@ -1182,43 +1182,52 @@ input::-webkit-inner-spin-button {
 /*
 *  ----------------------------- End of Menu Page ------------------------------
 */
+
+/*
+*  ------------------------------ Promotion Page --------------------------------------
+*/
+.promotion-page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
 .promotion-page main .page {
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
-.promotion-page main .page .container {
+.promotion-page main .page .container-empty {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
 
-.promotion-page main .page .container i {
+.promotion-page main .page .container-empty i {
     font-size: 126px;
     color: var(--dark-grey);
 }
 
-.promotion-page main .page .container .text {
+.promotion-page main .page .container-empty .text {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 }
 
-.promotion-page main .page .container .text .top,
-.promotion-page main .page .container .text .bottom {
+.promotion-page main .page .container-empty .text .top,
+.promotion-page main .page .container-empty .text .bottom {
     font-size: 24px;
     font-weight: 700;
     color: var(--dark);
 }
 
-.promotion-page main .page .container .text .bottom {
+.promotion-page main .page .container-empty .text .bottom {
     color: var(--dark-grey);
 }
 
@@ -1226,21 +1235,22 @@ input::-webkit-inner-spin-button {
     display: flex;
     width: 100%;
     height: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .promotion-page main .page .event .container-event {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
     align-items: flex-start;
-    margin-top: 90px;
-    padding: 0 280px;
+    margin-bottom: 20px;
+    width: 70%;
 }
 
-.promotion-page main .page .event .container-event img {
+.promotion-page main .page .event .container-event img.promotion-image {
+    margin-top: 90px;
     width: 100%;
-    height: 33%;
+    height: 280px;
     object-fit: cover;
 }
 
@@ -1280,23 +1290,31 @@ input::-webkit-inner-spin-button {
 .promotion-page main .page .event .container-event .promotion-item .item .container .description {
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 20px;
 }
 
 .promotion-page main .page .event .container-event .promotion-item .item .container .description .food-name,
 .promotion-page main .page .event .container-event .promotion-item .item .container .description .offer-price {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 500;
     color: var(--dark);
 }
 
 .promotion-page main .page .event .container-event .promotion-item .item .container .description .offer-price {
-    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
 }
-/*
-*  ------------------------------ Promotion Page --------------------------------------
-*/
 
+.promotion-page main .page .event .container-event .promotion-item .item .container .description .offer-price span {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.promotion-page main .page .event .container-event .promotion-item .item .container .description .offer-price span.cut {
+    color: var(--dark-grey);
+}
 /*
 *  ----------------------------- End of Promotion Page --------------------------------
 */
