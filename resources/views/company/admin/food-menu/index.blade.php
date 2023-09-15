@@ -37,7 +37,7 @@
                             <i class='bx bx-notepad'></i>
                             <h3>Menu</h3>
                             <i class='bx bx-filter' ></i>
-                            <form action="/" method="GET" id="search-form">
+                            <form action="{{ route('food-menu-search-index') }}" method="GET" id="search-form">
                                 <div class="search-field">
                                     <i class='bx bx-search' id="search-button"></i>
                                     <input type="text" name="search" placeholder="Search" value="{{ old('search') }}">

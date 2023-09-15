@@ -84,7 +84,8 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
 
     Route::post('/food-menu/create', [FoodCategoryController::class, 'store'])->name('food-category');
     Route::delete('/food-category-delete/{id}', [FoodCategoryController::class, 'destroy'])->name('food-category-delete');
-    Route::get('/food-search-index', [FoodMenuController::class, 'search_create'])->name('food-menu-search-create');
+    Route::get('/food-search-index', [FoodMenuController::class, 'search_index'])->name('food-menu-search-index');
+    Route::get('/food-search-create', [FoodMenuController::class, 'search_create'])->name('food-menu-search-create');
 
     // Restaurant module
     Route::resource('/restaurant', RestaurantController::class)->names([

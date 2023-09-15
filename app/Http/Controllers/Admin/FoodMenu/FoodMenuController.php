@@ -37,6 +37,30 @@ class FoodMenuController extends Controller
 
 
 
+
+    /*
+    *  Function to search resource in index page
+    */
+    public function search_index(Request $request) : View
+    {
+        $keyword = $request->input('search');
+
+        $search = FoodMenu::where(function ($query) use ($keyword) {
+            $query->where('name', 'like', '%' . $keyword . '%')
+            ->orWhere('description', 'like', '%' . $keyword . '%')
+            ->orWhere('price', 'like', '%' . $keyword . '%')
+            ->orWhere('category_id', 'like', '%' . $keyword . '%')
+            ->orWhere('image', 'like', '%' . $keyword . '%');
+        })->paginate(10);
+
+        return view('company.admin.food-menu.index', ['food' => $search]);
+    }
+
+
+
+
+    
+
     /*
     *  Function to search reasource in create page
     */
