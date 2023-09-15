@@ -38,6 +38,7 @@
     ```
 
 # `Authentication`
+
 - Admin
     ```
     ID: hashceo001

@@ -32,8 +32,8 @@
                     <a href="{{ route('menu') }}"><span>Menu</span></a>
                 </div>
 
-                <div class="promotions">
-                    <a href="#"><span>Promotions</span></a>
+                <div class="{{ request()->routeIs(['promotion']) ? 'active' : '' }}">
+                    <a href="{{ route('promotion') }}"><span>Promotions</span></a>
                 </div>
 
                 <div class="{{ request()->routeIs(['reservation']) ? 'active' : '' }}">
@@ -136,7 +136,7 @@
         </div>
 
         <div class="copyright">
-            <span>© COPYRIGHT 2023 HAZMI HAZIM - ALL RIGHTS RESERVED</span>
+            <span>&copy; COPYRIGHT 2023 HAZMI HAZIM - ALL RIGHTS RESERVED</span>
         </div>
 
     </div>

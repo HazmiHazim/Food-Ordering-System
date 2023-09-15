@@ -1180,7 +1180,125 @@ input::-webkit-inner-spin-button {
     color: var(--light);
 }
 /*
-*  -------------------------- End of Menu Page ------------------------------
+*  ----------------------------- End of Menu Page ------------------------------
+*/
+.promotion-page main .page {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.promotion-page main .page .container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.promotion-page main .page .container i {
+    font-size: 126px;
+    color: var(--dark-grey);
+}
+
+.promotion-page main .page .container .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.promotion-page main .page .container .text .top,
+.promotion-page main .page .container .text .bottom {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.promotion-page main .page .container .text .bottom {
+    color: var(--dark-grey);
+}
+
+.promotion-page main .page .event {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.promotion-page main .page .event .container-event {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    margin-top: 90px;
+    padding: 0 280px;
+}
+
+.promotion-page main .page .event .container-event img {
+    width: 100%;
+    height: 33%;
+    object-fit: cover;
+}
+
+.promotion-page main .page .event .container-event .promotion-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.promotion-page main .page .event .container-event .promotion-item span {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.promotion-page main .page .event .container-event .promotion-item .item {
+    display: flex;
+    gap: 20px;
+}
+
+.promotion-page main .page .event .container-event .promotion-item .item .container {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    align-items: flex-start;
+}
+
+.promotion-page main .page .event .container-event .promotion-item .item .container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.promotion-page main .page .event .container-event .promotion-item .item .container .description {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.promotion-page main .page .event .container-event .promotion-item .item .container .description .food-name,
+.promotion-page main .page .event .container-event .promotion-item .item .container .description .offer-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.promotion-page main .page .event .container-event .promotion-item .item .container .description .offer-price {
+    font-weight: 500;
+}
+/*
+*  ------------------------------ Promotion Page --------------------------------------
+*/
+
+/*
+*  ----------------------------- End of Promotion Page --------------------------------
 */
 
 /*

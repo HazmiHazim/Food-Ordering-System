@@ -35,6 +35,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PublicController::class, 'home'])->name('home');
 Route::get('/menu', [PublicController::class, 'menu'])->name('menu');
 Route::get('/about', [PublicController::class, 'about'])->name('about');
+Route::get('/promotion', [PublicController::class, 'promotion'])->name('promotion');
 Route::get('/reservation', [PublicController::class, 'reservation'])->name('reservation');
 
 // Add to cart

@@ -9,7 +9,10 @@ use App\Models\CustomerOrder;
 use App\Models\CustomerOrderDetail;
 use App\Models\DiningTable;
 use App\Models\FoodMenu;
+use App\Models\PromotionDiscount;
+use App\Models\PromotionEvent;
 use App\Models\Reservation;
+use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -42,6 +45,7 @@ class PublicController extends Controller
 
 
 
+
     /*
     *  Function to view about file
     */
@@ -49,6 +53,38 @@ class PublicController extends Controller
     {
         return view('public.about');
     }
+
+
+
+
+
+
+    /*
+    *  Function to view promotion file
+    */
+    public function promotion() : View
+    {
+        // Get current date
+        $currentMonth = Carbon::now();
+
+        // Get month before now
+        $monthBefore = Carbon::now()->subMonth();
+
+        // Get event available if user is within the event month and one month after even
+        // Other than that the promotion is unavailable
+        $promotion = PromotionEvent::where(function ($query) use ($currentMonth, $monthBefore) {
+            $query->whereMonth('event_date', '=', $currentMonth)
+                ->orWhereMonth('event_date', '=', $monthBefore);
+        })->get();
+
+        // To be fixed
+        $coupon = PromotionDiscount::all();
+
+        $menu = FoodMenu::where('price', '>', 27.00)->get();
+
+        return view('public.promotion', compact('promotion', 'coupon', 'menu'));
+    }
+
 
 
 
