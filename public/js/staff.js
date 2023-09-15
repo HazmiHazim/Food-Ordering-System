@@ -25,17 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /*
-*  ------------------ Logout Side Menu ----------------
+*  ------------------ Function Logout ----------------
 */
 document.addEventListener('DOMContentLoaded', () => {
+    // Sidebar Logout
     const logoutBtn = document.getElementById('logout-button');
+    // Logout for topbar
+    const topbarLogoutBtn = document.getElementById('logout-button-topbar');
+    const logout = document.getElementById('logout-form');
+
     logoutBtn.addEventListener('click', () => {
-        const logout = document.getElementById('logout-form');
+        logout.submit();
+    });
+
+    topbarLogoutBtn.addEventListener('click', () => {
         logout.submit();
     });
 });
 /*
-*  ------------------ End of Logout Side Menu -------------------
+*  ------------------ End of Function Logout -------------------
 */
 
 

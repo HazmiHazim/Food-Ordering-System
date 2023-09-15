@@ -65,7 +65,7 @@
                                 <tr>
                                     <th><input type="checkbox"></th>
                                     <th>Table No.</th>
-                                    <th>Occupy Status</th>
+                                    <th>Status</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -79,7 +79,7 @@
                                             @if ($table->isOccupied)
                                                 Occupied
                                             @else
-                                                Not Occupied
+                                                Available
                                             @endif
                                         </td>
                                         <td><a href="#"><i class='bx bxs-pencil'></i><span>Edit</span></a></td>

@@ -102,7 +102,7 @@
 
                             @csrf
 
-                            <button type="button" id="logout-button">
+                            <button type="button" id="logout-button-topbar">
                                 <i class='bx bx-log-out-circle'></i>
                                 <span>Logout</span>
                             </button>
