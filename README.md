@@ -4,8 +4,6 @@ The Online Food Ordering System is built using the Laravel framework, which harn
 
 Furthermore, the application offers dedicated panels for both staff members and administrators (restaurant owner) to manage incoming customer orders. These panels serve distinct roles within the system. The administrator panel grants full control over the entire system, whereas the staff panel is designed specifically for managing tasks related to customer orders, reservations, complaints, and other responsibilities pertinent to their roles.
 
-For ordering process, customers begin by choosing a table in the restaurant. They need to scan the QR code affixed to their table to access the system. Customers can then browse the menu and add items to their cart before finalizing their order. Once the food selection is complete, users confirm their cart's contents. To ensure efficient service, customers must also enter their table number, which is displayed at their table, allowing the staff to locate and serve the food. After completing the order, users receive a successful notification and QR code for payment, which is done at the counter, as the system does not support online payments.
-
 # `Available Features`
 
 - Admin panel
