@@ -28,7 +28,7 @@
                     <a href="{{ route('home') }}"><span>Home</span></a>
                 </div>
 
-                <div class="{{ request()->routeIs(['menu']) ? 'active' : '' }}">
+                <div class="{{ request()->routeIs(['menu', 'search']) ? 'active' : '' }}">
                     <a href="{{ route('menu') }}"><span>Menu</span></a>
                 </div>
 

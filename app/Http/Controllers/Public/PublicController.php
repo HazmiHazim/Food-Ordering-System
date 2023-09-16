@@ -200,7 +200,7 @@ class PublicController extends Controller
         Log::info([$table, $order, $orderDetails]);
 
         return response()->json([
-            'success-message' => 'Order is taken. Please wait 15 - 30 minutes for us to prepare your food.',
+            'success-message' => 'Your order is being processed. Please wait 15 - 30 minutes for us to prepare your food.',
         ]);
     }
 
