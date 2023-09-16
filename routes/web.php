@@ -41,6 +41,9 @@ Route::get('/reservation', [PublicController::class, 'reservation'])->name('rese
 // Add to cart
 Route::post('/menu/create-order', [PublicController::class, 'createOrder'])->name('create-order');
 
+// Search
+Route::get('/search', [PublicController::class, 'search'])->name('search');
+
 // Make reservation
 Route::post('/reservation/create', [PublicController::class, 'makeReservation'])->name('create-reservation');
 

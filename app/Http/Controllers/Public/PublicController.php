@@ -107,6 +107,33 @@ class PublicController extends Controller
 
 
 
+
+
+    /*
+    *  Function to search
+    */
+    public function search(Request $request) : View
+    {
+        $keyword = $request->input('search');
+
+        $search = FoodMenu::where(function ($query) use ($keyword) {
+            $query->where('name', 'like', '%' . $keyword . '%')
+            ->orWhere('price', 'like', '%' . $keyword . '%')
+            ->orWhereHas('foodCategory', function ($query) use ($keyword) {
+                $query->where('name', 'like', '%' . $keyword . '%');
+            });
+        })->get();
+
+        Log::info([$keyword, $search]);
+
+        return view('public.menu', ['menu' => $search]);
+    }
+
+
+
+
+
+
     /*
     *  Function for add to cart
     */

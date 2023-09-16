@@ -44,7 +44,13 @@
 
             <div class="manage">
                 <div class="search">
-                    <i class='bx bx-search'></i>
+                    <i class='bx bx-search' id="open-search"></i>
+                    <div class="search-container">
+                        <form action="{{ route('search') }}" method="GET" id="search-form">
+                            <i class='bx bx-search' id="search-button"></i>
+                            <input type="text" name="search" placeholder="Search..." value="{{ old('search') }}">
+                        </form>
+                    </div>
                 </div>
 
                 <div class="cart">

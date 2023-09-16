@@ -43,6 +43,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+/*
+*  ------------------------------ Search -------------------------------------------
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    const openSearch = document.getElementById('open-search');
+    const searchBox = document.querySelector('.search-container');
+    const body = document.querySelector('body');
+
+    openSearch.addEventListener('click', (event) => {
+        event.stopPropagation();
+        searchBox.classList.toggle('active');
+    });
+
+    searchBox.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+
+    body.addEventListener('click', () => {
+        searchBox.classList.remove('active');
+    });
+
+});
+/*
+*  ------------------------------ End of Search -------------------------------------
+*/
+
+
+/*
+*  -------------------------- Function to Click an Icon for Search ---------------------
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    const searchBtn = document.getElementById('search-button');
+
+    searchBtn.addEventListener('click', () => {
+        const search = document.getElementById('search-form');
+        search.submit();
+    });
+});
+/*
+*  ---------------------- End of Function to Click an Icon for Search -----------------------
+*/
+
+
 
 
 
