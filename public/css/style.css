@@ -202,22 +202,22 @@ input::-webkit-inner-spin-button {
     justify-content: center;
 }
 
-.topbar .container .nav-page>div {
+.topbar .container .nav-page div>a {
     cursor: pointer;
     padding: 5px 16px;
     border-radius: 30px;
 }
 
-.topbar .container .nav-page>div:hover {
+.topbar .container .nav-page div>a:hover {
     background: var(--light-glow);
     color: var(--light);
 }
 
-.topbar .container .nav-page .active {
+.topbar .container .nav-page .active a {
     background: var(--glow);
 }
 
-.topbar .container .nav-page .active span {
+.topbar .container .nav-page .active a span {
     color: var(--light);
 }
 
@@ -1080,39 +1080,71 @@ input::-webkit-inner-spin-button {
     overflow-y: auto;
 }
 
-.menu-page main .container {
+.menu-page main .page {
     display: block;
     width: 100%;
     height: 100%;
-    margin-top: 90px;
     overflow-y: auto;
 }
 
-.menu-page main .container:nth-of-type(n+2) {
+.menu-page main .page .container-empty {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.menu-page main .page .container-empty i {
+    font-size: 126px;
+    color: var(--dark-grey);
+}
+
+.menu-page main .page .container-empty .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menu-page main .page .container-empty .text .top,
+.menu-page main .page .container-empty .text .bottom {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.menu-page main .page .container-empty .text .bottom {
+    color: var(--dark-grey);
+}
+
+.menu-page main .page:nth-of-type(n+2) {
     margin-top: 0px;
 }
 
-.menu-page main .container .title {
+.menu-page main .page .title {
     display: flex;
     justify-content: space-between;
     padding: 60px 60px 10px;
+    margin-top: 90px;
 }
 
-.menu-page main .container .title h1,
-.menu-page main .container .title i {
+.menu-page main .page .title h1,
+.menu-page main .page .title i {
     font-size: 36px;
     color: var(--dark);
     cursor: pointer;
 }
 
-.menu-page main .container .food-item {
+.menu-page main .page .food-item {
     display: flex;
     padding: 0px 50px 50px;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
-.menu-page main .container .food-item>div {
+.menu-page main .page .food-item>div {
     display: flex;
     border-radius: 20px;
     width: 300px;
@@ -1124,13 +1156,13 @@ input::-webkit-inner-spin-button {
     margin-top: 20px;
 }
 
-.menu-page main .container .food-item .item {
+.menu-page main .page .food-item .item {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.menu-page main .container .food-item .item img {
+.menu-page main .page .food-item .item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -1138,21 +1170,21 @@ input::-webkit-inner-spin-button {
     border-top-right-radius: 20px;
 }
 
-.menu-page main .container .food-item .item span.food-name {
+.menu-page main .page .food-item .item span.food-name {
     margin-top: 5px;
     font-size: 20px;
     font-weight: 700;
     color: var(--dark);
 }
 
-.menu-page main .container .food-item .item span.price {
+.menu-page main .page .food-item .item span.price {
     margin-top: 5px;
     font-size: 16px;
     font-weight: 500;
     color: var(--dark);
 }
 
-.menu-page main .container .food-item .item button {
+.menu-page main .page .food-item .item button {
     display: flex;
     margin-top: 5px;
     width: 50%;
@@ -1166,16 +1198,16 @@ input::-webkit-inner-spin-button {
     gap: 5px;
 }
 
-.menu-page main .container .food-item .item button:hover {
+.menu-page main .page .food-item .item button:hover {
     transform: scale(1.02);
 }
 
-.menu-page main .container .food-item .item button i {
+.menu-page main .page .food-item .item button i {
     font-size: 24px;
     color: var(--light);
 }
 
-.menu-page main .container .food-item .item button span {
+.menu-page main .page .food-item .item button span {
     font-size: 16px;
     color: var(--light);
 }
