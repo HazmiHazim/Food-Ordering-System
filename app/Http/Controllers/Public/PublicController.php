@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\CustomerOrder;
 use App\Models\CustomerOrderDetail;
 use App\Models\DiningTable;
+use App\Models\FoodCategory;
 use App\Models\FoodMenu;
 use App\Models\PromotionDiscount;
 use App\Models\PromotionEvent;
@@ -39,7 +40,9 @@ class PublicController extends Controller
     {
         $menu = FoodMenu::all();
 
-        return view('public.menu', compact('menu'));
+        $category = FoodCategory::all();
+
+        return view('public.menu', compact('menu', 'category'));
     }
 
 

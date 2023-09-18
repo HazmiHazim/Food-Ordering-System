@@ -1173,72 +1173,72 @@ input::-webkit-inner-spin-button {
     margin-top: 0px;
 }
 
-.menu-page main .page .title {
+.menu-page main .page .category-banner {
     display: flex;
-    justify-content: space-between;
-    padding: 60px 60px 10px;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0px 200px;
     margin-top: 90px;
-}
-
-.menu-page main .page .title h1,
-.menu-page main .page .title i {
-    font-size: 36px;
-    color: var(--dark);
-    cursor: pointer;
+    overflow: hidden;
+    min-height: 48px;
 }
 
 .menu-page main .page .food-item {
     display: flex;
-    padding: 0px 50px 50px;
+    padding: 0px 200px 50px;
     flex-wrap: wrap;
+    column-gap: 5px;
+    row-gap: 55px;
     justify-content: space-evenly;
-}
-
-.menu-page main .page .food-item>div {
-    display: flex;
-    border-radius: 20px;
-    width: 300px;
-    height: 300px;
-    background: var(--light);
-    padding: 2px;
-    overflow-x: auto;
-    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
-    margin-top: 20px;
 }
 
 .menu-page main .page .food-item .item {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5px;
 }
 
-.menu-page main .page .food-item .item img {
+.menu-page main .page .food-item .item .image {
+    display: flex;
+    position: relative;
     width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-page main .page .food-item .item .image img {
+    width: 200px;
     height: 200px;
     object-fit: cover;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-radius: 12px;
 }
 
-.menu-page main .page .food-item .item span.food-name {
-    margin-top: 5px;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--dark);
+.menu-page main .page .food-item .item .image .overlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    transition: opacity 0.4s ease-in-out;
+    background: #000000;
 }
 
-.menu-page main .page .food-item .item span.price {
-    margin-top: 5px;
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--dark);
+.menu-page main .page .food-item .item .image:hover .overlay {
+    opacity: 0.8;
 }
 
 .menu-page main .page .food-item .item button {
     display: flex;
-    margin-top: 5px;
-    width: 50%;
-    height: 30px;
+    width: 80%;
+    height: 20%;
     border: none;
     border-radius: 5px;
     background: var(--glow);
@@ -1260,6 +1260,28 @@ input::-webkit-inner-spin-button {
 .menu-page main .page .food-item .item button span {
     font-size: 16px;
     color: var(--light);
+}
+
+.menu-page main .page .food-item .item .name-price {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.menu-page main .page .food-item .item .name-price span.food-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.menu-page main .page .food-item .item .name-price span.price {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark);
 }
 /*
 *  ----------------------------- End of Menu Page ------------------------------
