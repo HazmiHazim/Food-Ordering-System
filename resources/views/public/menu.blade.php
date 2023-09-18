@@ -31,7 +31,7 @@
                         <div class="food-item">
                             @foreach ($menu as $menu)
                                 <div class="item">
-                                    <img src="{{ $menu->image }}" alt="test">
+                                    <img src="{{ $menu->image }}" alt="food-image">
                                     <span class="food-name">{{ $menu->name }}</span>
                                     <span class="price">RM {{ $menu->price }}</span>
                                     <button type="button" class="add-to-cart" data-food-id="{{ $menu->id }}"

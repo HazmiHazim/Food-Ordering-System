@@ -108,8 +108,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Get input in add-to-cart
     const tableNumberInput = document.querySelector('input[name="table_number"]');
     const customerContactInput = document.querySelector('input[name="customer_contact"]');
+    const confirmOrderBtn = document.querySelector('.confirm-order');
 
     updateCart();
+    updateConfirmButtonState();
 
     openCart.addEventListener('click', (event) => {
         event.stopPropagation();
@@ -157,11 +159,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Make confirm button disable if input is not insert
     tableNumberInput.addEventListener('input', () => {
         // Check if the input value is empty
-        if (tableNumberInput.value.trim() === '') {
-            confirmOrderBtn.disabled = true;
-        } else {
-            confirmOrderBtn.disabled = false;
-        }
+        updateConfirmButtonState();
     });
 
     // Handle the minus button event
@@ -209,6 +207,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 // Save the updated cart to localStorage
                 localStorage.setItem('cart', JSON.stringify(cart));
                 updateCart();
+
+                // Update the confirm button state when an item is deleted
+                updateConfirmButtonState();
             }
         }
     });
@@ -271,10 +272,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         const cartQuantity = document.getElementById('cart-quantity');
         cartQuantity.textContent = totalItemCount;
+
+        updateConfirmButtonState();
+    }
+
+    // Function to update the state of the confirm button
+    function updateConfirmButtonState() {
+        const tableNumberValue = tableNumberInput.value.trim();
+        const isCartEmpty = Object.keys(cart).length === 0;
+
+        // Check if both table number is entered and cart is not empty
+        if (tableNumberValue !== '' && !isCartEmpty) {
+            confirmOrderBtn.disabled = false;
+        } else {
+            confirmOrderBtn.disabled = true;
+        }
     }
 
     // Send add-to-cart value to controller
-    const confirmOrderBtn = document.querySelector('.confirm-order');
     confirmOrderBtn.addEventListener('click', () => {
 
         // Initialize an empty array to collect cart data
