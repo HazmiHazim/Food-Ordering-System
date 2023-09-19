@@ -79,7 +79,7 @@
                                                 {{ $coupon->redeem_status }}
                                             </span>
                                         </td>
-                                        <td>{{ $coupon->event_id }}</td>
+                                        <td>{{ $coupon->promotionEvent->event_name }}</td>
                                         <td>{{ date('j M', strtotime($coupon->validity)) }}</td>
                                         <td>{{ $coupon->date_redeemed }}</td>
                                         <td><a href="{{ route('promotion-discount-show', ['promotion_discount' => $coupon->id]) }}"><i class='bx bxs-pencil'></i><span>Edit</span></a></td>

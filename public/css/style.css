@@ -1243,8 +1243,8 @@ input::-webkit-inner-spin-button {
     border-radius: 5px;
     background: var(--glow);
     align-items: center;
-    justify-content: center;
     cursor: pointer;
+    padding: 0 8px 0 12px;
     gap: 5px;
 }
 
@@ -1580,5 +1580,9 @@ input::-webkit-inner-spin-button {
 
     .registration .registration-details::-webkit-scrollbar {
         width: 0;
+    }
+
+    .menu-page main .page .food-item {
+        padding: 0;
     }
 }

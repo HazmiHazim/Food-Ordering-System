@@ -23,7 +23,7 @@
                         </div>
                     @else
                         <div class="category-banner">
-                            <span>All</span>
+                            <h1>Menu</h1>
                         </div>
                         <div class="food-item">
                             @foreach ($menu as $menu)
