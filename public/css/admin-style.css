@@ -771,7 +771,6 @@ input::-webkit-inner-spin-button {
 *  ----------------- Validation Error Message -------------------
 */
 .validation-error-message {
-    margin-top: 10px;
     color: var(--danger);
 }
 /*
@@ -3330,6 +3329,108 @@ input::-webkit-inner-spin-button {
 }
 /*
 *  ----------------------- End of Promotion Discount Page -------------------------
+*/
+
+/*
+*  ----------------------------- Profile Settings ----------------------------------
+*/
+.admin-profile-edit main .profile-section form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 10px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.admin-profile-edit main .profile-section form>div.container {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.2);
+}
+
+.admin-profile-edit main .profile-section form .container {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 500;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 48px;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.admin-profile-edit main .profile-section form .container .details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.admin-profile-edit main .profile-section form .container .details h3,
+.admin-profile-edit main .profile-section form .container .password-details h3 {
+    color: var(--dark);
+}
+
+.admin-profile-edit main .profile-section form .container .details span.text,
+.admin-profile-edit main .profile-section form .container .password-details span.text {
+    font-size: 16px;
+    color: var(--dark);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.admin-profile-edit main .profile-section form .container .details span:nth-child(n+2),
+.admin-profile-edit main .profile-section form .container .password-details span:nth-child(n+2) {
+    color: var(--dark);
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.admin-profile-edit main .profile-section form .container .details input,
+.admin-profile-edit main .profile-section form .container .password-details input {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 0 10px;
+    border: 1px solid var(--dark-grey);
+    color: var(--dark);
+    outline: none;
+}
+
+.admin-profile-edit main .profile-section form .container .details input[type="submit"],
+.admin-profile-edit main .profile-section form .container .password-details input[type="submit"] {
+    width: 20%;
+    background: var(--primary);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light);
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.admin-profile-edit main .profile-section form .container .details input[type="submit"]:hover,
+.admin-profile-edit main .profile-section form .container .password-details input[type="submit"]:hover {
+    background: var(--primary);
+    opacity: 0.9;
+}
+
+.admin-profile-edit main .profile-section form .container .password-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+/*
+*  ------------------------------- End of Profile Settings -----------------------------
 */
 
 /*

@@ -49,8 +49,8 @@
             <li>
                 <a href="#"><i class='bx bx-shield-quarter'></i>Access Control</a>
             </li>
-            <li>
-                <a href="#"><i class='bx bx-cog'></i>Settings</a>
+            <li class="{{ request()->routeIs('admin-profile') ? 'active' : ''}}">
+                <a href="{{ route('admin-profile') }}"><i class='bx bx-cog'></i>Settings</a>
             </li>
             <li>
                 <form action="{{ route('logout') }}" method="POST" id="logout-form">

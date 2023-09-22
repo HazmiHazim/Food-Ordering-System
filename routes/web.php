@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\PromotionDiscount\PromotionDiscountController;
 use App\Http\Controllers\Admin\PromotionDiscount\PromotionEventController;
 use App\Http\Controllers\Admin\Restaurant\ItemCategoryController;
 use App\Http\Controllers\Admin\Restaurant\RestaurantController;
+use App\Http\Controllers\Admin\Settings\AdminProfileController;
 use App\Http\Controllers\Admin\StaffAccount\StaffAccountController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
@@ -117,6 +118,11 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     ]);
 
     Route::post('/promotion-discount/create', [PromotionEventController::class, 'store'])->name('promotion-event');
+
+    // Setting Profile
+    Route::get('/settings', [AdminProfileController::class, 'adminProfile'])->name('admin-profile');
+    Route::put('/settings/update-profile/{id}', [AdminProfileController::class, 'updateProfile'])->name('update-admin-profile');
+    Route::put('/settings/update-password/{id}', [AdminProfileController::class, 'updatePassword'])->name('update-admin-password');
 });
 
 // Route for staff
