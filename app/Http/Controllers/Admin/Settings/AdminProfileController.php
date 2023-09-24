@@ -49,7 +49,7 @@ class AdminProfileController extends Controller
 
             $updated = $user->update($updateData);
 
-            Log::info($updateData, $updated);
+            Log::info([$updateData, $updated]);
 
             return back()->with('success-message', 'Profile update successfully.');
         }
