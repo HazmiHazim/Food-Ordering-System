@@ -52,6 +52,10 @@ Furthermore, the application offers dedicated panels for both staff members and 
     ```
     php artisan db:seed
     ```
+- Link local storage (Optional)
+    ```
+    php artisan storage:link    
+    ```
 
 # `Authentication`
 
