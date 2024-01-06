@@ -37,9 +37,9 @@
 
                 <!-- Insight -->
                 <ul class="insights">
-                    <li><i class='bx bxs-user'></i><span class="info"><h3>{{ $staff->count() }}</h3><p>Total Staff</p></span></li>
+                    <li><i class='bx bxs-user'></i><span class="info"><h3>300</h3><p>Total Staff</p></span></li>
                     <li><i class='bx bx-show-alt' ></i><span class="info"><h3>5,958</h3><p>Site Visit</p></span></li>
-                    <li><i class='bx bx-line-chart' ></i><span class="info"><h3>RM {{ $sales }}</h3><p>Total Sales</p></span></li>
+                    <li><i class='bx bx-line-chart' ></i><span class="info"><h3>RM 350,920</h3><p>Total Sales</p></span></li>
                 </ul>
 
                 <!-- Bottom Section -->
