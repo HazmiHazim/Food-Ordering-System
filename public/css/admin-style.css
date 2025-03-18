@@ -374,29 +374,118 @@ table td form button:hover {
     cursor: pointer;
 }
 
-table td form button span:hover {
-    text-decoration: underline;
-}
-
-table td:last-child:hover {
-    color: var(--main-blue);
-    text-decoration: underline;
-}
-
-table tbody tr {
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-table tbody tr:hover {
-    transform: scale(1.02);
-}
-
 table tbody tr:nth-child(even) {
     background-color: var(--grey);
 }
 /*
 *  ----------------- End of Table ------------------------
+*/
+
+/*
+*  ------------------- Custom Table ----------------------
+*/
+table.table1 {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    overflow: hidden;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+table.table1 th {
+    background: var(--main-blue);
+    color: #FFFFFF;
+    padding: 12px 0 12px 16px;
+    font-size: 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--grey);
+}
+
+table.table1 td {
+    padding: 12px 0 12px 16px;
+    font-size: 14px;
+}
+
+table.table1 td a {
+    color: var(--main-blue);
+}
+
+table.table1 tbody td i.bx {
+    font-size: 14px;
+    object-fit: cover;
+}
+
+table.table1 tbody td img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid var(--dark-grey);
+}
+
+table.table1 tbody td:last-child:hover {
+    color: var(--main-blue);
+    text-decoration: underline;
+}
+
+table.table1 tbody tr:nth-child(even) {
+    background-color: var(--grey);
+}
+
+/*
+*  ----------------- End of Table 1 ------------------------
+*/
+
+
+
+/*
+*
+*/
+.custom-card1 {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 10px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.custom-card1>div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
+}
+
+.custom-card1 .container {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.custom-card1 .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.custom-card1 .header h3 {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.custom-card1 .header .bx {
+    cursor: pointer;
+}
+
+/*
+*
 */
 
 /* 
@@ -1115,46 +1204,6 @@ input::-webkit-inner-spin-button {
 
 .staff-account-index main .header .create:hover {
     transform: scale(1.02);
-}
-
-.staff-account-index main .bottom-section {
-    display: flex;
-    flex-wrap: wrap;
-    grid-gap: 24px;
-    margin-top: 10px;
-    width: 100%;
-    color: var(--dark);
-}
-
-.staff-account-index main .bottom-section .staff {
-    flex-grow: 1;
-    flex-basis: 500px;
-}
-
-.staff-account-index main .bottom-section>div {
-    border-radius: 20px;
-    background: var(--light);
-    padding: 24px;
-    overflow-x: auto;
-    margin-bottom: 25px;
-    box-shadow: 0 5px 12px rgba(32, 32, 32, 0.3);
-}
-
-.staff-account-index main .bottom-section .header {
-    display: flex;
-    align-items: center;
-    grid-gap: 16px;
-    margin-bottom: 24px;
-}
-
-.staff-account-index .bottom-section .header h3 {
-    margin-right: auto;
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.staff-account-index main .bottom-section .header .bx {
-    cursor: pointer;
 }
 
 .staff-account-create main .form-section form .create-form {

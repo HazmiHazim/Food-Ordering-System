@@ -20,17 +20,30 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const menuBar = document.querySelector('.top-bar nav .bx.bx-menu');
     const sideBar = document.querySelector('.sidebar');
+    const section = document.querySelector('section');
 
     menuBar.addEventListener('click', () => {
         sideBar.classList.toggle('close');
+
+        if (sideBar.classList.contains('close')) {
+            section.style.width = "calc(100% - 60px)";
+            section.style.left = "60px";
+        } else {
+            section.style.width = "calc(100% - 230px)";
+            section.style.left = "230px";
+        }
     });
 
     window.addEventListener('resize', () => {
         if (window.innerWidth < 768) {
             sideBar.classList.add('close');
+            section.style.width = "calc(100% - 60px)";
+            section.style.left = "60px";
         }
         else {
             sideBar.classList.remove('close');
+            section.style.width = "calc(100% - 230px)";
+            section.style.left = "230px";
         }
     });
 });

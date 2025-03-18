@@ -84,6 +84,9 @@
     @yield('content')
 
     <script src="{{ asset('js/admin.js') }}"></script>
+    <script src="{{ asset('js/vendor/jqury/jqury_v3_7_1.min.js') }}"></script>
+
+    @yield('scripts')
 
 </body>
 

@@ -1,15 +1,10 @@
 @extends('company.admin.main')
-
 @section('title', 'Food Menu')
-
 @section('content')
 
     <div class="food-menu-index">
-
         <section>
-
             <main>
-
                 @if (session('success-message'))
                     <div class="success-message left-green">
                         <i class='bx bxs-check-circle'></i>
@@ -30,11 +25,10 @@
                 </div>
 
                 <!-- Food Menu -->
-                <div class="top-section">
-
-                    <div class="food-menu">
+                <div class="custom-card1">
+                    <div class="container">
                         <div class="header">
-                            <i class='bx bx-notepad'></i>
+                            <i class='bx bx-detail'></i>
                             <h3>Menu</h3>
                             <i class='bx bx-filter' ></i>
                             <form action="{{ route('food-menu-search-index') }}" method="GET" id="search-form">
@@ -45,54 +39,45 @@
                             </form>
                         </div>
 
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Price</th>
-                                    <th>Category</th>
-                                    <th>Image</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                @foreach ($food as $foodList)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $foodList->name }}</td>
-                                        <td>{{ Str::limit($foodList->description, 30) }}</td>
-                                        <td>RM {{ $foodList->price }}</td>
-                                        <td>{{ $foodList->foodCategory->name }}</td>
-                                        <td><img src="{{ asset($foodList->image) }}"></td>
-                                        <td>
-                                            <a href="{{ route('food-menu-show', ['food_menu' => $foodList->id]) }}">
-                                                <i class='bx bxs-pencil'></i>
-                                                <span>Edit</span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                        @include('partials.table1', [
+                            'tableId' => 'FoodMenuIndex',
+                            'tableAllCheckBoxId' => 'FoodMenuIndexAllCheckBox',
+                            'tableCheckboxName' => 'FoodMenuIndexAllCheckBox',
+                            'tableHeaders' => ['Name', 'Description', 'Price', 'Category', 'Image'],
+                            'tableBodyCheckBoxId' => 'FoodMenuIndexCheckBox_',
+                            'tableBodyCheckBoxName' => 'FoodMenuIndexCheckBox',
+                            'tableDatas' => $food,
+                            'tableFields' => ['name', 'description', 'price', 'foodCategory.name', 'image'],
+                            'buttonLink' => fn($td) => route('food-menu-show', ['food_menu' => $td->id]),
+                        ])
 
                         <div class="pagination">
                             <div class="count">Showing {{ $food->firstItem() }} to {{ $food->lastItem() }} out of {{ $food->total()}} results</div>
                             <div class="pagination-number">
-                                <div class="page-number">{{ $food->render('company.partials.paginator') }}</div>
+                                <div class="page-number">{{ $food->render('partials.paginator') }}</div>
                             </div>
                         </div>
 
                     </div>
-
                 </div>
-
             </main>
-
         </section>
-
     </div>
+@endsection
 
+@section('scripts')
+    <script>
+        $(document).ready(() => {
+            $('#FoodMenuIndexAllCheckBox').on('change', function () {
+                let allCheckBox = $(this);
+                let isChecked = allCheckBox.prop('checked');
+                let idList = [];
+
+                $('input[id^="FoodMenuIndexCheckBox_"]').each(function () {
+                    $(this).prop("checked", isChecked);
+                    idList.push($(this).val());
+                });
+            });
+        });
+    </script>
 @endsection
